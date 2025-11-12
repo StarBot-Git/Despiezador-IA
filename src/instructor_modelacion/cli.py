@@ -9,18 +9,25 @@ from .scanner import Scan_InputFolder, Guess_Type
 from .analyzers.pdf_analyzer import PDF_Analyzer
 from .analyzers.image_analyzer import Image_Analyzer
 from .summarizer import Furniture_Description
-from .reporter import Write_Outputs, now_iso
-#from .IA_Model
+from .reporter import Write_Outputs, now_iso, Report_To_Text
+from .IA_Model import Report_With_AI
 
-VERSION_MODULO = "0.1.0"
+VERSION_MODULO = "0.2.0"
 
-def run_instructor(input_dir: Path, outputs_root: Path):
+"""
+    Run_Instructor():
+    Funcion de ejecucion del instructor de modelacion.
+
+    - input_dir | Path: Ruta del mueble a analizar.
+    - Outputs_root | Path: Ruta para salida de informes
+"""
+def Run_Instructor(input_dir: Path, outputs_root: Path):
 
     #__________________________________________________________________________
     #   Preparacion de rutas
 
-    input_dir = Normalize_Path(input_dir)           # Metodo propio | Normaliza ruta
-    outputs_root = Ensure_OutputsRoot(outputs_root) # Metodo propio | Asegura existencia de la ruta
+    input_dir = Normalize_Path(input_dir)           # utils.paths | Normaliza ruta
+    outputs_root = Ensure_OutputsRoot(outputs_root) # utils.paths | Asegura existencia de la ruta
 
     #__________________________________________________________________________
     #   Escaneo y analisis de archivos
@@ -29,18 +36,19 @@ def run_instructor(input_dir: Path, outputs_root: Path):
     if not input_dir.exists():
         raise SystemExit(f"[error] No existe la ruta de entrada: {input_dir}")
 
+    # --- Nombre del mueble actual ---
     furniture_name = input_dir.name
     print(f"[inicio] Proyecto: {furniture_name}")
     print(f"[inicio] Escaneando ruta: {input_dir}")
 
     # --- Obtener | Lista de archivos en la ruta de entrada ---
-    paths = Scan_InputFolder(input_dir)
+    paths = Scan_InputFolder(input_dir) # .scanner | Lista de paths
 
     analyzed: List[File_Analyzed] = [] # Var | Lista de archivos analizados 
 
     # --- Recorrido | Analisis individual de cada archivo ---
     for p in paths:
-        t = Guess_Type(p) # Metodo propio | Tipo detectado
+        t = Guess_Type(p) # .scanner | Tipo de archivo detectado
 
         # --- Inicializacion | Archivo analizado ---
         a = File_Analyzed(name=p.name, extension=p.suffix.lower(), path=str(p), type_detected=t)
@@ -56,6 +64,7 @@ def run_instructor(input_dir: Path, outputs_root: Path):
             a.has_text = meta.get("tiene_texto")
             a.detected_views = meta.get("vistas_detectadas", [])
             a.comments.extend(meta.get("observaciones", []))
+            a.file_text = meta.get("texto_extraido", [])
 
         elif t == "imagen":
             # --- Image_Analyzer | Analisis de metadatos de la imagen ---
@@ -65,6 +74,7 @@ def run_instructor(input_dir: Path, outputs_root: Path):
             a.height_px = meta.get("alto_px")
             a.detected_views = meta.get("vistas_detectadas", [])
             a.comments.extend(meta.get("observaciones", []))
+            a.file_text = meta.get("texto_extraido", [])
         else:
             a.comments.append("Tipo no soportado por la versión 0.1 (omitido).")
 
@@ -97,8 +107,18 @@ def run_instructor(input_dir: Path, outputs_root: Path):
         timestamp=now_iso(),
     )
 
+    # --- Convertir | Reporte a texto ---
+
+    report_text = Report_To_Text(report_var)
+
+    # --- MODELO IA | Instructor de modelacion ---
+
+    report_refined = Report_With_AI(report_var, report_text)
+
+    #print(report_refined)
+
     # --- Escribir | Informes en JSON y TXT ---
-    p_json, p_txt = Write_Outputs(report_var, outputs_root, furniture_name)
+    p_json, p_txt = Write_Outputs(report_refined, outputs_root, furniture_name)
 
     print(f"[hecho] Informe JSON: {p_json}")
     print(f"[hecho] Informe TXT : {p_txt}")

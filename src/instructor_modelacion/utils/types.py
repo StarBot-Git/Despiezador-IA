@@ -5,6 +5,15 @@ from typing import List, Dict, Optional
 """
     File_Analyzed:
     Objeto que representa la informacion primordial de un archivo analizado.
+
+    - name: Nombre del archivo.
+    - extension: Extension del archivo.
+    - path: Ruta completa del archivo.
+    - type_detected: Tipo de archivo detectado (pdf, imagen, etc).
+    - is_vector: Indica si es un PDF vectorial
+    - pages: cantidad de paginas
+    - detected_views: Vistas detectadas en el archivo.
+    - has_text: Indica si tiene texto.
 """
 @dataclass
 class File_Analyzed:
@@ -19,6 +28,7 @@ class File_Analyzed:
     comments: List[str] = field(default_factory=list)
     width_px: Optional[int] = None
     height_px: Optional[int] = None
+    file_text: Optional[str] = ""
 
 """
     Report:

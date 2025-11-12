@@ -26,6 +26,7 @@ def PDF_Analyzer(path: Path) -> Dict[str, Any]:
         "tiene_texto": None,
         "vistas_detectadas": [],
         "observaciones": [],
+        "texto_extraido": "",
     }
 
     # --- Apertura | Documento PDF ---
@@ -56,6 +57,7 @@ def PDF_Analyzer(path: Path) -> Dict[str, Any]:
             if text.strip():
                 any_text = True
                 detected_views.extend(DetectViews_By_Text(text))
+                data["texto_extraido"] = " ".join(text)
             
             # --- Extraccion | Dibujos/elementos vectoriales ---
             drawings = page.get_drawings()
@@ -91,6 +93,8 @@ def PDF_Analyzer(path: Path) -> Dict[str, Any]:
             views_ocr = DetectViews_By_Text(concat_text)
             detected_views.extend(views_ocr)
 
+            data["texto_extraido"] = concat_text
+
             # --- Deteccion | Cotas en el texto OCR ---
             if any(u in concat_text.lower() for u in ["mm", "cm"]):
                 data["observaciones"].append("Se detectan cotas en el OCR (mm/cm).")
@@ -113,6 +117,8 @@ def PDF_Analyzer(path: Path) -> Dict[str, Any]:
         doc.close()
     except Exception:
         pass
+
+    #print(data["texto_extraido"])
 
     return data
 

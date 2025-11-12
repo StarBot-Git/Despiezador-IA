@@ -32,7 +32,7 @@ def Extract_Text_OCR(path_pdf: Path) -> List[str]:
             page = doc.load_page(i)
 
             # --- Convertir | Pagina PDF a imagen ---
-            pix = page.get_pixmap(dpi=300)
+            pix = page.get_pixmap(dpi=800)
 
             # --- Conversion | Pixmap a imagen PIL y OCR ---
             img_data = np.frombuffer(pix.tobytes(), dtype=np.uint8) # Convierte la imagen en array de bytes

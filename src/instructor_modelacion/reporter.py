@@ -5,6 +5,8 @@ from datetime import datetime
 from typing import List, Dict
 from .utils.types import Report, File_Analyzed
 
+"""
+"""
 def report_to_dict(report: Report) -> Dict:
     return {
         "proyecto": report.project,
@@ -17,6 +19,39 @@ def report_to_dict(report: Report) -> Dict:
         "timestamp": report.timestamp,
     }
 
+"""
+"""
+def Report_To_Text(report: Report) -> str:
+    lines = []
+    lines.append(f"Proyecto: {report.project}")
+    lines.append(f"Ruta de escaneo: {report.scan_path}")
+    lines.append(f"Versión módulo: {report.module_version}")
+    lines.append(f"Fecha: {report.timestamp}")
+    lines.append("\n[Resumen]")
+    lines.append(json.dumps(report.summary, ensure_ascii=False, indent=2))
+    lines.append("\n[Archivos]")
+
+    for f in report.files:
+        lines.append(f"- {f.name} ({f.type_detected})")
+        if f.type_detected == "pdf":
+            lines.append(f"  páginas={f.pages}, vectorial={f.is_vector}, texto={f.has_text}")
+        if f.type_detected == "imagen":
+            lines.append(f"  tamaño={f.width_px}x{f.height_px}px")
+        if f.detected_views:
+            lines.append(f"  vistas={', '.join(f.detected_views)}")
+        if f.comments:
+            lines.append(f"  obs={'; '.join(f.comments)}")
+        if f.file_text:
+            lines.append("\n[Texto extraído del archivo]")
+            lines.append(f.file_text)
+
+    lines.append("\n[Conclusiones]")
+    lines.append(json.dumps(report.conclusions, ensure_ascii=False, indent=2))
+
+    return "\n".join(lines)
+
+"""
+"""
 def Write_Outputs(report: Report, out_root: Path, furniture_name: str) -> tuple[Path, Path]:
     out_root.mkdir(parents=True, exist_ok=True)
 
@@ -24,11 +59,15 @@ def Write_Outputs(report: Report, out_root: Path, furniture_name: str) -> tuple[
     base = f"{furniture_name}_report"
     p_json = out_root / f"{base}.json"
     p_txt  = out_root / f"{base}.txt"
+    
 
     # --- Escritura | Archivos JSON y TXT ---
     with open(p_json, "w", encoding="utf-8") as f:
         json.dump(report_to_dict(report), f, ensure_ascii=False, indent=2)
 
+    # p_aux_txt = out_root / f"{base}_PDF_TEXT.txt"
+    # with open(p_aux_txt, "w", encoding="utf-8") as f:
+    #     f.write(report.files[0].file_text)
 
     with open(p_txt, "w", encoding="utf-8") as f:
         f.write(f"Proyecto: {report.project}\n")

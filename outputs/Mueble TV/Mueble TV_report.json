@@ -1,0 +1,49 @@
+{
+  "proyecto": "Mueble TV",
+  "ruta_escaneo": "C:\\Users\\autom\\Desktop\\CARPINTERIA\\STAR GPT\\Despiezador IA\\data\\input\\Mueble TV",
+  "resumen": {
+    "total_archivos": 1,
+    "por_tipo": {
+      "pdf": 1,
+      "imagen": 0,
+      "desconocido": 0
+    }
+  },
+  "archivos": [
+    {
+      "name": "Plano 1.pdf",
+      "extension": ".pdf",
+      "path": "C:\\Users\\autom\\Desktop\\CARPINTERIA\\STAR GPT\\Despiezador IA\\data\\input\\Mueble TV\\Plano 1.pdf",
+      "type_detected": "pdf",
+      "is_vector": true,
+      "pages": 1,
+      "detected_views": [
+        "alzado",
+        "planta"
+      ],
+      "has_text": true,
+      "comments": [
+        "Se detectaron elementos vectoriales (paths/drawings).",
+        "Se encontró texto (directo u OCR).",
+        "OCR exitoso",
+        "Cotas detectadas (valores numéricos con unidades implícitas en mm y m)"
+      ],
+      "width_px": null,
+      "height_px": null,
+      "file_text": "M I N I   B A R \n h :   0 , 5 1   L : \n 0 , 4 7 3   w : 0 , 4 4 \n h : 1 . 5 5   m \n T V   D E \n 5 5 \" \n C A J A \n F U E R T E \n A - 0 1 \n A \n A - 0 1 \n B \n A - 0 1 \n C \n h : 1 . 3 5 \n m \n T V \n h : 0 . 8 5 m \n N O T A :   S e   r e v i s a   e n \n o b r a   p r o t o t i p o   y \n E n t r e c a s a   s o l i c i t a \n a d i c i o n a r   L u z   L e e d \n ( A d i c i o n a l )   y   d i s e ñ o \n C h a f l a n \n N O T A :   S e   r e v i s a   e n   o b r a \n p r o t o t i p o   y   E n t r e c a s a \n s o l i c i t a   a j u s t a r   a l t u r a \n p a r a   m a n t e n e r   l i n e a   d e \n m o b i l i a r i o   g e n e r a l \n N O T A :   P r o y e c c i o n   d e \n l a m i n a   m a d e r a   , \n i n d e p e n d i z a n d o \n e s c r i t o r i o   d e   s u p e r f i c i e \n m i n i b a r \n M I N I   B A R \n h :   0 , 5 1   L : \n 0 , 4 7 3   w : 0 , 4 4 \n . 6 0 \n . 8 0 \n 1 . 4 2 \n . 5 1 \n N O T A :   S e   r e v i s a   e n \n o b r a   p r o t o t i p o   y \n E n t r e c a s a   s o l i c i t a \n a d i c i o n a r   r a n u r a d o \n p a r a   L u z   L e e d \n ( A d i c i o n a l )   y   d i s e ñ o \n C h a f l a n \n . 5 0 \n . 0 5 \n . 0 2 \n . 3 2 \n . 0 2 \n . 4 0 \n . 0 2 \n . 4 0 \n . 0 1 \n . 4 0 \n . 0 2 \n . 6 3 \n . 0 2 \n . 0 5 \n . 0 5 \n . 6 7 \n . 4 0 \n 1 . 2 0 \n . 5 6 \n . 0 2 \n . 5 8 \n . 0 2 \n N O T A :   T e n e r   e n   c u e n t a \n d i l a t a c i o n e s   y   q u e   a p e r t u r a \n d e   p u e r t a   n o   c h o q u e \n c h o n t r a   t a p a   v e n t i l a c i ó n \n N O T A :   S e   r e v i s a   e n   o b r a   p r o t o t i p o \n y   E n t r e c a s a   s o l i c i t a   a d i c i o n a r   L u z \n L e e d   ( A d i c i o n a l )   y   d i s e ñ o   C h a f l a n \n N O T A :   S e   r e d u c e   a l t u r a \n m u e b l e   p a r a   c o m p e n s a r \n d i l a t a c i ó n   s u p e r i o r   p a s o   d e \n a i r e   a c o n d i c i o n a d o \n N O T A : \n T a p a   l a m i n a   m a d e r a   , \n i n d e p e n d i z a n d o   e s c r i t o r i o   d e \n s u p e r f i c i e   m i n i b a r   c o l o r   r o v e r e \n . 5 5 \n . 0 2 \n . 0 2 \n . 2 5 \n . 0 2 \n . 1 5   . 0 2 \n . 6 0 \n . 4 0 \n . 6 7 \n . 0 5 \n . 4 0 \n . 9 0 \n . 3 0 \n N O T A :   S e   r e v i s a   e n   o b r a   p r o t o t i p o   y \n E n t r e c a s a   s o l i c i t a   a j u s t a r   a l t u r a   p a r a \n m a n t e n e r   l i n e a   d e   m o b i l i a r i o   g e n e r a l \n N O T A :   T e n e r   e n   c u e n t a \n d i l a t a c i o n e s   y   q u e   a p e r t u r a \n d e   p u e r t a   n o   c h o q u e \n c h o n t r a   t a p a   v e n t i l a c i ó n \n N O T A :   S e   r e d u c e   a l t u r a \n m u e b l e   p a r a   c o m p e n s a r \n d i l a t a c i ó n   s u p e r i o r   p a s o   d e \n a i r e   a c o n d i c i o n a d o \n . 2 8 \n . 1 0 \n 1 . 8 2 \n . 5 1 \n . 0 4 \n . 0 2 \n . 0 2 \n . 3 6 \n . 0 2 \n . 0 2 \n 1 . 1 4 \n . 0 2 \n . 3 3 \n . 0 2 \n . 3 4 \n . 0 2 \n . 0 5 \n . 0 5 \n 2 . 2 7 \n . 0 2 \n N O T A :   T e n e r   e n   c u e n t a \n d i l a t a c i o n e s   y   q u e   a p e r t u r a \n d e   p u e r t a   n o   c h o q u e \n c h o n t r a   t a p a   v e n t i l a c i ó n \n N O T A :   S e   r e d u c e   a l t u r a \n m u e b l e   p a r a   c o m p e n s a r \n d i l a t a c i ó n   s u p e r i o r   p a s o   d e \n a i r e   a c o n d i c i o n a d o \n A C T A   D E   V A N O S \n R e f e r e n c i a \n A N C H O   ( A ) \n A L T O   ( H ) \n P R O F U N D O   ( F ) \n P 2 \n M u e b l e   T V \n 2 3 3 5 \n 2 3 4 0 \n 5 8 0 \n P 3 \n M u e b l e   T V \n m o d e l o \n m o d e l o \n m o d e l o \n P 4 \n M u e b l e   T V \n 2 3 1 6 \n 2 3 2 0 \n 5 5 5 \n P 5 \n M u e b l e   T V \n 2 7 2 1 \n 2 3 1 4 \n 5 5 0 \n P 6 \n M u e b l e   T V \n 2 7 2 4 \n 2 3 1 1 \n 5 5 5 \n P 7 \n M u e b l e   T V \n 2 7 2 6 \n 2 3 1 1 \n 6 1 0 \n P 8 \n M u e b l e   T V \n 2 7 2 6 \n 2 3 3 5 \n 5 6 5 \n P 9 \n M u e b l e   T V \n 2 7 0 5 \n 2 4 2 0 \n 5 7 0 \n O B S E R V A C I O N E S : \n A P T O   M O D E L O   T I P O L O G I A   5 \n C A R P I N T E R I A   F I J A \n I t e m :   M 2   + M 3   -   M u e b l e   C l o s e t :   I n c l u y e   M u e b l e   m i n i b a r   +   P a n e l   d e   t v +   E s c r i t o r i o   +   C l o s e t   M u e b l e   e l a b o r a d o   e n   t a b l e r o   m e l a m i n i c o   R E F .   T a r o a   d e   P r i m a d e r a   ( A P R O B A D O   R O V E R E   P E L I K A N O ) ,   s e g ú n   d e t a l l e s   p l a n i m e t r i a .   - F o n d o   d e   6 m m \n d e   g r o s o r .   I n t e r i o r   d e   m u e b l e   e n   1 5 m m   -   f r e n t e s   e n   1 8 m m   -   c a j o n e s   y   p u e r t a s   c o n   s i s t e m a   c i e r r e   l e n t o -   f o n d o     p a r a   t v   y   a c e n t o s   d e   m u e b l e s   ( g r i s )   e n   m e l a m i n a   r e f .   S u k t a   M t   d e   P r i m a d e r a .   C a n t o s   i n t e r i o r e s   f l e x i b l e s ,   f r e n t e s   e n   c a n t o   r i g i d o . \n D i l a t a c i ó n   t i p o   n i c h o   p a r a   i n s t a l a c i ó n   d e   p e r f i l   e n   a l u m i n i o   y   c i n t a   L E D -   m a n i j a   d e   p u e r t a   s e g u n   d i s e ñ o   a r q u i t e c t o n i c o . \n V a l i d a r   c o n   d i s e ñ o   d e   e n t r e c a s a   s i   e s   p o s i b l e   m a n e j a r   l o s   e n t r e p a ñ o s   i n t e r n o s   e n   e l   m i s m o   m a t e r i a l   d e   l a s   p u e r t a s . \n N o   i n c l u y e   s u m i n i s t r o   n i   i n s t a l a c i ó n   d e   c i n t a   L E D ,   n i   d e m á s     c c e s o r i o s   n o   e s p e c i f i c a d o s   e n   l a   d e s c r i p c i ó n .     T e n e r   p r e s e n t e   q u e   s e   d e b e   h a c e r   u n   p a s o   p a r a   l a   i n s t a l a c i ó n   d e   c i n t a   l e d   e n   z o n a   d e   i n s t a l a c i ó n   d e l   t v ,   t o m a s   d e   t v   y   p u n t o \n e l e c t r i c o   p a r a   m i n i b a r . \n S e   d e b e n   v a l i d a r   d i m e n s i o n e s   e n   s i t i o . \n A P R O B A C I Ó N \n F I R M A   O B R A \n F \n F E C H A \n V I S T A   A L Z A D O \n P L A N T A \n U b i c a c i ó n   b i s e l e s \n N O T A :   S u r r o n e s   c o n t e m p l a d o s \n c o m o   l o s   e n t r e p a ñ o s   y   f o n d o   d e \n c l o s e t   d e   a c u e r d o   a   r e v i s i o n   c o n \n E n t r e c a s a \n"
+    }
+  ],
+  "descripcion_general_mueble": "Plano de mueble tipo TV con vistas alzado y planta explícitamente mencionadas en el texto extraído.",
+  "conclusiones": {
+    "estado": "parcialmente viable",
+    "razones": [
+      "La vista 'alzado' está respaldada por la frase exacta: 'V I S T A   A L Z A D O'.",
+      "La vista 'planta' está respaldada por la palabra: 'P L A N T A'.",
+      "No se encontró en el texto ninguna mención explícita a la vista 'frontal' ni 'lateral', por lo que fueron eliminadas.",
+      "No se menciona ninguna vista 'corte' ni 'isometrica' en el texto extraído.",
+      "El texto contiene múltiples cotas numéricas y medidas en metros y milímetros, lo que confirma la presencia de cotas."
+    ]
+  },
+  "version_modulo": "0.2.0",
+  "timestamp": "2025-11-12T16:51:02-05:00"
+}
