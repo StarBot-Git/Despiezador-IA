@@ -1,0 +1,5 @@
+pymupdf==1.24.10
+Pillow==10.4.0
+filetype==1.2.0
+pytesseract 
+opencv-python
