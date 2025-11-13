@@ -1,7 +1,7 @@
 Proyecto: Mueble escobero
 Ruta de escaneo: C:\Users\autom\Desktop\CARPINTERIA\STAR GPT\Despiezador IA\data\input\Mueble escobero
 Versión módulo: 0.2.0
-Fecha: 2025-11-12T16:52:42-05:00
+Fecha: 2025-11-13T12:58:50-05:00
 
 [Resumen]
 {
@@ -14,7 +14,7 @@ Fecha: 2025-11-12T16:52:42-05:00
 }
 
 [Descripción general del mueble]
-Plano de mueble alto para ropa con vistas explícitas de planta, alzado y corte. No se detecta vista lateral en el texto OCR.
+Mueble escobero tipo Mueble Alto con vistas planta, alzado y corte identificadas mediante texto OCR.
 
 [Archivos]
 - Plano 1.pdf (pdf)
@@ -26,9 +26,10 @@ Plano de mueble alto para ropa con vistas explícitas de planta, alzado y corte.
 {
   "estado": "parcialmente viable",
   "razones": [
-    "Vista planta confirmada por frases: 'MM-03_Planta', 'NM-03 Planta A', 'MM-03 _ Planta B'.",
-    "Vista alzado confirmada por frase: 'MM-03 Alzado'.",
-    "Vista corte confirmada por frase: 'MM-03 Corte'.",
-    "No se encontró en el texto OCR ninguna mención explícita a una vista lateral, por lo que fue eliminada de las vistas detectadas."
+    "Se detecta explícitamente la palabra 'Planta' en frases como 'MM-03_Planta', 'NM-03 Planta A', 'MM-03 _ Planta B'",
+    "La palabra 'Alzado' aparece textualmente en 'MM-03 Alzado 1:720 Mueble Alto - Ropas'",
+    "La vista 'Corte' está respaldada por la frase 'MM-03 Corte 1::20 Mueble Alto - Ropas'",
+    "No se encuentra mención explícita a vistas 'lateral' ni 'isometrica' en el texto OCR, por lo que fueron eliminadas",
+    "Se detectaron cotas expresadas en 'mm' y 'cm' según la frase 'Se detectan cotas en el OCR (mm/cm)' y presencia de símbolos relacionados con medidas"
   ]
 }

@@ -10,7 +10,7 @@ from .analyzers.pdf_analyzer import PDF_Analyzer
 from .analyzers.image_analyzer import Image_Analyzer
 from .summarizer import Furniture_Description
 from .reporter import Write_Outputs, now_iso, Report_To_Text
-from .IA_Model import Report_With_AI
+from agents.sg_instructor_modelacion import Instructor_Modelacion
 
 VERSION_MODULO = "0.2.0"
 
@@ -112,8 +112,8 @@ def Run_Instructor(input_dir: Path, outputs_root: Path):
     report_text = Report_To_Text(report_var)
 
     # --- MODELO IA | Instructor de modelacion ---
-
-    report_refined = Report_With_AI(report_var, report_text)
+    agente_IA = Instructor_Modelacion()
+    report_refined = agente_IA.Report(report_var, report_text)
 
     #print(report_refined)
 
