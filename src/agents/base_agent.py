@@ -1,14 +1,19 @@
 from .ai_client import send_request
 
 class BaseAgent:
-    def __init__(self, system_prompt, model, response_format, default_tools):
+    def __init__(self, system_prompt, model, temperature, default_tools):
         self.model = model
         self.system_prompt = system_prompt
-        self.response_format = response_format
         self.default_tools = default_tools or []
         self.messages = [{"role": "system", "content": system_prompt}]
+        self.temperature = temperature
 
     def run(self, prompt, variables=None, files=None, tools=None, detail=None):
+
+        print(f"[{self.__class__.__name__}] Hizo su peticion a OpenAI")
+
+        model_name = self.__class__.__name__
+
         content = []
         #content.append({"type":"input_text", "text":prompt, "variables":variables})
         content.append({"type":"input_text", "text":prompt})
@@ -17,14 +22,9 @@ class BaseAgent:
             for f in files:
                 content.append({"type":"input_file", "file_id": f})
 
-        self.messages.append({"role":"user", "content":prompt})
+        self.messages.append({"role":"user", "content":content})
 
-        # attachments = []
-        # if files:
-        #     for f in files:
-        #         attachments.append({"file_id":f, "tools": tools or self.default_tools})
-
-        response = send_request(model=self.model, input = self.messages, response_format=self.response_format)
+        response = send_request(model=self.model, input = self.messages, model_name=model_name, temperature=self.temperature)
 
         output = response.output_parsed
 

@@ -4,7 +4,7 @@ from typing import Dict, Any, List
 from PIL import Image
 
 # === IMPORTACIONES PROPIAS ===
-from ..utils.keywords import VIEWS_KEYWORDS
+from utils.keywords import VIEWS_KEYWORDS
 
 """
     Image_Analyzer():

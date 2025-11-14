@@ -1,0 +1,48 @@
+{
+  "proyecto": "Mini Bar",
+  "ruta_escaneo": "C:\\Users\\autom\\Desktop\\CARPINTERIA\\STAR GPT\\Despiezador IA\\data\\input\\Mini Bar",
+  "resumen": {
+    "total_archivos": 1,
+    "por_tipo": {
+      "pdf": 1,
+      "imagen": 0,
+      "desconocido": 0
+    }
+  },
+  "archivos": [
+    {
+      "name": "Tipología 4-DETALLE MINIBAR.pdf",
+      "extension": ".pdf",
+      "path": "C:\\Users\\autom\\Desktop\\CARPINTERIA\\STAR GPT\\Despiezador IA\\data\\input\\Mini Bar\\Tipología 4-DETALLE MINIBAR.pdf",
+      "type_detected": "pdf",
+      "is_vector": true,
+      "pages": 1,
+      "detected_views": [
+        "planta",
+        "alzado",
+        "corte"
+      ],
+      "has_text": true,
+      "comments": [
+        "Se detectaron elementos vectoriales (paths/drawings).",
+        "Se encontró texto (directo u OCR).",
+        "OCR exitoso",
+        "Cotas detectadas (0,51; 0,473; 0,44; 0,59; 0,55; 0,48; 5 cm; 2 cm)"
+      ],
+      "width_px": null,
+      "height_px": null,
+      "file_text": ". 0 5 \n . 7 5 \n . 0 3 \n . 0 1 \n . 8 4 \n . 4 7 \n . 4 7 \n . 0 5 \n 1 . 0 0 \n . 6 0 \n . 4 0 \n 2 \n 3 \n 6 \n 1 \n M I N I   B A R \n h :   0 , 5 1   L :   0 , 4 7 3 \n w : 0 , 4 4 \n A L Z A D O   F R O N T A L \n E S P E C I F I C A C I O N E S   T I P O L O G Í A   4   -   M U E B L E S   -   M 1 - M 2 \n 1   P u e r t a s   d e   p a r c h e   e n   m e l a m i n a   t i p o   m a d e r a   c l a r a   S o d e r   d e   d u r a t e x \n 2   E s t r u c t u r a   m e s ó n   e n   m e l a m i n a   t i p o   m a d e r a   s o d e r   +   T a p a   e n \n f o r m i c a   C L A Y   P W \n 3   Z ó c a l o   a c a b a d o   e n \n 4   E n t r e p a ñ o s   e n   m e l a m i n a   t i p o   l i n o   r e m e t i d o   5 c m   d e   l a   p u e r t a \n 5   I n t e r i o r   e n   m e l a m i n a   t i p o   l i n o \n 6   M i n i b a r :   d i m   s u g e r i d a s :   h :   0 , 5 9   L :   0 , 5 5   w : 0 , 5 5 . \n 7   E n t r e p a ñ o   r e f o r z a d o   p a r a   u b i c a c i ó n   d e l   m i n i b a r \n 8   V e n t i l a c i ó n   p a r a   m i n i b a r \n 9   E n t r e p a ñ o   s u p e r i o r   e n   m e l a m i n a   t i p o   m a d e r   c l a r a   v i e n e s   d e   d u r a t e x \n o   s i m i l a r \n 1 0   F o n d o   f a l s o \n 1 1   D i l a t a c i ó n   c o n t r a   p i s o / t e c h o   y   c o s t a d o s   d e   2 c m \n 1 2   B o l i l l o \n 1 3   M a n i j a   p a r a   c l o s e t   d e   p i s o   a   t e c h o   s e g ú n   r e f e r e n c i a \n N o t a :       * T o d a s   l a s   d i m e n s i o n e s   y   e s p e c i f i c a c i o n e s   d e   m a t e r i a l e s   a q u i \n p l a s m a d a s     d e b e r a n   s e r   v e r i f i c a d a s   p o r   e l   c o n t r a t i s a   e n   s i t i o \n M I N I   B A R \n h :   0 , 5 1   L :   0 , 4 7 3 \n w : 0 , 4 4 \n P L A N T A \n . 4 3 \n . 0 2 \n . 4 5 \n . 4 7 \n . 4 7 \n . 0 5 \n 1 . 0 0 \n . 0 5 \n . 4 5 \n . 0 5 \n . 5 5 \n . 6 0 \n . 4 0 \n 1 \n 6 \n M I N I   B A R \n h :   0 . 5 1   L :   0 . 4 4 \n w :   0 . 4 8 \n . 0 5 \n . 7 5 \n . 0 3   . 0 1 \n . 8 4 \n . 0 5 \n . 4 5 \n . 0 5 \n . 5 5 \n 5 \n 2 \n 3 \n 6 \n 1 \n C O R T E   L A T E R A L \n P L A N O : \n R E V I S I Ó N : \n E S C A L A : \n I N D I C A D A S \n D I S E Ñ Ó : \n D I B U J Ó : \n R E V I S I Ó N \n F E C H A \n R E V I S I O N E S \n C L I E N T E : \n P R O Y E C T O \n C O N T I E N E \n e q u i p o d i s e n o @ e n t r e c a s a . c o m \n C A L L E   7 9 A   #   7 A   -   4 0 \n P B X :   3 1 3 2 9 6 0 8 7 1 - 6 0 1 8 0 5 0 1 3 8 \n B O G O T Á \n N O T A S \n - \n - \n - \n A r q .   M a r i a   S a n i n t \n H O T E L   9 0 / 1 1 \n 0 \n P 0 1 \n E S T A N D A R   T I P O L O G Í A   4 \n 0 5 / 0 3 / 2 0 2 5 \n - \n D E T A L L E   M U E B L E   M I N I B A R   -   M 1 \n E S C A L A   1 : 1 5 \n H O T E L   9 0 / 1 1 \n E S T A N D A R T I P O L O G Í A   4   -   D E T A L L E   M U E B L E   M I N I B A R   -   M 1 \n H A B I T A C I Ó N   2 0 4 - 3 0 4 - 4 0 4 - 5 0 4 - 6 0 4 - 7 0 4 - 8 0 3 - 9 0 3 \n * L O S   P L A N O S \n P R E S E N T A D O S   S O N   U N \n D I S E Ñ O   E S T É T I C O   M A S   N O \n T É C N I C O .   E L   C O N T R A T I S T A \n E N   S I T I O   D E B E   R E C T I F I C A R \n T O D A S   L A S   M E D I D A S   Y   D A R \n G A R A N T Í A   D E   E S T A B I L I D A D \n Y   C A L I D A D   . \n E S T O S   D I S E Ñ O S   R E Q U I E R E N \n R E V I S I Ó N   P O R   P A R T E   D E \n N O V E N Z A   Y   T É C N I C O S \n I N V O L U C R A D O S .   E L \n P L A N T E M I E N T O   D E \n I L U M I N A C I Ó N ,   E L É C T R I C O   Y \n S A N I T A R I O   R E Q U I E R E \n A P R O B A C I Ó N   Y   R E V I S I Ó N \n P O R   P A R T E   D E   T É C N I C O , \n D I S E Ñ A D O R   Y   P R O F E S I O N A L \n E N   E L   C A M P O   A   C A R G O \n"
+    }
+  ],
+  "descripcion_general_mueble": "Plano de un mueble Mini Bar con vistas planta, alzado frontal y corte lateral, incluyendo especificaciones técnicas y dimensiones en metros y centímetros.",
+  "conclusiones": {
+    "estado": "viable",
+    "razones": [
+      "La vista 'ALZADO FRONTAL' está explícitamente mencionada en el texto OCR: 'ALZADO FRONTAL'.",
+      "La vista 'PLANTA' está explícitamente mencionada en el texto OCR: 'PLANTA'.",
+      "La vista 'CORTE LATERAL' está explícitamente mencionada en el texto OCR: 'CORTE LATERAL'."
+    ]
+  },
+  "version_modulo": "0.2.0",
+  "timestamp": "2025-11-14T09:03:02-05:00"
+}

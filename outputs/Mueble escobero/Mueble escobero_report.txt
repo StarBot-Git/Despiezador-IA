@@ -1,7 +1,7 @@
 Proyecto: Mueble escobero
 Ruta de escaneo: C:\Users\autom\Desktop\CARPINTERIA\STAR GPT\Despiezador IA\data\input\Mueble escobero
 Versión módulo: 0.2.0
-Fecha: 2025-11-13T12:58:50-05:00
+Fecha: 2025-11-14T06:55:03-05:00
 
 [Resumen]
 {
@@ -14,7 +14,7 @@ Fecha: 2025-11-13T12:58:50-05:00
 }
 
 [Descripción general del mueble]
-Mueble escobero tipo Mueble Alto con vistas planta, alzado y corte identificadas mediante texto OCR.
+Plano de mueble escobero multifuncional tipo mueble alto para ropa con vistas de planta, alzado y corte que muestran detalles constructivos y acabados.
 
 [Archivos]
 - Plano 1.pdf (pdf)
@@ -24,12 +24,12 @@ Mueble escobero tipo Mueble Alto con vistas planta, alzado y corte identificadas
 
 [Conclusiones]
 {
-  "estado": "parcialmente viable",
+  "estado": "viable",
   "razones": [
-    "Se detecta explícitamente la palabra 'Planta' en frases como 'MM-03_Planta', 'NM-03 Planta A', 'MM-03 _ Planta B'",
-    "La palabra 'Alzado' aparece textualmente en 'MM-03 Alzado 1:720 Mueble Alto - Ropas'",
-    "La vista 'Corte' está respaldada por la frase 'MM-03 Corte 1::20 Mueble Alto - Ropas'",
-    "No se encuentra mención explícita a vistas 'lateral' ni 'isometrica' en el texto OCR, por lo que fueron eliminadas",
-    "Se detectaron cotas expresadas en 'mm' y 'cm' según la frase 'Se detectan cotas en el OCR (mm/cm)' y presencia de símbolos relacionados con medidas"
+    "Se identifican explícitamente las vistas planta: 'MM-03_Planta', 'NM-03 Planta A', 'MM-03 _ Planta B'.",
+    "Se menciona la vista alzado: 'MM-03 Alzado' claramente en el texto OCR.",
+    "Se encuentra la vista corte: 'MM-03 Corte' en la lectura OCR.",
+    "No se menciona ninguna vista lateral ni isométrica en el texto, por lo que fueron eliminadas.",
+    "Existen cotas indicadas por la presencia de 'mm', 'cm' y referencias a dimensiones como '1:20', 'cierre lento', que corroboran mediciones."
   ]
 }

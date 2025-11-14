@@ -1,0 +1,57 @@
+{
+    "type_furniture": "Escritorio modular con mueble alto y bajo",
+    "components": [
+        {
+            "name": "Superficie entamborada con ranura pasacables",
+            "type_component": "Estructural",
+            "quantity": 1
+        },
+        {
+            "name": "Repisas con cantos flexibles",
+            "type_component": "Interno",
+            "quantity": 2
+        },
+        {
+            "name": "Archivero con fondo, interior con cantos flexibles",
+            "type_component": "Estructural",
+            "quantity": 1
+        },
+        {
+            "name": "Caja con sistema de apertura push",
+            "type_component": "Interno",
+            "quantity": 3
+        },
+        {
+            "name": "Pata lateral entamborada para escritorio con cantos flexibles",
+            "type_component": "Estructural",
+            "quantity": 2
+        },
+        {
+            "name": "Mueble alto con fondo, interior con cantos flexibles",
+            "type_component": "Estructural",
+            "quantity": 1
+        },
+        {
+            "name": "Puerta superior proyectante con brazo neumático y apertura tipo push",
+            "type_component": "Frontales",
+            "quantity": 1
+        },
+        {
+            "name": "Puerta inferior abatible con bisagras cierre lento",
+            "type_component": "Frontales",
+            "quantity": 1
+        },
+        {
+            "name": "Soporte vertical para repisas",
+            "type_component": "Interno",
+            "quantity": 2
+        },
+        {
+            "name": "Patas metálicas circulares para archivador",
+            "type_component": "Accesorios",
+            "quantity": 3
+        }
+    ],
+    "configuration": "Escritorio con superficie entamborada y ranura pasacables, mueble alto con puerta superior proyectante con brazo neumático y apertura push, puerta inferior abatible con bisagras, mueble bajo con archivero y tres cajones con sistema push, dos repisas internas y patas metálicas circulares para archivador. Cantos flexibles en repisas, fondos y laterales. Acabado en melamínico color escogido por propietario.",
+    "comments": "Se utilizaron los planos MM-07 Planta, Cortes A y B, y detalle de anclaje para identificar componentes y configuración. El plano contiene detalles completos para la reconstrucción del mueble. No se detectaron piezas faltantes o duplicadas."
+}

@@ -3,9 +3,9 @@ from pathlib import Path
 from typing import List, Dict
 
 # === IMPORTACIONES PROPIAS ===
-from .utils.paths import Normalize_Path, Ensure_OutputsRoot
-from .utils.types import File_Analyzed, Report
-from .scanner import Scan_InputFolder, Guess_Type
+from utils.paths import Normalize_Path, Ensure_OutputsRoot
+from utils.types import File_Analyzed, Report
+from utils.scanner import Scan_InputFolder, Guess_Type
 from .analyzers.pdf_analyzer import PDF_Analyzer
 from .analyzers.image_analyzer import Image_Analyzer
 from .summarizer import Furniture_Description
@@ -122,3 +122,5 @@ def Run_Instructor(input_dir: Path, outputs_root: Path):
 
     print(f"[hecho] Informe JSON: {p_json}")
     print(f"[hecho] Informe TXT : {p_txt}")
+
+    return p_txt

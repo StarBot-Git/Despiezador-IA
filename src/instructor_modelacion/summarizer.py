@@ -1,7 +1,7 @@
 from __future__ import annotations
 from typing import List
-from .utils.types import File_Analyzed
-from instructor_modelacion.utils.keywords import Keyword_Match, FURNITURE_KEYWORDS
+from utils.types import File_Analyzed
+from utils.keywords import Keyword_Match, FURNITURE_KEYWORDS
 
 def Furniture_Description(files: List[File_Analyzed]) -> str:
     corpus = []

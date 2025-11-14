@@ -3,7 +3,7 @@ import json
 from pathlib import Path
 from datetime import datetime
 from typing import List, Dict
-from .utils.types import Report, File_Analyzed
+from utils.types import Report, File_Analyzed
 
 """
 """

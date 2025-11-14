@@ -1,7 +1,7 @@
 Proyecto: Mueble TV
 Ruta de escaneo: C:\Users\autom\Desktop\CARPINTERIA\STAR GPT\Despiezador IA\data\input\Mueble TV
 Versión módulo: 0.2.0
-Fecha: 2025-11-12T16:51:02-05:00
+Fecha: 2025-11-14T16:49:03-05:00
 
 [Resumen]
 {
@@ -14,22 +14,20 @@ Fecha: 2025-11-12T16:51:02-05:00
 }
 
 [Descripción general del mueble]
-Plano de mueble tipo TV con vistas alzado y planta explícitamente mencionadas en el texto extraído.
+Plano de mueble TV tipo minibar con vistas alzado y planta, incluye dimensiones y notas técnicas.
 
 [Archivos]
 - Plano 1.pdf (pdf)
   páginas=1, vectorial=True, texto=True
   vistas=alzado, planta
-  obs=Se detectaron elementos vectoriales (paths/drawings).; Se encontró texto (directo u OCR).; OCR exitoso; Cotas detectadas (valores numéricos con unidades implícitas en mm y m)
+  obs=Se detectaron elementos vectoriales (paths/drawings).; Se encontró texto (directo u OCR).; OCR exitoso; Cotas detectadas en texto (valores numéricos y unidades implícitas en mm y m)
 
 [Conclusiones]
 {
   "estado": "parcialmente viable",
   "razones": [
-    "La vista 'alzado' está respaldada por la frase exacta: 'V I S T A   A L Z A D O'.",
-    "La vista 'planta' está respaldada por la palabra: 'P L A N T A'.",
-    "No se encontró en el texto ninguna mención explícita a la vista 'frontal' ni 'lateral', por lo que fueron eliminadas.",
-    "No se menciona ninguna vista 'corte' ni 'isometrica' en el texto extraído.",
-    "El texto contiene múltiples cotas numéricas y medidas en metros y milímetros, lo que confirma la presencia de cotas."
+    "Vista alzado confirmada por texto: 'V I S T A   A L Z A D O'",
+    "Vista planta confirmada por texto: 'P L A N T A'",
+    "No se encontró en el texto la palabra 'frontal' ni 'lateral' para validar esas vistas detectadas inicialmente"
   ]
 }

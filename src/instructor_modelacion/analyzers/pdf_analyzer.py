@@ -5,9 +5,8 @@ from annotated_types import doc
 import fitz  # PyMuPDF
 import sys
 
-sys.path.insert(0, r"C:\Users\autom\Desktop\CARPINTERIA\STAR GPT\Despiezador IA\src")   
 # === IMPORTACIONES PROPIAS ===
-from instructor_modelacion.utils.keywords import VIEWS_KEYWORDS
+from utils.keywords import VIEWS_KEYWORDS
 from instructor_modelacion.analyzers.ocr_reader import Extract_Text_OCR
 
 """
@@ -140,9 +139,3 @@ def DetectViews_By_Text(texto: str) -> List[str]:
             views.append(v)
 
     return views
-
-if __name__ == "__main__":
-    # Prueba rapida del analizador PDF
-    ruta = Path(r"C:\Users\autom\Desktop\CARPINTERIA\STAR GPT\Despiezador IA\data\input\Mueble escobero\Plano 1.pdf")
-    resultado = PDF_Analyzer(ruta)
-    print(resultado)

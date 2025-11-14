@@ -1,21 +1,21 @@
 from __future__ import annotations
 import json
 from typing import Any
-from instructor_modelacion.utils.types import Report
+from utils.types import Report
 from agents.base_agent import BaseAgent
 
 class Instructor_Modelacion(BaseAgent):
 
-    SG_SYSTEM_PROMPT = "Eres un asistente tecnico expero en analisis de planos de carpinteria."
+    SG_SYSTEM_PROMPT = "Eres un asistente tecnico experto en analisis de planos de carpinteria."
     SG_MODEL = "gpt-4.1-mini"
-    SG_RESPONSE_FORMAT = "json_object"
+    SG_TEMPERATURE = 0.3
 
     def __init__(self):
         super().__init__(
             system_prompt=self.SG_SYSTEM_PROMPT, 
-            model=self.SG_MODEL, 
-            response_format={"type": self.SG_RESPONSE_FORMAT}, 
-            default_tools=[]
+            model=self.SG_MODEL,
+            default_tools=[],
+            temperature=self.SG_TEMPERATURE
             )
         
     def Report(self, report:Report, report_text: str) -> Report:
