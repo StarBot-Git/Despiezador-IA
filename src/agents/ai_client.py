@@ -27,17 +27,28 @@ class ReportAIResult(BaseModel):
 #_______________________________________________________________
 # ANALISTA DE PIEZAS
 
+class Viability(BaseModel):
+    percentage: int
+    reason: str
+
+class Detail(BaseModel):
+    doors: int
+    drawers: int
+    shelves: int
+    related_to: str
+
 class Components(BaseModel):
     name: str
     type_component: str
     quantity: int
+    detail: Detail
 
 class Disassemble(BaseModel):
     type_furniture: str
     components: list[Components]
     configuration: str
     comments: str
-    viability: str
+    viability: Viability
 
 #_______________________________________________________________
 # Metodos de OpenAI
@@ -52,11 +63,11 @@ def send_request(model, input, model_name, temperature):
         text_format = Disassemble
 
     print(f"[IA] Temperature: {temperature}")
-    return client.responses.parse(model=model, input=input, text_format=text_format, temperature=temperature)
+    return client.responses.parse(model=model, input=input, text_format=text_format)
 
 def upload_file(local_FileName:str, path:str = None, purpose:str="user_data"):
     base_dir = Path(__file__).resolve().parents[2] # Ruta del proyecto → /DESPIEZADOR IA/
-    ID_REGISTER = base_dir / "data" / "file_ids.json"
+    ID_REGISTER = base_dir / "assets" / "file_ids.json"
     
     if path:
         data = {}
@@ -80,7 +91,7 @@ def upload_file(local_FileName:str, path:str = None, purpose:str="user_data"):
     
 def load_file(local_FileName:str):
     base_dir = Path(__file__).resolve().parents[2] # Ruta del proyecto → /DESPIEZADOR IA/
-    ID_REGISTER = base_dir / "data" / "file_ids.json"
+    ID_REGISTER = base_dir / "assets" / "file_ids.json"
 
     if not os.path.exists(ID_REGISTER):
         return None

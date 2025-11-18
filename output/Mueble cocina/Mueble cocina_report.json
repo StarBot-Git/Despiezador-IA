@@ -1,0 +1,110 @@
+{
+  "proyecto": "Mueble cocina",
+  "ruta_escaneo": "C:\\Users\\autom\\Desktop\\CARPINTERIA\\STAR GPT\\Despiezador IA\\input\\Mueble cocina",
+  "resumen": {
+    "total_archivos": 3,
+    "por_tipo": {
+      "pdf": 3,
+      "imagen": 0,
+      "desconocido": 0
+    }
+  },
+  "archivos": [
+    {
+      "name": "Plano 1.pdf",
+      "extension": ".pdf",
+      "path": "C:\\Users\\autom\\Desktop\\CARPINTERIA\\STAR GPT\\Despiezador IA\\input\\Mueble cocina\\Plano 1.pdf",
+      "type_detected": "pdf",
+      "is_vector": false,
+      "pages": 1,
+      "detected_views": [
+        "frontal",
+        "lateral",
+        "planta"
+      ],
+      "has_text": true,
+      "comments": [
+        "Página 1 contiene imágenes rasterizadas.",
+        "No se encontró texto embebido; aplicando OCR...",
+        "Se detectan cotas en el OCR (mm/cm).",
+        "No se detectaron elementos vectoriales.",
+        "Se encontró texto (directo u OCR).",
+        "OCR exitoso",
+        "Cotas detectadas (mm/cm)",
+        "Vistas corroboradas en texto: 'COO1_Planta A - Mueble Alto Cocina', '3.01 ' o O a * . » Mesón en QUARZTONE ref', 'COC Planta B - Mueble Bajo Cocina'"
+      ],
+      "width_px": null,
+      "height_px": null,
+      "file_text": "P Homo eléctrico 120v ref, -\nHE2485 CHALLENGER — '\n\n0.60\n\nYVálvula Gas\n\nA\n\nPF Muable tore de homos,\nInterlor con cantos fexiles,\nacabado color ref. BLANCO\nNEYADO de PELIKANO.\nLaterales y alas con cantos\nfexiblas, acabado en\n\n—-—melaminico ref. ROVERE de ea aaa anaannanna ;5 cód $%?£EPUEB…E\n\n— PELIKANO. Puertas y frentes y %ha|lanáer\n\n... de cajón con cantos rgldos,\n\n' ecabedo en meleminico ref. ARZTO\n\n. ROVERE de PELIKANO, iii —E£3Í.'LÚU NE Tr\n— bisagras cleme lento sin O :\n\n— manijas. 3.14 * *\n\n: 1.5 : 1.63 ¡\n\n(///I//J/J!f/.f////\nAA DILA\n\n'\n,.\n\nYar dellalla Torre\nde Homos (583)\n\n?\n|\n\nProyección 5Muah|-á Superor\n\n1.10 O\n\n' 3.01 '\no O a * . » Mesón en QUARZTONE ref\n' 9 Gris absoóluto\n_______ | Suardasacoba en MDF '\nCOO - Planta pintado de blanco h=8cm ' P Lavaplatos doble en acero\ne inidable submontar,\n4 | n Rel.TO7021240509 BO*430m\n25 Detalle de Cocinas SOCODA\n\n7777\n4\n\nHM 5\n\n77\n\nCO01_Planta A - Mueble Alto Cocina\n\n1:25 Detalle de Cocinas\n\n3.14\n1.51 1.83\n\n£ li\no c\nad De —\nx vennE…1 ='T'F'T\"\" =T T aTa F-]—\n0.81 ÚÚ'I u435 0.285 n 5 n?r5“? S\nN 1.015 0.01 n ' 905\n% Ver detalle Torre | |1 |\n% de Homos (583)\nN | ____::::: ______ - a . , . - E -\nN\n%|| g\nx O = -\n%“ 11 0058 — 06% 050 050 0,0£\nN —— N -\nN %\n% Espacio Para Nevera N r\n% NN . 0,505 06 % u\nN |\nN N\n\n0015\n\n1.1 1.92\n3.01\n\nCcO Planta B - Mueble Bajo Cocina\n1:25 Detalle de Cocinas\n\n0.79\n\n0.01%\n\n06\n\nNOG-ARC- APT-581A\nCOO1-Apt A\nv\nANAN VARGAS-WILLIAMSON\n\nARCUITECTURA - URBANISMO\n\nPROYECTO:\n\nEL NOSAL\nP.P. EL BOSQUE\n\nUBICAC ÓN\nPROYECTER\nARQUITECTONICO\n\nAMARILO\n\npOr ajutes de oriol y zaz\nACalraión de\n\ny]\nEE 2 a E\npor aua de oo y lii\n\n14. Ea Inclnyo sal pbcac eo 1\n1072028  rmueble de cocira tipo lla\n\nAMARILO S.A.\n\nVÁLIDO PARA CONSTRUIR\n18.07.2025\n\nGÚÚHDIHFDÚH Malra Algyandra Cajatta\n\nNC\n\nDETALLES DE YTWIENDAAL\nDetalles de Cocinas\n\nDetalla Cocina CO-01 - Apto A\n91, Planta\n\n02, Planta A - Mueble Alto\n\n03, Planta B - Mueble Bajo\n\nNOGARQ- APT- 581A\nCOO1-Apt A"
+    },
+    {
+      "name": "Plano 2.pdf",
+      "extension": ".pdf",
+      "path": "C:\\Users\\autom\\Desktop\\CARPINTERIA\\STAR GPT\\Despiezador IA\\input\\Mueble cocina\\Plano 2.pdf",
+      "type_detected": "pdf",
+      "is_vector": false,
+      "pages": 1,
+      "detected_views": [
+        "corte",
+        "frontal",
+        "lateral",
+        "planta"
+      ],
+      "has_text": true,
+      "comments": [
+        "Página 1 contiene imágenes rasterizadas.",
+        "No se encontró texto embebido; aplicando OCR...",
+        "No se detectaron elementos vectoriales.",
+        "Se encontró texto (directo u OCR).",
+        "OCR exitoso",
+        "Se detectan referencias a cortes: 'CO1-Corte A', 'Corte B', 'CO01-Corte C'",
+        "Vistas frontal, lateral y planta mencionadas explícitamente: 'Mueble alto', 'Laterales y alas', 'espacio para nevera'"
+      ],
+      "width_px": null,
+      "height_px": null,
+      "file_text": ") Estuco acabado en pintura tipo\npintuco antihongo para zonas\n\nhúmadas. Ref. (Blanco). Revisar — a dl adosodsgldcuu a TD TD DD DD DD D TD D DT DT DNZ ZZtT. --\n\nMuestra de color en obra,\n\nP Mueble tore de homos, interior —o”\ncon cantos flexXibles, acabado color —\nref. BLANCO NEVADO de\nPELIKANO. Laterales y alas con\ncantos flexibles, acabado en\nmelaminico ref. ROVERE de -\nPELIKANO. Puertas y Tentes de\ncajón con cantos rigidos, acabado en\nmelaminico ref. ROVYERE de\nPELIKANO, blsagras clerre lento sin\nmarnijas.\n\nver detalle Tome\nde Homos (583)\n\nP Salpicadero en quarzton mismo —\ncolor del mesón. E\n\nP Homo eléctrico 120v ref. HE2485 Y\nCHALLENGER\n\n.- - F - E\n-- r \", \" - \" É \"\n-- r \" r \" \". a \".\n- \" .'| J r =\n— r r r \".\n] — 4 - - \" - \"\n] — r iy — \". ] \".\n= —\n\"E—\nP Zócalo en PYC eluminzado\n_ N-\nr - \"a -l -\n\nCO1-Corte A\n\n1:725 Detalle de Cocinas\n\nP Muno con superficie pañeta,\nacabado en pintura tipo pintucc\nantlhongo para zoras húmedas, Ref. aa -----————-\n(Blanco). Revisar Muestra de color é\nobra.\n\nP Mueble alto, Interlor con cantos\nfexibles, acabado color ref. BLANCO\nNEVADO de PELIKANO. Laterales y\nalas con cantos fexibles acabado en\ntablero melaminico ref. ROYERE de\nPELIKANO, Puertas cor cantos\nrigidos acabado en tablero\nmelaminico ref. ROYERE de\nPFELIKANO, blsagras clierme lento sin\nmanijas y brazo plagable tGm.\n\n0.03 0.2630.0150:348\n\nP Parfil metálico — I —\nP Gnifería para cocina ref. YERÁA\nBASIC cod, VA50S55511 de — ------\nCORONA\n\nP Mesón en QUARZTONE ref. Gris\nabacluto\n\nP Lavaplatos doble en acero\ninoxidable submontar. —\nRef.7707021240509 80Xx430m\nSOCODA\n\n_______________________ pintuco. Ref. (Blanco). Revisar\n\n— — — — . ; | O A O A C O O O A O A A A A C O O A C A O A A O A A A A O O C A A O A A A C A O C A U . ;\n\n— Zócalo en PY'C aluminizado\n\np Estuco acabado en plntura tipo\n\nP Mueble alto, Interlor con cantos\nflexibles, acabado color ref. BLANCO\nNEYADO de PELIKANO, Laterales y\nBlas con cantos Texides acabado en\ntablero melaminico ref. ROVERE de\nPELIFANO, Puertas cor cantos\nriígides acabado en tablero\nmelaminico ref. ROYERE de\nPELIKFANO, bisagras cieme lento sin\nmanijas y brazo plaegabla Gm.\n\np Grifería para cocina ref. YERA\n\nMuestra de color en cbra,\n\n\"\nM -\n\n- Campana extractora paninsula,\nCód. OX 4880 CHALLENSER.\n\nBASIC cod. VAS0355511 de — —-—--——|-———-hb---———\n\n_P Estufa en cristal 4 puestos gas CORONA\n\ncód. SQU/62 AE Challengar p Salpicadero en quarztone miemo — | — s\ncolor del mesón\n\n_PMesón en QUARZTONE ref. Gris\n\nabsoluto PMesón en QUARZTONE ref. Gris — | — [ —\n\nP Mueble isla, interlor con cantos absoluto L\n\nTexibles, acabado color ref. BLANCE\n\nNEVADO de PELIKFANO. Laterales y aaa\n\nalas con cantos flexibles, acabado e » Eshuutumrpa|.-a mFEÚ\"'\n\ntablero melaminico ref. Lunar de P Mueble bajo, intenor con cantos\n\nTABLEMAC, Puertas y frentes de flexibles, acabado color ref. BLANCO\n\nNEVADO de PELIKANO. Laterales y\nalas con cantos Texibles, acabado en\ntablero melaminico ref. Lunar de\n\ncajón con canto rigido, acabado en\ntablero melaminico ref. Lunar de\nTABLEMAC:, blsagras clerme lento sir\n\nmanijas. TABLEMAC, Puertas con cantos\n\nrraldos, acabado en tablero e — Suministro\nP Mesón en QUARZTONE ref. Gris melaminico ref. Lunar de — navera\nabsoluto TABLEMAC. Bisagras cierre lento sin M p - a ;\n\nmanijas.\nD Zócalo en PYC aluminizado----------- |\n\n' _ MPlso SPC Ref. Aceda — P \"\nE P Piso SPC Ref. Árce de Eurolarninados\nEurolaminados\nCOO1-Corte B\n1:25 Detalle de Cocinas\np Carnpana extaciora penínsule.\n\nabsoluto\n\nP Salpicadero an quarzton mismo\ncolor del mesón.\n\nP Estufa en cnstal 4 puestos gas\ncod, SQ6762 AE Challenger\n\nPMesón en QUARZTONE ref. Grs\n\nP Mueble isla, interiór con cantos\nflexibles, acabado color ref. BLANC\n\n“Cód, CX 4880 CHALLENGER.\n\n» Estufa de inducción. Ref.:\naescogida por el propistario\n\n» Barera para estufa de\nInducción.\n% .-- l—\n» Dilatación de min. zom\nP Musble isla, interior con cantos Entrapaño\nfexies, acabado color ref.\nELANCO NEY)ACO de\n\nPELIKANO, Laterales y alas con\ncantos fexibles, acabado en\ntablero melaminico ref, Lunar de\nTABLEMAC. Puertas y frentes\nde cajón con canto riígido,\n\nacabado en tablero melaminico I AO\n\nA El\n\n- Pintura antihvongo para techo po\n\n________________________ pintuco, Ref. (Blanco), Revisar\n\nMuestrá de color en obra.\n\nEl tpo y ubicación de la ventana\nvaria en cade torre, Verificar\ncon detalles de ventanas, tipo,\nUbicación y dimensiones.\n\nP Estuco acabado en pintura tipo\n_pintuco antihongo para zonas\n\nhúmedas. Ref. (Blanco). Revisar\n\nMuestra de color an obra,\n\n_-»Guardasescoba en MOF pintado de\nblanco H=8em\n\nP Piso SPC Ref. Arce de\n\nEspacio para Nevera -- R- Eurolaminados\n\nNOG-ARG- APT- 581B\nCOM-Apt A\nYY\nANAN VARGAS-WILLIAMSON\n\nARQUITECTURA - URBANISMO\n\nEL NOGAL\nP.P. EL BOSQUE\n\nUBICAC ÓN\n\nPOZ Norte - Bogota\n\nPROYECTO:\nARQUITECTONICO\n\nPROPIETARIO:\n\nAMARILO\n\nARO COLABORADORES:\nAmrg. Calro Cortés\nAr. Andras del Plar CuilAcnes\n\nMODIFICACIONES:\n\nY. He Facha Descripción\n\n20125 …utlum$… LEz1\n04 — M7 por ajuatas de contrel y caldad\n\nAd| i ¿ d\n\n01 a Prlcgres afl pl apechidaa r\nvi lad < Catoelrm re Pl\n\nAMARILO $S.A.\n\nVÁLIDO PARA CONSTRUIR\n18.07.2025\n\nCOCREINADOR Malra Alejandre Coletta\nDESARROLLO Mora\nCONTENIDO:\n\nDETALLES DE VYVYIENDA\nDetalles de Cocinas\nDetalle Cocina CO - Ápto A\n\n1. Corte A\n02. Corte E\n\n03. Corte G\n\nNEYADO de PELIKANO, Laterales y ref Lunar de TABLEMAC\nalas con cartos Texibles, acabado er \" - An\n\ntablero melaminico ref. Lunar de bisagras cierre lento sin manijas.\nTABLEMAC. Puertas y trentes de NOTA:\ncajór con canto rigido, acabado en\n\nP Mueble bajo, Interlor con cantos\nflexibles, acabado color ref. BLANCO s Y NNE\nNEYADO de PELIKFANO, Laterales y\n\nelas con cantos fexidles, acabado en\ntablaro melaminico ref. Lunar de\nTABLEMAC, Puertas con cantos\nrigides, acabado en tablero\nmealaminico ref, Lunar de\nTABLEMAC. Bisagras cierre lento sir\n\nmanljas.\n\ntablero melaminico ref. Lunar de\n\n01, Este detalle solo aplica para\n\nTABLEMAC, bisagras cisrre lento sir\n\nlas cocinas en las que se deba\ninstalar estufa de inducción por\nelección del cliente.\n\nP Soporte vertical en melaminico.\n\n— Ref. Lunar de Tablemac\n\nManijas.\nmesones de cocina y lavaderos” — ¡ ¡ a -D-Poyo en concrelo pobre para Detalle Estufa de Inducción Nota: Pendiente definir por parte de\np Zócalo en PYC aluminizado-—---------——--—————— — — - * 1:25 Detalle de Cocinas AMARILO, la apartura y herrajes de las\n\nCO01-Corte C\n\n1:25 Detalle de Cocinás\n\nlooo ooo — 7Zúócalo en PYC aluminizado\n\npuertas del mueble superior\n\nARCHNO REVIT:\nAFROBÁ:\n\nNOG-ARO- APT-581B\n\nCOM-AptA"
+    },
+    {
+      "name": "Plano 3.pdf",
+      "extension": ".pdf",
+      "path": "C:\\Users\\autom\\Desktop\\CARPINTERIA\\STAR GPT\\Despiezador IA\\input\\Mueble cocina\\Plano 3.pdf",
+      "type_detected": "pdf",
+      "is_vector": false,
+      "pages": 1,
+      "detected_views": [
+        "corte",
+        "frontal",
+        "lateral",
+        "isometrica"
+      ],
+      "has_text": true,
+      "comments": [
+        "Página 1 contiene imágenes rasterizadas.",
+        "No se encontró texto embebido; aplicando OCR...",
+        "Se detectan cotas en el OCR (mm/cm).",
+        "No se detectaron elementos vectoriales.",
+        "Se encontró texto (directo u OCR).",
+        "OCR exitoso",
+        "Cotas detectadas (mm/cm)",
+        "Vistas corroboradas: 'Detalle Cocina CÓ-D1 - Apto A', 'CO -Vista 3D-B' indica vista isométrica",
+        "Cortes enumerados: '11, Corte E', 'dZ, Corte C'"
+      ],
+      "width_px": null,
+      "height_px": null,
+      "file_text": "NOG-ARQO- APT- 5616\n» Mueble torre de homos, COO1-Apt A\n\ninterior con cantos fexibles p Estuco acabado en pintura\n\na rel ANCO o E Saiv) NA\n\nEE£$%E F 3|35 con c;3nfg5 ; Revisar MU… de ¿ÚEÚF en VARGAS-WILLIAMSON\nIHE…LEIEE*EE£—I=BEIHÚÚ%FEREH : Úh|'3. ARCUITECTURA - URBANISMO\nMEIAMINTO Nel Ó— |\n\nPELIKANO. Puertas y frentes '\n\nde cajón con cantos r%gidns. ! »Campana extractora\n\nacabado en melaminico ref. [O nínsula. Cód. CX 4880 EL NOGAL\n\nROYERE de PELIKANO, HALLENGER. P.P. EL BOSQUE\n\nbisagras cierre lento sin\nmarijas.\n\np Grifería para cocina ref.\noooO —YERA BASIC cod.\n\nP Lavaplatos doble en acero VABS0355511 de CORONA UBICACIÓN:\n\ninoxdable submontar. m POZ Norte - Bogoctá\n\nRef.77070217240508 60X43cm PMueble alto, Interlor con y\n\nSOCODA cantos flexibles, acabado color\n\nref, ELAI'—.ISÚ NEVADO de _W\nPELIKFANO. Laterales y alas\ncon cantos Texibles ac:1badn ARQUITECTONICO\n\n_en tablero melaminico ref.\n\n. ROVERE de PELIKANO.\n\n| Puertas con cantos rigidos\n\n' acabado en tablero melamínico\nP Homo eléctrico 120v ref. _ ' ref. ROVERE de PELIKANO,\n\n' manijas y brazo plegable Gm.\n\n_______________________________________________ P Salpicadero en quarzton ' » Saloi\n- | picadaero an quartone\n| mismo color del mesún. o mismo color del mesón\nvalvula Gas —| — Ms » Estfa en cl 4 puestos 5 » Estuco acabado en pintura\n-- — as . ! tipo pintuco artihóngo para\nP Guardaescoba en MUF _ \" |'IE\"EHQ'ET r-=-------70nas húmedas, Ref, (Blanco).\npintado de blanco H=8cm ... MMesón en QUARZTONE ref. ' Revisar Muestra de color en\nGris absoluto ' obra.\n\nP Mueble Isla, Interlor cor\ncantos Texibles, acabado color\nref. BLANCO NEVADO de\nPELIFANO. Laterales y alas\ncon cantos flexibles, acabado\n\n_en tablero melaminico ref.\nLunar de TABLEMAC, Puertas\ny frentes de cajón con canto\nrígido, acabado én tablero\nmelaminico ref. Lunar de\nTABLEMAC, blsagras cierre\nlanto sin manijas.\n\nY. Ho. Pacia\n\nE 07.03.2025\n\nTA . Cl a ImeLn e hah\nCCC 2l A p\nTe 2E\n\n\"\"\"\" '.'ZÚBEIÚ an WB 3|Uml…iladÚ 18072025 Im. p …T-,“.W\"”\n* AMARILO S.A.\n. ' | VÁLIDO PARA CONSTRUIR\nCÚÚ1 'V|5t3 3D'A | aaa aaa P Piso EPG Ref. Arce de 18.07.2025\nFU Eurclaminados 07\n\nDetalle de Cocinas EOORDINADOR Malm Alejandre Cojaita\nMora\n\nPMueble bajo, interior con\ncantos flexibles, acabado color\nref. BLANCO NEYADO de\nPELIKANO. Lateralaes y alas\ncon cantos lexibles, acabado\nón tablero melaminico ref. m -\nLunar de TABLEMAC. Puertas\n\ncon cantos rigidos, acabado en\n\ntablero melaminico ref. Lunar\n\nde TABLEMAC, Bisagras cleme\n\nlento sin manijas.\n\nDETALLES DE YTWIENDAAL\nDetalles de Cocinas\nDetalla Cocina CÓ-D1 - Apto A\n\n11, Corte E\ndZ, Corte C\n\nP Zócalo en PYC aluminizado ----------------—-——————— -\nPMasón an QUARZTONE ref. \" í__hGuardaasmba en MDF\nGris absoluto pintado de blanco H=8crr\no P Piso SPC Ref. Arce de\nEurolaminados\nCO -Vista 3D-B\n\nLstalle de Cocinas\n\nNOG-ARG- APT- 5910\nCOO1-Apt A"
+    }
+  ],
+  "descripcion_general_mueble": "Proyecto de mueble de cocina con vistas planta, frontal, lateral, corte e isométrica detectadas en los planos analizados.",
+  "conclusiones": {
+    "estado": "viable",
+    "razones": [
+      "Plano 1: vistas frontal, lateral y planta aparecen explícitamente en el texto OCR: 'COO1_Planta A - Mueble Alto Cocina', 'COC Planta B - Mueble Bajo Cocina'.",
+      "Plano 2: se mencionan cortes específicos (CO1-Corte A, Corte B, CO01-Corte C) y se indican vistas frontal, lateral y planta en las descripciones.",
+      "Plano 3: se encuentra referencia a cortes ('11, Corte E', 'dZ, Corte C') y a una vista 3D, evidenciando la vista isométrica.",
+      "Las cotas en mm y cm están presentes en el texto OCR en los tres planos, confirmado por la presencia de medidas numéricas junto con unidades.",
+      "No se detectan vistas falsas o adicionales respecto a las mencionadas explícitamente en los textos extraídos."
+    ]
+  },
+  "version_modulo": "0.2.0",
+  "timestamp": "2025-11-18T16:03:29-05:00"
+}

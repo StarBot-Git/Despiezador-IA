@@ -1,0 +1,35 @@
+Proyecto: Mini Bar
+Ruta de escaneo: C:\Users\autom\Desktop\CARPINTERIA\STAR GPT\Despiezador IA\input\Mini Bar
+Versión módulo: 0.2.0
+Fecha: 2025-11-18T15:59:27-05:00
+
+[Resumen]
+{
+  "total_archivos": 1,
+  "por_tipo": {
+    "pdf": 1,
+    "imagen": 0,
+    "desconocido": 0
+  }
+}
+
+[Descripción general del mueble]
+Plano detallado de un minibar con vistas planta, alzado frontal y corte lateral, que muestra especificaciones del mueble incluyendo dimensiones y materiales.
+
+[Archivos]
+- Tipología 4-DETALLE MINIBAR.pdf (pdf)
+  páginas=1, vectorial=True, texto=True
+  vistas=planta, alzado frontal, corte lateral
+  obs=Se detectaron elementos vectoriales (paths/drawings).; Se encontró texto (directo u OCR).; OCR exitoso; Cotas detectadas en metros (h: 0,51 L: 0,473 w: 0,44, entre otras medidas con valores numéricos); Se identifican referencias explícitas a las vistas en el texto extraído
+
+[Conclusiones]
+{
+  "estado": "viable",
+  "razones": [
+    "Se menciona explícitamente 'A L Z A D O   F R O N T A L' en el texto, confirmando la vista alzado frontal.",
+    "Se menciona explícitamente 'P L A N T A' en el texto, confirmando la vista planta.",
+    "Se menciona explícitamente 'C O R T E   L A T E R A L' en el texto, confirmando la vista corte lateral.",
+    "No se encontró ninguna mención ni referencia a una vista 'isometrica' en el texto extraído.",
+    "El texto contiene múltiples valores de medición y cotas, por ejemplo: 'h : 0 , 5 1', 'L : 0 , 4 7 3', y otras medidas, evidenciando información dimensional valida."
+  ]
+}

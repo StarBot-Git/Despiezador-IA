@@ -1,0 +1,66 @@
+{
+    "type_furniture": "M1 - Mueble cocina tipología 6",
+    "components": [
+        {
+            "name": "Cajonera base (lado izquierdo)",
+            "type_component": "mueble_bajo",
+            "quantity": 1,
+            "detail": {
+                "doors": 0,
+                "drawers": 3,
+                "shelves": 0,
+                "related_to": "Mesón (travertino) / Lavaplatos"
+            }
+        },
+        {
+            "name": "Mueble alto superior (sobre mesón)",
+            "type_component": "mueble_alto",
+            "quantity": 1,
+            "detail": {
+                "doors": 3,
+                "drawers": 0,
+                "shelves": 2,
+                "related_to": "Cubre la zona de mesón y campana extractora"
+            }
+        },
+        {
+            "name": "Módulo alto corredizo - izquierdo (panel corredizo M1, interior DC-02)",
+            "type_component": "closet",
+            "quantity": 1,
+            "detail": {
+                "doors": 1,
+                "drawers": 2,
+                "shelves": 2,
+                "related_to": "Cajonera interna DC-02 / espacio minibar (según detalle lateral)"
+            }
+        },
+        {
+            "name": "Módulo alto corredizo - derecho (almacenamiento vertical)",
+            "type_component": "closet",
+            "quantity": 1,
+            "detail": {
+                "doors": 1,
+                "drawers": 0,
+                "shelves": 4,
+                "related_to": "Almacenamiento vertical detrás de puerta corrediza"
+            }
+        },
+        {
+            "name": "Mesón / Salpicadero",
+            "type_component": "estructural",
+            "quantity": 1,
+            "detail": {
+                "doors": 0,
+                "drawers": 0,
+                "shelves": 0,
+                "related_to": "Mueble bajo (soporta lavaplatos y grifería)"
+            }
+        }
+    ],
+    "configuration": "Conjunto lineal: a la izquierda mueble alto continuo sobre mesón y cajonera base; en el centro dos módulos verticales con puertas corredizas (panel M1 izquierdo con cajonera interna DC-02; panel derecho con entrepaños para almacenamiento). Mesón en travertino conecta el frente.",
+    "comments": "Interpretación basada en alzado, planta y cortes laterales. Materiales indicados en plano: mesón en travertino, melamina tipo vienes, zócalo pintura. No se clasifican electrodomésticos (campana, minibar, lavaplatos) como muebles; se indican como espacios/ocupaciones internas.",
+    "viability": {
+        "percentage": 85,
+        "reason": "Lectura de divisiones y símbolos clara (cajonera base, mueble alto, dos módulos con puerta corrediza). Incertidumbre en el conteo exacto de puertas del mueble alto y número preciso de entrepaños interiores (estimado desde cortes laterales). Verificar en obra alturas exactas, existencia de laterales interiores y la presencia/posición del minibar/electrodomésticos."
+    }
+}

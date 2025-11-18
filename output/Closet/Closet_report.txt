@@ -1,0 +1,35 @@
+Proyecto: Closet
+Ruta de escaneo: C:\Users\autom\Desktop\CARPINTERIA\STAR GPT\Despiezador IA\input\Closet
+Versión módulo: 0.2.0
+Fecha: 2025-11-18T15:56:32-05:00
+
+[Resumen]
+{
+  "total_archivos": 1,
+  "por_tipo": {
+    "pdf": 1,
+    "imagen": 0,
+    "desconocido": 0
+  }
+}
+
+[Descripción general del mueble]
+Plano técnico de detalle para un closet, incluyendo vistas planta, alzado frontal y corte lateral, con especificaciones y dimensiones para muebles tipo tipología 4.
+
+[Archivos]
+- Tipología 4-DETALLE CLOSET.pdf (pdf)
+  páginas=1, vectorial=True, texto=True
+  vistas=planta, alzado, corte
+  obs=Se detectaron elementos vectoriales (paths/drawings).; Se encontró texto (directo u OCR).; OCR exitoso; Cotas detectadas en texto (valores numéricos en formato decimal y medidas indeterminadas)
+
+[Conclusiones]
+{
+  "estado": "viable",
+  "razones": [
+    "La vista 'planta' está explícitamente mencionada en el texto: 'P L A N T A'",
+    "La vista 'alzado' está explícitamente mencionada como 'A L Z A D O   F R O N T A L'",
+    "La vista 'corte' está mencionada como 'C O R T E   L A T E R A L'",
+    "No se menciona ni se encuentra la palabra 'isometrica' en el texto",
+    "El texto contiene múltiples valores numéricos que corresponden a cotas y dimensiones, confirmando que hay cotas presentes"
+  ]
+}

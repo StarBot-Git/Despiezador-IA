@@ -19,8 +19,9 @@ class BaseAgent:
         content.append({"type":"input_text", "text":prompt})
 
         if files:
-            for f in files:
-                content.append({"type":"input_file", "file_id": f})
+            for file_id, file_type in files.items():
+                input_type = "input_file" if file_type == 'pdf' else "input_image"
+                content.append({"type": input_type, "file_id": file_id})
 
         self.messages.append({"role":"user", "content":content})
 

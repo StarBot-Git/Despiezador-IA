@@ -1,0 +1,55 @@
+{
+    "type_furniture": "MM07 - Escritorio",
+    "components": [
+        {
+            "name": "Superficie escritorio (L) - tablero entamborado",
+            "type_component": "estructural",
+            "quantity": 1,
+            "detail": {
+                "doors": 0,
+                "drawers": 0,
+                "shelves": 0,
+                "related_to": "Cajonera (mueble_bajo) y mueble alto / repisas superiores"
+            }
+        },
+        {
+            "name": "Cajonera soporte bajo (3 cajones)",
+            "type_component": "mueble_bajo",
+            "quantity": 1,
+            "detail": {
+                "doors": 0,
+                "drawers": 3,
+                "shelves": 0,
+                "related_to": "Superficie escritorio (soporte lateral y almacenamiento bajo)"
+            }
+        },
+        {
+            "name": "Mueble alto vertical izquierdo (armario superior proyectante/abatible)",
+            "type_component": "mueble_alto",
+            "quantity": 1,
+            "detail": {
+                "doors": 2,
+                "drawers": 0,
+                "shelves": 3,
+                "related_to": "Repisas abiertas y superficie escritorio (compone el conjunto superior)"
+            }
+        },
+        {
+            "name": "Repisas abiertas (estantes sobre fondo)",
+            "type_component": "estructural",
+            "quantity": 3,
+            "detail": {
+                "doors": 0,
+                "drawers": 0,
+                "shelves": 0,
+                "related_to": "Mueble alto / fondo con pasacables sobre la superficie de trabajo"
+            }
+        }
+    ],
+    "configuration": "Escritorio en L anclado a muro con tablero entamborado (0.60 m de profundidad), cajonera baja lateral (3 cajones) apoyada en piso, mueble alto lateral izquierdo con puertas y entrepaños, y tres repisas abiertas montadas en fondo vertical. Ancho total indicado en planos 2.35 m, altura de trabajo 0.75 m.",
+    "comments": "Interpretación basada en vistas planta, cortes y perspectiva. Se identifican: tablero entamborado anclado a muro, cajonera baja con 3 cajones, un módulo alto izquierdo con entrepaños y puertas (puerta proyectante superior y puerta batiente inferior indicada en cortes) y tres repisas abiertas sobre el fondo con pasacables.",
+    "viability": {
+        "percentage": 80,
+        "reason": "Planos claros en geometría y dimensiones del tablero, cajonera y repisas. Existe incertidumbre sobre la configuración exacta de puertas del módulo alto (cantidad y tipo) y si las repisas forman parte del mueble alto o son elementos estructurales independientes; se asumió un mueble alto con 2 puertas y 3 entrepaños y 3 repisas abiertas según anotaciones en cortes y perspectiva."
+    }
+}

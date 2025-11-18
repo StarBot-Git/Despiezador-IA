@@ -1,0 +1,66 @@
+{
+    "type_furniture": "Mueble Closet (incluye minibar + panel TV + escritorio + closet)",
+    "components": [
+        {
+            "name": "Mini Bar",
+            "type_component": "mueble_bajo",
+            "quantity": 1,
+            "detail": {
+                "doors": 1,
+                "drawers": 0,
+                "shelves": 1,
+                "related_to": "escritorio"
+            }
+        },
+        {
+            "name": "Mueble alto superior (banco de alacenas sobre TV)",
+            "type_component": "mueble_alto",
+            "quantity": 1,
+            "detail": {
+                "doors": 3,
+                "drawers": 0,
+                "shelves": 3,
+                "related_to": "panel tv"
+            }
+        },
+        {
+            "name": "Panel TV / nicho para TV",
+            "type_component": "estructural",
+            "quantity": 1,
+            "detail": {
+                "doors": 0,
+                "drawers": 0,
+                "shelves": 1,
+                "related_to": "televisor"
+            }
+        },
+        {
+            "name": "Escritorio (superficie)",
+            "type_component": "estructural",
+            "quantity": 1,
+            "detail": {
+                "doors": 0,
+                "drawers": 0,
+                "shelves": 0,
+                "related_to": "minibar"
+            }
+        },
+        {
+            "name": "Closet vertical (incluye caja fuerte)",
+            "type_component": "closet",
+            "quantity": 1,
+            "detail": {
+                "doors": 2,
+                "drawers": 0,
+                "shelves": 3,
+                "related_to": "caja fuerte"
+            }
+        }
+    ],
+    "configuration": "Configuración modular en pared: banca superior continua de mueble alto (run único de puertas y tapa común) sobre panel estructural para TV; escritorio/pausa integrado a la izquierda con minibar debajo; módulo vertical a la derecha tipo closet piso-techo que integra caja fuerte. Elementos estructurales (panel TV y sobre escritorio) sin cavidad.",
+    "comments": "Material según especificación: melamínico (frentes 18mm, interiores 15mm, fondo 6mm). Prever paso para cinta LED y puntos eléctricos. Validar en sitio dilataciones y ajuste de alturas indicado en notas. Diseño de chaflán y ranurado para LED es adicional.",
+    "viability": {
+        "percentage": 70,
+        "reason": "Las funciones principales (minibar, panel TV, escritorio, closet y alacenas superiores) son claras en los planos. Se estimaron cantidad de puertas y entrepaños porque las proyecciones no muestran explícitamente el conteo de hojas por módulo en alta resolución; la clasificación como 'mueble_alto' para la bancada superior y 'closet' para el módulo derecho se basa en la continuidad y la condición piso-techo respectivamente. Confirmar en obra el número exacto de hojas, cajones reales y distribución interna de entrepaños."
+    }
+}

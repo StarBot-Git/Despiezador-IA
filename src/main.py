@@ -15,28 +15,30 @@ from analista_piezas.cli import Run_Analyst
 
 def main():
     # --- Rutas base del proyecto ---
-    project_root = BASE                                         # → /DESPIEZADOR IA/
-    input_dir = project_root / "data" / "input" / NOMBRE_MUEBLE # → /data/input/mueble_actual/
-    output_dir = project_root / "outputs" / NOMBRE_MUEBLE       # → /outputs/mueble_actual/
+    project_root = BASE                                        # → /DESPIEZADOR IA/
+    input_dir = project_root / "input" / NOMBRE_MUEBLE         # → /input/mueble_actual/
+    output_dir = project_root / "output" / NOMBRE_MUEBLE       # → /output/mueble_actual/
 
     # --- INSTRUCTOR DE MODELACION ---
-    print("========== INSTRUCTOR DE MODELACIÓN ==========")
-    print(f"Proyecto raíz  : {project_root}")
-    print(f"Mueble         : {NOMBRE_MUEBLE}")
-    print(f"Ruta de entrada: {input_dir}")
-    print(f"Ruta de salida : {output_dir}")
-    print("==============================================")
+    print("┌──────────────────────────────────────────┐")
+    print("         INSTRUCTOR DE MODELACIÓN\n")
+    print(f"▣ Proyecto raíz  : {project_root}")
+    print(f"▣ Mueble         : {NOMBRE_MUEBLE}")
+    print(f"▣ Ruta de entrada: {input_dir}")
+    print(f"▣ Ruta de salida : {output_dir}")
+    print("\n└───────────────────────────────────────────┘")
 
-    #report_dir = Run_Instructor(input_dir, output_dir)
-    report_dir = r"C:\Users\autom\Desktop\CARPINTERIA\STAR GPT\Despiezador IA\outputs\Mueble escritorio\Mueble TV_report.txt"
+    report_dir = Run_Instructor(input_dir, output_dir)
+    #report_dir = r"C:\Users\autom\Desktop\CARPINTERIA\STAR GPT\Despiezador IA\output\Mueble TV\Mueble TV_report.txt"
 
     # --- ANALISTDA DE PIEZAS ---
-    print("========== ANALISTA DE PIEZAS ==========")
-    print(f"Proyecto raíz  : {project_root}")
-    print(f"Mueble         : {NOMBRE_MUEBLE}")
-    print(f"Ruta del reporte: {report_dir}")
-    print(f"Ruta de salida : {output_dir}")
-    print("==============================================")
+    print("┌──────────────────────────────────────────┐")
+    print("         ANALISTA DE PIEZAS\n")
+    print(f"▣ Proyecto raíz  : {project_root}")
+    print(f"▣ Mueble         : {NOMBRE_MUEBLE}")
+    print(f"▣ Ruta del reporte: {report_dir}")
+    print(f"▣ Ruta de salida : {output_dir}")
+    print("\n└───────────────────────────────────────────┘")
 
     Run_Analyst(input_dir, output_dir, report_dir, NOMBRE_MUEBLE)
 

@@ -1,0 +1,22 @@
+{
+    "type_furniture": "mueble_alto",
+    "components": [
+        {
+            "name": "MM-03 Mueble Alto - Ropas",
+            "type_component": "mueble_alto",
+            "quantity": 1,
+            "detail": {
+                "doors": 3,
+                "drawers": 0,
+                "shelves": 2,
+                "related_to": "Ropas"
+            }
+        }
+    ],
+    "configuration": "Mueble alto continuo de 2.32 m de ancho x 0.68 m de altura x 0.40 m de profundidad. Tres cuerpos interiores separados por divisiones verticales, puerta proyectante en cada cuerpo (brazo neumático cierre lento), hueco central visto con entrepaños (sin puerta) y colgaderos en los cuerpos laterales.",
+    "comments": "Acabados en tablero melamínico; cantos rígidos en puertas y cantos flexibles en fondos/entrepaños según plano. Soportes y bolillos metálicos indicados. El mueble es suspendido (mueble alto) y se presenta como una sola unidad continua con tapa superior común.",
+    "viability": {
+        "percentage": 90,
+        "reason": "Dibujo claro en planta, alzado y corte; sin embargo hay ambigüedad menor sobre la cantidad exacta de entrepaños en los cuerpos laterales (el plano etiqueta entrepaños en el hueco central claramente). Se asume 2 entrepaños visibles en el cuerpo central y ausencia de cajones."
+    }
+}

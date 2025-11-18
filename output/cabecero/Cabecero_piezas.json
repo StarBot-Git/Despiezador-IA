@@ -1,0 +1,83 @@
+{
+    "type_furniture": "Cabecero",
+    "components": [
+        {
+            "name": "Cabecero_Principal",
+            "type_component": "Mueble Alto (cabecero mural)",
+            "quantity": 1
+        },
+        {
+            "name": "Cabecero_Half_Izquierdo",
+            "type_component": "Módulo (mitad) - Mueble Alto",
+            "quantity": 1
+        },
+        {
+            "name": "Cabecero_Half_Derecho",
+            "type_component": "Módulo (mitad) - Mueble Alto",
+            "quantity": 1
+        },
+        {
+            "name": "Cabecero_Principal::Marco_Perimetral",
+            "type_component": "Frontales - marco perimetral (zócalo / bastidor visible)",
+            "quantity": 1
+        },
+        {
+            "name": "Cabecero_Principal::Divisor_Vertical_Central",
+            "type_component": "Internos - divisor vertical central (junta entre mitades)",
+            "quantity": 1
+        },
+        {
+            "name": "Cabecero_Principal::Placa_Trasera",
+            "type_component": "Internos - placa trasera / respaldo (backer board)",
+            "quantity": 1
+        },
+        {
+            "name": "Cabecero_Principal::Panel_Tapizado",
+            "type_component": "Frontales - paneles acolchados verticales (tapizados)",
+            "quantity": 8
+        },
+        {
+            "name": "Cabecero_Principal::Relleno_Espuma_por_panel",
+            "type_component": "Internos - relleno espuma / guata para panel",
+            "quantity": 8
+        },
+        {
+            "name": "Cabecero_Principal::Liston_Fijacion_Superior",
+            "type_component": "Internos - listón/cuña de fijación superior para montaje mural",
+            "quantity": 1
+        },
+        {
+            "name": "Cabecero_Principal::Liston_Fijacion_Inferior",
+            "type_component": "Internos - listón de apoyo inferior / distanciador",
+            "quantity": 1
+        },
+        {
+            "name": "Cabecero_Principal::Soportes_Anclaje",
+            "type_component": "Accesorios - soportes / herrajes de anclaje a muro",
+            "quantity": 2
+        },
+        {
+            "name": "Cabecero_Principal::Tornilleria_Tarugos_set",
+            "type_component": "Accesorios - tornillería y tarugos para montaje",
+            "quantity": 1
+        },
+        {
+            "name": "Cabecero_Principal::Nicho_Para_Interruptor/Enchufe",
+            "type_component": "Internos - nicho rectangular para interruptor/enchufe",
+            "quantity": 1
+        },
+        {
+            "name": "Cabecero_Principal::Remate_Lateral_Derecho",
+            "type_component": "Frontales - remate lateral derecho (perfil visible con hueco)",
+            "quantity": 1
+        },
+        {
+            "name": "Cabecero_Principal::Remate_Lateral_Izquierdo",
+            "type_component": "Frontales - remate lateral izquierdo",
+            "quantity": 1
+        }
+    ],
+    "configuration": "Cabecero mural compuesto por 2 módulos (mitades) simétricas unidas por divisor vertical central. No tiene puertas (paneles fijos tapizados). Paneles verticales acolchados: 4 por mitad (total 8) con espaciado y listones de fijación superior e inferior. Altura total indicada en plano: 1.15 m. Ancho de cada mitad: 1.96 m (total aprox. 3.92 m). Presenta un nicho lateral derecho para interruptor/enchufe. Tipo de apertura: Ninguna (panel fijo). Cantidad de puertas: 0. Tipo de cantos: ignorados (según regla). Presencia de repisas/cajones: ninguna. Divisiones: divisor vertical central entre mitades y alineación de 8 paneles verticales.",
+    "comments": "Se utilizaron tanto el plano adjunto como el texto OCR. Datos extraídos: alturas 1.15 m y anchos parciales 1.96 m por mitad (repetición .20/.29 indica 4 paneles de 0.29 m por mitad => 4+4 = 8 paneles). Identifiqué el nicho/recorte derecho para controles eléctricos (se listó como pieza, aunque herrajes eléctricos se comentan solo). Faltan espesores (grosor de tablero, espesor de espuma/tapizado), profundidad (fondo del cabecero), detalles de fijación (tipo exacto de herraje), y tolerancias de montaje. Con esos datos se puede esquematizar y fabricar la estructura y paneles, pero se requiere información de profundidades, espesores de materiales, y detalle de acabados para producción final.",
+    "viability": "75% - Se extrajeron composición modular, número de paneles (8), divisiones y medidas principales (1.15 m alto, 1.96 m por mitad). Para llegar al 100% hacen falta: profundidad (fondo del cabezal), espesores de tablero y tapizado, detalle de unión entre mitades, especificación de herrajes exactos (tipo y posiciones), y tolerancias/diámetros para tornillería."
+}

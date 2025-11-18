@@ -1,0 +1,51 @@
+{
+  "proyecto": "Mueble cocina 2",
+  "ruta_escaneo": "C:\\Users\\autom\\Desktop\\CARPINTERIA\\STAR GPT\\Despiezador IA\\input\\Mueble cocina 2",
+  "resumen": {
+    "total_archivos": 1,
+    "por_tipo": {
+      "pdf": 1,
+      "imagen": 0,
+      "desconocido": 0
+    }
+  },
+  "archivos": [
+    {
+      "name": "Tipología 6-DETALLE MUEBLE COCINA.pdf",
+      "extension": ".pdf",
+      "path": "C:\\Users\\autom\\Desktop\\CARPINTERIA\\STAR GPT\\Despiezador IA\\input\\Mueble cocina 2\\Tipología 6-DETALLE MUEBLE COCINA.pdf",
+      "type_detected": "pdf",
+      "is_vector": true,
+      "pages": 1,
+      "detected_views": [
+        "corte",
+        "alzado",
+        "planta"
+      ],
+      "has_text": true,
+      "comments": [
+        "Se detectaron elementos vectoriales (paths/drawings).",
+        "Se encontró texto (directo u OCR).",
+        "OCR exitoso",
+        "Cotas detectadas (valores numéricos sin unidades explícitas, presumiblemente en cm o mm)"
+      ],
+      "width_px": null,
+      "height_px": null,
+      "file_text": "P U E R T A   C O R R E D I Z A \n . 9 2 \n . 5 3 \n . 8 9 \n . 4 5 \n . 0 5 \n . 3 0 \n . 1 0 \n A L Z A D O   F R O N T A L \n 1 . 6 0 \n . 5 3 \n M 1 \n P U E R T A   C O R R E D I Z A \n . 5 0 \n . 5 0 \n . 6 0 \n . 0 8 \n . 4 5 \n . 3 7 \n . 3 7 \n . 5 8 \n . 5 6 \n C A J Ó N   I N T E R N O \n C A J Ó N \n C A J Ó N \n . 0 2 5 \n . 0 2 5 \n . 0 4 \n C A M P A N A \n E X T R A C T O R A \n M 1 \n C A J Ó N   I N T E R N O \n . 0 5 \n . 4 1 \n . 0 1 \n . 3 8 \n . 0 2 \n . 0 4 \n . 5 7 \n . 7 9 \n . 1 0 \n . 9 4 \n . 5 3 \n . 8 9 \n 2 . 3 6 \n . 2 4 \n . 0 4 \n . 3 2 \n . 5 5 \n . 0 5 \n . 6 0 \n . 0 2 \n . 2 5 \n . 0 2 \n . 2 1 \n . 0 2 \n . 2 3 \n . 0 2 \n . 0 2 \n . 1 0 \n C O R T E   L A T E R A L   -   A \n M 1 \n M 1 \n D C - 0 2 \n . 0 8 \n . 0 2 . 0 4 \n . 5 3 \n . 7 9 \n . 1 0 \n . 9 4 \n . 5 3 \n . 8 9 \n 2 . 3 6 \n . 7 8 \n . 3 2 \n . 0 5 \n . 3 0 \n . 4 5 \n . 1 0 \n C O R T E   L A T E R A L   -   B \n . 5 5 \n . 0 5 \n . 6 0 \n M 1 \n M 1 \n K - 2 8 8 2 \n V E R T I C Y L \n L A V A T O R Y \n V I T R E O U S   C H I N A \n . 5 6 \n . 4 7 \n . 5 6 \n 1 . 6 0 \n P L A N T A \n . 2 8 \n . 3 2 \n . 6 0 \n A - 0 1 \n A \n B - 0 1 \n B \n . 3 2 \n E S P E C I F I C A C I O N E S   T I P O L O G Í A   6   -   M U E B L E   C O C I N A \n 1   P i n t u r a   p l a n a   s e m i m a t e   v e r d e \n 2   M e s ó n   e n   t r a v e r t i n o \n 3   S a l p i c a d e r o   e n   t r a v e r t i n o \n 4   G r i f e r í a   n e g r a   s e g ú n   r e f e r e n c i a \n 5   M e l a m i n a   t i p o   v i e n e s \n 6   Z ó c a l o   a c a b a d o   e n   p i n t u r a   g r i s   n o p a l \n 7   C i n t a   l u z   l e d   c a l i d a \n 8   M i n i b a r   c h a l l e n g e r   s e g ú n   r e f e r e n c i a \n 9   L a v a p l a t o s   s e g ú n   r e f e r e n c i a \n N o t a :     * T o d a s   l a s   d i m e n s i o n e s   y   e s p e c i f i c a c i o n e s   d e   m a t e r i a l e s \n a q u i   p l a s m a d a s     d e b e r a n   s e r   v e r i f i c a d a s   p o r   e l   c o n t r a t i s a   e n   s i t i o \n P L A N O : \n R E V I S I Ó N : \n E S C A L A : \n I N D I C A D A S \n D I S E Ñ Ó : \n D I B U J Ó : \n R E V I S I Ó N \n F E C H A \n R E V I S I O N E S \n C L I E N T E : \n P R O Y E C T O \n C O N T I E N E \n e q u i p o d i s e n o @ e n t r e c a s a . c o m \n C A L L E   7 9 A   #   7 A   -   4 0 \n P B X :   3 1 3 2 9 6 0 8 7 1 - 6 0 1 8 0 5 0 1 3 8 \n B O G O T Á \n N O T A S \n - \n - \n - \n A r q .   M a r i a   S a n i n t \n D a v i d   L e o n \n H O T E L   9 0 / 1 1 \n 0 \n P 0 1 \n T I P O L O G Í A   6 \n 2 0 / 1 1 / 2 0 2 4 \n - \n D E T A L L E   M U E B L E   C O C I N A \n L a s   m e d i d a s   d i s p u e s t a s   e n   p l a n o \n d e b e n   s e r   v e r i f i c a d a s   e n   o b r a   y   p o r   e l \n p r o f e s i o n a l   a   c a r g o . \n E S T A N D A R \n T I P O L O G Í A   6   -   D E T A L L E   M U E B L E   C O C I N A   -   M 1 \n H A B I T A C I Ó N   9 0 5 \n E S C A L A   1 : 2 0 \n H O T E L   9 0 / 1 1 \n * L O S   P L A N O S \n P R E S E N T A D O S   S O N   U N \n D I S E Ñ O   E S T É T I C O   M A S \n N O   T É C N I C O   N I   D E \n C A L I D A D .   L A   G A R A N T Í A \n Y   T O D A S   L A S   M E D I D A S \n D E B E N   S E R \n R E C T I F I C A D A S   P O R   E L \n C O N T R A T I S T A   E N   S I T I O . \n"
+    }
+  ],
+  "descripcion_general_mueble": "Mueble de cocina tipo Tipología 6 con vistas de corte lateral, alzado frontal y planta, incluyendo especificaciones detalladas y cotas numéricas.",
+  "conclusiones": {
+    "estado": "parcialmente viable",
+    "razones": [
+      "Se detecta explícitamente la vista 'ALZADO FRONTAL' en el texto OCR: 'A L Z A D O   F R O N T A L'.",
+      "Se mencionan varias secciones de corte, por ejemplo: 'C O R T E   L A T E R A L   -   A' y 'C O R T E   L A T E R A L   -   B', confirmando la existencia de vistas de corte.",
+      "La palabra 'P L A N T A' aparece claramente en el texto OCR, validando la presencia de planta.",
+      "No se menciona ni aparece la palabra 'frontal' sola como vista, ni 'isometrica', por lo que vistas detectadas como 'frontal' o 'isometrica' no tienen respaldo textual y fueron eliminadas.",
+      "Las cotas numéricas están presentes, aunque las unidades (mm o cm) no se especifican explícitamente en el texto, sí hay valores decimales en formato comúnmente usado en carpintería.",
+      "Vistas detectadas originalmente incluían 'frontal' y 'lateral', pero en el texto OCR sólo se menciona 'ALZADO FRONTAL' y varios 'CORTE LATERAL', por lo que 'frontal' se ajusta a 'alzado' y 'lateral' corresponde a 'corte', no se conserva 'frontal' como vista independiente."
+    ]
+  },
+  "version_modulo": "0.2.0",
+  "timestamp": "2025-11-18T16:06:59-05:00"
+}

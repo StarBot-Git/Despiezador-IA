@@ -1,0 +1,99 @@
+{
+    "type_furniture": "Cocina CO01 - distribución en línea contra pared + isla",
+    "components": [
+        {
+            "name": "Torre de hornos",
+            "type_component": "closet",
+            "quantity": 1,
+            "detail": {
+                "doors": 2,
+                "drawers": 0,
+                "shelves": 2,
+                "related_to": "Pared izquierda; torre de electrodomésticos (horno/microondas)"
+            }
+        },
+        {
+            "name": "Mueble alto superior (sobre lavaplatos)",
+            "type_component": "mueble_alto",
+            "quantity": 1,
+            "detail": {
+                "doors": 3,
+                "drawers": 0,
+                "shelves": 3,
+                "related_to": "Encimera/mesón posterior; ubicado sobre el mueble bajo con lavaplatos"
+            }
+        },
+        {
+            "name": "Mueble bajo pared - módulo izquierdo",
+            "type_component": "mueble_bajo",
+            "quantity": 1,
+            "detail": {
+                "doors": 2,
+                "drawers": 0,
+                "shelves": 1,
+                "related_to": "Linea inferior contra pared, adosado a la torre de hornos"
+            }
+        },
+        {
+            "name": "Mueble bajo pared - módulo central (bajo doble lavaplatos)",
+            "type_component": "mueble_bajo",
+            "quantity": 1,
+            "detail": {
+                "doors": 2,
+                "drawers": 0,
+                "shelves": 1,
+                "related_to": "Aloja lavaplatos doble; línea inferior contra pared"
+            }
+        },
+        {
+            "name": "Mueble bajo pared - módulo derecho",
+            "type_component": "mueble_bajo",
+            "quantity": 1,
+            "detail": {
+                "doors": 1,
+                "drawers": 2,
+                "shelves": 1,
+                "related_to": "Linea inferior contra pared, junto a espacio para nevera"
+            }
+        },
+        {
+            "name": "Isla - mueble bajo (con estufa/placa)",
+            "type_component": "mueble_bajo",
+            "quantity": 1,
+            "detail": {
+                "doors": 4,
+                "drawers": 0,
+                "shelves": 1,
+                "related_to": "Isla central con estufa de 4 puestos y campana extractora"
+            }
+        },
+        {
+            "name": "Mesón / Encimera (QUARZTONE)",
+            "type_component": "estructural",
+            "quantity": 1,
+            "detail": {
+                "doors": 0,
+                "drawers": 0,
+                "shelves": 0,
+                "related_to": "Tapa de los muebles bajos y de la isla"
+            }
+        },
+        {
+            "name": "Salpicadero / Zócalo",
+            "type_component": "estructural",
+            "quantity": 1,
+            "detail": {
+                "doors": 0,
+                "drawers": 0,
+                "shelves": 0,
+                "related_to": "Salpicadero sobre encimera y zócalo en base de muebles"
+            }
+        }
+    ],
+    "configuration": "Distribución en línea contra pared (torre de hornos a la izquierda, encimera con lavaplatos) más isla central con placa de 4 puestos. Mueble alto continuo sobre la encimera; zócalo y salpicadero según plano.",
+    "comments": "Se identifican: 1 torre de hornos (tipo closet), 1 mueble alto continuo (3 puertas), 3 módulos de mueble bajo contra pared (izq, central con lavaplatos, derecho) y 1 isla mueble_bajo. Encimera y salpicadero clasificados como estructurales.",
+    "viability": {
+        "percentage": 80,
+        "reason": "Clasificación basada en geometría y vistas 2D/3D. Cantidad de puertas, cajones y entrepaños estimada a partir de módulos visibles; algunos detalles de herrajes y divisiones internas no son legibles a escala PDF, por lo que los conteos (especialmente cajones frente derecho y estantes internos) son aproximados."
+    }
+}

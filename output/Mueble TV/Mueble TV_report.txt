@@ -1,0 +1,35 @@
+Proyecto: Mueble TV
+Ruta de escaneo: C:\Users\autom\Desktop\CARPINTERIA\STAR GPT\Despiezador IA\input\Mueble TV
+Versión módulo: 0.2.0
+Fecha: 2025-11-18T16:16:45-05:00
+
+[Resumen]
+{
+  "total_archivos": 1,
+  "por_tipo": {
+    "pdf": 1,
+    "imagen": 0,
+    "desconocido": 0
+  }
+}
+
+[Descripción general del mueble]
+Mueble TV con vistas detectadas: alzado y planta. Incluye varias cotas y notas técnicas para elaboración y ajuste del mobiliario.
+
+[Archivos]
+- Plano 1.pdf (pdf)
+  páginas=1, vectorial=True, texto=True
+  vistas=alzado, planta
+  obs=Se detectaron elementos vectoriales (paths/drawings).; Se encontró texto (directo u OCR).; OCR exitoso; Cotas detectadas en mm y m indicadas por valores numéricos como '0,51', '1.35 m', '580', '2314', entre otros.
+
+[Conclusiones]
+{
+  "estado": "parcialmente viable",
+  "razones": [
+    "La vista 'alzado' es mencionada explícitamente: 'V I S T A   A L Z A D O'.",
+    "La vista 'planta' está corroborada por la palabra 'P L A N T A'.",
+    "No se encontró en el texto ninguna referencia explícita a la vista 'corte'.",
+    "Tampoco hay referencia textual explícita a una vista 'isometrica'.",
+    "La vista 'lateral' detectada en el resumen no tiene mención textual en el OCR, por lo que se elimina."
+  ]
+}

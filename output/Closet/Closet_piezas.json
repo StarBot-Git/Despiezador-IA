@@ -1,0 +1,44 @@
+{
+    "type_furniture": "closet",
+    "components": [
+        {
+            "name": "Closet M2 (cuerpo principal)",
+            "type_component": "closet",
+            "quantity": 1,
+            "detail": {
+                "doors": 2,
+                "drawers": 0,
+                "shelves": 4,
+                "related_to": "Contiene minibar (entrepaño reforzado) y caja fuerte; refuerzo lateral para mesón lavamanos"
+            }
+        },
+        {
+            "name": "Minibar empotrado",
+            "type_component": "mueble_bajo",
+            "quantity": 1,
+            "detail": {
+                "doors": 0,
+                "drawers": 0,
+                "shelves": 0,
+                "related_to": "Ubicado en entrepaño reforzado interno del closet M2 (especificaciones #6 y #7: dim. sugeridas y entrepaño reforzado; ventilación prevista)"
+            }
+        },
+        {
+            "name": "Caja fuerte (inserto)",
+            "type_component": "estructural",
+            "quantity": 1,
+            "detail": {
+                "doors": 1,
+                "drawers": 0,
+                "shelves": 0,
+                "related_to": "Inserto empotrado en el interior del closet M2 (dimensiones indicadas en plano)"
+            }
+        }
+    ],
+    "configuration": "Cuerpo vertical piso-techo tipo closet de 1.08 m ancho (2 puertas de 0.54 m) x 2.35 m alto, con 4 entrepaños internos (incluye entrepaño superior y entrepaño reforzado para minibar), fondo falso y zócalo. Puertas frontales abatibles dobles; dilataciones de 2 cm contra piso/techo/costados según especificación.",
+    "comments": "Materiales según especificaciones: puertas en melamina tipo madera clara (Soder/duratex), estructura en melamina con tapa en formica. Se incluye zócalo, fondo falso y bolillo; manija para closet piso-techo según referencia. Minibar debe contar con refuerzo y ventilación según notas. La caja fuerte aparece dimensionada como inserto; se trata como elemento estructural embebido. Todas las dimensiones y condiciones deberán verificarse y coordinarse en sitio por el contratista.",
+    "viability": {
+        "percentage": 90,
+        "reason": "Los planos (planta, alzado y corte) permiten identificar claramente el closet como módulo vertical con dos puertas, entrepaños, minibar y caja fuerte. Se asume 4 entrepaños conforme a la etiqueta '4 Entrepaños' en especificaciones. Incertidumbre menor sobre clasificación de la caja fuerte (se la trata como elemento estructural/inserto) y confirmación de dimensiones finales y detallar anclajes/refuerzos en obra; por eso se recomienda verificación en sitio."
+    }
+}

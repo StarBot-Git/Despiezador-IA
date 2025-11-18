@@ -28,6 +28,10 @@ def PDF_Analyzer(path: Path) -> Dict[str, Any]:
         "texto_extraido": "",
     }
 
+    # --- PDF To Image ---
+
+    PDF_To_Image(pdf_path=path)
+
     # --- Apertura | Documento PDF ---
     try:
         doc = fitz.open(str(path))
@@ -139,3 +143,26 @@ def DetectViews_By_Text(texto: str) -> List[str]:
             views.append(v)
 
     return views
+
+"""
+"""
+def PDF_To_Image(pdf_path: Path, dpi: int = 150):
+    carpeta_salida = pdf_path.parent
+    nombre_base = pdf_path.stem
+    
+    doc = fitz.open(str(pdf_path))
+    contador = 0
+    
+    # Si no hay imágenes, convertir páginas
+    if contador == 0:
+        for page_num in range(doc.page_count):
+            page = doc.load_page(page_num)
+            zoom = dpi / 65
+            pix = page.get_pixmap(matrix=fitz.Matrix(zoom, zoom))
+            
+            output = carpeta_salida / f"{nombre_base}_image_{page_num+1}.png"
+            pix.save(str(output))
+            contador += 1
+    
+    doc.close()
+    print(f"✅ {contador} imágenes guardadas en: {carpeta_salida}")

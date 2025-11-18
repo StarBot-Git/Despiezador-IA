@@ -1,0 +1,38 @@
+Proyecto: Mueble escritorio
+Ruta de escaneo: C:\Users\autom\Desktop\CARPINTERIA\STAR GPT\Despiezador IA\input\Mueble escritorio
+Versión módulo: 0.2.0
+Fecha: 2025-11-18T16:13:22-05:00
+
+[Resumen]
+{
+  "total_archivos": 2,
+  "por_tipo": {
+    "pdf": 2,
+    "imagen": 0,
+    "desconocido": 0
+  }
+}
+
+[Descripción general del mueble]
+Mueble escritorio con vistas planta y corte detectadas. Se identifican detalles técnicos y acabados en los textos.
+
+[Archivos]
+- Plano 1.pdf (pdf)
+  páginas=1, vectorial=False, texto=True
+  vistas=planta
+  obs=Página 1 contiene imágenes rasterizadas.; No se encontró texto embebido; aplicando OCR...; Se detectan cotas en el OCR (mm/cm).; No se detectaron elementos vectoriales.; Se encontró texto (directo u OCR).; OCR exitoso; Cotas detectadas (mm/cm)
+- Plano 2.pdf (pdf)
+  páginas=1, vectorial=False, texto=True
+  vistas=corte, planta
+  obs=Página 1 contiene imágenes rasterizadas.; No se encontró texto embebido; aplicando OCR...; Se detectan cotas en el OCR (mm/cm).; No se detectaron elementos vectoriales.; Se encontró texto (directo u OCR).; OCR exitoso; Cotas detectadas (mm/cm)
+
+[Conclusiones]
+{
+  "estado": "parcialmente viable",
+  "razones": [
+    "La vista planta está claramente respaldada por las frases 'MM-07 Planta B - Mueble Alto', 'MM-07 Planta A - Mueble Bajo' y 'MM-07 _ Planta' en el texto del Plano 1.",
+    "La vista corte está validada por múltiples menciones como 'MM-07 Corte A', 'MM-07 Corte B' y descripciones detalladas de puertas, entrepaños y acabados en el texto del Plano 2.",
+    "La vista frontal y lateral detectadas en el Plano 2 no están explícitamente mencionadas en el texto extraído; por lo tanto, se eliminaron para mantener coherencia con la información textual.",
+    "Se detectan cotas en los textos OCR, evidenciado por símbolos y medidas como 'mm', 'cm', '0.5 m', '1:25' que refuerzan la presencia de cotas en ambos planos."
+  ]
+}
