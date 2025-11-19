@@ -1,0 +1,246 @@
+QMainWindow {
+    background: #FFFFFF;
+}
+
+#main-area {
+    background: #FFFFFF;
+    border-radius: 10px;
+}
+
+#TopBar {
+  background: {{PRIMARY}};
+}
+
+#TopBar-Title{
+    font-size: 20px;
+    font-weight:600;
+    color: {{SECONDARY}};
+}
+
+#TopDivider  { color: #E5E7EB; }
+#SideDivider { color: #E5E7EB; }
+
+#SideBar{
+    background: {{SECONDARY}};
+}
+
+#SideBar-IconWrapper {
+    background: {{PRIMARY}};
+    border-radius: 16px;
+}
+
+#SideBar-ModelTitle {
+    font-size: 20px;
+    font-weight: 700;
+    color: #1E3A5F;
+}
+
+#SideBar-OptionLabels{
+    font-size: 16px;
+    font-weight:500;
+    color: {{PRIMARY}};
+}
+
+/* ========== SIDEBAR COMBOBOXES ========== */
+
+#SideBar-ComboBoxes {
+  background: {{BG_LIGHT}};
+  color: {{FONT_LIGHT}};
+  border: 1px solid #E5E7EB;
+  border-radius: 8px;
+  min-height: 20px;
+  padding: 6px 36px 6px 10px;
+  font-family: "Segoe UI", "Inter", Arial; 
+  font-weight: 500;
+}
+#SideBar-ComboBoxes::drop-down { 
+  width: 16px;
+  subcontrol-origin: padding;
+  subcontrol-position: top right;
+  border-left: 1.5px solid #2053a4;
+  font-size: 20px;
+}
+
+#SideBar-ComboBoxes[valid="disabled"]::drop-down {
+  border-left: 1.5px solid #2f2f2f;
+}
+
+#SideBar-ComboBoxes[valid="valid"]::drop-down {
+  border-left: 1.5px solid #10B981;
+}
+
+#SideBar-ComboBoxes[valid="problem"]::drop-down {
+  border-left: 1.5px solid #F59E0B;
+}
+
+#SideBar-ComboBoxes:hover {
+  border: 1.25px solid #9CA3AF;
+}
+
+#SideBar-ComboBoxes:focus {
+  border: 1px solid #9CA3AF;
+  outline: none;
+}
+
+#SideBar-ComboBoxes:focus:hover {
+  border: 1.5px solid #9CA3AF;
+}
+
+#SideBar-ComboBoxes::down-arrow {
+  width: 12px;
+  height: 8px;
+  margin-right: 8px;
+}
+
+/* Dropdown menu */
+#SideBar-ComboBoxes QAbstractItemView {
+  background: {{BG_LIGHT}};
+  color: {{FONT_LIGHT}};
+  border: 1px solid #E5E7EB;
+  border-radius: 0px;
+  padding: 4px 0;
+  outline: none;
+  font-family: "Segoe UI", "Inter", Arial;
+}
+
+#SideBar-ComboBoxes QAbstractItemView::item {
+  padding: 6px 10px;
+}
+
+#SideBar-ComboBoxes QAbstractItemView::item:hover {
+  background: #F3F4F6;
+  border-left: 1.5px solid {{COMPLEMENTARY}};
+}
+
+#SideBar-ComboBoxes QAbstractItemView::item:selected {
+  background: #EFF6FF;
+  color: #1E40AF;
+}
+
+/* ========== SIDEBAR - ARCHIVOS ========== */
+
+/* Label de sección */
+#SideBarSectionLabel {
+    font-size: 13px;
+    font-weight: 600;
+    color: #6B7280;
+    padding: 0px;
+    margin-top: 8px;
+}
+
+/* Área de scroll de archivos */
+#FileListScrollArea {
+    border: none;
+    background: transparent;
+}
+
+/* Item individual de archivo */
+#FileItem {
+    background: #F9FAFB;
+    border: 1px solid #E5E7EB;
+    border-radius: 8px;
+}
+
+#FileItem:hover {
+    background: #F3F4F6;
+    border-color: #D1D5DB;
+}
+
+/* Botón X de eliminar */
+#FileItemRemoveBtn {
+    background: transparent;
+    border: none;
+    color: #9CA3AF;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 0px;
+}
+
+#FileItemRemoveBtn:hover {
+    color: #EF4444;
+    background: #FEE2E2;
+    border-radius: 4px;
+}
+
+/* Nombre del archivo */
+#FileItemName {
+    font-size: 13px;
+    color: #374151;
+}
+
+/* Botón de upload */
+#SideBarUploadButton {
+    background: #C17B6C;
+    color: {{SECONDARY}};
+    border: none;
+    border-radius: 8px;
+    padding: 14px;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+#SideBarUploadButton:hover {
+    background: #B06A5B;
+}
+
+#SideBarUploadButton:pressed {
+    background: #9F5A4B;
+}
+
+/* Label de formatos */
+#SideBarFormatsLabel {
+    font-size: 11px;
+    color: #9CA3AF;
+    margin-top: -10px;
+}
+
+/* ========== COMBOBOX PERSONALIZADO ========== */
+
+#ModelComboBox {
+    background: #FFFFFF;
+    border: 1px solid #D1D5DB;
+    border-radius: 8px;
+    padding: 8px 12px;
+    min-height: 50px;
+}
+
+#ModelComboBox:hover {
+    border: 1px solid #9CA3AF;
+}
+
+#ModelComboBox:on {
+    border: 1px solid #6B7280;
+}
+
+#ModelComboBox::drop-down {
+    border: none;
+    width: 30px;
+}
+
+#ModelComboBox::down-arrow {
+    image: url(ui/assets/icons/chevron-down.png);  /* Tu icono de flecha */
+    width: 12px;
+    height: 12px;
+}
+
+#ModelComboBox QAbstractItemView {
+    background: #FFFFFF;
+    border: 1px solid #E5E7EB;
+    border-radius: 8px;
+    padding: 4px;
+    selection-background-color: transparent;
+}
+
+#ModelComboBox QAbstractItemView::item {
+    min-height: 60px;
+    border-radius: 6px;
+    margin: 2px;
+}
+
+#ModelComboBox QAbstractItemView::item:hover {
+    background: #F3F4F6;
+}
+
+#ModelComboBox QAbstractItemView::item:selected {
+    background: #E5E7EB;
+}
