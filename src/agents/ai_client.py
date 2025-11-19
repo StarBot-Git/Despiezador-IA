@@ -59,7 +59,7 @@ def send_request(model, input, model_name, temperature):
 
     if model_name == "Instructor_Modelacion":
         text_format = ReportAIResult
-    elif model_name == "Analista_Piezas":
+    elif model_name == "Analista_Piezas" or "Supervisor_Piezas":
         text_format = Disassemble
 
     print(f"[IA] Temperature: {temperature}")

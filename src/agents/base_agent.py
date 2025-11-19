@@ -1,4 +1,5 @@
-from .ai_client import send_request
+from agents.ai_client import send_request
+import json
 
 class BaseAgent:
     def __init__(self, system_prompt, model, temperature, default_tools):
@@ -25,8 +26,17 @@ class BaseAgent:
 
         self.messages.append({"role":"user", "content":content})
 
+        print(self.messages)
+
         response = send_request(model=self.model, input = self.messages, model_name=model_name, temperature=self.temperature)
 
+        # --- ASSISTANT CONTENT | Respuesta completa de la IA ---
+        # output_assistant_msg = json.dumps(response.model_dump(), ensure_ascii=False, indent=2)
+        # self.messages.append({"role":"assistant", "content":output_assistant_msg})
+
         output = response.output_parsed
+
+        output_assistant_msg = json.dumps(output.dict(), ensure_ascii=False, indent=2)
+        self.messages.append({"role":"assistant", "content":output_assistant_msg})
 
         return output

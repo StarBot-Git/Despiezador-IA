@@ -17,13 +17,14 @@ class Analista_Piezas(BaseAgent):
             temperature=self.SG_TEMPERATURE
         )
 
-    def Disassemble(self, files = None, report_text:str = None):
+    def Disassemble(self, files = None, report_text:str = None, prompt = None):
         # --- Prompt ---
-        prompt = f"""
-            Analiza los planos adjuntos y genera el JSON del mueble según las reglas del sistema. 
-            Incluye los componentes y su clasificación exacta según los dibujos. 
-            No agregues texto fuera del JSON.
-        """
+        if prompt == None:
+            prompt = f"""
+                Analiza los planos adjuntos y genera el JSON del mueble según las reglas del sistema. 
+                Incluye los componentes y su clasificación exacta según los dibujos. 
+                No agregues texto fuera del JSON.
+            """
 
         # --- Ejecutar agente ---
         print("[AI_Refiner] Enviando informe preliminar al modelo IA...")

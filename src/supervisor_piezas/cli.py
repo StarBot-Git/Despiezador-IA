@@ -8,21 +8,20 @@ from utils.paths import Normalize_Path, Ensure_OutputsRoot
 from utils.scanner import Scan_InputFolder
 from agents.ai_client import load_file, upload_file
 
-from agents.sg_analista_piezas import Analista_Piezas
+from agents.sg_supervisor_piezas import Supervisor_Piezas
 
-
-def Run_Analyst(input_dir:str, output_root:str, report_dir:str, furniture_name:str):
+def Run_Supervisor(input_dir:str, output_root:str, file_pieces_JSON:str, furniture_name:str, files=None):
     #__________________________________________________________________________
     #  Preparacion de rutas
 
     input_dir = Normalize_Path(input_dir)           # utils.paths | Normaliza ruta
-    outputs_root = Ensure_OutputsRoot(output_root)  # utils.paths | Asegura existencia de la ruta
+    output_root = Ensure_OutputsRoot(output_root)  # utils.paths | Asegura existencia de la ruta
 
     #__________________________________________________________________________
     #  Recuperacion del reporte de [Instructor de Modelacion]
 
-    with open(report_dir, "r", encoding="utf-8") as file:
-        report = file.read()
+    with open(file_pieces_JSON, "r", encoding="utf-8") as file:
+        pieces_JSON = file.read()
 
     #__________________________________________________________________________
     #  Preparacion de archivos para IA
@@ -53,27 +52,19 @@ def Run_Analyst(input_dir:str, output_root:str, report_dir:str, furniture_name:s
 
     print(file_data)
 
+    files = file_data
+
+    print(files)
+
     #__________________________________________________________________________
-    #  MODELO IA | Analista de Piezas
+    #  MODELO IA | Supervisor de Piezas
 
-    agent_IA = Analista_Piezas()
-    valor = None
+    agent_IA = Supervisor_Piezas()
+    disassemble_obj = agent_IA.Disassemble_Corrected(files, pieces_JSON)
 
-    while True:
-        disassemble_obj = agent_IA.Disassemble(files=file_data, report_text=report, prompt=valor)
+    file_JSON = f"{output_root}\\{furniture_name}_piezas_CORREGIDAS.json"
 
-        file_JSON = f"{output_root}\\{furniture_name}_piezas.json"
+    #print(disassemble_obj)
 
-        #print(disassemble_obj)
-
-        with open(file_JSON, "w", encoding="utf-8") as f:
-            json.dump(disassemble_obj.dict(), f, indent=4, ensure_ascii=False)
-
-        valor = input("IA Input: ")
-
-        if valor == "salir":   
-            break
-
-    
-
-    return file_JSON, file_data
+    with open(file_JSON, "w", encoding="utf-8") as f:
+        json.dump(disassemble_obj.dict(), f, indent=4, ensure_ascii=False)
