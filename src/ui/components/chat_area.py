@@ -3,6 +3,7 @@ from PySide6.QtWidgets import QWidget, QVBoxLayout, QScrollArea
 from ui.components.message_bubble import MessageBubble
 
 
+
 class ChatWidget(QWidget):
     def __init__(self, parent=None):
         super().__init__(parent)

@@ -270,6 +270,10 @@ QMainWindow {
     background: #E5E7EB;
 }
 
+#ModelComboBox QAbstractItemView::item:focus {
+    background: #E5E7EB;
+}
+
 /* ========== CHAT AREA ========== */
 
 #ChatContentArea{

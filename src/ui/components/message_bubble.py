@@ -1,6 +1,7 @@
 from PySide6.QtWidgets import QWidget, QLabel, QVBoxLayout, QHBoxLayout, QSizePolicy
 from PySide6.QtCore import Qt
 from PySide6.QtGui import QPainter, QColor, QBrush
+import markdown
 
 
 class MessageBubble(QWidget):
@@ -9,7 +10,7 @@ class MessageBubble(QWidget):
         self.setAttribute(Qt.WA_StyledBackground, True)
 
         self.role = role
-        self.text = text
+        self.text = markdown.markdown(text)
 
         # --- Estilos según tipo ---
         if role == "assistant":
@@ -39,7 +40,9 @@ class MessageBubble(QWidget):
         bubble_layout = QVBoxLayout(bubble)
         bubble_layout.setContentsMargins(14, 10, 14, 10)
 
-        label = QLabel(text)
+        label = QLabel()
+        label.setTextFormat(Qt.RichText)   # MUY IMPORTANTE
+        label.setText(self.text)
         label.setWordWrap(True)
         label.setStyleSheet(f"color:{text_color}; font-size:14px;")
         bubble_layout.addWidget(label)

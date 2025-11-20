@@ -18,6 +18,8 @@ class MainWindow(QMainWindow):
         self.resize(settings.WINDOW_WIDTH, settings.WINDOW_HEIGHT) # Tamaño inicial
         self.setWindowIcon(QIcon(settings.LOGO_DIR)) # Logo All Star | Barra de la App
 
+        self.agent_IA = None
+
         # ======== Layout principal ========
 
         central = QWidget(self)
@@ -104,19 +106,20 @@ class MainWindow(QMainWindow):
         input_layout.setContentsMargins(0, 0, 0, 0)
         input_layout.setSpacing(12)
 
-        self.input_field = QLineEdit()
+        self.input_field = QTextEdit()
         self.input_field.setPlaceholderText("Escribe tu mensaje aquí...")
         self.input_field.setMinimumHeight(42)
+        self.input_field.setMaximumHeight(120)    # Para que no crezca infinito
         self.input_field.setStyleSheet("""
-            QLineEdit {
+            QTextEdit {
                 background: #F5F7F9;
                 border: 1px solid #E0E6EB;
                 border-radius: 20px;
-                padding-left: 16px;
+                padding: 10px 16px;
                 font-size: 14px;
                 color: #133855;
             }
-            QLineEdit:focus {
+            QTextEdit:focus {
                 border: 1px solid #C5D4E0;
                 background: #FFFFFF;
             }
@@ -146,9 +149,7 @@ class MainWindow(QMainWindow):
         """)
 
         self.send_button.clicked.connect(self.handle_send_message)
-        self.input_field.returnPressed.connect(self.handle_send_message)
-
-
+        #self.input_field.returnPressed.connect(self.handle_send_message)
 
         input_layout.addWidget(self.input_field)
         input_layout.addWidget(self.send_button)
@@ -183,11 +184,21 @@ class MainWindow(QMainWindow):
         self.setCentralWidget(central)
 
     def handle_send_message(self):
-        text = self.input_field.text().strip()
+        text = self.input_field.toPlainText()
+
+        print(self.agent_IA.__class__.__name__)
+
         if not text:
             return
 
         self.chat_area.add_message(text, role="user")
+        output_obj = self.agent_IA.run(prompt=text)
+        output_msg = self.agent_IA.json_to_message(output_obj.dict())
+        print(output_msg)
+        self.chat_area.add_message(output_msg, role="assistant")
+
+        self.sidebar.save_output_JSON(output_obj)
+
         self.input_field.clear()
 
         # Llamar a tu IA y añadir la respuesta:

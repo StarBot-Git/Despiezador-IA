@@ -1,99 +1,88 @@
 {
-    "type_furniture": "Cocina CO01 - distribución en línea contra pared + isla",
+    "type_furniture": "Cocina CO01 - detalle",
     "components": [
         {
-            "name": "Torre de hornos",
+            "name": "Torre de hornos (mueble torre)",
             "type_component": "closet",
             "quantity": 1,
             "detail": {
                 "doors": 2,
                 "drawers": 0,
                 "shelves": 2,
-                "related_to": "Pared izquierda; torre de electrodomésticos (horno/microondas)"
+                "related_to": "Mueble bajo pared (run principal)"
             }
         },
         {
-            "name": "Mueble alto superior (sobre lavaplatos)",
+            "name": "Mueble alto continuo (sobre lavaplatos y mesón)",
             "type_component": "mueble_alto",
             "quantity": 1,
             "detail": {
                 "doors": 3,
                 "drawers": 0,
                 "shelves": 3,
-                "related_to": "Encimera/mesón posterior; ubicado sobre el mueble bajo con lavaplatos"
+                "related_to": "Mueble bajo pared (debajo del mesón)"
             }
         },
         {
-            "name": "Mueble bajo pared - módulo izquierdo",
+            "name": "Mueble bajo - run pared (bajo lavaplatos y área de trabajo)",
             "type_component": "mueble_bajo",
             "quantity": 1,
             "detail": {
-                "doors": 2,
-                "drawers": 0,
+                "doors": 3,
+                "drawers": 1,
                 "shelves": 1,
-                "related_to": "Linea inferior contra pared, adosado a la torre de hornos"
+                "related_to": "Mueble alto continuo"
             }
         },
         {
-            "name": "Mueble bajo pared - módulo central (bajo doble lavaplatos)",
-            "type_component": "mueble_bajo",
-            "quantity": 1,
-            "detail": {
-                "doors": 2,
-                "drawers": 0,
-                "shelves": 1,
-                "related_to": "Aloja lavaplatos doble; línea inferior contra pared"
-            }
-        },
-        {
-            "name": "Mueble bajo pared - módulo derecho",
-            "type_component": "mueble_bajo",
-            "quantity": 1,
-            "detail": {
-                "doors": 1,
-                "drawers": 2,
-                "shelves": 1,
-                "related_to": "Linea inferior contra pared, junto a espacio para nevera"
-            }
-        },
-        {
-            "name": "Isla - mueble bajo (con estufa/placa)",
+            "name": "Mueble bajo isla/península (con estufa sobre mesón)",
             "type_component": "mueble_bajo",
             "quantity": 1,
             "detail": {
                 "doors": 4,
-                "drawers": 0,
+                "drawers": 3,
                 "shelves": 1,
-                "related_to": "Isla central con estufa de 4 puestos y campana extractora"
+                "related_to": "Mesón isla (estructura de trabajo)"
             }
         },
         {
-            "name": "Mesón / Encimera (QUARZTONE)",
+            "name": "Mesón / Encimera (pared)",
             "type_component": "estructural",
             "quantity": 1,
             "detail": {
                 "doors": 0,
                 "drawers": 0,
                 "shelves": 0,
-                "related_to": "Tapa de los muebles bajos y de la isla"
+                "related_to": "Mueble bajo - run pared"
             }
         },
         {
-            "name": "Salpicadero / Zócalo",
+            "name": "Mesón / Encimera (isla)",
             "type_component": "estructural",
             "quantity": 1,
             "detail": {
                 "doors": 0,
                 "drawers": 0,
                 "shelves": 0,
-                "related_to": "Salpicadero sobre encimera y zócalo en base de muebles"
+                "related_to": "Mueble bajo isla"
+            }
+        },
+        {
+            "name": "Salpicadero / Zócalo (paneles y acabado posterior)",
+            "type_component": "estructural",
+            "quantity": 1,
+            "detail": {
+                "doors": 0,
+                "drawers": 0,
+                "shelves": 0,
+                "related_to": "Mesón / Encimera (pared)"
             }
         }
     ],
-    "configuration": "Distribución en línea contra pared (torre de hornos a la izquierda, encimera con lavaplatos) más isla central con placa de 4 puestos. Mueble alto continuo sobre la encimera; zócalo y salpicadero según plano.",
-    "comments": "Se identifican: 1 torre de hornos (tipo closet), 1 mueble alto continuo (3 puertas), 3 módulos de mueble bajo contra pared (izq, central con lavaplatos, derecho) y 1 isla mueble_bajo. Encimera y salpicadero clasificados como estructurales.",
+    "configuration": "Cocina con torre de hornos a la izquierda (modular de piso a techo), run principal de muebles bajos con lavaplatos y mesón, mueble alto continuo sobre el mesón, y península/isla con estufa y módulo de almacenamiento en frente.",
+    "comments": "Clasificación basada en vistas en planta, cortes y 3D: la torre se considera 'closet' por su altura tomada como módulo vertical de piso a techo en las alzadas. Los muebles altos forman un único mueble_alto continuo (misma altura y tapa). Las dos líneas de muebles bajos (run pared e isla) se consideran mueble_bajo separados porque están en líneas opuestas. Mesones y salpicadero se clasifican como estructurales.",
     "viability": {
-        "percentage": 80,
-        "reason": "Clasificación basada en geometría y vistas 2D/3D. Cantidad de puertas, cajones y entrepaños estimada a partir de módulos visibles; algunos detalles de herrajes y divisiones internas no son legibles a escala PDF, por lo que los conteos (especialmente cajones frente derecho y estantes internos) son aproximados."
+        "percentage": 75,
+        "reason": "Dibujo claro en disposición general y divisiones de frentes, pero hay ambigüedad en el conteo exacto de puertas vs cajones (líneas de frentes sugieren cajoneras en isla y posiblemente cajones en el run). Asimismo la altura exacta de la torre (si llega hasta forjado/techo) se asumió por alzados; si la torre no llega al techo dejaría de ser 'closet'. Se recomienda validar cantidades finales de cajones/entrepaños y la cota de remate superior de la torre en obra."
     }
 }

@@ -25,7 +25,7 @@ class FileItemWidget(QWidget):
         self.remove_btn.setObjectName("FileItemRemoveBtn")
         self.remove_btn.setFixedSize(20, 20)
         self.remove_btn.setCursor(Qt.PointingHandCursor)
-        self.remove_btn.clicked.connect(lambda: self.remove_clicked.emit(self.filepath))
+        self.remove_btn.clicked.connect(self.remove_element)
         
         # Icono del archivo
         icon_label = QLabel()
@@ -49,3 +49,6 @@ class FileItemWidget(QWidget):
         layout.addWidget(self.remove_btn)
         layout.addWidget(icon_label)
         layout.addWidget(name_label, 1)
+
+    def remove_element(self):
+        self.remove_clicked.emit(self.filepath)

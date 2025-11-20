@@ -11,7 +11,7 @@ from agents.ai_client import load_file, upload_file
 from agents.sg_analista_piezas import Analista_Piezas
 
 
-def Run_Analyst(input_dir:str, output_root:str, report_dir:str, furniture_name:str):
+def Run_Analyst(input_dir:str, output_root:str, furniture_name:str):
     #__________________________________________________________________________
     #  Preparacion de rutas
 
@@ -21,8 +21,8 @@ def Run_Analyst(input_dir:str, output_root:str, report_dir:str, furniture_name:s
     #__________________________________________________________________________
     #  Recuperacion del reporte de [Instructor de Modelacion]
 
-    with open(report_dir, "r", encoding="utf-8") as file:
-        report = file.read()
+    # with open(report_dir, "r", encoding="utf-8") as file:
+    #     report = file.read()
 
     #__________________________________________________________________________
     #  Preparacion de archivos para IA
@@ -60,7 +60,7 @@ def Run_Analyst(input_dir:str, output_root:str, report_dir:str, furniture_name:s
     valor = None
 
     while True:
-        disassemble_obj = agent_IA.Disassemble(files=file_data, report_text=report, prompt=valor)
+        disassemble_obj = agent_IA.Disassemble(files=file_data, prompt=valor)
 
         file_JSON = f"{output_root}\\{furniture_name}_piezas.json"
 

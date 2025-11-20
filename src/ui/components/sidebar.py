@@ -2,10 +2,13 @@ from PySide6.QtWidgets import QWidget, QVBoxLayout, QPushButton, QLabel, QSizePo
 from PySide6.QtCore import Qt, QSize
 from PySide6.QtGui import QIcon
 from pathlib import Path
+import json
 
 from config import settings
 from ui.components.fileitem_widget import FileItemWidget
 from ui.components.model_combobox import IconComboBox 
+from ui.controllers.furniture_controller import Furniture_Controller
+from ui.controllers.sg_model_controller import StarGPTModelController
 
 class SideBar(QWidget):
     def __init__(self, parent:QWidget|None = None):
@@ -15,6 +18,12 @@ class SideBar(QWidget):
         self.setAttribute(Qt.WA_StyledBackground, True)
 
         self.uploaded_files = []
+        self.furniture_name = ""
+        self.output_dir = ""
+        self.input_dir = ""
+        self.agent_IA = None
+
+        print(parent.__class__.__name__)
 
         # ======== Layout principal ========
 
@@ -47,7 +56,7 @@ class SideBar(QWidget):
         model_icon.setFixedSize(40,40)
         model_icon.setObjectName("SideBar-ModelIcon")
         #model_icon.setAlignment(Qt.AlignCenter)
-        model_icon.setPixmap(QIcon(settings.ANALISTA_PIEZAS_ICON_DIR).pixmap(40,40))
+        model_icon.setPixmap(QIcon(settings.OPEN_AI_LOGO_DIR).pixmap(40,40))
 
         wrapper_layout.addWidget(model_icon)
 
@@ -60,11 +69,11 @@ class SideBar(QWidget):
 
         # ------ Title ------
 
-        model_title = QLabel("Analista de Piezas")
-        model_title.setObjectName("SideBar-ModelTitle")
-        model_title.setAlignment(Qt.AlignCenter)
+        self.model_title = QLabel("STAR GPT")
+        self.model_title.setObjectName("SideBar-ModelTitle")
+        self.model_title.setAlignment(Qt.AlignCenter)
 
-        info_layout.addWidget(model_title)
+        info_layout.addWidget(self.model_title)
 
         main_layout.addWidget(info_container)
 
@@ -95,7 +104,11 @@ class SideBar(QWidget):
 
         self.furniture_combo = QComboBox()
         self.furniture_combo.setObjectName("SideBar-ComboBoxes")
-        self.furniture_combo.addItems(["Seleccione un mueble...","Mueble TV", "Mueble escritorio", "Mueble cocina", "Añadir mueble..."])
+
+        self.furniture_controller = Furniture_Controller(sidebar=self)
+        self.furniture_controller.Load_FurnitureFolders(settings.INPUT_DIR)
+
+        self.furniture_combo.currentIndexChanged.connect(self.furniture_controller.Change_Furniture)
 
         options_layout.addWidget(self.furniture_combo)
 
@@ -109,9 +122,18 @@ class SideBar(QWidget):
         # ------ ComboBox | Models ------
 
         self.model_combo = IconComboBox(self)
-        self.model_combo.add_item("Instructor de Modelacion", settings.INSTRUCTOR_ICON_CB)
+        # self.model_combo.add_item("Instructor de Modelacion", settings.INSTRUCTOR_ICON_CB)
+        self.model_combo.add_item("STAR GPT", settings.IA_ICON_DIR)
         self.model_combo.add_item("Analista de Piezas", settings.ANALISTA_ICON_CB)
+        #self.model_combo.model.item(1).setEnabled(False)
         self.model_combo.add_item("Supervisor de Piezas", settings.SUPERVISOR_ICON_CB)
+        self.model_combo.model.item(2).setEnabled(False)
+
+        self.model_combo_controller = StarGPTModelController(sidebar=self, main_window=parent)
+
+        self.model_combo.currentIndexChanged.connect(self.model_combo_controller.Change_Model)
+
+        self.model_combo.setEnabled(False)
 
         options_layout.addWidget(self.model_combo)
 
@@ -223,3 +245,11 @@ class SideBar(QWidget):
             item = self.files_layout.takeAt(0)
             if item.widget():
                 item.widget().deleteLater()
+
+    def save_output_JSON(self, response_obj):
+        file_JSON = f"{self.output_dir}\\{self.furniture_name}_piezas.json"
+
+        #print(disassemble_obj)
+
+        with open(file_JSON, "w", encoding="utf-8") as f:
+            json.dump(response_obj.dict(), f, indent=4, ensure_ascii=False)

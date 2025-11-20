@@ -5,30 +5,29 @@ from agents.base_agent import BaseAgent
 from config.prompts import Analista_Piezas_Prompt
 
 class Analista_Piezas(BaseAgent):
+    #SG_MODEL = "gpt-4.1-nano"
     SG_MODEL = "gpt-5-mini"
     SG_RESPONSE_FORMAT = "json_object"
     SG_TEMPERATURE = 0.5
+    SG_USER_PROMPT = f"""Analiza los planos adjuntos y genera el JSON del mueble según las reglas del sistema. Incluye los componentes y su clasificación exacta según los dibujos. No agregues texto fuera del JSON."""
 
-    def __init__(self):
+    def __init__(self, files = None):
         super().__init__(
             system_prompt=Analista_Piezas_Prompt(), 
             model=self.SG_MODEL,
             default_tools=[],
-            temperature=self.SG_TEMPERATURE
+            temperature=self.SG_TEMPERATURE,
+            files=files
         )
 
-    def Disassemble(self, files = None, report_text:str = None, prompt = None):
+    def Disassemble(self, prompt = None):
         # --- Prompt ---
         if prompt == None:
-            prompt = f"""
-                Analiza los planos adjuntos y genera el JSON del mueble según las reglas del sistema. 
-                Incluye los componentes y su clasificación exacta según los dibujos. 
-                No agregues texto fuera del JSON.
-            """
+            prompt = self.SG_USER_PROMPT
 
         # --- Ejecutar agente ---
         print("[AI_Refiner] Enviando informe preliminar al modelo IA...")
         
-        model_Output = self.run(prompt=prompt, files=files)
+        model_Output = self.run(prompt=prompt, files=self.files)
 
         return model_Output

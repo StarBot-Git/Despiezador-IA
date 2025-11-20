@@ -24,18 +24,29 @@ FONT_LIGHT = "#000000"
 BACKGROUND_DARK = "#000000"
 FONT_DARK = "#FFFFFF"
 
-# ======== RUTAS =========
+# ======== RUTAS PRINCIPALES =========
 
 ROOT_DIR = Path(__file__).parent.parent.parent
 ASSETS_DIR = ROOT_DIR / "assets"
 ICONS_DIR = ASSETS_DIR / "icons"
+INPUT_DIR = ROOT_DIR / "input"
+OUTPUT_DIR = ROOT_DIR / "output"
+SRC_DIR = ROOT_DIR / "src"
+
+# ======== RUTAS MODELOS STARGPT =========
+
+ANALISTA_PIEZAS_PATH = str(SRC_DIR / "analista_piezas")
+
 
 LOGO_DIR = str(ICONS_DIR / "all_star_logo.svg")
 
+OPEN_AI_LOGO_DIR = str(ICONS_DIR / "openAI.svg")
 ANALISTA_PIEZAS_ICON_DIR = str(ICONS_DIR / "analista_piezas.svg")
 INSTRUCTOR_ICON_CB = str(ICONS_DIR / "instructor.svg")
 ANALISTA_ICON_CB = str(ICONS_DIR / "analista.svg")
 SUPERVISOR_ICON_CB = str(ICONS_DIR / "supervisor.svg")
+
+IA_ICON_DIR = str(ICONS_DIR / "AI_icon.svg")
 
 PDF_ICON_DIR = str(ICONS_DIR / "pdf_file.svg")
 IMAGE_ICON_DIR = str(ICONS_DIR / "images.svg")
