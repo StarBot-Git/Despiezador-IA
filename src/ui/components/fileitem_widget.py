@@ -13,6 +13,7 @@ class FileItemWidget(QWidget):
         self.filepath = filepath
         self.filename = Path(filepath).name
         self.setObjectName("FileItem")
+        self.setAttribute(Qt.WA_StyledBackground, True)
         
         # Layout horizontal
         layout = QHBoxLayout(self)

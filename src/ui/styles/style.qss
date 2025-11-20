@@ -131,18 +131,43 @@ QMainWindow {
 /* Área de scroll de archivos */
 #FileListScrollArea {
     border: none;
+    background: transparent;  /* ✅ Cambiado de #c61414 a transparent */
+}
+
+/* Widget contenedor interno del scroll */
+#FileListScrollArea > QWidget {
     background: transparent;
+}
+
+#FilesContainer {
+    background: transparent;
+}
+
+/* ScrollBar del área (opcional, para ocultarla o estilizarla) */
+#FileListScrollArea QScrollBar:vertical {
+    background: transparent;
+    width: 8px;
+}
+
+#FileListScrollArea QScrollBar::handle:vertical {
+    background: #D1D5DB;
+    border-radius: 4px;
+}
+
+#FileListScrollArea QScrollBar::add-line:vertical,
+#FileListScrollArea QScrollBar::sub-line:vertical {
+    height: 0px;
 }
 
 /* Item individual de archivo */
 #FileItem {
-    background: #F9FAFB;
+    background: #FFFFFF;  /* ✅ Fondo blanco */
     border: 1px solid #E5E7EB;
     border-radius: 8px;
 }
 
 #FileItem:hover {
-    background: #F3F4F6;
+    background: #F9FAFB;  /* ✅ Hover muy suave */
     border-color: #D1D5DB;
 }
 
@@ -150,22 +175,22 @@ QMainWindow {
 #FileItemRemoveBtn {
     background: transparent;
     border: none;
-    color: #9CA3AF;
-    font-size: 20px;
-    font-weight: bold;
+    color: #D1D5DB;  /* ✅ Gris más suave */
+    font-size: 18px;
+    font-weight: normal;
     padding: 0px;
 }
 
 #FileItemRemoveBtn:hover {
     color: #EF4444;
-    background: #FEE2E2;
-    border-radius: 4px;
+    background: transparent;  /* ✅ Sin fondo en hover */
 }
 
 /* Nombre del archivo */
 #FileItemName {
     font-size: 13px;
     color: #374151;
+    font-weight: 400;
 }
 
 /* Botón de upload */
@@ -174,7 +199,7 @@ QMainWindow {
     color: {{SECONDARY}};
     border: none;
     border-radius: 8px;
-    padding: 14px;
+    padding: 8px;
     font-size: 14px;
     font-weight: 600;
 }
@@ -243,4 +268,81 @@ QMainWindow {
 
 #ModelComboBox QAbstractItemView::item:selected {
     background: #E5E7EB;
+}
+
+/* ========== CHAT AREA ========== */
+
+#ChatContentArea{
+  background: {{SECONDARY}};
+}
+
+#Chat_TopBar{
+  background: {{SECONDARY}};
+}
+
+#ChatArea{
+  background: {{SECONDARY}}
+}
+
+/* ========== COMBOBOX TOP BAR ========== */
+
+#ChatTopBar-ModelOpenAICB {
+    background: {{SECONDARY}};
+    color: {{PRIMARY}};
+    border: 0px solid;
+    border-radius: 8px;
+    min-height: 24px;
+    padding: 4px 16px;
+    font-family: "Segoe UI", "Inter", Arial;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+#ChatTopBar-ModelOpenAICB:hover {
+    background: #F9FAFB;
+}
+
+#ChatTopBar-ModelOpenAICB:on {
+    border: 0px solid {{PRIMARY}};
+}
+
+#ChatTopBar-ModelOpenAICB::drop-down {
+    border: none;
+    width: 20px;
+    subcontrol-origin: padding;
+    subcontrol-position: center right;
+    padding-right: 8px;
+}
+
+#ChatTopBar-ModelOpenAICB::down-arrow {
+    image: url(":/icons/Dropdown.svg");
+    border: none;
+    width: 18px;
+    height: 18px;
+}
+
+/* Dropdown menu */
+#ChatTopBar-ModelOpenAICB QAbstractItemView {
+    background: #ececec;
+    color: {{FONT_LIGHT}};
+    border: 1px solid #ececec;
+    padding: 2px 0;
+    outline: none;
+    font-family: "Segoe UI", "Inter", Arial;
+    min-width: 150px;
+    border-radius: 8px;
+}
+
+#ChatTopBar-ModelOpenAICB QAbstractItemView::item {
+    padding: 4px 0px;
+    min-height: 24px;
+}
+
+#ChatTopBar-ModelOpenAICB QAbstractItemView::item:hover {
+    background: #F3F4F6;
+}
+
+#ChatTopBar-ModelOpenAICB QAbstractItemView::item:selected {
+    background: #EFF6FF;
+    color: {{PRIMARY}};
 }

@@ -31,14 +31,22 @@ ASSETS_DIR = ROOT_DIR / "assets"
 ICONS_DIR = ASSETS_DIR / "icons"
 
 LOGO_DIR = str(ICONS_DIR / "all_star_logo.svg")
+
 ANALISTA_PIEZAS_ICON_DIR = str(ICONS_DIR / "analista_piezas.svg")
 INSTRUCTOR_ICON_CB = str(ICONS_DIR / "instructor.svg")
 ANALISTA_ICON_CB = str(ICONS_DIR / "analista.svg")
 SUPERVISOR_ICON_CB = str(ICONS_DIR / "supervisor.svg")
 
-PDF_ICON_DIR = ANALISTA_PIEZAS_ICON_DIR
-IMAGE_ICON_DIR = ANALISTA_PIEZAS_ICON_DIR
+PDF_ICON_DIR = str(ICONS_DIR / "pdf_file.svg")
+IMAGE_ICON_DIR = str(ICONS_DIR / "images.svg")
 FILE_ICON_DIR = ANALISTA_PIEZAS_ICON_DIR
+
+UPLOAD_ICON_DIR = str(ICONS_DIR / "upload.svg")
+
+ARROW_ICON_CHAT_TOPBAR = str(ICONS_DIR / "Dropdown.svg")
+
+CARD_TOKENS_DIR = str(ICONS_DIR / "diagram_bar.svg")
+CARD_COST_DIR = str(ICONS_DIR / "dolar_icon.svg")
 
 ONEDRIVE_CARPENTRY_DIR = str(Path.home() / "OneDrive" / "Carpintería")
 ONEDRIVE_MODELS_DIR = str(Path.home() / "OneDrive" / "Carpintería" / "Modelos Produccion")

@@ -4,7 +4,7 @@ from PySide6.QtGui import QIcon
 from config import settings
 
 # En TopBar.__init__
-class TopBar(QFrame):
+class Window_TopBar(QFrame):
     def __init__(self, parent:QWidget|None = None):
         super().__init__(parent)
         self.setObjectName("TopBar")

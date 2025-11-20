@@ -1,9 +1,12 @@
-from PySide6.QtCore import Qt
+from PySide6.QtCore import Qt, QSize
 from PySide6.QtWidgets import *
 from PySide6.QtGui import QIcon
+
 from ui.components.sidebar import SideBar
 from config import settings
-from ui.components.topbar import TopBar
+from ui.components.window_topbar import Window_TopBar
+from ui.components.chat_topbar import Chat_TopBar
+from ui.components.chat_area import ChatWidget
 
 class MainWindow(QMainWindow):
     def __init__(self):
@@ -25,12 +28,12 @@ class MainWindow(QMainWindow):
 
         # ======== Top Bar ========
 
-        self.topbar = TopBar(self)
-        self.topbar.setSizePolicy(QSizePolicy.Expanding, QSizePolicy.Fixed)
-        self.topbar.setFixedHeight(50)
-        root.addWidget(self.topbar)
+        self.window_topbar = Window_TopBar(self)
+        self.window_topbar.setSizePolicy(QSizePolicy.Expanding, QSizePolicy.Fixed)
+        self.window_topbar.setFixedHeight(50)
+        root.addWidget(self.window_topbar)
 
-        root.addWidget(self.topbar, alignment=Qt.AlignTop)
+        root.addWidget(self.window_topbar, alignment=Qt.AlignTop)
 
         # ======== Subcontenedor | Sidebar + Content/Table ========
             # - Sidebar (panel de selección)
@@ -38,7 +41,7 @@ class MainWindow(QMainWindow):
             # - Content/Table (vista dinámica)
 
         main_container = QHBoxLayout()
-        main_container.setContentsMargins(16,16,16,16)   # <--- CAMBIO
+        main_container.setContentsMargins(16,0,16,16)   # <--- CAMBIO
         main_container.setSpacing(12)                 # <--- CAMBIO
 
 
@@ -50,9 +53,6 @@ class MainWindow(QMainWindow):
         self.sidebar.setSizePolicy(QSizePolicy.Fixed, QSizePolicy.Expanding)
         self.sidebar.setFixedWidth(285)
 
-        #self._SelectionPanelController = SelectionPanelController(self, self.DB) # Controlador del panel de selección
-        #self._SelectionPanelController.Start_SP() # Cargar datos iniciales proveniente de la base de datos
-
         main_container.addWidget(self.sidebar, 0)
 
         vsep = QFrame(self); vsep.setObjectName("SideDivider"); vsep.setFrameShape(QFrame.VLine)
@@ -61,11 +61,110 @@ class MainWindow(QMainWindow):
         # ========= Chat Container ========
 
         self.chat_container = QWidget(self)
-        self.chat_container.setObjectName("ContentArea")
+        self.chat_container.setObjectName("ChatContentArea")
 
         chat_content_layout = QVBoxLayout(self.chat_container)
         chat_content_layout.setContentsMargins(8, 8, 8, 8)
         chat_content_layout.setSpacing(8)
+
+        # ========= TopBar | Chat Container =========
+
+        self.chat_topbar = Chat_TopBar(self.chat_container)
+        self.chat_topbar.setSizePolicy(QSizePolicy.Expanding, QSizePolicy.Fixed)
+        self.chat_topbar.setFixedHeight(75)
+
+        chat_content_layout.addWidget(self.chat_topbar)
+
+        # ========= Separador horizontal  | Decorativo ========
+
+        divider = QFrame(self)
+        divider.setObjectName("TopDivider")
+        divider.setFrameShape(QFrame.HLine)
+
+        chat_content_layout.addWidget(divider)
+
+        # ========= Chat Area =========
+
+        self.chat_area = ChatWidget()
+        self.chat_area.setSizePolicy(QSizePolicy.Expanding, QSizePolicy.Expanding)
+
+        chat_content_layout.addWidget(self.chat_area)
+
+        # ========= Separador horizontal  | Decorativo ========
+
+        divider = QFrame(self)
+        divider.setObjectName("TopDivider")
+        divider.setFrameShape(QFrame.HLine)
+
+        chat_content_layout.addWidget(divider)
+
+        # ========= Message Area =========
+
+        input_layout = QHBoxLayout()
+        input_layout.setContentsMargins(0, 0, 0, 0)
+        input_layout.setSpacing(12)
+
+        self.input_field = QLineEdit()
+        self.input_field.setPlaceholderText("Escribe tu mensaje aquí...")
+        self.input_field.setMinimumHeight(42)
+        self.input_field.setStyleSheet("""
+            QLineEdit {
+                background: #F5F7F9;
+                border: 1px solid #E0E6EB;
+                border-radius: 20px;
+                padding-left: 16px;
+                font-size: 14px;
+                color: #133855;
+            }
+            QLineEdit:focus {
+                border: 1px solid #C5D4E0;
+                background: #FFFFFF;
+            }
+        """)
+
+        self.send_button = QPushButton("  Enviar")
+        self.send_button.setCursor(Qt.PointingHandCursor)
+        self.send_button.setMinimumHeight(42)
+        self.send_button.setIcon(QIcon("assets/icons/paper_plane.png"))
+        self.send_button.setIconSize(QSize(18, 18))
+
+        self.send_button.setStyleSheet("""
+            QPushButton {
+                background: #0F3A55;
+                color: white;
+                border-radius: 20px;
+                padding: 0 18px;
+                font-size: 14px;
+                font-weight: 600;
+            }
+            QPushButton:hover {
+                background: #174C71;
+            }
+            QPushButton:pressed {
+                background: #0B2C40;
+            }
+        """)
+
+        self.send_button.clicked.connect(self.handle_send_message)
+        self.input_field.returnPressed.connect(self.handle_send_message)
+
+
+
+        input_layout.addWidget(self.input_field)
+        input_layout.addWidget(self.send_button)
+
+        chat_content_layout.addLayout(input_layout)
+
+
+        # ========= Message Area =========
+
+        # self.message_area = QWidget()
+        # self.message_area.setSizePolicy(QSizePolicy.Expanding, QSizePolicy.Fixed)
+        # self.message_area.setFixedHeight(50)
+
+        # chat_content_layout.addWidget(self.message_area)
+
+        # ========= FIN =========
 
         main_container.addWidget(self.chat_container, 1)
 
@@ -82,3 +181,14 @@ class MainWindow(QMainWindow):
         # layout.addWidget(self.main_area)
 
         self.setCentralWidget(central)
+
+    def handle_send_message(self):
+        text = self.input_field.text().strip()
+        if not text:
+            return
+
+        self.chat_area.add_message(text, role="user")
+        self.input_field.clear()
+
+        # Llamar a tu IA y añadir la respuesta:
+        # self.chat_widget.add_message(respuesta, role="assistant")

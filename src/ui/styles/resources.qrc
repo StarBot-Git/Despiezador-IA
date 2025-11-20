@@ -1,0 +1,5 @@
+<RCC>
+    <qresource prefix="/icons">
+        <file alias="Dropdown.svg">../../../assets/icons/Dropdown.svg</file>
+    </qresource>
+</RCC>

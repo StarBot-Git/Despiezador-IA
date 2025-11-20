@@ -1,5 +1,5 @@
 from PySide6.QtWidgets import QWidget, QVBoxLayout, QPushButton, QLabel, QSizePolicy, QFrame, QComboBox, QScrollArea, QFileDialog, QHBoxLayout
-from PySide6.QtCore import Qt
+from PySide6.QtCore import Qt, QSize
 from PySide6.QtGui import QIcon
 from pathlib import Path
 
@@ -115,12 +115,6 @@ class SideBar(QWidget):
 
         options_layout.addWidget(self.model_combo)
 
-        # self.model_combo = QComboBox()
-        # # self.furniture_combo.setObjectName("SideBar-ComboBoxes")
-        # self.model_combo.addItems(["Instructor de Modelacion", "Analista de Piezas", "Supervisor de Piezas"])
-
-        # options_layout.addWidget(self.model_combo)
-
         main_layout.addWidget(options_container)
 
         # ======== Separador Horizontal ========
@@ -150,6 +144,7 @@ class SideBar(QWidget):
         
         # Widget contenedor de la lista
         self.files_container = QWidget()
+        self.files_container.setObjectName("FilesContainer")
         self.files_layout = QVBoxLayout(self.files_container)
         self.files_layout.setContentsMargins(0, 0, 0, 0)
         self.files_layout.setSpacing(8)
@@ -159,18 +154,21 @@ class SideBar(QWidget):
         main_layout.addWidget(scroll_area)
         
         # ======== Botón: Adjuntar Archivos ========
-        upload_btn = QPushButton("⬆ Adjuntar Archivos")
+        upload_btn = QPushButton(" Adjuntar Archivos")
         upload_btn.setObjectName("SideBarUploadButton")
         upload_btn.setCursor(Qt.PointingHandCursor)
+        upload_btn.setIcon(QIcon(settings.UPLOAD_ICON_DIR))
+        upload_btn.setIconSize(QSize(16,16))
         upload_btn.clicked.connect(self.open_file_dialog)
+
+        main_layout.addWidget(upload_btn)
         
         # Texto de formatos permitidos
-        formats_label = QLabel("PDF, PNG, JPG")
-        formats_label.setObjectName("SideBarFormatsLabel")
-        formats_label.setAlignment(Qt.AlignCenter)
+        # formats_label = QLabel("PDF, PNG, JPG")
+        # formats_label.setObjectName("SideBarFormatsLabel")
+        # formats_label.setAlignment(Qt.AlignCenter)
         
-        main_layout.addWidget(upload_btn)
-        main_layout.addWidget(formats_label)
+        # main_layout.addWidget(formats_label)
 
 
         # ======== fIN ========

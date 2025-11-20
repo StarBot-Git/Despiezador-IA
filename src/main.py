@@ -16,6 +16,7 @@ from instructor_modelacion.cli import Run_Instructor
 from analista_piezas.cli import Run_Analyst
 from supervisor_piezas.cli import Run_Supervisor
 from config import settings
+import config.resources_rc
 
 def apply_stylesheet(app: QApplication) -> None:
     # === Cargar hoja de estilos | main.qss ===
@@ -33,6 +34,7 @@ def apply_stylesheet(app: QApplication) -> None:
         qss = qss.replace('{{FONT_LIGHT}}', settings.FONT_LIGHT)
         qss = qss.replace('{{BG_DARK}}', settings.BACKGROUND_DARK)
         qss = qss.replace('{{BG_LIGHT}}', settings.BACKGROUND_LIGHT)
+        #qss = qss.replace('{{ARROW_ICON_CHAT_TOPBAR}}', settings.ARROW_ICON_CHAT_TOPBAR)
         
         # === Aplicar hoja de estilos ===
         app.setStyleSheet(qss)
@@ -46,6 +48,7 @@ def main():
     window.show()
 
     sys.exit(app.exec())
+
     # # --- Rutas base del proyecto ---
     # project_root = BASE                                        # → /DESPIEZADOR IA/
     # input_dir = project_root / "input" / NOMBRE_MUEBLE         # → /input/mueble_actual/
