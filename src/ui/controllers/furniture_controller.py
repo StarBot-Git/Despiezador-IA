@@ -6,15 +6,16 @@ from utils.scanner import Scan_InputFolder
 from config import settings
 
 class Furniture_Controller:
-    def __init__(self, sidebar):
+    def __init__(self, sidebar, main_window):
         self.sidebar = sidebar
+        self.main_window = main_window
 
     def Change_Furniture(self):
 
         # ------ Cargar los archivos -------
 
         self.sidebar.clear_files()
-        self.sidebar.furniture_name = furniture_name = self.sidebar.furniture_combo.currentText()
+        self.sidebar.furniture_name = self.main_window.furniture_name = furniture_name = self.sidebar.furniture_combo.currentText()
 
         if not furniture_name == "Seleccione un mueble...":
             print(f"{furniture_name}")
@@ -23,8 +24,8 @@ class Furniture_Controller:
             output_path = settings.OUTPUT_DIR / furniture_name
 
             if os.path.isdir(furniture_path):
-                self.sidebar.input_dir = Normalize_Path(furniture_path)           # utils.paths | Normaliza ruta
-                self.sidebar.output_dir = Ensure_OutputsRoot(output_path)         # utils.paths | Asegura existencia de la ruta
+                self.sidebar.input_dir = self.main_window.input_dir = Normalize_Path(furniture_path)           # utils.paths | Normaliza ruta
+                self.sidebar.output_dir = self.main_window.output_dir = Ensure_OutputsRoot(output_path)         # utils.paths | Asegura existencia de la ruta
             else:
                 return
 
@@ -44,9 +45,11 @@ class Furniture_Controller:
 
             # ------ Activar | Modelos StarGPT ------
             self.sidebar.model_combo.setEnabled(True)
+            self.main_window.window_topbar.btn_folder.setEnabled(True)
 
         else:
             self.sidebar.model_combo.setEnabled(False)
+            self.main_window.window_topbar.btn_folder.setEnabled(False)
             
     def Load_FurnitureFolders(self, input_path="Input"):
         self.sidebar.furniture_combo.clear()

@@ -23,8 +23,6 @@ class SideBar(QWidget):
         self.input_dir = ""
         self.agent_IA = None
 
-        print(parent.__class__.__name__)
-
         # ======== Layout principal ========
 
         main_layout = QVBoxLayout(self)
@@ -105,7 +103,7 @@ class SideBar(QWidget):
         self.furniture_combo = QComboBox()
         self.furniture_combo.setObjectName("SideBar-ComboBoxes")
 
-        self.furniture_controller = Furniture_Controller(sidebar=self)
+        self.furniture_controller = Furniture_Controller(sidebar=self, main_window=parent)
         self.furniture_controller.Load_FurnitureFolders(settings.INPUT_DIR)
 
         self.furniture_combo.currentIndexChanged.connect(self.furniture_controller.Change_Furniture)

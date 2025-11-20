@@ -17,6 +17,50 @@ QMainWindow {
     color: {{SECONDARY}};
 }
 
+/* ========== BUTTONS TOPBAR ========== */
+
+/* --- BOTÓN BASE --- */
+#Button_Style {
+    width: 36px;
+    height: 36px;
+    padding: 0px;
+
+    background: transparent;
+    border: none;
+
+    border-radius: 10px;
+
+    color: #FFFFFF;         /* Icono blanco */
+}
+
+/* --- ICONO CENTRADO --- */
+#Button_Style::icon {
+    subcontrol-origin: content;
+    subcontrol-position: center center;
+}
+
+/* --- HOVER: fondo suave azulado --- */
+#Button_Style:hover {
+    background: rgba(255, 255, 255, 0.08);   /* similar a tu imagen */
+}
+
+/* --- PRESSED: un poco más oscuro --- */
+#Button_Style:pressed {
+    background: rgba(255, 255, 255, 0.15);
+}
+
+/* --- BOTÓN ACTIVO (State="true") --- */
+#Button_Style[State="true"] {
+    background: rgba(255, 255, 255, 0.18);
+    border-radius: 10px;
+}
+
+/* --- DESACTIVADO --- */
+#Button_Style:disabled {
+    background: transparent;
+}
+
+
 #TopDivider  { color: #E5E7EB; }
 #SideDivider { color: #E5E7EB; }
 
@@ -243,7 +287,7 @@ QMainWindow {
 }
 
 #ModelComboBox::down-arrow {
-    image: url(ui/assets/icons/chevron-down.png);  /* Tu icono de flecha */
+    image: None;
     width: 12px;
     height: 12px;
 }

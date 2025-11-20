@@ -19,6 +19,9 @@ class MainWindow(QMainWindow):
         self.setWindowIcon(QIcon(settings.LOGO_DIR)) # Logo All Star | Barra de la App
 
         self.agent_IA = None
+        self.furniture_name = ""
+        self.output_dir = ""
+        self.input_dir = ""
 
         # ======== Layout principal ========
 

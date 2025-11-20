@@ -56,6 +56,8 @@ UPLOAD_ICON_DIR = str(ICONS_DIR / "upload.svg")
 
 ARROW_ICON_CHAT_TOPBAR = str(ICONS_DIR / "Dropdown.svg")
 
+FOLDER_ICON_DIR = str(ICONS_DIR / "folder.svg")
+
 CARD_TOKENS_DIR = str(ICONS_DIR / "diagram_bar.svg")
 CARD_COST_DIR = str(ICONS_DIR / "dolar_icon.svg")
 

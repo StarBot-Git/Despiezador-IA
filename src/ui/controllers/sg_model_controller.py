@@ -45,5 +45,6 @@ class StarGPTModelController:
             
             file_data[file_id] = file_type
 
-        print(file_data)
+        #print(file_data)
+        
         return file_data
