@@ -1,14 +1,17 @@
+import json
+
 from PySide6.QtWidgets import QWidget, QVBoxLayout, QPushButton, QLabel, QSizePolicy, QFrame, QComboBox, QScrollArea, QFileDialog, QHBoxLayout
 from PySide6.QtCore import Qt, QSize
 from PySide6.QtGui import QIcon
 from pathlib import Path
-import json
 
-from config import settings
+# ====== IMPORTACIONES PROPIAS ======
+from ui.config import icons
+from core import config
 from ui.components.fileitem_widget import FileItemWidget
 from ui.components.model_combobox import IconComboBox 
 from ui.controllers.furniture_controller import Furniture_Controller
-from ui.controllers.sg_model_controller import StarGPTModelController
+#from ui.controllers.sg_model_controller import StarGPTModelController
 
 class SideBar(QWidget):
     def __init__(self, parent:QWidget|None = None):
@@ -53,10 +56,11 @@ class SideBar(QWidget):
         model_icon = QLabel()
         model_icon.setFixedSize(40,40)
         model_icon.setObjectName("SideBar-ModelIcon")
-        #model_icon.setAlignment(Qt.AlignCenter)
-        model_icon.setPixmap(QIcon(settings.OPEN_AI_LOGO_DIR).pixmap(40,40))
+        model_icon.setPixmap(QIcon(icons.OPENAI_LOGO).pixmap(40,40))
 
         wrapper_layout.addWidget(model_icon)
+
+        # ------ Aux ------
 
         row = QHBoxLayout()
         row.addStretch(1)
@@ -72,7 +76,6 @@ class SideBar(QWidget):
         self.model_title.setAlignment(Qt.AlignCenter)
 
         info_layout.addWidget(self.model_title)
-
         main_layout.addWidget(info_container)
 
         # ======== Separador Horizontal ========
@@ -104,7 +107,7 @@ class SideBar(QWidget):
         self.furniture_combo.setObjectName("SideBar-ComboBoxes")
 
         self.furniture_controller = Furniture_Controller(sidebar=self, main_window=parent)
-        self.furniture_controller.Load_FurnitureFolders(settings.INPUT_DIR)
+        self.furniture_controller.Load_FurnitureFolders(config.INPUT_DIR)
 
         self.furniture_combo.currentIndexChanged.connect(self.furniture_controller.Change_Furniture)
 
@@ -121,15 +124,14 @@ class SideBar(QWidget):
 
         self.model_combo = IconComboBox(self)
         # self.model_combo.add_item("Instructor de Modelacion", settings.INSTRUCTOR_ICON_CB)
-        self.model_combo.add_item("STAR GPT", settings.IA_ICON_DIR)
-        self.model_combo.add_item("Analista de Piezas", settings.ANALISTA_ICON_CB)
+        self.model_combo.add_item("STAR GPT", icons.IA_ICON)
+        self.model_combo.add_item("Analista de Piezas", icons.ANALISTA)
         #self.model_combo.model.item(1).setEnabled(False)
-        self.model_combo.add_item("Supervisor de Piezas", settings.SUPERVISOR_ICON_CB)
+        self.model_combo.add_item("Supervisor de Piezas", icons.SUPERVISOR)
         self.model_combo.model.item(2).setEnabled(False)
 
-        self.model_combo_controller = StarGPTModelController(sidebar=self, main_window=parent)
-
-        self.model_combo.currentIndexChanged.connect(self.model_combo_controller.Change_Model)
+        # self.model_combo_controller = StarGPTModelController(sidebar=self, main_window=parent)
+        # self.model_combo.currentIndexChanged.connect(self.model_combo_controller.Change_Model)
 
         self.model_combo.setEnabled(False)
 
@@ -180,7 +182,7 @@ class SideBar(QWidget):
         upload_btn = QPushButton(" Adjuntar Archivos")
         upload_btn.setObjectName("SideBarUploadButton")
         upload_btn.setCursor(Qt.PointingHandCursor)
-        upload_btn.setIcon(QIcon(settings.UPLOAD_ICON_DIR))
+        upload_btn.setIcon(QIcon(icons.UPLOAD_ICON))
         upload_btn.setIconSize(QSize(16,16))
         upload_btn.clicked.connect(self.open_file_dialog)
 

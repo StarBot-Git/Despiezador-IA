@@ -2,11 +2,12 @@ from PySide6.QtWidgets import QFrame, QLabel, QWidget, QHBoxLayout, QPushButton,
 from PySide6.QtCore import Qt, QSize
 from PySide6.QtGui import QIcon
 
-from config import settings
-from ui.controllers.topbar_controller import open_folder
+# ====== IMPORTACIONES PROPIAS ======
+from ui.config import icons
+from core import config
+from ui.controllers.topbar_controller import Open_Folder
 
 
-# En TopBar.__init__
 class Window_TopBar(QFrame):
     def __init__(self, parent:QWidget|None = None):
         super().__init__(parent)
@@ -20,22 +21,26 @@ class Window_TopBar(QFrame):
 
         # ======== Titulo de barra =========
 
-        self._title = QLabel(settings.APP_NAME, self)
-        self._title.setObjectName("TopBar-Title")
+        title = QLabel(config.APP_NAME, self)
+        title.setObjectName("TopBar-Title")
 
-        main_layout.addWidget(self._title, 0, Qt.AlignVCenter)
+        main_layout.addWidget(title, 0, Qt.AlignVCenter)
 
         main_layout.addStretch(1)
 
         # ======== Botones |  =========
 
         self.btn_folder = QPushButton("")
-        self.btn_folder.clicked.connect(lambda: open_folder(parent.input_dir, parent.furniture_name))
-        self.set_Button_Style(self.btn_folder, icon_path=settings.FOLDER_ICON_DIR)
+        self.btn_folder.clicked.connect(lambda: Open_Folder(parent.input_dir, parent.furniture_name))
+        self.set_Button_Style(self.btn_folder, icon_path=icons.FOLDER_ICON)
+
         main_layout.addWidget(self.btn_folder, 0, Qt.AlignVCenter)
 
         # ======== FIN =========
 
+    """
+        set_Button_Style():
+    """
     def set_Button_Style(self, button:QPushButton, icon_path:str = "", enabled:bool = False):
         # === Estilo base | Button ===
         button.setObjectName("Button_Style")

@@ -1,4 +1,4 @@
-from config import settings
+from core import config
 
 class ModelOpenAI_Controller:
     def __init__(self, chat_topbar, main_window):
@@ -9,5 +9,5 @@ class ModelOpenAI_Controller:
         model = self.chat_topbar.model_openAI_combo.currentText()
 
         if self.main_window.agent_IA:
-            print(f"De [{model}] sale: {settings.OPENAI_MODELS[model]["name"]}")
-            self.main_window.agent_IA.model = settings.OPENAI_MODELS[model]["name"]
+            print(f"De [{model}] sale: {config.OPENAI_MODELS[model]["name"]}")
+            self.main_window.agent_IA.model = config.OPENAI_MODELS[model]["name"]

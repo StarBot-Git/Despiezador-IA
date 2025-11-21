@@ -2,7 +2,8 @@ from PySide6.QtWidgets import QFrame, QLabel, QWidget, QHBoxLayout, QPushButton,
 from PySide6.QtCore import Qt, QSize
 from PySide6.QtGui import QIcon
 
-from config import settings
+from ui.config import theme, icons
+from core import config
 from ui.components.info_card import InfoCard
 from ui.controllers.model_openAI_controller import ModelOpenAI_Controller
 
@@ -37,8 +38,8 @@ class Chat_TopBar(QFrame):
         self.card_tokens = InfoCard(
             title="Tokens usados",
             value="0",
-            accent_color=settings.BLUE_ALL_STAR,
-            icon_path=settings.CARD_TOKENS_DIR
+            accent_color=theme.BLUE_ALL_STAR,
+            icon_path=icons.CARD_TOKENS
         )
 
         main_layout.addWidget(self.card_tokens)
@@ -48,8 +49,8 @@ class Chat_TopBar(QFrame):
         self.card_tokens_price = InfoCard(
             title="Costo estimado",
             value="0.00",
-            accent_color=settings.ORANGE_ALL_STAR,
-            icon_path=settings.CARD_COST_DIR
+            accent_color=theme.ORANGE_ALL_STAR,
+            icon_path=icons.CARD_COST
         )
 
         main_layout.addWidget(self.card_tokens_price)

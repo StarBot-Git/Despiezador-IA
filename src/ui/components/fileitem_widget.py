@@ -2,7 +2,7 @@ from PySide6.QtWidgets import QWidget, QHBoxLayout, QLabel, QPushButton
 from PySide6.QtCore import Qt, Signal
 from PySide6.QtGui import QIcon
 from pathlib import Path
-from config import settings
+from core import config
 
 class FileItemWidget(QWidget):
     """Widget individual para cada archivo en la lista"""
@@ -35,11 +35,11 @@ class FileItemWidget(QWidget):
         # Determinar icono según extensión
         ext = Path(filepath).suffix.lower()
         if ext == '.pdf':
-            icon_label.setPixmap(QIcon(settings.PDF_ICON_DIR).pixmap(20, 20))
+            icon_label.setPixmap(QIcon(config.PDF_ICON_DIR).pixmap(20, 20))
         elif ext in ['.png', '.jpg', '.jpeg']:
-            icon_label.setPixmap(QIcon(settings.IMAGE_ICON_DIR).pixmap(20, 20))
+            icon_label.setPixmap(QIcon(config.IMAGE_ICON_DIR).pixmap(20, 20))
         else:
-            icon_label.setPixmap(QIcon(settings.FILE_ICON_DIR).pixmap(20, 20))
+            icon_label.setPixmap(QIcon(config.FILE_ICON_DIR).pixmap(20, 20))
         
         # Nombre del archivo
         name_label = QLabel(self.filename)

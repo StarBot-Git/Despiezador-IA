@@ -2,12 +2,14 @@ from PySide6.QtCore import Qt, QSize
 from PySide6.QtWidgets import *
 from PySide6.QtGui import QIcon
 
-from ui.components.sidebar import SideBar
-from config import settings
+# ====== IMPORTACIONES PROPIAS ======
+from core import config
+from ui.config import theme, icons
 from ui.components.window_topbar import Window_TopBar
+from ui.components.sidebar import SideBar
 from ui.components.chat_topbar import Chat_TopBar
 from ui.components.chat_area import ChatWidget
-from ui.workers.ai_worker import AIWorker  # <--- IMPORTAR EL WORKER
+# from ui.workers.ai_worker import AIWorker  # <--- IMPORTAR EL WORKER
 
 class MainWindow(QMainWindow):
     def __init__(self):
@@ -15,9 +17,9 @@ class MainWindow(QMainWindow):
 
         # ======== Configuracion inicial ========
 
-        self.setWindowTitle(settings.APP_NAME)
-        self.resize(settings.WINDOW_WIDTH, settings.WINDOW_HEIGHT)
-        self.setWindowIcon(QIcon(settings.LOGO_DIR))
+        self.setWindowTitle(config.APP_NAME)
+        self.resize(theme.WINDOW_WIDTH, theme.WINDOW_HEIGHT)
+        self.setWindowIcon(QIcon(icons.LOGO))
 
         self.agent_IA = None
         self.furniture_name = ""
@@ -41,7 +43,7 @@ class MainWindow(QMainWindow):
         self.window_topbar = Window_TopBar(self)
         self.window_topbar.setSizePolicy(QSizePolicy.Expanding, QSizePolicy.Fixed)
         self.window_topbar.setFixedHeight(50)
-        root.addWidget(self.window_topbar)
+        #root.addWidget(self.window_topbar)
 
         root.addWidget(self.window_topbar, alignment=Qt.AlignTop)
 
@@ -152,7 +154,7 @@ class MainWindow(QMainWindow):
             }
         """)
 
-        self.send_button.clicked.connect(self.handle_send_message)
+        #self.send_button.clicked.connect(self.handle_send_message)
 
         input_layout.addWidget(self.input_field)
         input_layout.addWidget(self.send_button)
@@ -163,78 +165,79 @@ class MainWindow(QMainWindow):
 
         self.setCentralWidget(central)
 
-    def handle_send_message(self):
-        """Método actualizado con Threading"""
-        text = self.input_field.toPlainText().strip()
+    # def handle_send_message(self):
+    #     """Método actualizado con Threading"""
+    #     text = self.input_field.toPlainText().strip()
 
-        if not text:
-            return
+    #     if not text:
+    #         return
 
-        # Deshabilitar el botón mientras procesa
-        self.send_button.setEnabled(False)
-        self.send_button.setText("  Procesando...")
+    #     # Deshabilitar el botón mientras procesa
+    #     self.send_button.setEnabled(False)
+    #     self.send_button.setText("  Procesando...")
         
-        # Agregar mensaje del usuario
-        self.chat_area.add_message(text, role="user")
+    #     # Agregar mensaje del usuario
+    #     self.chat_area.add_message(text, role="user")
         
-        # Limpiar el campo de entrada
-        self.input_field.clear()
+    #     # Limpiar el campo de entrada
+    #     self.input_field.clear()
         
-        # Agregar mensaje temporal "IA escribiendo..."
-        self.chat_area.add_message("✍️ Analizando...", role="assistant")
+    #     # Agregar mensaje temporal "IA escribiendo..."
+    #     self.chat_area.add_message("✍️ Analizando...", role="assistant")
 
-        # Crear y configurar el worker thread
-        self.ai_worker = AIWorker(self.agent_IA, text)
+    #     # Crear y configurar el worker thread
+    #     self.ai_worker = AIWorker(self.agent_IA, text)
         
-        # Conectar las señales
-        self.ai_worker.finished.connect(self.on_ai_response)
-        self.ai_worker.error.connect(self.on_ai_error)
+    #     # Conectar las señales
+    #     self.ai_worker.finished.connect(self.on_ai_response)
+    #     self.ai_worker.error.connect(self.on_ai_error)
         
-        # Iniciar el thread (no bloquea la interfaz)
-        self.ai_worker.start()
+    #     # Iniciar el thread (no bloquea la interfaz)
+    #     self.ai_worker.start()
 
-    def on_ai_response(self, output_obj, price, tokens):
-        """Se ejecuta cuando el worker termina exitosamente"""
+    # def on_ai_response(self, output_obj, price, tokens):
+    #     """Se ejecuta cuando el worker termina exitosamente"""
 
-        print("HOLA 2")
+    #     print("HOLA 2")
         
-        # Remover el mensaje temporal "Analizando..."
-        self.chat_area.remove_last_message()
+    #     # Remover el mensaje temporal "Analizando..."
+    #     self.chat_area.remove_last_message()
         
-        # Convertir respuesta a texto legible
-        output_msg = self.agent_IA.json_to_message(output_obj.dict())
+    #     # Convertir respuesta a texto legible
+    #     output_msg = self.agent_IA.json_to_message(output_obj.dict())
         
-        # Agregar respuesta de la IA
-        self.chat_area.add_message(output_msg, role="assistant")
+    #     # Agregar respuesta de la IA
+    #     self.chat_area.add_message(output_msg, role="assistant")
         
-        # Guardar el JSON
-        self.sidebar.save_output_JSON(output_obj)
+    #     # Guardar el JSON
+    #     self.sidebar.save_output_JSON(output_obj)
 
-        self.tokens += int(tokens)
-        self.tokens_price += float(price)
+    #     self.tokens += int(tokens)
+    #     self.tokens_price += float(price)
 
-        print(self.tokens_price)
+    #     print(self.tokens_price)
 
-        self.chat_topbar.card_tokens.lbl_value.setText(f"{self.tokens:,}".replace(",", " "))
-        self.chat_topbar.card_tokens_price.lbl_value.setText( str( round(self.tokens_price,3) ) )
+    #     self.chat_topbar.card_tokens.lbl_value.setText(f"{self.tokens:,}".replace(",", " "))
+    #     self.chat_topbar.card_tokens_price.lbl_value.setText( str( round(self.tokens_price,3) ) )
         
-        # Rehabilitar el botón
-        self.send_button.setEnabled(True)
-        self.send_button.setText("  Enviar")
+    #     # Rehabilitar el botón
+    #     self.send_button.setEnabled(True)
+    #     self.send_button.setText("  Enviar")
         
-        print(f"[{self.agent_IA.__class__.__name__}] Respuesta recibida exitosamente")
+    #     print(f"[{self.agent_IA.__class__.__name__}] Respuesta recibida exitosamente")
 
-    def on_ai_error(self, error_msg):
-        """Se ejecuta si hay un error en el worker"""
+    # def on_ai_error(self, error_msg):
+    #     """Se ejecuta si hay un error en el worker"""
         
-        # Remover el mensaje temporal
-        self.chat_area.remove_last_message()
+    #     # Remover el mensaje temporal
+    #     self.chat_area.remove_last_message()
         
-        # Mostrar error
-        self.chat_area.add_message(f"❌ Error: {error_msg}", role="assistant")
+    #     # Mostrar error
+    #     self.chat_area.add_message(f"❌ Error: {error_msg}", role="assistant")
         
-        # Rehabilitar el botón
-        self.send_button.setEnabled(True)
-        self.send_button.setText("  Enviar")
+    #     # Rehabilitar el botón
+    #     self.send_button.setEnabled(True)
+    #     self.send_button.setText("  Enviar")
         
-        print(f"[ERROR] {error_msg}")
+    #     print(f"[ERROR] {error_msg}")
+

@@ -1,25 +1,24 @@
-from pathlib import Path
 import sys
+
+from pathlib import Path
 from PySide6.QtWidgets import QApplication
 
-# === CONFIGURACIÓN MANUAL ===
-NOMBRE_MUEBLE = "Mueble TV"
-
-# === PREPARACIÓN DEL ENTORNO ===
+# ====== PREPARACIÓN DEL ENTORNO ======
 BASE = Path(__file__).resolve().parents[1]  # Ruta del proyecto → /DESPIEZADOR IA/
-PKG_DIR = BASE / "instructor_modelacion"    # Ruta del paquete-modelo actual → /instructor_modelacion/
-sys.path.insert(0, str(PKG_DIR))            # Añadir proyecto actual al path de importaciones
+sys.path.insert(0, str(BASE))               # Añadir proyecto actual al path de importaciones
 
-# === IMPORTACIONES PROPIAS ===
+# ====== IMPORTACIONES PROPIAS ======
+from ui.config import theme
 from ui.windows.main_window import MainWindow
-from instructor_modelacion.cli import Run_Instructor
-from analista_piezas.cli import Run_Analyst
-from supervisor_piezas.cli import Run_Supervisor
-from config import settings
-import config.resources_rc
+import ui.resources.resources_rc
 
+
+"""
+    apply_stylesheet():
+    Funcion encargada de aplicar estilo qss a la aplicacion
+"""
 def apply_stylesheet(app: QApplication) -> None:
-    # === Cargar hoja de estilos | main.qss ===
+    # === Cargar hoja de estilos | style.qss ===
     style_path = Path(__file__).parent / "ui" / "styles" / "style.qss"
 
     if style_path.exists():
@@ -27,13 +26,13 @@ def apply_stylesheet(app: QApplication) -> None:
         qss = style_path.read_text(encoding="utf-8")
         
         # === Reemplazar constantes ===
-        qss = qss.replace('{{PRIMARY}}', settings.BLUE_ALL_STAR)
-        qss = qss.replace('{{SECONDARY}}', settings.WHITE_ALL_STAR)
-        qss = qss.replace('{{COMPLEMENTARY}}', settings.ORANGE_ALL_STAR)
-        qss = qss.replace('{{FONT_DARK}}', settings.FONT_DARK)
-        qss = qss.replace('{{FONT_LIGHT}}', settings.FONT_LIGHT)
-        qss = qss.replace('{{BG_DARK}}', settings.BACKGROUND_DARK)
-        qss = qss.replace('{{BG_LIGHT}}', settings.BACKGROUND_LIGHT)
+        qss = qss.replace('{{PRIMARY}}', theme.BLUE_ALL_STAR)
+        qss = qss.replace('{{SECONDARY}}', theme.WHITE_ALL_STAR)
+        qss = qss.replace('{{COMPLEMENTARY}}', theme.ORANGE_ALL_STAR)
+        qss = qss.replace('{{FONT_DARK}}', theme.FONT_DARK)
+        qss = qss.replace('{{FONT_LIGHT}}', theme.FONT_LIGHT)
+        qss = qss.replace('{{BG_DARK}}', theme.BACKGROUND_DARK)
+        qss = qss.replace('{{BG_LIGHT}}', theme.BACKGROUND_LIGHT)
         
         # === Aplicar hoja de estilos ===
         app.setStyleSheet(qss)

@@ -3,7 +3,7 @@ from pathlib import Path
 
 from utils.paths import Normalize_Path, Ensure_OutputsRoot
 from utils.scanner import Scan_InputFolder
-from config import settings
+from core import config
 
 class Furniture_Controller:
     def __init__(self, sidebar, main_window):
@@ -20,8 +20,8 @@ class Furniture_Controller:
         if not furniture_name == "Seleccione un mueble...":
             print(f"{furniture_name}")
 
-            furniture_path = settings.INPUT_DIR / furniture_name
-            output_path = settings.OUTPUT_DIR / furniture_name
+            furniture_path = config.INPUT_DIR / furniture_name
+            output_path = config.OUTPUT_DIR / furniture_name
 
             if os.path.isdir(furniture_path):
                 self.sidebar.input_dir = self.main_window.input_dir = Normalize_Path(furniture_path)           # utils.paths | Normaliza ruta

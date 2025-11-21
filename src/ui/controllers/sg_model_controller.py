@@ -1,7 +1,7 @@
 import os
 
-from agents.sg_analista_piezas import Analista_Piezas
-from agents.ai_client import load_file, upload_file
+from agents.analista.analista_piezas import Analista_Piezas
+from core.ai_client import load_file, upload_file
 
 class StarGPTModelController:
     def __init__(self, sidebar, main_window):
