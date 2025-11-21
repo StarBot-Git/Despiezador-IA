@@ -21,6 +21,9 @@ class StarGPTModelController:
             if selected_model == "Analista de Piezas":
                 self.main_window.agent_IA = Analista_Piezas(files_data)
                 self.main_window.input_field.setText(self.main_window.agent_IA.SG_USER_PROMPT)
+        
+        else:
+            self.main_window.agent_IA = None
 
     def Load_File_IDs(self, paths=None, furniture_name=""):
         file_data = {}

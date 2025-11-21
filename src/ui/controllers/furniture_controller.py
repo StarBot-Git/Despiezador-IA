@@ -43,11 +43,16 @@ class Furniture_Controller:
 
             self.sidebar.uploaded_files = paths_str
 
+            if not self.main_window.agent_IA == None:
+                files_data = self.sidebar.model_combo_controller.Load_File_IDs(paths=self.sidebar.uploaded_files, furniture_name=self.sidebar.furniture_name)
+                self.main_window.agent_IA.files = files_data
+
             # ------ Activar | Modelos StarGPT ------
             self.sidebar.model_combo.setEnabled(True)
             self.main_window.window_topbar.btn_folder.setEnabled(True)
 
         else:
+            self.sidebar.uploaded_files = []
             self.sidebar.model_combo.setEnabled(False)
             self.main_window.window_topbar.btn_folder.setEnabled(False)
             

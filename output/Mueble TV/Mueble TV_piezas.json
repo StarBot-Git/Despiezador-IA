@@ -1,41 +1,41 @@
 {
-    "type_furniture": "Mueble TV + Minibar + Escritorio + Closet",
+    "type_furniture": "Mueble Closet (incluye Mini Bar, Panel TV, Escritorio y Closet)",
     "components": [
         {
-            "name": "Minibar (base izquierda)",
+            "name": "Mini Bar",
             "type_component": "mueble_bajo",
             "quantity": 1,
             "detail": {
                 "doors": 1,
                 "drawers": 0,
-                "shelves": 0,
-                "related_to": "Escritorio / Panel TV"
+                "shelves": 1,
+                "related_to": "Escritorio"
             }
         },
         {
-            "name": "Panel TV (receso y fondo)",
-            "type_component": "estructural",
-            "quantity": 1,
-            "detail": {
-                "doors": 0,
-                "drawers": 0,
-                "shelves": 0,
-                "related_to": "Mueble TV"
-            }
-        },
-        {
-            "name": "Mueble alto izquierdo (sobre minibar)",
+            "name": "Mueble alto sobre Mini Bar",
             "type_component": "mueble_alto",
             "quantity": 1,
             "detail": {
                 "doors": 1,
                 "drawers": 0,
                 "shelves": 1,
-                "related_to": "Minibar / Panel TV"
+                "related_to": "Mini Bar"
             }
         },
         {
-            "name": "Mueble alto central (sobre hueco TV)",
+            "name": "Panel TV (panel estructural y nicho para TV)",
+            "type_component": "estructural",
+            "quantity": 1,
+            "detail": {
+                "doors": 0,
+                "drawers": 0,
+                "shelves": 0,
+                "related_to": "Mueble alto sobre Panel TV, Escritorio"
+            }
+        },
+        {
+            "name": "Mueble alto sobre Panel TV",
             "type_component": "mueble_alto",
             "quantity": 1,
             "detail": {
@@ -46,32 +46,43 @@
             }
         },
         {
-            "name": "Módulo vertical derecho con caja fuerte",
-            "type_component": "closet",
-            "quantity": 1,
-            "detail": {
-                "doors": 1,
-                "drawers": 0,
-                "shelves": 3,
-                "related_to": "Mueble TV"
-            }
-        },
-        {
-            "name": "Escritorio (superficie integrada)",
+            "name": "Escritorio (superficie intermedia)",
             "type_component": "estructural",
             "quantity": 1,
             "detail": {
                 "doors": 0,
                 "drawers": 0,
                 "shelves": 0,
-                "related_to": "Minibar / Panel TV"
+                "related_to": "Mini Bar, Panel TV"
+            }
+        },
+        {
+            "name": "Closet vertical con caja fuerte",
+            "type_component": "closet",
+            "quantity": 1,
+            "detail": {
+                "doors": 1,
+                "drawers": 0,
+                "shelves": 3,
+                "related_to": "Panel TV"
+            }
+        },
+        {
+            "name": "Tapa / zócalo frontal continuo",
+            "type_component": "estructural",
+            "quantity": 1,
+            "detail": {
+                "doors": 0,
+                "drawers": 0,
+                "shelves": 0,
+                "related_to": "Todos los módulos"
             }
         }
     ],
-    "configuration": "Ensamble mural lineal: base minibar (izquierda) + panel TV central (estructural) + dos módulos altos independientes (izquierdo sobre minibar y central sobre TV; NO continúo) + módulo vertical derecho (closet con caja fuerte, inicia en piso) + superficie escritorio integrada a la cota indicada.",
-    "comments": "Se corrige la clasificación: los muebles altos NO son continuos; se detectan al menos dos cuerpos altos con alturas diferentes (módulo izquierdo más bajo y módulo central de mayor altura), mientras que el módulo derecho es un closet vertical con caja fuerte que comienza en piso. Materiales y detalles según notas: tablero melamínico, frentes 18mm, interiores 15mm, fondo 6mm, ranurado para cinta LED previsto, verificar ventilación del minibar y chaflán según proyecto. Confirmar en obra número final de puertas/entrepaños antes de fabricación.",
+    "configuration": "Conjunto integrado: mueble_bajo (minibar) en extremo izquierdo con mueble_alto encima; panel central estructural para TV con mueble_alto superior; superficie/escritorio entre minibar y panel; closet vertical derecho de piso a techo con caja fuerte. Zócalo/tapa frontal continuo. Muebles altos suspendidos sobre la línea de escritorio/minibar.",
+    "comments": "Se añadieron dos muebles altos solicitados: uno sobre el minibar y otro sobre el panel de TV, según alzado superior. Los muebles altos aparecen como módulos suspendidos con puertas (cavidad). Notas del plano indican ranurado para LED, chaflan y ajustes de altura que deben considerarse en la obra prototipo.",
     "viability": {
         "percentage": 85,
-        "reason": "Detección basada en vistas alzado y cortes: se aprecia diferencia clara de altura entre el cuerpo alto izquierdo y el cuerpo sobre el hueco de TV; el módulo derecho es vertical desde piso (closet). Incertidumbres menores: exacto número de entrepaños y si el mueble alto central tiene 2 frentes unidos o 2 módulos separados. Recomiendo verificación en sitio para confirmar frentes y medidas antes de corte."
+        "reason": "Basado en las vistas cliente y corrección solicitada: la existencia de los dos muebles altos está clara en el alzado. Persiste incertidumbre en la cantidad exacta de puertas y entrepaños internos (se asignaron valores probables: 1 puerta para el mueble alto sobre minibar y 2 puertas para el sobre TV). Verificar en sitio dimensiones finales, continuidad de altura (si son módulos independientes o continuos) y detalle de herrajes/entrepaños antes de producción."
     }
 }

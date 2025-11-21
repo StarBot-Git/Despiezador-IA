@@ -4,10 +4,11 @@ from PySide6.QtGui import QIcon
 
 from config import settings
 from ui.components.info_card import InfoCard
+from ui.controllers.model_openAI_controller import ModelOpenAI_Controller
 
 # En TopBar.__init__
 class Chat_TopBar(QFrame):
-    def __init__(self, parent:QWidget|None = None):
+    def __init__(self, parent:QWidget|None = None, main_window=None):
         super().__init__(parent)
         self.setObjectName("Chat_TopBar")
 
@@ -21,30 +22,34 @@ class Chat_TopBar(QFrame):
 
         self.model_openAI_combo = QComboBox()
         self.model_openAI_combo.setObjectName("ChatTopBar-ModelOpenAICB")
-        self.model_openAI_combo.addItems(["GPT-5","GPT-5.1","GPT-4", "GPT-3.5"])
+        self.model_openAI_combo.addItems(["GPT-5 mini","GPT-4 nano"])
 
         main_layout.addWidget(self.model_openAI_combo)
+
+        self.model_openAI_controller = ModelOpenAI_Controller(chat_topbar=self, main_window=main_window)
+        self.model_openAI_combo.currentIndexChanged.connect(self.model_openAI_controller.Change_OpenAIModel)
+
 
         main_layout.addStretch(1)
 
         # ======== InfoCard | Tokens spent ========= 
 
-        card_tokens = InfoCard(
+        self.card_tokens = InfoCard(
             title="Tokens usados",
-            value="xx.xx",
+            value="0",
             accent_color=settings.BLUE_ALL_STAR,
             icon_path=settings.CARD_TOKENS_DIR
         )
 
-        main_layout.addWidget(card_tokens)
+        main_layout.addWidget(self.card_tokens)
 
         # ======== InfoCard | Cost ========= 
 
-        card_tokens = InfoCard(
+        self.card_tokens_price = InfoCard(
             title="Costo estimado",
-            value="xx.xx",
+            value="0.00",
             accent_color=settings.ORANGE_ALL_STAR,
             icon_path=settings.CARD_COST_DIR
         )
 
-        main_layout.addWidget(card_tokens)
+        main_layout.addWidget(self.card_tokens_price)

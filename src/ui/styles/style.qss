@@ -371,26 +371,24 @@ QMainWindow {
 
 /* Dropdown menu */
 #ChatTopBar-ModelOpenAICB QAbstractItemView {
-    background: #ececec;
-    color: {{FONT_LIGHT}};
-    border: 1px solid #ececec;
-    padding: 2px 0;
-    outline: none;
-    font-family: "Segoe UI", "Inter", Arial;
-    min-width: 150px;
-    border-radius: 8px;
+  background: {{BG_LIGHT}};
+  color: {{FONT_LIGHT}};
+  border: 1px solid #E5E7EB;
+  border-radius: 0px;
+  padding: 4px 0;
+  outline: none;
+  font-family: "Segoe UI", "Inter", Arial;
 }
 
 #ChatTopBar-ModelOpenAICB QAbstractItemView::item {
-    padding: 4px 0px;
-    min-height: 24px;
+  padding: 6px 10px;
 }
 
 #ChatTopBar-ModelOpenAICB QAbstractItemView::item:hover {
-    background: #F3F4F6;
+  background: #F3F4F6;
 }
 
 #ChatTopBar-ModelOpenAICB QAbstractItemView::item:selected {
-    background: #EFF6FF;
-    color: {{PRIMARY}};
+  background: #EFF6FF;
+  color: #1E40AF;
 }

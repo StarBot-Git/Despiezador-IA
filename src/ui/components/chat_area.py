@@ -1,8 +1,5 @@
 from PySide6.QtWidgets import QWidget, QVBoxLayout, QScrollArea
-
 from ui.components.message_bubble import MessageBubble
-
-
 
 class ChatWidget(QWidget):
     def __init__(self, parent=None):
@@ -34,3 +31,18 @@ class ChatWidget(QWidget):
         self.scroll.verticalScrollBar().setValue(
             self.scroll.verticalScrollBar().maximum()
         )
+
+    def remove_last_message(self):
+        """
+        Remueve el último mensaje del chat.
+        Útil para eliminar mensajes temporales como "Analizando..."
+        """
+        if self.layout.count() > 1:  # Debe haber al menos 1 mensaje + stretch
+            # El último item es el stretch, el penúltimo es el mensaje
+            last_msg_index = self.layout.count() - 2
+            last_item = self.layout.itemAt(last_msg_index)
+            
+            if last_item and last_item.widget():
+                widget = last_item.widget()
+                self.layout.removeWidget(widget)
+                widget.deleteLater()

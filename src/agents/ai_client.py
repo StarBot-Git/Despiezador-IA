@@ -44,6 +44,7 @@ class Components(BaseModel):
     detail: Detail
 
 class Disassemble(BaseModel):
+    message: str
     type_furniture: str
     components: list[Components]
     configuration: str

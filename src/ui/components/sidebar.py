@@ -160,18 +160,21 @@ class SideBar(QWidget):
         scroll_area.setWidgetResizable(True)
         scroll_area.setHorizontalScrollBarPolicy(Qt.ScrollBarAlwaysOff)
         scroll_area.setVerticalScrollBarPolicy(Qt.ScrollBarAsNeeded)
-        scroll_area.setMaximumHeight(200)
+        scroll_area.setMinimumHeight(100)
         
         # Widget contenedor de la lista
         self.files_container = QWidget()
         self.files_container.setObjectName("FilesContainer")
+        self.files_container.setSizePolicy(QSizePolicy.Expanding, QSizePolicy.Expanding)
         self.files_layout = QVBoxLayout(self.files_container)
         self.files_layout.setContentsMargins(0, 0, 0, 0)
         self.files_layout.setSpacing(8)
         self.files_layout.setAlignment(Qt.AlignTop)
         
         scroll_area.setWidget(self.files_container)
-        main_layout.addWidget(scroll_area)
+        main_layout.addWidget(scroll_area, 1)
+
+        main_layout.addStretch()
         
         # ======== Botón: Adjuntar Archivos ========
         upload_btn = QPushButton(" Adjuntar Archivos")

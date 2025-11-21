@@ -35,19 +35,19 @@ class InfoCard(QWidget):
             icon.setPixmap(pix)
             header.addWidget(icon)
 
-        lbl_title = QLabel(title)
-        lbl_title.setStyleSheet(f"color:{text_color}; font-size:12px; font-weight:600;")
-        header.addWidget(lbl_title)
+        self.lbl_title = QLabel(title)
+        self.lbl_title.setStyleSheet(f"color:{text_color}; font-size:12px; font-weight:600;")
+        header.addWidget(self.lbl_title)
         header.addStretch()
 
         # --- Valor ---
-        lbl_value = QLabel(value)
-        lbl_value.setAlignment(Qt.AlignLeft)
-        lbl_value.setStyleSheet(f"color:{accent_color}; font-size:18px; font-weight:700;")
+        self.lbl_value = QLabel(value)
+        self.lbl_value.setAlignment(Qt.AlignLeft)
+        self.lbl_value.setStyleSheet(f"color:{accent_color}; font-size:18px; font-weight:700;")
 
         # Añadir al layout
         main_layout.addLayout(header)
-        main_layout.addWidget(lbl_value)
+        main_layout.addWidget(self.lbl_value)
 
         # --- Estilos dinámicos ---
         self.setStyleSheet(f"""

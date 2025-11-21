@@ -1,11 +1,32 @@
 from dataclasses import dataclass
 from pathlib import Path
 
-# ======== IDENTIDAD VENTANA =========
+# ======== WINDOW FEATURES =========
 
 APP_NAME = "Star GPT - WoodWork"
 WINDOW_WIDTH = 1200
 WINDOW_HEIGHT = 700
+
+# ======== OPENAI MODELS ========
+
+OPENAI_MODELS = {
+    "GPT-5 mini": {
+        "name": "gpt-5-mini",
+        "input_price": 0.25,
+        "output_price": 2.00
+    },
+    "GPT-4 nano": {
+        "name": "gpt-4.1-nano",
+        "input_price": 0.1,
+        "output_price": 0.4
+    },
+    "gpt-o1": {
+        "nombre": "gpt-o1",
+        "tokenizer": "o200k_base",     # <----- MODELOS "o1"
+        "precio_entrada": 15.00,
+        "precio_salida": 60.00
+    }
+}
 
 # ======== TEMA ==========
 

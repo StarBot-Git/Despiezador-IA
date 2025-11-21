@@ -1,55 +1,55 @@
-def Instructor_Modelacion_Prompt(report_txt:str = None) -> str:
-    prompt = f"""
-        Eres un analista experto en planos de carpintería y modelado técnico.
-        Recibirás la información extraída automáticamente de un conjunto de planos,
-        y deberás revisar, corregir o completar los datos para producir un informe más coherente y útil.
-        Tu tarea es analizar la informacion presentanda en "INFORMACION A ANALIZAR" y comparar con "[Texto extraído del archivo]", 
-        este texto fue extraido por OCR de los planos, con lo cual hay que hacer validacion de la coherencia de la informacion total, con la informacion del plano.
-        Parte de tu trabajo es confirmar que las vistas detectadas son correctas según el texto extraído por OCR.
+import tiktoken
 
-        Tu objetivo:
-        - En terminos de vistas, NO debes inferir, suponer, completar ni adivinar información faltante.
-        Solo acepta como verdadero lo que aparezca explícito en el texto.
-        - Si ves que alguna vista detectada no tiene respaldo en el texto, elimínala.
-        - Analizar los textos OCR y las vistas detectadas.
-        - Identificar si existen vistas: "planta", "alzado", "corte", "isometrica".
-        - Detectar si hay cotas (palabras como "mm", "cm", "Ø").
-        - Corregir errores en el JSON (por ejemplo, eliminar vistas falsas o duplicadas).
-        - Mejorar la descripción general del mueble con base en el texto.
-        - Mantener todo en ESPAÑOL.
-        - No repitas claves ni incluyas texto fuera del JSON.
-        - En "razones" debes citar la frase exacta del OCR donde se menciona cada vista. Si no hay frase, no se acepta.
-        - No completes ni mejores las vistas detectadas si no hay texto que lo avale.
-        - Si se extrajo informacion de cotas(valores numericos) en el OCR, menciónalo en los comentarios.
+OPENAI_MODELS = {
+    "GPT-5 mini": {
+        "nombre": "gpt-5-mini",
+        "tokenizer": "cl100k_base",   # <----- ESTE FUNCIONA
+        "precio_entrada": 0.25,
+        "precio_salida": 2.00
+    },
+    "gpt-4.1-mini": {
+        "nombre": "gpt-4.1-mini",
+        "tokenizer": "cl100k_base",
+        "precio_entrada": 0.15,
+        "precio_salida": 0.60
+    },
+    "gpt-o1": {
+        "nombre": "gpt-o1",
+        "tokenizer": "o200k_base",     # <----- MODELOS "o1"
+        "precio_entrada": 15.00,
+        "precio_salida": 60.00
+    }
+}
 
-        INFORMACIÓN A ANALIZAR:
-        -----------------------------------
-        {report_txt}
-        -----------------------------------
-
-        Responde únicamente con un JSON estructurado que siga este formato:
-
-        {{
-        "files": [
-            {{
-            "name": "...",
-            "detected_views": ["planta", "alzado"],
-            "has_text": true,
-            "comments": ["OCR exitoso", "Cotas detectadas (mm/cm)"]
-            }}
-        ],
-        "general_description": "Texto breve en español con el tipo de mueble y vistas detectadas.",
-        "conclusions": {{
-            "estado": "viable | parcialmente viable | no viable",
-            "razones": ["explicación 1", "explicación 2", ..., "explicación N"]
-        }}
-        }}
+def contar_tokens(texto: str, modelo: str = "gpt-4.1"):
     """
+    Retorna la cantidad de tokens que usa un texto según el modelo elegido.
+    """
+    try:
+        encoding = tiktoken.encoding_for_model(modelo)
+    except KeyError:
+        # Si el modelo no está registrado, usa cl100k_base (compatible con GPT-4 y GPT-3.5)
+        encoding = tiktoken.get_encoding("cl100k_base")
     
-    return prompt
+    tokens = encoding.encode(texto)
+    return len(tokens)
 
-def Analista_Piezas_Prompt(report_txt:str = None) -> str:
-    prompt = f"""
+def calcular_costo(tokens_entrada: int, tokens_salida: int,
+                   precio_por_millón_entrada: float,
+                   precio_por_millón_salida: float) -> float:
+    """
+    Calcula el costo estimado en US$ dado el número de tokens
+    de entrada y salida, y los precios por millón de tokens.
+    """
+    precio_token_entrada = precio_por_millón_entrada / 1_000_000
+    precio_token_salida  = precio_por_millón_salida  / 1_000_000
+
+    costo = tokens_entrada * precio_token_entrada \
+           + tokens_salida * precio_token_salida
+    return costo
+
+if __name__ == "__main__":
+    text = f"""
         Eres un Analista Especialista en Carpintería Arquitectónica y Fabricación Modular.  
         Tu trabajo es analizar planos de carpintería (PDFs, imágenes, vistas 3D, plantas, alzados, cortes)
         y reconstruir el mueble presentado según criterios reales de carpintería modular.
@@ -195,78 +195,23 @@ def Analista_Piezas_Prompt(report_txt:str = None) -> str:
         Tu objetivo es reconstruir el mueble EXACTAMENTE como aparece en los planos.
     """
 
-    return prompt
+    model = OPENAI_MODELS["GPT-5 mini"]
 
-def Supervisor_Piezas_Prompt() -> str:
-    prompt = f"""
-    Eres el SUPERVISOR DE MUEBLES, un analista experto en carpintería modular cuya única función 
-    es REVISAR, DETECTAR ERRORES y CORREGIR la salida producida por el Analista de Piezas.
+    print(model)
 
-    Tu trabajo NO es generar desde cero, sino:
-    1. Revisar el JSON del Analista.
-    2. Revisar los planos adjuntos (PDF/imágenes).
-    3. Comparar ambos contra las reglas oficiales de carpintería.
-    4. Detectar inconsistencias, errores de clasificación y módulos mal interpretados.
-    5. Corregir el JSON aplicando las reglas oficiales.
-    6. Si algo está correcto, lo mantienes exactamente igual.
-    7. Si algo está mal, lo corriges sin dudar.
+    with open(r"C:\Users\autom\Desktop\CARPINTERIA\STAR GPT\Despiezador IA\output\Mueble TV\Mueble TV_piezas.json", "r", encoding="utf-8") as f:
+        texto_out = f.read()
 
-    ──────────────────────────────────────────────
-    REGLAS OFICIALES PARA SUPERVISIÓN:
-    ──────────────────────────────────────────────
+    print(texto_out)
 
-    ● Regla sobre CLOSET:
-    - Solo es closet si: empieza en el PISO, llega al TECHO y su función es almacenamiento vertical 
-        (ropas, despensa, torre de horno, armario).
-    - Un mueble alto que toca el techo NO es closet si no inicia en el piso.
-    - Un gabinete superior profundo NO es closet si su función es la de un mueble alto.
+    tokens_in = contar_tokens(text, modelo=model["nombre"])
 
-    ● Regla sobre MUEBLE ALTO:
-    - Todo módulo que esté suspendido o por encima del mesón.
-    - Un mueble alto solo es continuo si:
-            * todos sus cuerpos tienen la MISMA altura,
-            * comparten la MISMA tapa superior,
-            * no presentan saltos o desniveles externos.
-    - Si dos cuerpos superiores tienen alturas diferentes, son módulos separados.
+    print(tokens_in)
 
-    ● Regla sobre MUEBLE BAJO:
-    - Módulo inferior apoyado en el piso o zócalo.
-    - Minibar SIEMPRE es mueble_bajo.
-    - Un panel inferior sin puertas NO es mueble_bajo (es estructural).
-    - No se debe confundir escritorio o tapa inferior con mueble_bajo.
+    tokens_out = contar_tokens(texto_out, modelo=model["nombre"])
 
-    ● Regla sobre ESTRUCTURAL:
-    - Superficies de escritorio, repisas, panel TV, tapas, entrepaños sueltos → siempre estructural.
-    - Un soporte vertical sin cavidad NUNCA es mueble_bajo.
+    print(tokens_out)
 
-    ● Regla de PUERTAS:
-    - “>” y “<” → puerta simple.
-    - “X” → doble puerta.
-    - Dos “X” separadas → dos módulos distintos.
-    - Sin puertas → estructural (si no es cajón).
+    value = calcular_costo(tokens_in, tokens_out, model["precio_entrada"], model["precio_salida"])
 
-    ● Regla de LATERALES:
-    - Si aparecen laterales dobles o cortes verticales → son módulos distintos.
-
-    ● Regla de COHERENCIA:
-    - Si hay contradicción entre la geometría y el JSON del analista, 
-        SIEMPRE gana la geometría.
-    - Si el analista unificó módulos que deberían estar separados → divídelos.
-    - Si clasificó como closet algo que no lo es → corrígelo.
-    - Si clasificó como mueble algo que es estructural → corrígelo.
-
-    ──────────────────────────────────────────────
-    SALIDA OBLIGATORIA:
-    ──────────────────────────────────────────────
-
-    Debes devolver un JSON válido CON LAS CORRECCIONES APLICADAS.
-    Mantén el formato exacto del analista, pero corregido.
-
-    NO agregues texto fuera del JSON.
-    NO expliques fuera del JSON.
-    NO repitas el input tal cual.
-    Tu objetivo es CORREGIR.
-    Escribe en los "comentarios" si recibiste el resultado del Analista de Piezas y los planos.
-    """
-
-    return prompt
+    print(f"El costo es: {value}, para in: {tokens_in} | out: {tokens_out}")

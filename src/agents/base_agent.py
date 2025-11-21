@@ -1,4 +1,7 @@
 from agents.ai_client import send_request
+from utils.tokens_ai import *
+from config import settings
+
 import json
 
 class BaseAgent:
@@ -12,9 +15,13 @@ class BaseAgent:
 
     def run(self, prompt):
 
-        print(f"[{self.__class__.__name__}] Hizo su peticion a OpenAI")
+        print(f"[{self.__class__.__name__}] Hizo su peticion a OpenAI: {self.model}")
 
         model_name = self.__class__.__name__
+
+        for key, data in settings.OPENAI_MODELS.items():
+                if data.get("name") == self.model:
+                    model_selected = key
 
         content = []
         #content.append({"type":"input_text", "text":prompt, "variables":variables})
@@ -27,7 +34,7 @@ class BaseAgent:
 
         self.messages.append({"role":"user", "content":content})
 
-        print(self.messages)
+        #print(self.messages)
 
         response = send_request(model=self.model, input = self.messages, model_name=model_name, temperature=self.temperature)
 
@@ -40,48 +47,18 @@ class BaseAgent:
         output_assistant_msg = json.dumps(output.dict(), ensure_ascii=False, indent=2)
         self.messages.append({"role":"assistant", "content":output_assistant_msg})
 
-        return output
-    
-    def json_to_message(self, data: dict) -> str:
-        """
-        Convierte la estructura JSON del mueble en un mensaje legible estilo IA.
-        Ignora 'configuration' y 'viability.reason'.
-        """
+        print(f"TOKENS ENTRADA: {response.usage.input_tokens}")
+        print(f"TOKENS SALIDA: {response.usage.output_tokens}")
+        print(f"TOTAL: {response.usage.total_tokens}")
 
-        tipo = data.get("type_furniture", "mueble desconocido")
-        components = data.get("components", [])
-        viability = data.get("viability", {})
-        viability_pct = viability.get("percentage", None)
-        comments = data.get("comments", "")
+        model_data = settings.OPENAI_MODELS[model_selected]
 
-        # ---- Encabezado ----
-        msg = []
-        msg.append(f"🔍 **Análisis del mueble identificado: {tipo.replace('_', ' ').title()}**\n")
+        print(model_data)
 
-        # ---- Componentes ----
-        msg.append("### 🧩 **Componentes detectados**")
-        for comp in components:
-            nombre = comp.get("name", "").replace("_", " ")
-            tipo_comp = comp.get("type_component", "")
-            cantidad = comp.get("quantity", 1)
+        costo = calcular_costo(response.usage.input_tokens, response.usage.output_tokens, model_data["input_price"], model_data["output_price"])
 
-            det = comp.get("detail", {})
-            related = det.get("related_to", "-")
+        print(f"EL COSTO ES: {costo}")
 
-            msg.append(
-                f"- **{cantidad} × {nombre.title()}** "
-                f"({tipo_comp})\n"
-                f"  - Relación: *{related}*"
-            )
+        print("HOLA 0")
 
-        # ---- Comentarios generales ----
-        if comments:
-            msg.append("\n### 📝 **Comentarios generales**")
-            msg.append(comments)
-
-        # ---- Viabilidad ----
-        if viability_pct is not None:
-            msg.append("\n### 📊 **Viabilidad estimada del análisis**")
-            msg.append(f"- **{viability_pct}%** de claridad estructural general.")
-
-        return "\n".join(msg)
+        return output, costo, response.usage.total_tokens

@@ -1,44 +1,23 @@
 {
+    "message": "No, en los planos no aparece un closet. El mueble es un minibar con almacenamiento, no un closet completo.",
     "type_furniture": "mueble_bajo",
     "components": [
         {
-            "name": "Módulo minibar (derecha)",
+            "name": "Minibar (mueble base con puertas)",
             "type_component": "mueble_bajo",
             "quantity": 1,
             "detail": {
-                "doors": 1,
+                "doors": 2,
                 "drawers": 0,
                 "shelves": 2,
-                "related_to": "Entrepaño reforzado para ubicación de minibar; ventilación; interior en melamina tipo lino"
-            }
-        },
-        {
-            "name": "Nicho bajo mesón (izquierda)",
-            "type_component": "estructural",
-            "quantity": 1,
-            "detail": {
-                "doors": 0,
-                "drawers": 0,
-                "shelves": 0,
-                "related_to": "Espacio abierto bajo mesón (sin puerta en plano)"
-            }
-        },
-        {
-            "name": "Tapa / mesón superior",
-            "type_component": "estructural",
-            "quantity": 1,
-            "detail": {
-                "doors": 0,
-                "drawers": 0,
-                "shelves": 0,
-                "related_to": "Tapa continua en formica CLAY PW sobre ambos cuerpos"
+                "related_to": "Compartimento para minibar y almacenamiento"
             }
         }
     ],
-    "configuration": "Composición lineal bajo mesón: cuerpo izquierdo abierto (nicho) + cuerpo derecho con módulo minibar embebido. Zócalo en base, tapa continua; módulo minibar con entrepaño reforzado y fondo falso según detalle.",
-    "comments": "Dimensiones principales del minibar en plano: h 0.51 m, L 0.473 m (fondo interno w 0.44 m). Especificaciones: puertas parche en melamina tipo madera clara, estructura en melamina, interior en melamina tipo lino, entrepaño reforzado para minibar y ventilación. Zócalo y dilataciones contra piso/techo de 2 cm indicadas.",
+    "configuration": "Mueble de base en piso con dos puertas, diseñado para minibar en un compartimento derecho con entrepaños reforzados y ventilación, y espacio de almacenamiento en el lado izquierdo.",
+    "comments": "El plano muestra un mueble de base con acceso a minibar y espacios cavernosos, sin elementos que configuren un closet completo vertical que llegue de piso a techo.",
     "viability": {
-        "percentage": 90,
-        "reason": "Dibujo claro en planta, alzado y corte; clasificación como mueble_bajo (minibar) es consistente con la nota 'MINIBAR: dim sugeridas' y la regla específica que indica que el minibar siempre es mueble_bajo. Hay una pequeña ambigüedad en el plano respecto a si existe puerta adicional en el cuerpo izquierdo (el alzado muestra división vertical pero el plano y arco de apertura solo indican puerta en el cuerpo derecho), y el número exacto de entrepaños internos se interpreta como 2 (entrepaño superior + entrepaño reforzado para minibar). Recomiendo verificación en obra para confirmar cantidad de entrepaños y apertura de puertas."
+        "percentage": 95,
+        "reason": "La clasificación se basa en que es un mueble de base sin cavidad de closet completo, con función específica de minibar y almacenamiento."
     }
 }
