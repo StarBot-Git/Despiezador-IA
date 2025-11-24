@@ -26,3 +26,5 @@ class Disassemble(BaseModel):
     configuration: str
     comments: str
     viability: Viability
+
+#_______________________________________________________________

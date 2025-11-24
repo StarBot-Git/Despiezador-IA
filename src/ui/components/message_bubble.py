@@ -1,8 +1,6 @@
 from PySide6.QtWidgets import QWidget, QLabel, QVBoxLayout, QHBoxLayout, QSizePolicy
 from PySide6.QtCore import Qt
-from PySide6.QtGui import QPainter, QColor, QBrush
 import markdown
-
 
 class MessageBubble(QWidget):
     def __init__(self, text: str, role="assistant", parent=None):

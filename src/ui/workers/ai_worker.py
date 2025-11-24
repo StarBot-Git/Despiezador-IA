@@ -1,12 +1,7 @@
 from PySide6.QtCore import QThread, Signal
 
 class AIWorker(QThread):
-    """
-    Worker thread que ejecuta agent_IA.run() en segundo plano
-    para no bloquear la interfaz gráfica.
-    """
-    # Señales para comunicarse con la interfaz principal
-    finished = Signal(object, float, int)  # Envía output_obj cuando termina
+    finished = Signal(object, object)  # Envía output_obj cuando termina
     error = Signal(str)        # Envía mensaje de error si falla
     
     def __init__(self, agent_IA, prompt):
@@ -19,14 +14,10 @@ class AIWorker(QThread):
         try:
             # Aquí va la llamada que bloquea
 
-            
-
-            output_obj, price, tokens = self.agent_IA.run(prompt=self.prompt)
-
-            print("HOLA 1")
+            output_obj, response_usage = self.agent_IA.Run(prompt=self.prompt)
             
             # Emitir señal con el resultado
-            self.finished.emit(output_obj, price, tokens)
+            self.finished.emit(output_obj, response_usage)
             
         except Exception as e:
             # Si algo sale mal, emitir error

@@ -1,22 +1,23 @@
 {
-    "type_furniture": "closet",
+    "message": "El plano y la descripción indican que el mueble closet incluye un minibáar en su interior, específicamente en el componente que tiene la dimensión sugerida de 0.55 m x 0.55 m x 0.59 m de altura, con ventilación para minibar y entrepaño reforzado para su ubicación. Por lo tanto, se clasifica como un closet con minibar.",
+    "type_furniture": "closet con minibar",
     "components": [
         {
-            "name": "Mueble Closet M2",
+            "name": "Closet con minibar",
             "type_component": "closet",
             "quantity": 1,
             "detail": {
                 "doors": 2,
                 "drawers": 0,
                 "shelves": 4,
-                "related_to": "Minibar (entrepaño reforzado), caja fuerte incorporada, ver refuerzo para mesón lavamanos"
+                "related_to": "Estructura de closet con espacio para minibar, ventilación y entrepaños reforzados"
             }
         }
     ],
-    "configuration": "Módulo único piso-techo. Ancho total 1.08 m (2 puertas de 0.54 m), profundidad indicada ~0.60 m, altura total aprox. 2.35 m. Interior con 4 entrepaños (uno reforzado para minibar), fondo falso y ventilación para minibar. Zócalo y dilatación contra piso/techo/costados 2 cm.",
-    "comments": "Materiales y acabados según especificaciones: puertas de parche en melamina tipo madera clara (Soder o similar), estructura e interiores en melamina tipo lino, tapa en formica CLAY PW, zócalo, bolillo y manija para closet piso a techo. Caja fuerte integrada en interior (mostrar ubicación en taller). No se identifican cajones en el alzado ni en corte.",
+    "configuration": "Puertas en melamina tipo madera clara, estructura en melamina, entrepaños reforzados, ventilación para minibar y espacio interno para minibar.",
+    "comments": "El mueble incluye un espacio de minibar con ventilación y entrepaños reforzados. La estructura y puertas siguen especificaciones de melamina y fórmica.",
     "viability": {
-        "percentage": 95,
-        "reason": "El plano está rotulado como 'Detalle Mueble Closet - M2' y muestra claramente un módulo continuous piso-techo con dos puertas y entrepaños; especificaciones listan 4 entrepaños, minibar y caja fuerte. Se recomienda verificar en obra todas las dimensiones y refuerzos indicados (minibar/caja fuerte/mesón) antes de fabricación."
+        "percentage": 100,
+        "reason": "El diseño mencionado y la estructura del closet con espacio para minibar son coherentes con las reglas de clasificación y la descripción en planos."
     }
 }

@@ -1,13 +1,10 @@
-from PySide6.QtWidgets import QFrame, QLabel, QWidget, QHBoxLayout, QPushButton, QSizePolicy, QComboBox
-from PySide6.QtCore import Qt, QSize
-from PySide6.QtGui import QIcon
+from PySide6.QtWidgets import QFrame, QWidget, QHBoxLayout, QComboBox
 
+# ====== IMPORTACIONES PROPIAS ======
 from ui.config import theme, icons
-from core import config
 from ui.components.info_card import InfoCard
-from ui.controllers.model_openAI_controller import ModelOpenAI_Controller
+from ui.controllers.chat_topbar_controller import Chat_TopBarController
 
-# En TopBar.__init__
 class Chat_TopBar(QFrame):
     def __init__(self, parent:QWidget|None = None, main_window=None):
         super().__init__(parent)
@@ -24,12 +21,14 @@ class Chat_TopBar(QFrame):
         self.model_openAI_combo = QComboBox()
         self.model_openAI_combo.setObjectName("ChatTopBar-ModelOpenAICB")
         self.model_openAI_combo.addItems(["GPT-5 mini","GPT-4 nano"])
+        self.model_openAI_combo.setEnabled(False)
 
         main_layout.addWidget(self.model_openAI_combo)
 
-        self.model_openAI_controller = ModelOpenAI_Controller(chat_topbar=self, main_window=main_window)
-        self.model_openAI_combo.currentIndexChanged.connect(self.model_openAI_controller.Change_OpenAIModel)
+        # ======== Controlador | Chat TopBar ========= 
 
+        self.controller = Chat_TopBarController(chat_topbar=self, main_window=main_window)
+        self.model_openAI_combo.currentIndexChanged.connect(self.controller.Change_OpenAIModel)
 
         main_layout.addStretch(1)
 

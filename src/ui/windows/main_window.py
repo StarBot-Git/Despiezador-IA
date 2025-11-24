@@ -5,10 +5,13 @@ from PySide6.QtGui import QIcon
 # ====== IMPORTACIONES PROPIAS ======
 from core import config
 from ui.config import theme, icons
+from core.ai_client import AIClient
+
 from ui.components.window_topbar import Window_TopBar
 from ui.components.sidebar import SideBar
 from ui.components.chat_topbar import Chat_TopBar
 from ui.components.chat_area import ChatWidget
+from ui.controllers.chat_controller import ChatController
 # from ui.workers.ai_worker import AIWorker  # <--- IMPORTAR EL WORKER
 
 class MainWindow(QMainWindow):
@@ -27,6 +30,7 @@ class MainWindow(QMainWindow):
         self.input_dir = ""
         self.tokens = 0
         self.tokens_price = 0.0
+        self.ai_client = AIClient()
         
         self.ai_worker = None  # <--- Guardar referencia al worker
 
@@ -43,7 +47,6 @@ class MainWindow(QMainWindow):
         self.window_topbar = Window_TopBar(self)
         self.window_topbar.setSizePolicy(QSizePolicy.Expanding, QSizePolicy.Fixed)
         self.window_topbar.setFixedHeight(50)
-        #root.addWidget(self.window_topbar)
 
         root.addWidget(self.window_topbar, alignment=Qt.AlignTop)
 
@@ -57,7 +60,7 @@ class MainWindow(QMainWindow):
 
         # ======== Side Bar ========
 
-        self.sidebar = SideBar(self)
+        self.sidebar = SideBar(parent=self, ai_client=self.ai_client)
         self.sidebar.setSizePolicy(QSizePolicy.Fixed, QSizePolicy.Expanding)
         self.sidebar.setFixedWidth(285)
 
@@ -98,6 +101,11 @@ class MainWindow(QMainWindow):
 
         chat_content_layout.addWidget(self.chat_area)
 
+        
+        # ========= Controlador Chat Area ========
+
+        self.chat_controller = ChatController(self)
+
         # ========= Separador horizontal  | Decorativo ========
 
         divider = QFrame(self)
@@ -116,45 +124,47 @@ class MainWindow(QMainWindow):
         self.input_field.setPlaceholderText("Escribe tu mensaje aquí...")
         self.input_field.setMinimumHeight(42)
         self.input_field.setMaximumHeight(120)
-        self.input_field.setStyleSheet("""
-            QTextEdit {
-                background: #F5F7F9;
-                border: 1px solid #E0E6EB;
-                border-radius: 20px;
-                padding: 10px 16px;
-                font-size: 14px;
-                color: #133855;
-            }
-            QTextEdit:focus {
-                border: 1px solid #C5D4E0;
-                background: #FFFFFF;
-            }
-        """)
+        self.input_field.setObjectName("message-TextArea")
+        # self.input_field.setStyleSheet("""
+        #     QTextEdit {
+        #         background: #F5F7F9;
+        #         border: 1px solid #E0E6EB;
+        #         border-radius: 20px;
+        #         padding: 10px 16px;
+        #         font-size: 14px;
+        #         color: #133855;
+        #     }
+        #     QTextEdit:focus {
+        #         border: 1px solid #C5D4E0;
+        #         background: #FFFFFF;
+        #     }
+        # """)
 
         self.send_button = QPushButton("  Enviar")
         self.send_button.setCursor(Qt.PointingHandCursor)
         self.send_button.setMinimumHeight(42)
         self.send_button.setIcon(QIcon("assets/icons/paper_plane.png"))
         self.send_button.setIconSize(QSize(18, 18))
+        self.send_button.setObjectName("message-SendButton")
 
-        self.send_button.setStyleSheet("""
-            QPushButton {
-                background: #0F3A55;
-                color: white;
-                border-radius: 20px;
-                padding: 0 18px;
-                font-size: 14px;
-                font-weight: 600;
-            }
-            QPushButton:hover {
-                background: #174C71;
-            }
-            QPushButton:pressed {
-                background: #0B2C40;
-            }
-        """)
+        # self.send_button.setStyleSheet("""
+        #     QPushButton {
+        #         background: #0F3A55;
+        #         color: white;
+        #         border-radius: 20px;
+        #         padding: 0 18px;
+        #         font-size: 14px;
+        #         font-weight: 600;
+        #     }
+        #     QPushButton:hover {
+        #         background: #174C71;
+        #     }
+        #     QPushButton:pressed {
+        #         background: #0B2C40;
+        #     }
+        # """)
 
-        #self.send_button.clicked.connect(self.handle_send_message)
+        self.send_button.clicked.connect(self.chat_controller.Handle_SendMessage)
 
         input_layout.addWidget(self.input_field)
         input_layout.addWidget(self.send_button)
@@ -164,80 +174,3 @@ class MainWindow(QMainWindow):
         main_container.addWidget(self.chat_container, 1)
 
         self.setCentralWidget(central)
-
-    # def handle_send_message(self):
-    #     """Método actualizado con Threading"""
-    #     text = self.input_field.toPlainText().strip()
-
-    #     if not text:
-    #         return
-
-    #     # Deshabilitar el botón mientras procesa
-    #     self.send_button.setEnabled(False)
-    #     self.send_button.setText("  Procesando...")
-        
-    #     # Agregar mensaje del usuario
-    #     self.chat_area.add_message(text, role="user")
-        
-    #     # Limpiar el campo de entrada
-    #     self.input_field.clear()
-        
-    #     # Agregar mensaje temporal "IA escribiendo..."
-    #     self.chat_area.add_message("✍️ Analizando...", role="assistant")
-
-    #     # Crear y configurar el worker thread
-    #     self.ai_worker = AIWorker(self.agent_IA, text)
-        
-    #     # Conectar las señales
-    #     self.ai_worker.finished.connect(self.on_ai_response)
-    #     self.ai_worker.error.connect(self.on_ai_error)
-        
-    #     # Iniciar el thread (no bloquea la interfaz)
-    #     self.ai_worker.start()
-
-    # def on_ai_response(self, output_obj, price, tokens):
-    #     """Se ejecuta cuando el worker termina exitosamente"""
-
-    #     print("HOLA 2")
-        
-    #     # Remover el mensaje temporal "Analizando..."
-    #     self.chat_area.remove_last_message()
-        
-    #     # Convertir respuesta a texto legible
-    #     output_msg = self.agent_IA.json_to_message(output_obj.dict())
-        
-    #     # Agregar respuesta de la IA
-    #     self.chat_area.add_message(output_msg, role="assistant")
-        
-    #     # Guardar el JSON
-    #     self.sidebar.save_output_JSON(output_obj)
-
-    #     self.tokens += int(tokens)
-    #     self.tokens_price += float(price)
-
-    #     print(self.tokens_price)
-
-    #     self.chat_topbar.card_tokens.lbl_value.setText(f"{self.tokens:,}".replace(",", " "))
-    #     self.chat_topbar.card_tokens_price.lbl_value.setText( str( round(self.tokens_price,3) ) )
-        
-    #     # Rehabilitar el botón
-    #     self.send_button.setEnabled(True)
-    #     self.send_button.setText("  Enviar")
-        
-    #     print(f"[{self.agent_IA.__class__.__name__}] Respuesta recibida exitosamente")
-
-    # def on_ai_error(self, error_msg):
-    #     """Se ejecuta si hay un error en el worker"""
-        
-    #     # Remover el mensaje temporal
-    #     self.chat_area.remove_last_message()
-        
-    #     # Mostrar error
-    #     self.chat_area.add_message(f"❌ Error: {error_msg}", role="assistant")
-        
-    #     # Rehabilitar el botón
-    #     self.send_button.setEnabled(True)
-    #     self.send_button.setText("  Enviar")
-        
-    #     print(f"[ERROR] {error_msg}")
-

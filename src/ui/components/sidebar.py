@@ -8,13 +8,14 @@ from pathlib import Path
 # ====== IMPORTACIONES PROPIAS ======
 from ui.config import icons
 from core import config
+from ui.controllers.sidebar_controller import SideBarController
 from ui.components.fileitem_widget import FileItemWidget
 from ui.components.model_combobox import IconComboBox 
-from ui.controllers.furniture_controller import Furniture_Controller
+#from ui.controllers.furniture_controller import Furniture_Controller
 #from ui.controllers.sg_model_controller import StarGPTModelController
 
 class SideBar(QWidget):
-    def __init__(self, parent:QWidget|None = None):
+    def __init__(self, parent:QWidget|None = None, ai_client = None):
         super().__init__(parent)
 
         self.setObjectName("SideBar")
@@ -94,6 +95,10 @@ class SideBar(QWidget):
         options_layout.setContentsMargins(0,0,0,0)
         options_layout.setSpacing(12)
 
+        # ------ Controlador | SideBar -------
+
+        self.controller = SideBarController(sidebar=self, main_window=parent, ai_client=ai_client)
+
         # ------ Label | Select Furniture ------
 
         furniture_label = QLabel("Seleccione un mueble:")
@@ -106,10 +111,9 @@ class SideBar(QWidget):
         self.furniture_combo = QComboBox()
         self.furniture_combo.setObjectName("SideBar-ComboBoxes")
 
-        self.furniture_controller = Furniture_Controller(sidebar=self, main_window=parent)
-        self.furniture_controller.Load_FurnitureFolders(config.INPUT_DIR)
+        self.controller.Load_FurnitureFolders(config.INPUT_DIR)
 
-        self.furniture_combo.currentIndexChanged.connect(self.furniture_controller.Change_Furniture)
+        self.furniture_combo.currentIndexChanged.connect(self.controller.Change_Furniture)
 
         options_layout.addWidget(self.furniture_combo)
 
@@ -130,8 +134,7 @@ class SideBar(QWidget):
         self.model_combo.add_item("Supervisor de Piezas", icons.SUPERVISOR)
         self.model_combo.model.item(2).setEnabled(False)
 
-        # self.model_combo_controller = StarGPTModelController(sidebar=self, main_window=parent)
-        # self.model_combo.currentIndexChanged.connect(self.model_combo_controller.Change_Model)
+        self.model_combo.currentIndexChanged.connect(self.controller.Change_SG_Model)
 
         self.model_combo.setEnabled(False)
 
@@ -184,75 +187,8 @@ class SideBar(QWidget):
         upload_btn.setCursor(Qt.PointingHandCursor)
         upload_btn.setIcon(QIcon(icons.UPLOAD_ICON))
         upload_btn.setIconSize(QSize(16,16))
-        upload_btn.clicked.connect(self.open_file_dialog)
+        upload_btn.clicked.connect(self.controller.OpenFile_Dialog)
 
         main_layout.addWidget(upload_btn)
         
-        # Texto de formatos permitidos
-        # formats_label = QLabel("PDF, PNG, JPG")
-        # formats_label.setObjectName("SideBarFormatsLabel")
-        # formats_label.setAlignment(Qt.AlignCenter)
-        
-        # main_layout.addWidget(formats_label)
-
-
         # ======== fIN ========
-
-        #main_layout.addStretch(1)
-
-    def open_file_dialog(self):
-        """Abre el diálogo para seleccionar archivos"""
-        files, _ = QFileDialog.getOpenFileNames(
-            self,
-            "Seleccionar archivos",
-            "",
-            "Archivos permitidos (*.pdf *.png *.jpg *.jpeg);;Todos los archivos (*)"
-        )
-        
-        if files:
-            for file in files:
-                if file not in self.get_uploaded_files():
-                    self.add_file(file)
-                    print(f"añadi:{file}")
-    
-    def add_file(self, filepath: str):
-        """Añade un archivo a la lista"""
-        self.uploaded_files.append(filepath)
-        
-        # Crear widget del archivo
-        file_widget = FileItemWidget(filepath)
-        file_widget.remove_clicked.connect(self.remove_file)
-        
-        self.files_layout.addWidget(file_widget)
-    
-    def remove_file(self, filepath: str):
-        """Elimina un archivo de la lista"""
-        if filepath in self.uploaded_files:
-            self.uploaded_files.remove(filepath)
-        
-        # Buscar y eliminar el widget
-        for i in range(self.files_layout.count()):
-            widget = self.files_layout.itemAt(i).widget()
-            if isinstance(widget, FileItemWidget) and widget.filepath == filepath:
-                widget.deleteLater()
-                break
-    
-    def get_uploaded_files(self):
-        """Retorna la lista de archivos subidos"""
-        return self.uploaded_files.copy()
-    
-    def clear_files(self):
-        """Limpia todos los archivos de la lista"""
-        self.uploaded_files.clear()
-        while self.files_layout.count():
-            item = self.files_layout.takeAt(0)
-            if item.widget():
-                item.widget().deleteLater()
-
-    def save_output_JSON(self, response_obj):
-        file_JSON = f"{self.output_dir}\\{self.furniture_name}_piezas.json"
-
-        #print(disassemble_obj)
-
-        with open(file_JSON, "w", encoding="utf-8") as f:
-            json.dump(response_obj.dict(), f, indent=4, ensure_ascii=False)

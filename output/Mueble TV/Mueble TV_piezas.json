@@ -1,88 +1,89 @@
 {
-    "type_furniture": "Mueble Closet (incluye Mini Bar, Panel TV, Escritorio y Closet)",
+    "message": "Actualizo análisis: separé los dos muebles altos según lo indicado (izquierdo sobre minibar y central sobre hueco TV). Los componentes se detallan a continuación con su clasificación según vistas planta/alzado.",
+    "type_furniture": "closet",
     "components": [
         {
-            "name": "Mini Bar",
+            "name": "Mueble alto izquierdo (sobre minibar)",
+            "type_component": "mueble_alto",
+            "quantity": 1,
+            "detail": {
+                "doors": 1,
+                "drawers": 0,
+                "shelves": 2,
+                "related_to": "Montado sobre minibar; volumen pequeño independiente; prever ranurado para LED y chaflán según notas"
+            }
+        },
+        {
+            "name": "Mueble alto central (sobre hueco TV)",
+            "type_component": "mueble_alto",
+            "quantity": 1,
+            "detail": {
+                "doors": 3,
+                "drawers": 0,
+                "shelves": 3,
+                "related_to": "Cuerpo superior sobre panel TV; tapa superior continua del cuerpo central; paso previsto para cinta LED y acceso técnico detrás del TV"
+            }
+        },
+        {
+            "name": "Panel soporte TV (panel central)",
+            "type_component": "estructural",
+            "quantity": 1,
+            "detail": {
+                "doors": 0,
+                "drawers": 0,
+                "shelves": 0,
+                "related_to": "Panel estructural para TV 55\"; incluye paso para tomas eléctricas y ranura de instalación de LED"
+            }
+        },
+        {
+            "name": "Mueble bajo minibar (izquierda bajo escritorio)",
             "type_component": "mueble_bajo",
             "quantity": 1,
             "detail": {
                 "doors": 1,
                 "drawers": 0,
                 "shelves": 1,
-                "related_to": "Escritorio"
+                "related_to": "Minibar h=0.51m, prof.≈0.44m; ventilación y paso eléctrico previstos; separado superficialmente por lámina madera"
             }
         },
         {
-            "name": "Mueble alto sobre Mini Bar",
-            "type_component": "mueble_alto",
-            "quantity": 1,
-            "detail": {
-                "doors": 1,
-                "drawers": 0,
-                "shelves": 1,
-                "related_to": "Mini Bar"
-            }
-        },
-        {
-            "name": "Panel TV (panel estructural y nicho para TV)",
+            "name": "Superficie escritorio (sobre minibar y hueco central)",
             "type_component": "estructural",
             "quantity": 1,
             "detail": {
                 "doors": 0,
                 "drawers": 0,
                 "shelves": 0,
-                "related_to": "Mueble alto sobre Panel TV, Escritorio"
+                "related_to": "Superficie de trabajo independiente sobre minibar (lámina madera). No es cavidad."
             }
         },
         {
-            "name": "Mueble alto sobre Panel TV",
-            "type_component": "mueble_alto",
+            "name": "Torre closet derecha (piso a techo) con caja fuerte",
+            "type_component": "closet",
             "quantity": 1,
             "detail": {
                 "doors": 2,
                 "drawers": 0,
-                "shelves": 1,
-                "related_to": "Panel TV"
-            }
-        },
-        {
-            "name": "Escritorio (superficie intermedia)",
-            "type_component": "estructural",
-            "quantity": 1,
-            "detail": {
-                "doors": 0,
-                "drawers": 0,
-                "shelves": 0,
-                "related_to": "Mini Bar, Panel TV"
-            }
-        },
-        {
-            "name": "Closet vertical con caja fuerte",
-            "type_component": "closet",
-            "quantity": 1,
-            "detail": {
-                "doors": 1,
-                "drawers": 0,
                 "shelves": 3,
-                "related_to": "Panel TV"
+                "related_to": "Módulo vertical piso-techo; incluye compartimento CAJA FUERTE en zona media/alta según alzado; profundidad mayor que mueble alto"
             }
         },
         {
-            "name": "Tapa / zócalo frontal continuo",
+            "name": "Zócalo / base corrida",
             "type_component": "estructural",
             "quantity": 1,
             "detail": {
                 "doors": 0,
                 "drawers": 0,
                 "shelves": 0,
-                "related_to": "Todos los módulos"
+                "related_to": "Base continua del conjunto que soporta los módulos bajos"
             }
         }
     ],
-    "configuration": "Conjunto integrado: mueble_bajo (minibar) en extremo izquierdo con mueble_alto encima; panel central estructural para TV con mueble_alto superior; superficie/escritorio entre minibar y panel; closet vertical derecho de piso a techo con caja fuerte. Zócalo/tapa frontal continuo. Muebles altos suspendidos sobre la línea de escritorio/minibar.",
-    "comments": "Se añadieron dos muebles altos solicitados: uno sobre el minibar y otro sobre el panel de TV, según alzado superior. Los muebles altos aparecen como módulos suspendidos con puertas (cavidad). Notas del plano indican ranurado para LED, chaflan y ajustes de altura que deben considerarse en la obra prototipo.",
+    "configuration": "Conjunto compuesto por torre closet derecha (piso-techo con caja fuerte) + panel TV central (estructural) + mueble alto central sobre el hueco TV + mueble alto izquierdo independiente sobre minibar + minibar mueble_bajo con superficie de escritorio superpuesta. Zócalo base corrido.",
+    "comments": "Material según planos: melamina (frentes 18mm, interiores 15mm, fondos 6mm). Herrajes cierre lento. Prever paso para cinta LED y tomas eléctricas. Notas de obra: ajustar alturas por dilatación y detalle de chaflán en prototipo. Confirmar ubicación exacta de caja fuerte y ventilaciones en taller.",
     "viability": {
-        "percentage": 85,
-        "reason": "Basado en las vistas cliente y corrección solicitada: la existencia de los dos muebles altos está clara en el alzado. Persiste incertidumbre en la cantidad exacta de puertas y entrepaños internos (se asignaron valores probables: 1 puerta para el mueble alto sobre minibar y 2 puertas para el sobre TV). Verificar en sitio dimensiones finales, continuidad de altura (si son módulos independientes o continuos) y detalle de herrajes/entrepaños antes de producción."
+        "percentage": 90,
+        "reason": "La separación de los dos muebles altos es clara en alzado y planta; clasificación y ubicación de módulos se pueden definir con buena certeza. Quedan supuestos menores sobre número exacto de entrepaños interiores y número preciso de puertas en el mueble alto central (estimado 3) y en la torre (distribución interna). Recomendable validar y confirmar en sitio o planos de taller antes de producción."
     }
 }

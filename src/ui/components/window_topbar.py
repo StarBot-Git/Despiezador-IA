@@ -1,4 +1,4 @@
-from PySide6.QtWidgets import QFrame, QLabel, QWidget, QHBoxLayout, QPushButton, QSizePolicy
+from PySide6.QtWidgets import QFrame, QLabel, QWidget, QHBoxLayout, QPushButton
 from PySide6.QtCore import Qt, QSize
 from PySide6.QtGui import QIcon
 
@@ -6,7 +6,6 @@ from PySide6.QtGui import QIcon
 from ui.config import icons
 from core import config
 from ui.controllers.topbar_controller import Open_Folder
-
 
 class Window_TopBar(QFrame):
     def __init__(self, parent:QWidget|None = None):

@@ -1,7 +1,6 @@
 import os
 import json
 
-from openai import OpenAI
 from pathlib import Path
 
 class OpenAIFileManager:
@@ -9,12 +8,13 @@ class OpenAIFileManager:
         self.client = openai_client
 
         base_dir = Path(__file__).resolve().parents[2]
+
         self.id_register = base_dir / "assets" / "file_ids.json"
 
     """
         Upload_File():
     """
-    def Upload_File(self, local_FileName: str, path: str, purpose="user_data"):
+    def Upload_File(self, local_FileName: str, path: str, purpose:str = "user_data"):
         data = self.Load_Register()
 
         with open(path, "rb") as f:

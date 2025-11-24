@@ -392,3 +392,34 @@ QMainWindow {
   background: #EFF6FF;
   color: #1E40AF;
 }
+
+#message-TextArea {
+    background: #F5F7F9;
+    border: 1px solid #E0E6EB;
+    border-radius: 20px;
+    padding: 10px 16px;
+    font-size: 14px;
+    color: #133855;
+}
+
+#message-TextArea:focus {
+    border: 1px solid #C5D4E0;
+    background: #FFFFFF;
+}
+
+#message-SendButton {
+    background: #0F3A55;
+    color: white;
+    border-radius: 20px;
+    padding: 0 18px;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+#message-SendButton:hover {
+    background: #174C71;
+}
+
+#message-SendButton:pressed {
+    background: #0B2C40;
+}

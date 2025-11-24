@@ -1,30 +1,42 @@
 from __future__ import annotations
-import json
-from typing import Any
+
+# ====== IMPORTACIONES PROPIAS ======
 from core.base_agent import BaseAgent
-from agents.prompts import Analista_Piezas_Prompt
+from agents.analista.prompts import System_Prompt, USER_PROMPT
+from agents.analista.types import Disassemble
 
 class Analista_Piezas(BaseAgent):
-    #SG_MODEL = "gpt-4.1-nano"
-    SG_MODEL = "gpt-5-mini"
-    SG_RESPONSE_FORMAT = "json_object"
-    SG_TEMPERATURE = 0.5
-    SG_USER_PROMPT = f"""Analiza los planos adjuntos y genera el JSON del mueble según las reglas del sistema. Incluye los componentes y su clasificación exacta según los dibujos. No agregues texto fuera del JSON."""
+    SG_MODEL = "gpt-5-mini"             # Modelo base
+    SG_RESPONSE_FORMAT = "json_object"  # Formato JSON
+    SG_TEMPERATURE = 0.5                # Temperatura flexible
+    SG_USER_PROMPT = USER_PROMPT        # Prompt recomendado
 
-    def __init__(self, files = None):
+    def __init__(self, ai_client):
+        #_____________________________________
+        
         super().__init__(
-            system_prompt=Analista_Piezas_Prompt(), 
+            ai_client=ai_client,
+            system_prompt=System_Prompt(),
             model=self.SG_MODEL,
-            default_tools=[],
-            temperature=self.SG_TEMPERATURE,
-            files=files
+            temperature=self.SG_TEMPERATURE
         )
 
-    def json_to_message(self, data: dict) -> str:
-        """
-        Convierte la estructura JSON del mueble en un mensaje legible estilo IA.
-        Ignora 'configuration' y 'viability.reason'.
-        """
+        self.text_format = Disassemble
+
+        #______________________________________
+
+    """
+        Json_To_Message(self, data):
+        Convierte un diccionario con información analizada del mueble en un mensaje formateado en texto para mostrar al usuario.  
+        Incluye mensaje de IA, tipo de mueble, componentes, comentarios y viabilidad, pero solo si existen en el JSON.
+
+            -self | objeto: Referencia a la instancia de la clase donde está definida la función.
+            -data | dict: Diccionario con la información del análisis (mensaje, tipo, componentes, comentarios y viabilidad).
+    """
+    def Json_To_Message(self, data: dict) -> str:
+        #_______________________________________________________________________________________________
+        #   Extraccion de datos | Creacion de variables
+
         msg_IA = data.get("message", "")
         tipo = data.get("type_furniture", "")
         components = data.get("components", [])
@@ -32,21 +44,23 @@ class Analista_Piezas(BaseAgent):
         viability_pct = viability.get("percentage", None)
         comments = data.get("comments", "")
 
-        # ---- Encabezado ----
+        #_______________________________________________________________________________________________
+        #   Creacion de mensaje
+
         msg = []
 
-        # Solo agregar mensaje de IA si existe
+        # ------ Encabezado ------
         if msg_IA:
             msg.append(f"{msg_IA}\n")
 
-        # Solo agregar tipo si existe y no es el default
+        # ------ Agregar | Tipo de mueble ------
         if tipo and tipo != "mueble desconocido":
             msg.append(f"🔍 **Análisis del mueble identificado: {tipo.replace('_', ' ').title()}**\n")
 
-        # ---- Componentes ----
-        # Solo mostrar sección si hay componentes
+        # ------ Enlistar | Componentes ------
         if components:
             msg.append("### 🧩 **Componentes detectados**")
+
             for comp in components:
                 nombre = comp.get("name", "").replace("_", " ")
                 tipo_comp = comp.get("type_component", "")
@@ -61,31 +75,20 @@ class Analista_Piezas(BaseAgent):
                     f"  - Relación: *{related}*"
                 )
 
-        # ---- Comentarios generales ----
+        # ------ Agregar | Comentarios generales ------
         if comments:
             msg.append("\n### 📝 **Comentarios generales**")
             msg.append(comments)
 
-        # ---- Viabilidad ----
-        if viability_pct is not None and viability_pct is not 0:
+        # ------ Agregar | Viabilidad ------
+        if viability_pct is not None and viability_pct != 0:
             msg.append("\n### 📊 **Viabilidad estimada del análisis**")
             msg.append(f"- **{viability_pct}%** de claridad estructural general.")
 
-        # Si no hay nada que mostrar, retornar mensaje por defecto
+        # ------ Error | Sin datos que mostrar ------
         if not msg:
             return "⚠️ No se pudo generar el análisis. Por favor, intenta nuevamente."
 
         return "\n".join(msg)
-
-
-    def Disassemble(self, prompt = None):
-        # --- Prompt ---
-        if prompt == None:
-            prompt = self.SG_USER_PROMPT
-
-        # --- Ejecutar agente ---
-        print("[AI_Refiner] Enviando informe preliminar al modelo IA...")
-        
-        model_Output = self.run(prompt=prompt, files=self.files)
-
-        return model_Output
+    
+        #_______________________________________________________________________________________________
