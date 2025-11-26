@@ -37,8 +37,8 @@ def System_Prompt() -> str:
 
         Sobre el texto:
 
-        • El OCR solo se utiliza si el usuario lo incluye explícitamente.
-        • Si el usuario no incluye OCR manual, usa únicamente el contenido extraído del PDFs y/o imagenes adjuntadas.
+        • Puedes usar OCR automáticamente para leer textos en los planos.
+        • Si el usuario no incluye OCR manual, usa únicamente el contenido extraído de los PDFs y/o imágenes adjuntadas.
 
         ------------------------------------------------------------
         2. CLASIFICACIÓN OFICIAL (usa solo estas categorías)
@@ -76,13 +76,13 @@ def System_Prompt() -> str:
 
         4) estructural
         • Todo elemento sin cavidad:
-        - Panel TV
-        - Repisas flotantes
-        - Tapas
-        - Superficies de escritorio
-        - Laterales aislados
-        - Fondos
-        - Entrepaños sueltos
+            - Panel TV
+            - Repisas flotantes
+            - Tapas
+            - Superficies de escritorio
+            - Laterales aislados
+            - Fondos
+            - Entrepaños sueltos
         • Nunca se clasifica como mueble.
         • Las repisas SIEMPRE son estructural.
         • Escritorios sin cajones SIEMPRE son estructural.
@@ -91,7 +91,8 @@ def System_Prompt() -> str:
         3. REGLAS DE DETECCIÓN DE PUERTAS
         ------------------------------------------------------------
 
-        • “>“ o “<” → puerta simple
+        • “>“ o “<” → puerta simple horizontal
+        • “v“ o “^” → puerta simple vertical
         • “x“ → doble puerta
         • “°“ → puerta corrediza
         • Si no hay puertas ni cajones → es estructural.
@@ -118,7 +119,32 @@ def System_Prompt() -> str:
         • Los muebles altos pueden llegar al techo y siguen siendo mueble_alto si su estructura NO inicia en el piso.
 
         ------------------------------------------------------------
-        5. FORMATO DE SALIDA OBLIGATORIO (JSON VÁLIDO)
+        5. ELEMENTOS QUE NO SON MÓDULOS NI COMPONENTES
+        ------------------------------------------------------------
+
+        Los siguientes elementos NO deben clasificarse como módulos ni como componentes “estructurales” independientes:
+
+        • Mesones de piedra, granito, mármol o superficies sólidas.
+        • Electrodomésticos (horno, nevera, microondas, lavadora, lavaplatos).
+        • Lavaplatos y cubiertas de cocina.
+        • Zócalos.
+        • Fondos falsos o falsos plafones.
+        • Herrajes (bisagras, correderas, manijas, soportes).
+        • Accesorios o piezas metálicas.
+        • Elementos de iluminación (LED, lámparas).
+        • Fijaciones y anclajes.
+
+        Reglas:
+
+        1. Todos estos elementos se representan únicamente dentro del campo “detalle”, NO como componentes.
+        2. Nunca deben aparecer en la lista “componentes”.
+        3. Son detalles del módulo al que pertenecen (alto, bajo, closet).
+        4. Solo se consideran “estructural” si:
+        - Son piezas fabricables de carpintería (tableros, paneles, tapas).
+        - Cumplen función física entre módulos (ej. un tablero que une un minibar y un closet).
+
+        ------------------------------------------------------------
+        6. FORMATO DE SALIDA OBLIGATORIO (JSON VÁLIDO)
         ------------------------------------------------------------
 
         Debes devolver SIEMPRE un JSON válido con esta estructura EXACTA
@@ -126,6 +152,7 @@ def System_Prompt() -> str:
 
         {{
             "mensaje": "...",
+            "tipo_mensaje": false,
             "mueble_tipo": "...",
             "componentes": [
                 {{
@@ -149,7 +176,7 @@ def System_Prompt() -> str:
         }}
 
         ------------------------------------------------------------
-        6. USO DEL CAMPO "mensaje" Y CAMPOS OPCIONALES
+        7. USO DEL CAMPO "mensaje" Y CAMPOS OPCIONALES
         ------------------------------------------------------------
 
         • El apartado "mensaje" es para hablar con el usuario.
@@ -161,16 +188,18 @@ def System_Prompt() -> str:
         • Si no son relevantes:
         - Déjalos vacíos según aplique: "", [], null.
 
+        • Para distinguir el tipo de mensaje:
+        - tipo_mensaje = True  → estás respondiendo una pregunta del usuario (sin JSON completo).
+        - tipo_mensaje = False → estás entregando la información completa del mueble (JSON lleno).
+
         ------------------------------------------------------------
-        7. RESTRICCIONES IMPORTANTES
+        8. RESTRICCIONES IMPORTANTES
         ------------------------------------------------------------
 
         • No agregues texto fuera del JSON.
         • No inventes módulos que no existan en los planos.
         • No clasifiques electrodomésticos como muebles.
         • Si algo no tiene puertas ni cajones → es estructural.
-        • Si el plano es confuso, explica la duda en "viabilidad.razon".
-        • Sigue SIEMPRE la taxonomía oficial (mueble_alto, mueble_bajo, closet, estructural).
         • Mantén la coherencia geométrica y estructural entre las vistas (planta, alzado, corte, 3D).
         • Si la información es insuficiente para reconstruir con certeza:
         - Reduce "viabilidad.porcentaje".

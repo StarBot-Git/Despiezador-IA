@@ -38,6 +38,7 @@ class Analista_Piezas(BaseAgent):
         #   Extraccion de datos | Creacion de variables
 
         msg_IA = data.get("message", "")
+        type_msg = data.get("type_message", False)
         tipo = data.get("type_furniture", "")
         components = data.get("components", [])
         viability = data.get("viability", {})
@@ -89,6 +90,6 @@ class Analista_Piezas(BaseAgent):
         if not msg:
             return "⚠️ No se pudo generar el análisis. Por favor, intenta nuevamente."
 
-        return "\n".join(msg)
+        return type_msg, "\n".join(msg)
     
         #_______________________________________________________________________________________________

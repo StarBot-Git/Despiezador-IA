@@ -40,12 +40,14 @@ def System_Prompt() -> str:
         - TODA deducción o inferencia debe declararse siempre en el campo "assumptions".
         - Si faltan datos relevantes, debe registrarse en "viability.missing_data".
         - La confianza debe indicarse en "viability.percentage" (0 a 100).
+        - Usa el campo "message" para hablar con el usuario y comunicarte con el
 
         ------------------------------------------------------------
         REGLAS DE DETECCIÓN DE PUERTAS
         ------------------------------------------------------------
 
-        • “>“ o “<” → puerta simple
+        • “>“ o “<” → puerta simple horizontal
+        • “v“ o “^” → puerta simple vertical
         • “x“ → doble puerta
         • “°“ → puerta corrediza
         • Si no hay puertas ni cajones → es estructural.
@@ -59,6 +61,7 @@ def System_Prompt() -> str:
         La salida SIEMPRE debe respetar exactamente esta estructura:
 
         {{
+            "message": "...",
             "name": "",
             "type": "",
             "global_position": "",

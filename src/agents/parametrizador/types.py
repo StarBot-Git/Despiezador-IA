@@ -37,6 +37,7 @@ class Structure(BaseModel):
     cavities: int
 
 class Modules_Description(BaseModel):
+    message: str
     name: str
     type: str
     global_position: str

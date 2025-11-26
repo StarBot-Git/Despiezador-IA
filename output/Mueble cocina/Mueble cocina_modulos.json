@@ -1,150 +1,190 @@
 {
     "parametrizacion": [
         {
-            "name": "Torre de hornos",
+            "name": "Torre de hornos (torre vertical con horno y compartimientos)",
             "type": "closet",
-            "global_position": "Zona izquierda - torre integrada al mueble bajo y mesón",
+            "global_position": "",
             "dimensions": {
-                "height": 0.0,
-                "width": 0.0,
-                "depth": 0.0,
+                "height": 2200.0,
+                "width": 640.0,
+                "depth": 600.0,
                 "unit": "mm"
             },
             "structure": {
                 "doors": 2,
-                "drawers": 0,
-                "shelves": 2,
+                "drawers": 1,
+                "shelves": 3,
                 "cavities": 3
             },
             "sub_modules": [
                 {
-                    "name": "Compartment superior",
-                    "type": "cavity",
-                    "specifications": "Espacio para horno",
-                    "relative_position": "superior",
+                    "name": "Compartimiento superior",
+                    "type": "storage_cavity",
+                    "specifications": "Espacio de almacenamiento superior con estantes móviles (3 estantes previstos en conjunto del módulo).",
+                    "relative_position": "Superior (parte alta de la torre, encima del hueco para horno).",
                     "dimensions": {
-                        "height": 0.0,
-                        "width": 0.0,
-                        "depth": 0.0,
+                        "height": 764.0,
+                        "width": 604.0,
+                        "depth": 582.0,
                         "unit": "mm"
                     }
                 },
                 {
-                    "name": "Compartment medio",
-                    "type": "cavity",
-                    "specifications": "Espacio para microondas",
-                    "relative_position": "medio",
+                    "name": "Hueco para horno empotrado",
+                    "type": "appliance_void",
+                    "specifications": "Vano para horno eléctrico empotrado (centro del módulo). Ventilación y holguras mínimas previstas.",
+                    "relative_position": "Medio (centro de la torre, destinado a horno empotrado de 60 cm).",
                     "dimensions": {
-                        "height": 0.0,
-                        "width": 0.0,
-                        "depth": 0.0,
+                        "height": 564.0,
+                        "width": 604.0,
+                        "depth": 582.0,
                         "unit": "mm"
                     }
                 },
                 {
-                    "name": "Compartment inferior",
-                    "type": "cavity",
-                    "specifications": "Espacio de almacenamiento",
-                    "relative_position": "inferior",
+                    "name": "Cajón y compartimiento inferior",
+                    "type": "drawer_and_cavity",
+                    "specifications": "Cajón frontal (1) y compartimiento inferior con puerta para almacenamiento de utensilios/recipientes.",
+                    "relative_position": "Inferior (debajo del hueco de horno).",
                     "dimensions": {
-                        "height": 0.0,
-                        "width": 0.0,
-                        "depth": 0.0,
+                        "height": 764.0,
+                        "width": 604.0,
+                        "depth": 582.0,
                         "unit": "mm"
                     }
                 }
             ],
             "pieces": [
                 {
-                    "name": "Panel lateral izquierdo",
-                    "role": "side panel",
-                    "height": 0.0,
-                    "width": 0.0,
-                    "depth": 0.0,
-                    "material": "MDF 18mm",
+                    "name": "Costado izquierdo (panel lateral)",
+                    "role": "estructura lateral",
+                    "height": 2200.0,
+                    "width": 600.0,
+                    "depth": 18.0,
+                    "material": "Melamínico 18mm (panel lateral)",
                     "quantity": 1
                 },
                 {
-                    "name": "Panel lateral derecho",
-                    "role": "side panel",
-                    "height": 0.0,
-                    "width": 0.0,
-                    "depth": 0.0,
-                    "material": "MDF 18mm",
+                    "name": "Costado derecho (panel lateral)",
+                    "role": "estructura lateral",
+                    "height": 2200.0,
+                    "width": 600.0,
+                    "depth": 18.0,
+                    "material": "Melamínico 18mm (panel lateral)",
                     "quantity": 1
                 },
                 {
-                    "name": "Panel superior",
-                    "role": "top panel",
-                    "height": 0.0,
-                    "width": 0.0,
-                    "depth": 0.0,
-                    "material": "MDF 18mm",
+                    "name": "Panel superior (cubre torre)",
+                    "role": "tapa superior",
+                    "height": 18.0,
+                    "width": 640.0,
+                    "depth": 600.0,
+                    "material": "Melamínico 18mm",
                     "quantity": 1
                 },
                 {
-                    "name": "Panel inferior",
-                    "role": "bottom panel",
-                    "height": 0.0,
-                    "width": 0.0,
-                    "depth": 0.0,
-                    "material": "MDF 18mm",
+                    "name": "Panel inferior (base)",
+                    "role": "base estructural",
+                    "height": 18.0,
+                    "width": 640.0,
+                    "depth": 600.0,
+                    "material": "Melamínico 18mm",
                     "quantity": 1
                 },
                 {
                     "name": "Panel trasero",
-                    "role": "back panel",
-                    "height": 0.0,
-                    "width": 0.0,
-                    "depth": 0.0,
-                    "material": "MDF 18mm",
+                    "role": "cierre posterior",
+                    "height": 2200.0,
+                    "width": 640.0,
+                    "depth": 6.0,
+                    "material": "Trasera MDF/PVC 6mm",
                     "quantity": 1
                 },
                 {
-                    "name": "Estante",
-                    "role": "shelf",
-                    "height": 0.0,
-                    "width": 0.0,
-                    "depth": 0.0,
-                    "material": "MDF 18mm",
-                    "quantity": 2
+                    "name": "Separador horizontal (entre compartimentos) - cantidad total",
+                    "role": "entrepaños/entrepaños estructurales",
+                    "height": 18.0,
+                    "width": 604.0,
+                    "depth": 600.0,
+                    "material": "Melamínico 18mm",
+                    "quantity": 3
                 },
                 {
-                    "name": "Puerta",
-                    "role": "door",
-                    "height": 0.0,
-                    "width": 0.0,
-                    "depth": 0.0,
-                    "material": "MDF 18mm",
-                    "quantity": 2
+                    "name": "Frente de puerta superior",
+                    "role": "puerta",
+                    "height": 800.0,
+                    "width": 640.0,
+                    "depth": 18.0,
+                    "material": "Melamínico 18mm (frente puerta)",
+                    "quantity": 1
+                },
+                {
+                    "name": "Frente de puerta inferior",
+                    "role": "puerta",
+                    "height": 600.0,
+                    "width": 640.0,
+                    "depth": 18.0,
+                    "material": "Melamínico 18mm (frente puerta)",
+                    "quantity": 1
+                },
+                {
+                    "name": "Frente cajón (gaveta)",
+                    "role": "frente cajón",
+                    "height": 200.0,
+                    "width": 640.0,
+                    "depth": 18.0,
+                    "material": "Melamínico 18mm (frente cajón)",
+                    "quantity": 1
+                },
+                {
+                    "name": "Cajón (caja interna) - conjunto",
+                    "role": "caja cajón",
+                    "height": 164.0,
+                    "width": 568.0,
+                    "depth": 540.0,
+                    "material": "Tablero laminado 12mm / herrajes cajón metálico",
+                    "quantity": 1
+                },
+                {
+                    "name": "Marco soporte horno (soporte y remate)",
+                    "role": "soporte de electrodoméstico",
+                    "height": 18.0,
+                    "width": 640.0,
+                    "depth": 600.0,
+                    "material": "Melamínico 18mm / refuerzo metálico según necesidad",
+                    "quantity": 1
                 }
             ],
             "assumptions": [
-                "Se usa espesor estándar de 18 mm para paneles, estantes y puertas",
-                "El número de cavidades se infiere como estantes+1",
-                "Los submódulos representan compartimentos para horno, microondas y almacenamiento",
-                "No se cuenta con dimensiones exactas de módulo ni submódulos"
+                "Espesor estándar aplicado: 18 mm en paneles estructurales (regla general indicada).",
+                "Ancho externo de la torre tomado como 640 mm basado en indicación gráfica '0.64' presente en los planos.",
+                "Profundidad adoptada como 600 mm (profundidad estándar para muebles de cocina y coincidente con proyecciones de isométricos).",
+                "Altura total de la torre sugerida 2200 mm como valor típico para torres de horno; no se encontró una cota explícita en las imágenes, por tanto se sugiere para fabricación y debe confirmarse en obra.",
+                "Distribución vertical propuesta: compartimiento superior 800 mm, hueco horno 600 mm, cajón 200 mm y compartimiento inferior 600 mm (suma = 2200 mm). Estos valores son sugeridos para acomodar un horno empotrado de 60 cm y espacio de almacenamiento; deben verificarse contra el modelo de horno y requerimientos del cliente.",
+                "Dimensiones internas (ancho y profundidad útiles) calculadas restando espesores: ancho interno = 640 - (2×18) = 604 mm; profundidad interna = 600 - 18 = 582 mm (regla de cálculo interno indicada en instrucciones).",
+                "Alturas internas de sub-módulos calculadas restando 2 × 18 mm (separadores superior/inferior) a la altura externa del sub-módulo según regla: p. ej. 800 - 36 = 764 mm (compartimiento superior).",
+                "Se considera 1 cajón frontal (con caja y guías) y 2 puertas (superior e inferior) tal como la información proporcionada en el detalle del módulo.",
+                "Materiales especificados de forma genérica: melamínico/MDF 18 mm para frentes y paneles; trasera 6 mm; refuerzos metálicos en marco soporte de horno. Referencias de acabado exactas (Rovere, color, etc.) no se definieron y deben confirmarse.",
+                "Holguras de instalación del horno: se deja margen interno calculado; la verificación final contra la ficha técnica del horno (alto, ancho, profundidad y ventilación) es obligatoria antes de fabricación.",
+                "Herrajes (bisagras cierre lento, guías de cajón, ventilación posterior) no están detallados; se asume bisagras de cierre lento sin manijas según nota en plano, y guías metálicas para cajón."
             ],
             "viability": {
-                "percentage": 30,
-                "reason": "Falta información de dimensiones externas e internas",
+                "percentage": 65,
+                "reason": "Interpretación basada en cotas gráficas parciales (ancho 0.64) y reglas estándar. Faltan cotas exactas de altura, profundidad final de hueco de horno y especificación del electrodoméstico; por ello los valores son propuestas que requieren confirmación.",
                 "missing_data": [
-                    "dimensions.height",
-                    "dimensions.width",
-                    "dimensions.depth",
-                    "sub_modules.dimensions.height",
-                    "sub_modules.dimensions.width",
-                    "sub_modules.dimensions.depth",
-                    "pieces.height",
-                    "pieces.width",
-                    "pieces.depth"
+                    "Cota exacta de altura total del módulo (no explícita en las imágenes).",
+                    "Cota exacta de profundidad útil aprobada para la torre (conflicto posible con mesón/encimera).",
+                    "Dimensiones exactas y modelo del horno empotrado (alto, ancho, profundidad y requerimientos de ventilación).",
+                    "Espesor y acabado final confirmados (referencias de melamínico o lacado).",
+                    "Ubicación exacta de puntos de fijación y ventilación posterior para electrodoméstico.",
+                    "Tipo y marca de herrajes (bisagras, guías de cajón, tiradores o sistema push-to-open)."
                 ]
             }
         },
         {
-            "name": "Mueble alto sobre mesón",
+            "name": "Mueble alto (alineado sobre zona de lavado)",
             "type": "mueble_alto",
-            "global_position": "pared superior sobre mesón",
+            "global_position": "alineado sobre zona de lavado",
             "dimensions": {
                 "height": 700.0,
                 "width": 1915.0,
@@ -152,16 +192,16 @@
                 "unit": "mm"
             },
             "structure": {
-                "doors": 6,
+                "doors": 3,
                 "drawers": 0,
                 "shelves": 3,
                 "cavities": 3
             },
             "sub_modules": [
                 {
-                    "name": "Cuerpo 1",
-                    "type": "sub_mueble_alto",
-                    "specifications": "2 puertas, 1 estante interno",
+                    "name": "Submodulo izquierdo",
+                    "type": "compartment",
+                    "specifications": "Puerta simple vertical. Un estante horizontal fijo. Espacio para almacenaje sobre zona de lavado.",
                     "relative_position": "izquierda",
                     "dimensions": {
                         "height": 700.0,
@@ -171,9 +211,9 @@
                     }
                 },
                 {
-                    "name": "Cuerpo 2",
-                    "type": "sub_mueble_alto",
-                    "specifications": "2 puertas, 1 estante interno",
+                    "name": "Submodulo central",
+                    "type": "compartment",
+                    "specifications": "Puerta simple vertical. Un estante horizontal fijo. Posible ventilación posterior para extracción/enchufes.",
                     "relative_position": "centro",
                     "dimensions": {
                         "height": 700.0,
@@ -183,9 +223,9 @@
                     }
                 },
                 {
-                    "name": "Cuerpo 3",
-                    "type": "sub_mueble_alto",
-                    "specifications": "2 puertas, 1 estante interno",
+                    "name": "Submodulo derecho",
+                    "type": "compartment",
+                    "specifications": "Puerta simple vertical. Un estante horizontal fijo.",
                     "relative_position": "derecha",
                     "dimensions": {
                         "height": 700.0,
@@ -195,98 +235,117 @@
                     }
                 }
             ],
-            "pieces": [],
-            "assumptions": [
-                "Altura total inferida como 700 mm según C001_Corte B",
-                "Ancho total inferido como 1 915 mm según suma de anchos en C001_Planta A (641+633+641)",
-                "Profundidad estándar de mueble alto inferida como 320 mm",
-                "Espesor estándar de paneles asumido 18 mm",
-                "Número de cavidades igual a número de sub-módulos",
-                "Detalle de piezas no provisto en plano, piezas omitidas"
-            ],
-            "viability": {
-                "percentage": 80,
-                "reason": "Faltan detalles de piezas y materiales específicos para corte",
-                "missing_data": [
-                    "pieces"
-                ]
-            }
-        },
-        {
-            "name": "Mueble bajo - pared (bajo mesón y fregadero)",
-            "type": "mueble_bajo",
-            "global_position": "pared",
-            "dimensions": {
-                "height": 820.0,
-                "width": 1920.0,
-                "depth": 600.0,
-                "unit": "mm"
-            },
-            "structure": {
-                "doors": 3,
-                "drawers": 1,
-                "shelves": 1,
-                "cavities": 1
-            },
-            "sub_modules": [
+            "pieces": [
                 {
-                    "name": "Submódulo Izquierdo",
-                    "type": "puerta simple",
-                    "specifications": "Puerta simple de 600 mm de ancho",
-                    "relative_position": "izquierda",
-                    "dimensions": {
-                        "height": 820.0,
-                        "width": 600.0,
-                        "depth": 600.0,
-                        "unit": "mm"
-                    }
+                    "name": "Lateral izquierdo",
+                    "role": "Lateral carcasa",
+                    "height": 700.0,
+                    "width": 320.0,
+                    "depth": 18.0,
+                    "material": "MDF melaminado (interior BLANCO NEVADO / exterior ROVERE según plano)",
+                    "quantity": 1
                 },
                 {
-                    "name": "Submódulo Central",
-                    "type": "puerta doble",
-                    "specifications": "Doble puerta con cajón superior",
-                    "relative_position": "centro",
-                    "dimensions": {
-                        "height": 820.0,
-                        "width": 1165.0,
-                        "depth": 600.0,
-                        "unit": "mm"
-                    }
+                    "name": "Lateral derecho",
+                    "role": "Lateral carcasa",
+                    "height": 700.0,
+                    "width": 320.0,
+                    "depth": 18.0,
+                    "material": "MDF melaminado (interior BLANCO NEVADO / exterior ROVERE según plano)",
+                    "quantity": 1
                 },
                 {
-                    "name": "Submódulo Derecho",
-                    "type": "puerta simple",
-                    "specifications": "Puerta simple de 600 mm de ancho",
-                    "relative_position": "derecha",
-                    "dimensions": {
-                        "height": 820.0,
-                        "width": 600.0,
-                        "depth": 600.0,
-                        "unit": "mm"
-                    }
+                    "name": "Panel superior (tope carcasa)",
+                    "role": "Tapa superior carcasa",
+                    "height": 18.0,
+                    "width": 1915.0,
+                    "depth": 320.0,
+                    "material": "MDF melaminado ROVERE (externo)",
+                    "quantity": 1
+                },
+                {
+                    "name": "Panel inferior (base carcasa)",
+                    "role": "Base carcasa",
+                    "height": 18.0,
+                    "width": 1915.0,
+                    "depth": 320.0,
+                    "material": "MDF melaminado (BLANCO NEVADO interior / ROVERE exterior)",
+                    "quantity": 1
+                },
+                {
+                    "name": "Panel trasero",
+                    "role": "Respaldo",
+                    "height": 700.0,
+                    "width": 1915.0,
+                    "depth": 6.0,
+                    "material": "Contrachapado/MDP trasero 6 mm (según detalle de montaje)",
+                    "quantity": 1
+                },
+                {
+                    "name": "Estante horizontal",
+                    "role": "Repisa interior",
+                    "height": 18.0,
+                    "width": 1879.0,
+                    "depth": 302.0,
+                    "material": "MDF melaminado BLANCO NEVADO (fijado a 18 mm desde cantos)",
+                    "quantity": 3
+                },
+                {
+                    "name": "Puerta izquierda",
+                    "role": "Frente puerta",
+                    "height": 700.0,
+                    "width": 641.0,
+                    "depth": 18.0,
+                    "material": "Tablero melaminico ROVERE (frente)",
+                    "quantity": 1
+                },
+                {
+                    "name": "Puerta central",
+                    "role": "Frente puerta",
+                    "height": 700.0,
+                    "width": 633.0,
+                    "depth": 18.0,
+                    "material": "Tablero melaminico ROVERE (frente)",
+                    "quantity": 1
+                },
+                {
+                    "name": "Puerta derecha",
+                    "role": "Frente puerta",
+                    "height": 700.0,
+                    "width": 641.0,
+                    "depth": 18.0,
+                    "material": "Tablero melaminico ROVERE (frente)",
+                    "quantity": 1
                 }
             ],
-            "pieces": [],
             "assumptions": [
-                "Se asume altura externa estándar de módulo base de 820 mm (720 mm interior + 100 mm zócalo)",
-                "La anchura total de 1920 mm se infiere de la dimensión 1.92 m en el plano",
-                "La profundidad de 600 mm se asume como estándar de módulo bajo mesón",
-                "Se considera una cavidad para el espacio de fregadero"
+                "Ancho total externo tomado de las cotas del plano: 0.641 + 0.633 + 0.641 = 1.915 m (1915 mm).",
+                "Altura externa del mueble inferida como 700 mm basándome en cotas verticales aproximadas en los cortes (valores de 0.70 mostrados en alzado).",
+                "Profundidad externa del mueble asumida 320 mm (valor estándar para muebles altos de cocina; plano no muestra una cota única clara para profundidad).",
+                "Espesor estándar de tableros usado 18 mm según regla de inferencia; tablero trasero asumido 6 mm (práctica común).",
+                "Dimensiones internas calculadas aplicando espesores: anch. interna = 1915 - 2*18 = 1879 mm; prof. interna = 320 - 18 = 302 mm; alt. interna = 700 - 2*18 = 664 mm.",
+                "Las 3 puertas son verticales y cubren cada submódulo indicado en planta; se asume holgura de ajuste de 2–3 mm por junta (no incluida en dimensiones de puerta entregadas).",
+                "Se asume 3 repisas internas (elementos tipo estante) distribuidas en los 3 submódulos (1 estante por submódulo), conforme al dato 'shelves':3. Interpretación: 3 tableros estante fijos/ajustables según obra.",
+                "Materiales y acabados inferidos desde las notas del plano: frentes en tablero melamínico ROVERE, interior en BLANCO NEVADO; se registran como asumidos.",
+                "Herrajes (bisagras cierre lento, tornillería, soportes de estante, rieles) no especificados; se asume uso de bisagra cierre lento sin manija según nota del plano, pero el modelo exacto queda por definir."
             ],
             "viability": {
-                "percentage": 80,
-                "reason": "Dimensiones inferidas basadas en medidas estándar y plano; verificar en obra",
+                "percentage": 72,
+                "reason": "Ancho derivado directamente del plano con alta confianza; altura y profundidad inferidas a partir de cotas aproximadas y normas comunes de carpintería. Faltan detalles de herrajes, ajuste de juntas, y confirmación de acabados y espesores exactos.",
                 "missing_data": [
-                    "height",
-                    "width",
-                    "depth"
+                    "Confirmación de altura exacta del mueble alto (cota explícita no localizada).",
+                    "Confirmación de profundidad exacta requerida (cota del plano no inequívoca).",
+                    "Tipo y modelo de bisagras, tornillería y soportes de estante.",
+                    "Si estantes son fijos o regulables y su separación exacta.",
+                    "Tolerancias de montaje y holguras de puertas (gap exacto).",
+                    "Confirmación final de materiales y acabados por cara (interior/exterior)."
                 ]
             }
         },
         {
-            "name": "Mueble bajo - isla",
-            "type": "mueble_bajo",
-            "global_position": "isla",
+            "name": "Mueble bajo - línea mural (con espacio para nevera y lavaplatos)",
+            "type": "Mueble Bajo",
+            "global_position": "",
             "dimensions": {
                 "height": 900.0,
                 "width": 1920.0,
@@ -294,34 +353,412 @@
                 "unit": "mm"
             },
             "structure": {
-                "doors": 4,
-                "drawers": 0,
-                "shelves": 0,
-                "cavities": 4
+                "doors": 3,
+                "drawers": 1,
+                "shelves": 2,
+                "cavities": 3
             },
-            "sub_modules": [],
-            "pieces": [],
+            "sub_modules": [
+                {
+                    "name": "Modulo Izquierdo (almacenamiento)",
+                    "type": "compartment",
+                    "specifications": "Vano de almacenamiento con puerta frontal. Posible estante interno.",
+                    "relative_position": "izquierda",
+                    "dimensions": {
+                        "height": 900.0,
+                        "width": 605.0,
+                        "depth": 600.0,
+                        "unit": "mm"
+                    }
+                },
+                {
+                    "name": "Modulo Central (lavaplatos)",
+                    "type": "sink_module",
+                    "specifications": "Vano para lavaplatos proyectado (doble seno según plano). Incluye frente de cajón superior y puertas inferiores bajo seno.",
+                    "relative_position": "centro",
+                    "dimensions": {
+                        "height": 900.0,
+                        "width": 1165.0,
+                        "depth": 600.0,
+                        "unit": "mm"
+                    }
+                },
+                {
+                    "name": "Modulo Derecho (filler / suministro)",
+                    "type": "filler / servicio",
+                    "specifications": "Espacio reducido lateral para suministro / jambas / remate. Puede alojar paso de instalaciones o panel de terminación.",
+                    "relative_position": "derecha (extremo)",
+                    "dimensions": {
+                        "height": 900.0,
+                        "width": 150.0,
+                        "depth": 600.0,
+                        "unit": "mm"
+                    }
+                }
+            ],
+            "pieces": [
+                {
+                    "name": "Panel lateral (izquierdo)",
+                    "role": "panel lateral carcasa",
+                    "height": 900.0,
+                    "width": 600.0,
+                    "depth": 18.0,
+                    "material": "MDF 18mm",
+                    "quantity": 1
+                },
+                {
+                    "name": "Panel lateral (derecho)",
+                    "role": "panel lateral carcasa",
+                    "height": 900.0,
+                    "width": 600.0,
+                    "depth": 18.0,
+                    "material": "MDF 18mm",
+                    "quantity": 1
+                },
+                {
+                    "name": "Panel inferior (base soporte interno)",
+                    "role": "panel inferior carcasa",
+                    "height": 18.0,
+                    "width": 1884.0,
+                    "depth": 600.0,
+                    "material": "MDF 18mm",
+                    "quantity": 1
+                },
+                {
+                    "name": "Panel superior interno (soporte encimera)",
+                    "role": "panel superior carcasa / refuerzo encimera",
+                    "height": 18.0,
+                    "width": 1884.0,
+                    "depth": 600.0,
+                    "material": "MDF 18mm",
+                    "quantity": 1
+                },
+                {
+                    "name": "Panel trasero",
+                    "role": "cierre trasero",
+                    "height": 900.0,
+                    "width": 1920.0,
+                    "depth": 6.0,
+                    "material": "Chapa trasera 6mm",
+                    "quantity": 1
+                },
+                {
+                    "name": "Separador vertical interno",
+                    "role": "tabique entre modulos",
+                    "height": 900.0,
+                    "width": 600.0,
+                    "depth": 18.0,
+                    "material": "MDF 18mm",
+                    "quantity": 2
+                },
+                {
+                    "name": "Estante interior (izquierdo)",
+                    "role": "estante interno",
+                    "height": 18.0,
+                    "width": 569.0,
+                    "depth": 582.0,
+                    "material": "MDF 18mm",
+                    "quantity": 1
+                },
+                {
+                    "name": "Estante interior (central)",
+                    "role": "estante interno",
+                    "height": 18.0,
+                    "width": 1129.0,
+                    "depth": 582.0,
+                    "material": "MDF 18mm",
+                    "quantity": 1
+                },
+                {
+                    "name": "Puerta izquierda",
+                    "role": "frente puerta",
+                    "height": 800.0,
+                    "width": 605.0,
+                    "depth": 18.0,
+                    "material": "Melamínico / tablero 18mm",
+                    "quantity": 1
+                },
+                {
+                    "name": "Puertas bajo lavaplatos (central, par)",
+                    "role": "frente puerta",
+                    "height": 800.0,
+                    "width": 582.5,
+                    "depth": 18.0,
+                    "material": "Melamínico / tablero 18mm",
+                    "quantity": 2
+                },
+                {
+                    "name": "Frente de cajón (central superior)",
+                    "role": "frente cajon",
+                    "height": 150.0,
+                    "width": 1165.0,
+                    "depth": 18.0,
+                    "material": "Melamínico / tablero 18mm",
+                    "quantity": 1
+                },
+                {
+                    "name": "Cajón (caja interna estimada)",
+                    "role": "cajonera interna (caja)",
+                    "height": 120.0,
+                    "width": 1129.0,
+                    "depth": 450.0,
+                    "material": "MDF 12-15mm (cajas)",
+                    "quantity": 1
+                },
+                {
+                    "name": "Zócalo / patín",
+                    "role": "zócalo frontal",
+                    "height": 80.0,
+                    "width": 1920.0,
+                    "depth": 80.0,
+                    "material": "PVC aluminizado / MDF 18mm pintado",
+                    "quantity": 1
+                },
+                {
+                    "name": "Encimera QUARZTONE",
+                    "role": "mesón / encimera",
+                    "height": 20.0,
+                    "width": 1920.0,
+                    "depth": 600.0,
+                    "material": "QUARZTONE (Gris absoluto) - espesor asumido 20mm",
+                    "quantity": 1
+                }
+            ],
             "assumptions": [
-                "Se asumió grosor de panel de 18 mm según estándar.",
-                "Anchura total inferida de 1.92 m del plano (1920 mm).",
-                "Profundidad estándar de módulos bajos inferida como 600 mm.",
-                "Altura estándar de módulo bajo con mesón inferida como 900 mm.",
-                "Número de cavidades igual al número de puertas."
+                "El usuario indicó que el ancho total del módulo es 1.92 m; por tanto se actualizó el ancho externo a 1920 mm (corrección respecto a versión previa).",
+                "Altura externa tomada de cotas típicas de mueble bajo: 900 mm (cota visible en planos y usada previamente).",
+                "Profundidad externa tomada como 600 mm (cota estándar y consistente con la proyección del plano).",
+                "Espesor estándar de paneles utilizado: 18 mm para laterales, tableros y frentes (regla de inferencia).",
+                "Panel trasero asumido 6 mm (práctica común en la documentación previa).",
+                "Subdivisión del ancho 1920 mm en tres sub-módulos según cotas visibles en el detalle: izquierdo 605 mm, central lavaplatos 1165 mm, derecho remate 150 mm (sumatoria 1920 mm). Estas cotas provienen de lectura directa de acotaciones en el detalle suministrado y se usan para definir submódulos.",
+                "Cálculo de anchuras internas: ancho interno por submódulo = ancho externo submódulo - 2×espesor(18mm). Ej.: módulo izquierdo interno = 605 - 36 = 569 mm; módulo central interno = 1165 - 36 = 1129 mm; módulo derecho interno = 150 - 36 = 114 mm (muy reducido, se considera como filler/caño técnico).",
+                "Profundidad interna = profundidad externa - espesor(18mm) = 600 - 18 = 582 mm (regla aplicada).",
+                "Altura interna aproximada = altura externa - (zócalo + encimera) cuando corresponde; para frentes se asume puerta altura 800 mm considerando zócalo 80 mm y encimera 20 mm (detalle de montaje).",
+                "Se asume 1 cajón superior grande en el módulo central (frente ancho 1165 mm) según la proyección y la anotación 'cajón' en el plano; la caja interna se dimensiona restando espesores laterales.",
+                "Se generaron 2 estantes (uno en módulo izquierdo y uno en módulo central) para respetar 'shelves:2' informado; sus dimensiones se calcularon con anchuras internas por módulo.",
+                "Se han incluido piezas constructivas estándar (zócalo, paneles, encimera) pero no se han detallado herrajes, guías, bisagras ni recortes para fregadero y grifería.",
+                "Dimensiones de frente de puertas y cajones se han colocado en base a las cotas externas del submódulo; holguras de montaje (2-3 mm) no restadas explícitamente en los frentes y deben definirse según especificación de herrajes/overlay.",
+                "Si alguna medida crítica (por ejemplo hueco de nevera, paso de instalaciones, recorte del fregadero) difiere del plano general, deberá actualizarse; estas decisiones están registradas en missing_data."
             ],
             "viability": {
-                "percentage": 70,
-                "reason": "Dimensiones inferidas por ausencia de datos explícitos.",
+                "percentage": 75,
+                "reason": "Ancho total corregido a 1920 mm conforme a la imagen/nota del usuario; la parametrización interna se infirió a partir de cotas visibles y reglas estándar. Faltan detalles críticos de herrajes, recortes para fregadero, ubicación y dimensiones del hueco para nevera/ suministros y tolerancias de montaje.",
                 "missing_data": [
-                    "height",
-                    "width",
-                    "depth"
+                    "Confirmación de que el hueco para nevera está fuera del tramo de 1.92 m o sus dimensiones exactas (ancho/profundidad/altura).",
+                    "Posición exacta y recorte de lavaplatos (seno simple/doble) y holguras para desagües y grifería.",
+                    "Tipo y espesor final de la encimera (se asumió 20 mm QUARZTONE).",
+                    "Especificación exacta de herrajes (bisagras, guías de cajón, sistema de cierre) y su repercusión en holguras/frentes.",
+                    "Confirmación de si el módulo derecho (150 mm) es realmente un filler técnico o corresponde a otro módulo adyacente (p. ej. espacio para nevera).",
+                    "Acabados definitivos y referencias de material (melamina, color, canto), para definir cortes y juegos de materiales.",
+                    "Tolerancias de montaje y tipo de ajuste de frentes (overlay/inset) para calcular frentes y juntas."
+                ]
+            }
+        },
+        {
+            "name": "Mueble bajo - isla (con placa de cocción y almacenamiento frontal)",
+            "type": "mueble_bajo",
+            "global_position": "",
+            "dimensions": {
+                "height": 900.0,
+                "width": 2500.0,
+                "depth": 640.0,
+                "unit": "mm"
+            },
+            "structure": {
+                "doors": 4,
+                "drawers": 4,
+                "shelves": 2,
+                "cavities": 4
+            },
+            "sub_modules": [
+                {
+                    "name": "Módulo 1 (frontal izquierdo)",
+                    "type": "columna frontal",
+                    "specifications": "Columna con 1 cajón superior y puerta inferior. Espacio de almacenamiento general.",
+                    "relative_position": "frente, extremo izquierdo de la isla",
+                    "dimensions": {
+                        "height": 900.0,
+                        "width": 625.0,
+                        "depth": 640.0,
+                        "unit": "mm"
+                    }
+                },
+                {
+                    "name": "Módulo 2 (frente centro-izq)",
+                    "type": "columna frontal",
+                    "specifications": "Columna con 1 cajón superior y puerta inferior. Puede situarse parcial o totalmente bajo la placa de cocción según confirmación de posición de la placa.",
+                    "relative_position": "frente, segunda desde la izquierda",
+                    "dimensions": {
+                        "height": 900.0,
+                        "width": 625.0,
+                        "depth": 640.0,
+                        "unit": "mm"
+                    }
+                },
+                {
+                    "name": "Módulo 3 (frente centro-derecha)",
+                    "type": "columna frontal",
+                    "specifications": "Columna con 1 cajón superior y puerta inferior. Espacio para almacenamiento o para alojar electrónica bajo placa según requerimiento.",
+                    "relative_position": "frente, tercera desde la izquierda",
+                    "dimensions": {
+                        "height": 900.0,
+                        "width": 625.0,
+                        "depth": 640.0,
+                        "unit": "mm"
+                    }
+                },
+                {
+                    "name": "Módulo 4 (frontal derecho)",
+                    "type": "columna frontal",
+                    "specifications": "Columna con 1 cajón superior y puerta inferior. Espacio para accesorios o contenedor de basura opcional.",
+                    "relative_position": "frente, extremo derecho de la isla",
+                    "dimensions": {
+                        "height": 900.0,
+                        "width": 625.0,
+                        "depth": 640.0,
+                        "unit": "mm"
+                    }
+                }
+            ],
+            "pieces": [
+                {
+                    "name": "Panel lateral (izquierdo)",
+                    "role": "panel lateral carcasa",
+                    "height": 900.0,
+                    "width": 640.0,
+                    "depth": 18.0,
+                    "material": "MDF 18mm",
+                    "quantity": 1
+                },
+                {
+                    "name": "Panel lateral (derecho)",
+                    "role": "panel lateral carcasa",
+                    "height": 900.0,
+                    "width": 640.0,
+                    "depth": 18.0,
+                    "material": "MDF 18mm",
+                    "quantity": 1
+                },
+                {
+                    "name": "Panel inferior continuo",
+                    "role": "panel inferior carcasa",
+                    "height": 18.0,
+                    "width": 2464.0,
+                    "depth": 640.0,
+                    "material": "MDF 18mm",
+                    "quantity": 1
+                },
+                {
+                    "name": "Panel superior interno (soporte encimera)",
+                    "role": "panel superior carcasa / refuerzo encimera",
+                    "height": 18.0,
+                    "width": 2464.0,
+                    "depth": 640.0,
+                    "material": "MDF 18mm",
+                    "quantity": 1
+                },
+                {
+                    "name": "Panel trasero",
+                    "role": "cierre trasero",
+                    "height": 900.0,
+                    "width": 2500.0,
+                    "depth": 6.0,
+                    "material": "Chapa trasera 6mm",
+                    "quantity": 1
+                },
+                {
+                    "name": "Separador vertical interno",
+                    "role": "tabique entre modulos",
+                    "height": 900.0,
+                    "width": 18.0,
+                    "depth": 640.0,
+                    "material": "MDF 18mm",
+                    "quantity": 3
+                },
+                {
+                    "name": "Estante interior (tipo fijo)",
+                    "role": "estante interno",
+                    "height": 18.0,
+                    "width": 589.0,
+                    "depth": 622.0,
+                    "material": "MDF 18mm",
+                    "quantity": 2
+                },
+                {
+                    "name": "Puerta frontal (x4)",
+                    "role": "frente puerta",
+                    "height": 800.0,
+                    "width": 625.0,
+                    "depth": 18.0,
+                    "material": "Melamínico / tablero 18mm",
+                    "quantity": 4
+                },
+                {
+                    "name": "Frente de cajón (x4)",
+                    "role": "frente cajon",
+                    "height": 160.0,
+                    "width": 625.0,
+                    "depth": 18.0,
+                    "material": "Melamínico / tablero 18mm",
+                    "quantity": 4
+                },
+                {
+                    "name": "Cajón (caja interna estimada, x4)",
+                    "role": "cajonera interna (caja)",
+                    "height": 120.0,
+                    "width": 589.0,
+                    "depth": 540.0,
+                    "material": "MDF 12-15mm (cajas)",
+                    "quantity": 4
+                },
+                {
+                    "name": "Zócalo / patín",
+                    "role": "zócalo frontal",
+                    "height": 80.0,
+                    "width": 2500.0,
+                    "depth": 80.0,
+                    "material": "PVC aluminizado / MDF pintado",
+                    "quantity": 1
+                },
+                {
+                    "name": "Encimera QUARZTONE",
+                    "role": "mesón / encimera",
+                    "height": 20.0,
+                    "width": 2500.0,
+                    "depth": 640.0,
+                    "material": "QUARZTONE (Gris absoluto) - espesor asumido 20mm",
+                    "quantity": 1
+                }
+            ],
+            "assumptions": [
+                "El usuario indicó ancho total 2.5 m; por tanto ancho externo corregido a 2500 mm.",
+                "Se dividió el frente de la isla en 4 módulos iguales de 625 mm para reproducir una distribución equilibrada y facilitar frentes/herrajes. Esta división es una inferencia práctica ante la falta de acotación detallada por módulos.",
+                "Se asume que cada módulo frontal incorpora un cajón superior y una puerta inferior (drawers=4, doors=4) porque es una configuración frecuente y coherente con iteraciones previas. Si la placa de cocción ocupa un vano sin frentes, esto deberá ajustarse.",
+                "Espesor estándar empleado: 18 mm para laterales, tableros y frentes; trasera 6 mm; encimera QUARZTONE asumida 20 mm, siguiendo las reglas de inferencia.",
+                "Cálculo de anchuras internas por módulo = 625 - 2×18 = 589 mm; profundidad interna = 640 - 18 = 622 mm; estas reglas aplicadas están documentadas según especificación.",
+                "Se incluyen 3 separadores verticales (uno entre cada módulo) de 18 mm para crear 4 cavidades independientes (cavities=4).",
+                "Se han generado 2 estantes fijos (shelves=2) ubicados según criterio de optimización de almacenamiento; su ubicación vertical exacta no fue especificada en plano.",
+                "Se asumió altura de frentes 800 mm (900 mm total - zócalo 80 mm - encimera 20 mm). Las holguras de montaje (2–3 mm) y el tipo de ajuste (overlay/inset) no se descontaron y deben definirse con los herrajes.",
+                "No se han modelado: cortes de encimera para placa, refuerzos metálicos puntuales bajo placa, herrajes (bisagras, guías de cajón), canalizaciones para instalaciones ni tolerancias específicas; estos elementos no son visibles en el plano y requieren especificación del cliente/proveedor.",
+                "Si la placa de cocción debe situarse en una posición concreta (p. ej. centrada entre módulos 2 y 3 o sobre módulo central estrecho), la configuración de frentes y la presencia de un vano técnico pueden cambiar; la disposición actual presume frentes en los 4 módulos hasta confirmar ubicación exacta de la placa."
+            ],
+            "viability": {
+                "percentage": 65,
+                "reason": "Ancho corregido y particionado en 4 módulos iguales por inferencia práctica; la parametrización cubre dimensiones externas y piezas principales, pero faltan datos críticos de posicionamiento de la placa de cocción, recortes en la encimera, herrajes y organización interna definitiva. Es adecuada como base pero requiere confirmación técnica antes de fabricación.",
+                "missing_data": [
+                    "Posición exacta de la placa de cocción sobre la isla (coincidente con uno o varios módulos) y dimensiones de recorte en encimera.",
+                    "Confirmación de si el vano central debe quedar sin frentes (acceso técnico) o si todos los módulos llevan frente y cajón como asumido.",
+                    "Tipo y modelo de herrajes (bisagras, guías de cajón, sistema de apertura) y tolerancias de montaje (overlay/inset).",
+                    "Refuerzos estructurales adicionales bajo placa de cocción, y requisitos de ventilación/espacio para conexiones.",
+                    "Especificación exacta de acabados, colores y cantos para frentes y cantos de tableros.",
+                    "Confirmación de zócalo y encimera definitivos (material, espesor y remates)."
                 ]
             }
         }
     ],
     "tokens": {
-        "input": 55474,
-        "output": 12603,
-        "total": 68077
+        "input": 42514,
+        "output": 19127,
+        "total": 61641
     }
 }

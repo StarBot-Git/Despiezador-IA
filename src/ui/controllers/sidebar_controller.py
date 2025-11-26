@@ -194,7 +194,7 @@ class SideBarController:
 
         agent.Clear_FileHistory()
         
-        agent.files = files_data
+        files_data
         agent.Add_Files(files_data)
 
     # ------ Control | Modelo StarGPT ------
@@ -250,7 +250,7 @@ class SideBarController:
         for p in paths:
             local_filename = f"{furniture_name}-{os.path.splitext(os.path.basename(p))[0]}"
             
-            file_id = self.openAI_fileManager.Load_File(local_filename)
+            file_id = self.openAI_fileManager.Load_File(local_FileName=local_filename, path=p)
             
             if file_id == None:
                 file_id = self.openAI_fileManager.Upload_File(local_FileName=local_filename, path=p)

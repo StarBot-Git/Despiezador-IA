@@ -43,11 +43,13 @@ class FileItemWidget(QWidget):
         # Nombre del archivo
         name_label = QLabel(self.filename)
         name_label.setObjectName("FileItemName")
+        name_label.setMaximumWidth(180)
         
         # Añadir widgets
         layout.addWidget(self.remove_btn)
         layout.addWidget(icon_label)
-        layout.addWidget(name_label, 1)
+        layout.addWidget(name_label)
+        layout.addStretch()  # ← Empuja todo hacia la izquierda
 
     def remove_element(self):
         self.remove_clicked.emit(self.filepath)

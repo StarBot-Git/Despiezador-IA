@@ -1,56 +1,57 @@
 {
-    "message": "Análisis basado en las vistas planta, alzados, cortes y 3D: identifico torre de hornos, mueble alto continuo, mueble bajo pared, mueble bajo isla y la encimera estructural. Véanse detalles y observaciones en 'comentarios' y 'viabilidad'.",
-    "type_furniture": "Cocina - conjunto (torre + mueble alto + muebles bajos + isla)",
+    "message": "Análisis completo del conjunto de cocina según planos: identifico una torre de hornos vertical, un mueble alto continuo sobre la zona del lavaplatos, un mueble bajo mural (con espacio para nevera y lavaplatos) y un mueble bajo isla con placa. He usado las vistas en planta, alzado, cortes y 3D para definir continuidad y separación de módulos. Hay notas de materiales (mesón QUARTZTONE, frentes en melamínico ROVERE de PELIKANO, zócalo PVC aluminizado) y accesorios señalados en los planos que se incluyen en 'comentarios' y no como componentes.",
+    "type_message": false,
+    "type_furniture": "mueble_bajo",
     "components": [
         {
-            "name": "Torre de hornos",
+            "name": "Torre de hornos (torre vertical con horno y compartimientos)",
             "type_component": "closet",
             "quantity": 1,
             "detail": {
                 "doors": 2,
-                "drawers": 0,
-                "shelves": 2,
-                "related_to": "Zona izquierda: torre integrada al mueble bajo y mesón (espacio para hornos y microondas)."
+                "drawers": 1,
+                "shelves": 3,
+                "related_to": "Mueble bajo línea mural y mueble alto (se apoya en la línea mural). Contiene hueco para horno eléctrico según detalle."
             }
         },
         {
-            "name": "Mueble alto sobre mesón",
+            "name": "Mueble alto (alineado sobre zona de lavado)",
             "type_component": "mueble_alto",
             "quantity": 1,
             "detail": {
-                "doors": 6,
+                "doors": 3,
                 "drawers": 0,
                 "shelves": 3,
-                "related_to": "Mueble superior continuo sobre mesón y fregadero (compartido en 3 cuerpos con puertas dobles)."
+                "related_to": "Mueble bajo línea mural (montado sobre el mesón y en continúo con éste)."
             }
         },
         {
-            "name": "Mueble bajo - pared (bajo mesón y fregadero)",
+            "name": "Mueble bajo - línea mural (con espacio para nevera y lavaplatos)",
             "type_component": "mueble_bajo",
             "quantity": 1,
             "detail": {
                 "doors": 3,
                 "drawers": 1,
-                "shelves": 1,
-                "related_to": "Corrida inferior sobre zócalo, incluye espacio para nevera/suministros y cajón identificado en elevación."
+                "shelves": 2,
+                "related_to": "Torre de hornos y mueble alto. Incluye hueco para nevera y módulo bajo lavabo indicado en cortes."
             }
         },
         {
-            "name": "Mueble bajo - isla",
+            "name": "Mueble bajo - isla (con placa de cocción y almacenamiento frontal)",
             "type_component": "mueble_bajo",
             "quantity": 1,
             "detail": {
                 "doors": 4,
-                "drawers": 0,
-                "shelves": 0,
-                "related_to": "Isla principal con placa de cocina y campana, frente con 4 cuerpos/aperturas visibles."
+                "drawers": 4,
+                "shelves": 2,
+                "related_to": "Mesón/encimera (QUARZTONE) y campana extractora. Isla independiente de la línea mural."
             }
         }
     ],
-    "configuration": "Configuración lineal contra pared con torre de hornos en la izquierda, mueble bajo continuo + fregadero en la pared, mueble alto continuo encima del mesón, isla independiente con placa y campana.",
-    "comments": "Conteos basados en la división y símbolos visibles en planos (alzados, cortes y 3D). Las puertas dobles en el mueble alto se aprecian como 'X' en los alzados. Se identifica al menos un cajón en la corrida baja por la nota 'Cajón' en alzado. Mesón identificado como QUARZTONE en notas.",
+    "configuration": "Cocina en L con isla: línea mural con torre de hornos y mueble bajo continuo (incluye hueco nevera y lavaplatos), mueble alto continuo sobre lavaplatos y isla alineada paralela a la línea mural con placa empotrada.",
+    "comments": "Materiales y herrajes según notas de plano: frentes en melamínico (ROVERE PELIKANO), mesón QUARZTONE (Gris absoluto), zócalo en PVC aluminizado; lavaplatos doble en acero inoxidable y campana extractora peninsular indicada. Herrajes y aperturas superiores pendientes de definir por el cliente según nota en plano.",
     "viability": {
-        "percentage": 80,
-        "reason": "Plano legible y con anotaciones claras para la identificación de módulos principales; incertidumbre en el número exacto de entrepaños interiores y posible existencia de cajones adicionales (especialmente en isla) por escala de los dibujos y faltante de detalle interior completo. Confirmar listados de herrajes y cortes interiores para precisión final."
+        "percentage": 75,
+        "reason": "Clasificación de módulos principal basada en planta, cortes y vistas 3D. Las cantidades de puertas, cajones y entrepaños se estimaron a partir de los frontales y cotas repetidas en los alzados y planta; sin embargo hay ambigüedad en algunos frentes interiores (p. ej. número exacto de cajones en la isla y comparticiones internas de la torre). Si se requiere fabricación exacta, solicitar cortes detallados de interior de módulos y lista de herrajes/aperturas para confirmar cajoneras y separaciones internas."
     }
 }

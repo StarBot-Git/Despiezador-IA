@@ -16,18 +16,25 @@ class BaseAgent:
     """
         Add_Files():
     """
-    def Add_Files(self, files: list[dict] = None):
+    def Add_Files(self, files: dict = None):
         #_____________________________________________________________
 
+        # Remove any existing file attachments from pending content to avoid duplicates or stale refs
+        self.content = [
+            item for item in self.content
+            if not (isinstance(item, dict) and item.get("type") in ("input_file", "input_image"))
+        ]
+
         if files:
+            # Reset the internal file list when new files are provided
+            self.files = []
             for file_id, file_type in files.items():
                 input_type = "input_file" if file_type == 'pdf' else "input_image"
 
                 self.files.append({"type": input_type, "file_id": file_id})
-                print(f"[{self.__class__.__name__}] Añadio: {file_id}")
-            
-            self.content.extend(self.files)
-        else:
+                print(f"[{self.__class__.__name__}] Anadio: {file_id}")
+
+        if self.files:
             self.content.extend(self.files)
         #_____________________________________________________________
 
@@ -47,7 +54,7 @@ class BaseAgent:
                 new_history.append(msg)
                 continue
 
-            # Ver si algún ítem es archivo
+            # Ver si algun item es archivo
             contains_file = any(
                 isinstance(x, dict) and x.get("type") in ("input_file", "input_image")
                 for x in content
@@ -58,6 +65,7 @@ class BaseAgent:
 
         self.messages = new_history
         self.files = []
+        self.content = []
 
         print(f"[{self.__class__.__name__}] Archivos del historial limpiados.")
 
@@ -76,7 +84,7 @@ class BaseAgent:
 
         print(f"[{self.__class__.__name__}] Hizo su peticion a OpenAI: {self.model}")
 
-        # ------ Añadir | Prompt ------
+        # ------ Anadir | Prompt ------
         self.content.append({"type": "input_text", "text": prompt})
         # self.messages.append()
 

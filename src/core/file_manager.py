@@ -30,12 +30,25 @@ class OpenAIFileManager:
     """
         Load_File():
     """
-    def Load_File(self, local_FileName: str):
+    def Load_File(self, local_FileName: str, path: str = None, purpose: str = "user_data"):
+        """
+        Devuelve el ID del archivo almacenado en el registro. Si no existe y se
+        proporciona una ruta, lo sube a OpenAI y registra su ID.
+        """
         data = self.Load_Register()
+        file_id = data.get(local_FileName)
 
-        print(f"[OpenAI] Se cargo {local_FileName}: {data[local_FileName]}")
+        if file_id:
+            print(f"[OpenAI] Se cargó {local_FileName}: {file_id}")
+            return file_id
 
-        return data.get(local_FileName)
+        print(f"[OpenAI] {local_FileName} no existe en el registro.")
+
+        if path and os.path.exists(path):
+            print(f"[OpenAI] Subiendo {local_FileName} desde {path}...")
+            return self.Upload_File(local_FileName, path, purpose)
+
+        return None
 
     """
         Load_Register():

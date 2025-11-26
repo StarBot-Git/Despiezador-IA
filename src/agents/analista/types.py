@@ -21,6 +21,7 @@ class Components(BaseModel):
 
 class Disassemble(BaseModel):
     message: str
+    type_message: bool
     type_furniture: str
     components: list[Components]
     configuration: str

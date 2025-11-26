@@ -1,13 +1,14 @@
 {
     "parametrizacion": [
         {
-            "name": "MINI BAR (izquierda, base)",
+            "message": "Parámetros generados con base en planos y notas; revisar en obra prototipo y validar puntos eléctricos/ventilación y bisagras.",
+            "name": "Minibar",
             "type": "mueble_bajo",
-            "global_position": "lado izquierdo del conjunto modular, base bajo superficie de escritorio, junto a panel TV; apoya la superficie de escritorio y requiere paso para ventilación y punto eléctrico",
+            "global_position": "izquierda bajo TV",
             "dimensions": {
                 "height": 510.0,
-                "width": 473.0,
-                "depth": 440.0,
+                "width": 440.0,
+                "depth": 473.0,
                 "unit": "mm"
             },
             "structure": {
@@ -16,104 +17,276 @@
                 "shelves": 0,
                 "cavities": 1
             },
-            "sub_modules": [],
+            "sub_modules": [
+                {
+                    "name": "Cavidad minibar",
+                    "type": "cavity",
+                    "specifications": "Espacio interno para instalación de minibar y paso para toma eléctrica; sin entrepaños internos según alcance. Se prevé ventilación y holguras para apertura de puerta.",
+                    "relative_position": "interno, entre paneles laterales, sobre base",
+                    "dimensions": {
+                        "height": 480.0,
+                        "width": 410.0,
+                        "depth": 467.0,
+                        "unit": "mm"
+                    }
+                }
+            ],
             "pieces": [
                 {
                     "name": "Panel lateral izquierdo",
-                    "role": "laterales carcasa",
+                    "role": "side",
                     "height": 510.0,
-                    "width": 440.0,
-                    "depth": 15.0,
-                    "material": "melamina interior 15mm (Primadera - interior)",
+                    "width": 15.0,
+                    "depth": 473.0,
+                    "material": "melamina interior 15mm",
                     "quantity": 1
                 },
                 {
                     "name": "Panel lateral derecho",
-                    "role": "laterales carcasa",
+                    "role": "side",
+                    "height": 510.0,
+                    "width": 15.0,
+                    "depth": 473.0,
+                    "material": "melamina interior 15mm",
+                    "quantity": 1
+                },
+                {
+                    "name": "Tapa superior",
+                    "role": "top",
+                    "height": 15.0,
+                    "width": 440.0,
+                    "depth": 473.0,
+                    "material": "melamina interior 15mm",
+                    "quantity": 1
+                },
+                {
+                    "name": "Base inferior",
+                    "role": "bottom",
+                    "height": 15.0,
+                    "width": 440.0,
+                    "depth": 473.0,
+                    "material": "melamina interior 15mm",
+                    "quantity": 1
+                },
+                {
+                    "name": "Fondo",
+                    "role": "back",
                     "height": 510.0,
                     "width": 440.0,
-                    "depth": 15.0,
-                    "material": "melamina interior 15mm (Primadera - interior)",
-                    "quantity": 1
-                },
-                {
-                    "name": "Panel superior (entre laterales)",
-                    "role": "tapa superior carcasa",
-                    "height": 15.0,
-                    "width": 443.0,
-                    "depth": 440.0,
-                    "material": "melamina interior 15mm (Primadera)",
-                    "quantity": 1
-                },
-                {
-                    "name": "Panel inferior / base",
-                    "role": "base carcasa",
-                    "height": 15.0,
-                    "width": 443.0,
-                    "depth": 440.0,
-                    "material": "melamina interior 15mm (Primadera)",
-                    "quantity": 1
-                },
-                {
-                    "name": "Fondo (back) 6mm",
-                    "role": "fondo trasero",
-                    "height": 480.0,
-                    "width": 443.0,
                     "depth": 6.0,
-                    "material": "melamina fondo 6mm (gris Sukta Mt según especificación)",
+                    "material": "melamina fondo 6mm",
                     "quantity": 1
                 },
                 {
-                    "name": "Frente / puerta",
-                    "role": "puerta frontal",
-                    "height": 504.0,
-                    "width": 467.0,
+                    "name": "Frente puerta minibar",
+                    "role": "door",
+                    "height": 507.0,
+                    "width": 437.0,
                     "depth": 18.0,
-                    "material": "melamina frentes 18mm (Rovere Pelikano - Taroa de Primadera)",
-                    "quantity": 1
-                },
-                {
-                    "name": "Abertura / rejilla ventilación (previsión)",
-                    "role": "ventilación / pase eléctrico",
-                    "height": 0.0,
-                    "width": 0.0,
-                    "depth": 0.0,
-                    "material": "previsión/recorte - dimensiones a confirmar en obra",
+                    "material": "melamina frente 18mm (frente)",
                     "quantity": 1
                 }
             ],
             "assumptions": [
-                "Conversion de medidas: valores proporcionados en metros convertidos a mm (h:0.51 m → 510 mm; w:0.473 m → 473 mm; depth:0.44 m → 440 mm).",
-                "Espesores según especificación del proyecto: frentes 18 mm, interiores 15 mm, fondo 6 mm; aplicados a piezas (se usa 15 mm para laterales, 6 mm para fondo, 18 mm para puerta).",
-                "Cálculo ancho interno: ancho_externo 473 mm - 2×espesor_lateral(15 mm) = 443 mm (paneles superior/inferior y fondo dimensionados con ancho interno).",
-                "Cálculo profundidad interna útil: profundidad_externa 440 mm - espesor_fondo 6 mm = 434 mm (se documenta como profundidad útil; fondo de 6 mm según detalle).",
-                "Cálculo alto interno útil: alto_externo 510 mm - (espesor_superior 15 mm + espesor_inferior 15 mm) = 480 mm.",
-                "Puerta única: puerta cubre vano frontal menos holguras estándar 3 mm por lado y 3 mm arriba/abajo → puerta ancho = 473 - 2×3 = 467 mm; altura = 510 - 2×3 = 504 mm. Holguras asumidas en rango 2–3 mm según regla de proyecto.",
-                "Se incluye previsión de abertura para ventilación/paso eléctrico pero sin dimensiones finales (a confirmar en obra).",
-                "Las piezas laterales se definen con la profundidad total externa y espesor 15 mm para facilitar su mecanización; panel superior/inferior se considera encajado entre laterales (ancho interno 443 mm).",
-                "No se modela zócalo/plinto ni herrajes específicos (bisagras, rieles, manija) por falta de información; se deben definir en fase de fabricación.",
-                "Materiales asignados según especificación del documento: frentes rovere (Taroa Primadera), fondos gris Sukta Mt; interior en melamina 15 mm. Canto rígido en frentes y cantos interiores flexibles según nota del proyecto."
+                "Se interpreta texto del plano: h:0,51 → altura externa 510 mm; w:0,44 → ancho externo 440 mm; L:0,473 → profundidad externa 473 mm.",
+                "Se usa espesor interior 15 mm para laterales, tapa y base según nota 'Interior de mueble en 15mm'. (documentado en planos).",
+                "Se usa espesor de frente 18 mm para la puerta según nota 'frentes en 18mm'.",
+                "Se usa fondo 6 mm según nota 'Fondo de 6mm'.",
+                "Alto interno calculado: 510 - (2 × 15) = 480 mm (se asumió tapa y base 15 mm).",
+                "Ancho interno calculado: 440 - (2 × 15) = 410 mm (se asumieron dos laterales 15 mm).",
+                "Profundidad interna calculada restando espesor de fondo: 473 - 6 = 467 mm (se asume regla 'profundidad interna = externa - espesor' aplicada al fondo).",
+                "Frente/puerta dimensionada con holgura total conservadora de 3 mm en altura y 3 mm en ancho: puerta H = 510 - 3 = 507 mm; puerta W = 440 - 3 = 437 mm (holguras estándar 2–3 mm aplicadas).",
+                "Se modela una sola cavidad interna y sin entrepaños (según detalle 'MINI BAR' sin repisas interiores explícitas).",
+                "No se ha definido lado de apertura/ubicación de bisagras; se deja para definición en obra.",
+                "Se asume montaje y soporte integrado en la composición lineal; fijaciones y tolerancias a validar en obra."
             ],
             "viability": {
                 "percentage": 70,
-                "reason": "Dimensiones principales inferidas del plano y notas; faltan datos de plinto, ubicación y tamaño exacto de ventilación, tolerancias finales, herrajes y posición de pasacables, por lo que algunos cortes y detalles deben verificarse en obra.",
+                "reason": "Dimensiones exteriores principales tomadas del plano y especificaciones de material inferidas; faltan detalles críticos (bisagras, cortes de ventilación, ubicación de punto eléctrico, tolerancias de montaje y ajustes de chaflán/led).",
                 "missing_data": [
-                    "Dimensiones y posición exacta de la abertura/rejilla de ventilación y paso para cableado/punto eléctrico del minibar",
-                    "Detallado de plinto / separación al suelo (zócalo) y posible ajuste por dilatación",
-                    "Tipo y posición de bisagras, sistema de cierre lento y manija (dimensiones de herrajes)",
-                    "Espesor/posicionamiento de perfiles de instalación para cinta LED en zona TV (interfaz con este módulo)",
-                    "Cotas de montaje respecto a cerramiento de obra y tolerancias de hueco (revisión in situ necesaria)"
+                    "Lado y tipo de apertura (bisagra) de la puerta",
+                    "Ubicación exacta y dimensiones de ventilaciones/ranuras para ventilación",
+                    "Posición exacta del punto eléctrico y tomas para minibar",
+                    "Confirmación final del espesor de laterales (15mm) vs espesor estándar 18mm en algunos elementos",
+                    "Holguras exactas de montaje y juego para puerta en obra",
+                    "Detallar chaflán y ranurado para cinta LED (nota mencionada pero sin dimensiones)",
+                    "Sistema de fijación al mueble contiguo / pared y tolerancias de dilatación a aplicar"
                 ]
             }
         },
         {
-            "name": "MUEBLE ALTO SOBRE MINI BAR (izquierda, superior reducido)",
-            "type": "mueble_alto",
-            "global_position": "Izquierda, encima del minibar; parte superior reducida alineada al lado izquierdo del panel TV",
+            "message": "Parametrización generada para el módulo. Ver 'assumptions' para detalles de inferencias y 'viability' para limitaciones.",
+            "name": "Panel TV (fondo y soporte)",
+            "type": "estructural",
+            "global_position": "",
             "dimensions": {
-                "height": 600.0,
-                "width": 473.0,
-                "depth": 320.0,
+                "height": 2340.0,
+                "width": 2335.0,
+                "depth": 580.0,
+                "unit": "mm"
+            },
+            "structure": {
+                "doors": 0,
+                "drawers": 0,
+                "shelves": 0,
+                "cavities": 0
+            },
+            "sub_modules": [
+                {
+                    "name": "Nicho TV",
+                    "type": "niche",
+                    "specifications": "Apertura para montaje TV 55\", provisión paso cables y ranura para cinta LED (canal superior). Altura tomada de acotación gráfica h:1.55 m; posición central del módulo.",
+                    "relative_position": "centro",
+                    "dimensions": {
+                        "height": 1550.0,
+                        "width": 0.0,
+                        "depth": 0.0,
+                        "unit": "mm"
+                    }
+                }
+            ],
+            "pieces": [
+                {
+                    "name": "Panel fondo (trasero)",
+                    "role": "fondo",
+                    "height": 0.0,
+                    "width": 0.0,
+                    "depth": 6.0,
+                    "material": "Melamina (fondo) 6mm",
+                    "quantity": 1
+                },
+                {
+                    "name": "Laterales internas (carcasa)",
+                    "role": "lateral",
+                    "height": 0.0,
+                    "width": 0.0,
+                    "depth": 15.0,
+                    "material": "Melamina interior 15mm",
+                    "quantity": 2
+                },
+                {
+                    "name": "Tapa superior / inferior (carcasa)",
+                    "role": "tapa",
+                    "height": 0.0,
+                    "width": 0.0,
+                    "depth": 15.0,
+                    "material": "Melamina interior 15mm",
+                    "quantity": 2
+                },
+                {
+                    "name": "Panel frontal / soporte visible",
+                    "role": "frente/soporte",
+                    "height": 0.0,
+                    "width": 0.0,
+                    "depth": 18.0,
+                    "material": "Melamina frentes 18mm (Rovere Pelikano)",
+                    "quantity": 1
+                },
+                {
+                    "name": "Ranura / canal para cinta LED",
+                    "role": "canalizacion",
+                    "height": 0.0,
+                    "width": 0.0,
+                    "depth": 0.0,
+                    "material": "Perfil aluminio (instalación posterior) - no incluido",
+                    "quantity": 1
+                },
+                {
+                    "name": "Apertura / paso de cables",
+                    "role": "paso",
+                    "height": 0.0,
+                    "width": 0.0,
+                    "depth": 0.0,
+                    "material": "Corte en panel - dimensionar en obra",
+                    "quantity": 1
+                }
+            ],
+            "assumptions": [
+                "Se asume que el módulo corresponde al 'Mueble TV' listado en el ACTA DE VANOS referencia P2 (ANCHO 2335 x ALTO 2340 x PROFUNDO 580) y por ello se usan esas dimensiones como dimensiones externas del módulo.",
+                "Se utilizó la cota gráfica dentro del alzado 'h:1.55 m' como altura del vano o nicho del TV (se guarda en sub_modules.Nicho TV.height = 1550 mm).",
+                "Grosor estándar aplicado según la documentación: frentes 18 mm, interior 15 mm, fondo 6 mm. Estas espesores provienen de las notas del proyecto y se aplican a 'pieces'.",
+                "Donde no se dispone de ancho y profundidad específicos para el nicho del TV se han dejado valores 0 para indicar medida no determinada (se requiere verificación en sitio).",
+                "Se incluyó una ranura/canal para cinta LED y un paso de cables como piezas funcionales pero sin dimensiones pues no están especificadas; su ejecución depende de perfil y ubicación exacta en obra.",
+                "Se mantiene el módulo como 'estructural' sin puertas ni cajones tal como se indicó.",
+                "Cualquier ajuste de chaflán, diseño estético o refuerzo estructural para montaje del televisor debe definirse en taller/obra; no se ha inventado detalle de refuerzos o anclajes."
+            ],
+            "viability": {
+                "percentage": 65,
+                "reason": "Dimensiones externas tomadas del ACTA DE VANOS (posible variación según referencia exacta de módulo en obra) y varias cotas internas no están especificadas en plano; se requieren verificaciones en sitio y definición de ranuras/anchos y refuerzos para montaje TV y canal LED.",
+                "missing_data": [
+                    "Ancho exacto del vano (nicholateral interno) para el soporte del TV",
+                    "Profundidad interna útil del nicho y distancia de montaje para soporte VESA",
+                    "Posición y sección exacta del canal/running para cinta LED (anchura y profundidad)",
+                    "Detalle de refuerzos o soportes para montaje de TV (placa, patas, herrajes)",
+                    "Tolerancias de montaje y holguras para frentes y ranuras",
+                    "Chaflán(es) o diseño estético final (medidas del bisel)",
+                    "Ubicación exacta del paso de tomas eléctricas y datos (toma TV y minibar)"
+                ]
+            }
+        },
+        {
+            "message": "Parámetrización del módulo 'Escritorio (tapa lamina madera independiente)' generada. Verificar in situ fijaciones, ranurado LED, chaflán y alturas finales antes de fabricación.",
+            "name": "Escritorio (tapa lamina madera independiente)",
+            "type": "estructural",
+            "global_position": "izquierda bajo TV (sobre minibar / adyacente al panel TV)",
+            "dimensions": {
+                "height": 18.0,
+                "width": 1420.0,
+                "depth": 600.0,
+                "unit": "mm"
+            },
+            "structure": {
+                "doors": 0,
+                "drawers": 0,
+                "shelves": 0,
+                "cavities": 0
+            },
+            "sub_modules": [],
+            "pieces": [
+                {
+                    "name": "Tapa escritorio - lamina madera",
+                    "role": "superficie / tapa independiente",
+                    "height": 18.0,
+                    "width": 1420.0,
+                    "depth": 600.0,
+                    "material": "Melamínico ref. Taroa / Rovere Pelikano (laminado)",
+                    "quantity": 1
+                }
+            ],
+            "assumptions": [
+                "Se interpreta que la 'tapa' es una pieza horizontal independiente con espesor estándar de 18 mm (regla de inferencia: espesor 18 mm).",
+                "Ancho (1420 mm) inferido desde cota de planta mostrada como '1.42' en los planos (convertida a mm).",
+                "Profundidad (600 mm) inferida a partir de la cota '.60' presente en planta/elevación y como profundidad típica de escritorio/minibar (convertida a mm).",
+                "La cota de altura de instalación de la superficie se interpreta como h = 0.85 m (850 mm) según marca 'h:0.85m' en alzado; sin embargo, en 'dimensions.height' se reporta el espesor de la pieza (18 mm) ya que el módulo es la tapa. La altura de colocación (850 mm) debe confirmarse en sitio.",
+                "Material de la tapa tomado de la especificación general: lamina madera color 'rovere' (Melamínico ref. Taroa / Rovere Pelikano).",
+                "Se asume que la tapa se apoya/solapa sobre el minibar y/o sobre soporte en la pared; detalles de soporte (escuadras, patas, pletinas ocultas, unión mecánica) no están especificados y deben definirse en obra.",
+                "No se modelaron ranuras para iluminación LED ni chaflán; se registran como requerimientos a validar y detallar en fabricación.",
+                "Todas las conversiones de metros a mm se redondearon a mm enteros (0.01 m ≈ 10 mm)."
+            ],
+            "viability": {
+                "percentage": 75,
+                "reason": "Dimensiones principales (ancho, profundidad, espesor) inferidas con base en las cotas visibles del plano; faltan detalles de fijación, tolerancias, chaflán, ranurado LED y confirmación final de alturas en obra.",
+                "missing_data": [
+                    "Método y posiciones exactas de soporte / fijación (escuadras, zócalo, refuerzos, pletinas).",
+                    "Confirmación final de ancho (1420 mm) y profundidad (600 mm) en verificación en sitio.",
+                    "Confirmación de espesor final y tipo de canto (18 mm inferido, canto rígido vs flexible).",
+                    "Detalles de ranurado para cinta LED (posición, profundidad, ancho).",
+                    "Diseño de chaflán/fillet (dimensiones de chaflán indicadas como requerimiento).",
+                    "Ubicación y recortes para tomas eléctricas/ventilación en la tapa o en su proximidad.",
+                    "Holguras y tolerancias de montaje frente a tapa ventilación y puertas adyacentes.",
+                    "Altura de instalación final y cotejo con línea de mobiliario general (se indica ajuste en obra)."
+                ]
+            }
+        },
+        {
+            "message": "He actualizado las dimensiones del módulo según las cotas indicadas en el plano: ancho igual al minibar (0.44 m), alto 1.20 m y fondo 0.55 m. Por favor validar en obra la confirmación de bisagras, posición de entrepaños y detalle de ranurado para LED/chaflán.",
+            "name": "Gabinete superior izquierdo",
+            "type": "Mueble Alto",
+            "global_position": "izquierda - superior (sobre minibar y escritorio, al lado izquierdo del panel TV)",
+            "dimensions": {
+                "height": 1200.0,
+                "width": 440.0,
+                "depth": 550.0,
                 "unit": "mm"
             },
             "structure": {
@@ -124,200 +297,127 @@
             },
             "sub_modules": [
                 {
-                    "name": "Cavidad interna principal",
-                    "type": "compartment",
-                    "specifications": "Cavidad interna única con un entrepaño creando dos compartimentos; preparada para ranurado para cinta LED en base/inferior del mueble y chaflán frontal según detalle arquitectónico (dimensiones del ranurado y chaflán por confirmar).",
-                    "relative_position": "Interno al módulo, accesible por la puerta frontal; sobre minibar",
+                    "name": "Compartimento Principal",
+                    "type": "vano",
+                    "specifications": "Vano único con 1 entrepaño (fijo/ajustable) y frente abatible; fondo 6mm; interiores 15mm; frentes 18mm. Debe preverse ranurado para cinta LED y espacio para dilataciones según nota de proyecto.",
+                    "relative_position": "dentro del cuerpo del gabinete, detrás de la puerta frontal",
                     "dimensions": {
-                        "height": 564.0,
-                        "width": 437.0,
-                        "depth": 302.0,
+                        "height": 1164.0,
+                        "width": 404.0,
+                        "depth": 544.0,
                         "unit": "mm"
                     }
                 }
             ],
             "pieces": [
                 {
-                    "name": "Panel lateral izquierdo",
-                    "role": "lateral",
-                    "height": 600.0,
-                    "width": 15.0,
-                    "depth": 320.0,
-                    "material": "melamina interior 15mm",
+                    "name": "Lateral izquierdo",
+                    "role": "carcasa",
+                    "height": 1200.0,
+                    "width": 18.0,
+                    "depth": 550.0,
+                    "material": "Melamina Taroa de Primadera (estructura 18mm)",
                     "quantity": 1
                 },
                 {
-                    "name": "Panel lateral derecho",
-                    "role": "lateral",
-                    "height": 600.0,
-                    "width": 15.0,
-                    "depth": 320.0,
-                    "material": "melamina interior 15mm",
+                    "name": "Lateral derecho",
+                    "role": "carcasa",
+                    "height": 1200.0,
+                    "width": 18.0,
+                    "depth": 550.0,
+                    "material": "Melamina Taroa de Primadera (estructura 18mm)",
                     "quantity": 1
                 },
                 {
                     "name": "Tapa superior",
-                    "role": "top",
-                    "height": 15.0,
-                    "width": 473.0,
-                    "depth": 320.0,
-                    "material": "melamina 15mm",
+                    "role": "carcasa",
+                    "height": 18.0,
+                    "width": 440.0,
+                    "depth": 550.0,
+                    "material": "Melamina Taroa de Primadera (18mm)",
                     "quantity": 1
                 },
                 {
-                    "name": "Tapa inferior",
-                    "role": "bottom",
-                    "height": 15.0,
-                    "width": 473.0,
-                    "depth": 320.0,
-                    "material": "melamina 15mm",
+                    "name": "Base inferior",
+                    "role": "carcasa",
+                    "height": 18.0,
+                    "width": 440.0,
+                    "depth": 550.0,
+                    "material": "Melamina Taroa de Primadera (18mm)",
                     "quantity": 1
                 },
                 {
-                    "name": "Fondo (back panel)",
-                    "role": "back",
-                    "height": 564.0,
-                    "width": 437.0,
+                    "name": "Fondo (trasera)",
+                    "role": "fondo",
+                    "height": 1200.0,
+                    "width": 440.0,
                     "depth": 6.0,
-                    "material": "melamina 6mm (fondo)",
+                    "material": "Melamina Sukta Mt de Primadera (6mm)",
                     "quantity": 1
                 },
                 {
-                    "name": "Puerta frontal",
-                    "role": "frente / puerta simple",
-                    "height": 594.0,
-                    "width": 467.0,
+                    "name": "Frente / Puerta",
+                    "role": "frente puerta",
+                    "height": 1197.0,
+                    "width": 437.0,
                     "depth": 18.0,
-                    "material": "melamina frente 18mm (Rovere Pelikano)",
+                    "material": "Melamina Taroa de Primadera (frentes 18mm, canto rígido)",
                     "quantity": 1
                 },
                 {
-                    "name": "Entrepaño interno",
+                    "name": "Entrepaño",
                     "role": "entrepaño",
                     "height": 15.0,
-                    "width": 437.0,
-                    "depth": 302.0,
-                    "material": "melamina interior 15mm",
+                    "width": 404.0,
+                    "depth": 544.0,
+                    "material": "Melamina interior 15mm",
+                    "quantity": 1
+                },
+                {
+                    "name": "Herrajes y fijaciones",
+                    "role": "herrajes",
+                    "height": 0.0,
+                    "width": 0.0,
+                    "depth": 0.0,
+                    "material": "Bisagras cierre lento, tornillería y anclajes (especificar en obra)",
                     "quantity": 1
                 }
             ],
             "assumptions": [
-                "Se usa espesor estándar de tablero: frentes 18 mm, interiores (lados, tapas, entrepaños) 15 mm, fondo 6 mm (según especificación general del proyecto).",
-                "Ancho externo del módulo inferido igual al ancho del minibar indicado en plano: 0.473 m → 473 mm (texto: MINIBAR w:0,473).",
-                "Profundidad externa inferida a partir de anotaciones numéricas parciales ('.32' en planos) y coherencia con muebles altos: 0.32 m → 320 mm.",
-                "Altura externa del módulo asumida como 600 mm (módulo superior reducido típico) por falta de una cota explícita; se documenta como inferida y debe validar en obra.",
-                "Dimensiones internas calculadas con reglas estándar: ancho interno = ancho ext - 2×espesor lateral (473 - 2×18 = 437 mm); profundidad interna = profundidad ext - espesor trasero (320 - 18 = 302 mm); alto interno = alto ext - (espesor superior + inferior) (600 - 2×15 = 570 mm). Se estableció altura interna utilizable en 564 mm considerando posibles ajustes/holguras de montaje.",
-                "Se aplicó holgura típica de puertas de 3 mm por lado/arriba/abajo para calcular dimensiones de frente (puerta H = 600 - 2×3 = 594 mm; W = 473 - 2×3 = 467 mm).",
-                "Entrepaño colocado a mitad de la cavidad (1 entrepaño) para generar 2 compartimentos con cantidad 1 indicada; posición exacta debe verificarse en obra.",
-                "Preparación para ranurado LED y chaflán registrada en especificaciones del sub-módulo; dimensiones y ubicación exacta del ranurado y chaflán no proporcionadas y requieren definición por diseño o en obra.",
-                "Se asume unión y cantos según proyecto: cantos interiores flexibles, frentes en canto rígido (según nota del proyecto).",
-                "No se han incluido herrajes (bisagras, tornillería, soporte muro) ni sistema de cierre lento en piezas; se asume que se especificarán por separado según proyecto."
+                "El ancho del gabinete se toma igual al minibar indicado en planta: 0.44 m (440 mm) según indicación del usuario y vista superior del plano.",
+                "El alto externo del módulo se toma de la vista lateral indicada por el usuario: 1.20 m (1200 mm).",
+                "El fondo externo se toma de la vista lateral como 0.55 m (550 mm), cercano a otros muebles del conjunto (se usó 550 mm).",
+                "Espesores aplicados según especificación general del proyecto: laterales/tapas/frentes 18 mm, entrepaños/interior 15 mm, fondo 6 mm.",
+                "Cálculos de espacio interno aplican reglas: ancho interno = 440 - (2 × 18) = 404 mm; profundidad interna = 550 - 6 = 544 mm; alto interno = 1200 - (2 × 18) = 1164 mm.",
+                "Frente/puerta dimensionado con holgura total conservadora de 3 mm en alto y ancho (holguras estándar 2–3 mm).",
+                "Se considera un entrepaño (15 mm) que divide el vano en 2 cavidades; posición exacta del entrepaño no especificada y debe validarse en sitio.",
+                "No se ha definido el sentido de apertura de la puerta (lado de bisagra) ni la ubicación exacta de pasacables o ranurado para LED; estas decisiones quedan para verificación en obra.",
+                "Se asume que se debe prever ranurado para cinta LED y chaflán según notas del proyecto; dimensiones y sección del ranurado no están especificadas y deben detallarse.",
+                "Se han mantenido materiales y acabados indicados en el proyecto (Rovere Pelikano / Sukta Mt) conforme a la especificación textual."
             ],
             "viability": {
-                "percentage": 65,
-                "reason": "Dimensiones horizontales (ancho) y la profundidad fueron inferidas a partir de anotaciones del plano; la altura del módulo se asumió por ausencia de cota explícita. Faltan detalles críticos para fabricación final (chaflán, ranurado LED, posición exacta del entrepaño, herrajes y anclaje).",
+                "percentage": 80,
+                "reason": "Dimensiones principales (alto, ancho, fondo) extraídas del plano y confirmadas por el usuario; faltan detalles de herrajes, posición exacta del entrepaño, lado de apertura de puerta, y especificación del ranurado LED/chaflán.",
                 "missing_data": [
-                    "Cota explícita de altura del módulo en plano (se asumió 600 mm).",
-                    "Dimensiones y sección del ranurado para cinta LED (ancho, profundidad, posición exacta).",
-                    "Dimensiones/ángulo y posición del chaflán frontal.",
-                    "Posición exacta y tipo de herrajes (bisagra, montaje, sentido de apertura).",
-                    "Confirmación de acabado y material de frentes (aunque se sugiere Rovere Pelikano, confirmar).",
-                    "Holguras de montaje y tolerancias especificadas por el proyecto.",
-                    "Requerimientos de ventilación/clearance para minibar bajo el módulo y puntos eléctricos.",
-                    "Ubicación exacta del entrepaño (altura) si debe ser fija o ajustable."
+                    "Lado y sentido de apertura de la puerta (bisagra: izquierda/derecha)",
+                    "Cota exacta de posición/altura del entrepaño interno (mm desde base)",
+                    "Sección y posición exacta del ranurado para cinta LED y diseño de chaflán",
+                    "Detalle de refuerzos para montaje en pared y tolerancias de fijación",
+                    "Especificación de manija (modelo y ubicación) y compatibilidad con chaflán",
+                    "Confirmación final de materiales para entrepaños (si serán del mismo material que frentes)",
+                    "Holguras y tolerancias de montaje finales a aplicar en obra"
                 ]
             }
         },
         {
-            "name": "PANEL / SOPORTE TV (centro)",
-            "type": "estructural",
-            "global_position": "centro (panel soporte TV, entre minibar izquierdo y módulo closet derecho)",
+            "message": "He actualizado los gabinetes superiores centrales para que compartan el mismo ancho que la tapa escritorio (1420 mm) y profundidad 550 mm. Dividí el ancho en dos gabinetes simétricos (710 mm cada uno). Verificar en obra la división, sentido de apertura de puertas, y detalles de ranurado LED / chaflán.",
+            "name": "Gabinetes superiores centrales",
+            "type": "Mueble Alto",
+            "global_position": "Sobre hueco TV (centrales, compartiendo tapa superior con módulos adyacentes)",
             "dimensions": {
-                "height": 2340.0,
+                "height": 400.0,
                 "width": 1420.0,
-                "depth": 580.0,
-                "unit": "mm"
-            },
-            "structure": {
-                "doors": 0,
-                "drawers": 0,
-                "shelves": 1,
-                "cavities": 0
-            },
-            "sub_modules": [
-                {
-                    "name": "Repisa abierta bajo pantalla",
-                    "type": "shelf_open",
-                    "specifications": "Repisa abierta bajo la ubicación de TV a cota h = 0.85 m según alzado; prevista ranura/paso para cinta LED en cerramiento superior y tomas en zona trasera.",
-                    "relative_position": "Bajo la pantalla (altura de repisa 850 mm desde piso)",
-                    "dimensions": {
-                        "height": 18.0,
-                        "width": 1384.0,
-                        "depth": 562.0,
-                        "unit": "mm"
-                    }
-                }
-            ],
-            "pieces": [
-                {
-                    "name": "Panel frontal (cara)",
-                    "role": "panel estructural / acabado frontal",
-                    "height": 2340.0,
-                    "width": 1420.0,
-                    "depth": 18.0,
-                    "material": "Melamina Rovere Pelikano (frente) - 18mm",
-                    "quantity": 1
-                },
-                {
-                    "name": "Repisa (tabla)",
-                    "role": "entrepaño abierto",
-                    "height": 18.0,
-                    "width": 1384.0,
-                    "depth": 562.0,
-                    "material": "Melamina Rovere Pelikano - 18mm",
-                    "quantity": 1
-                },
-                {
-                    "name": "Fondo (back panel)",
-                    "role": "fondo interno",
-                    "height": 2340.0,
-                    "width": 1420.0,
-                    "depth": 6.0,
-                    "material": "Melamina (fondo) - 6mm",
-                    "quantity": 1
-                }
-            ],
-            "assumptions": [
-                "Altura total del módulo tomada de 'Acta de vanos' P2: 2340 mm (se asume que el alzado central comparte esta cota).",
-                "Ancho del panel tomado de la segmentación presente en planos (.60 .51 1.42 .80): se asume que 1.42 m corresponde al ancho del panel central → 1420 mm.",
-                "Profundidad tomada del 'Acta de vanos' P2: 580 mm (se asume profundidad uniforme para el conjunto TV).",
-                "Espesor estándar aplicado: frentes y entrepaños 18 mm; fondo 6 mm (según especificación texto: 'Fondo de 6mm; frentes en 18mm').",
-                "Cálculo de huecos internos aplicado: ancho_interno = ancho_externo - 2×espesor = 1420 - 36 = 1384 mm; profundidad_interna = profundidad_externa - espesor = 580 - 18 = 562 mm; alto_interno = altura_externa - (2×espesor) = 2340 - 36 = 2304 mm. Estas fórmulas aplicadas según reglas estándar indicadas.",
-                "Se considera una repisa abierta única bajo la pantalla a cota 0.85 m según nota del alzado; la repisa se modela como entrepaño de 18 mm de espesor con ancho útil 1384 mm y profundidad útil 562 mm.",
-                "Se prevé paso para cinta LED en zona superior trasera del panel y paso para tomas eléctricas tras la repisa, pero no se dimensionan perfiles ni ranuras exactas (datos no suministrados).",
-                "Materiales de referencia: 'Taroa de Primadera (Rovere Pelikano)' para frentes y 'Sukta Mt' para acentos según texto; se ha asignado 'Melamina Rovere Pelikano' a frentes y repisa por coherencia con la especificación.",
-                "No se han incluido herrajes, perforaciones de anclaje ni detalles de fijación; deben validarse en obra."
-            ],
-            "viability": {
-                "percentage": 65,
-                "reason": "Dimensiones principales parcialmente inferidas de planos y segmentaciones; falta confirmación in situ de anchos reales, posiciones exactas del hueco TV y detalle de ranuras para LED y fijaciones.",
-                "missing_data": [
-                    "Confirmación en sitio del ancho real del módulo central vs acta de vanos (inconsistencia entre acta y segmentación de planta).",
-                    "Dimensiones exactas del vano para TV (ancho/alto del hueco visible) y holguras requeridas para la televisión.",
-                    "Detalles y sección de ranurado/perfil para cinta LED (profundidad y posición exacta).",
-                    "Detalles de anclaje/montaje al muro y refuerzos estructurales.",
-                    "Acabados exactos interiores (si entrepaños internos deben ser de mismo material que puertas)."
-                ]
-            }
-        },
-        {
-            "name": "MUEBLE ALTO SOBRE TV (franja superior central)",
-            "type": "mueble_alto",
-            "global_position": "franja superior central, sobre hueco para TV, entre mueble alto izquierdo y mueble derecho (caja fuerte); forma la banda superior sobre la apertura de TV",
-            "dimensions": {
-                "height": 510.0,
-                "width": 1420.0,
-                "depth": 350.0,
+                "depth": 550.0,
                 "unit": "mm"
             },
             "structure": {
@@ -328,319 +428,296 @@
             },
             "sub_modules": [
                 {
-                    "name": "Compartment izquierdo",
-                    "type": "compartment",
-                    "specifications": "Compartimento interior con 1 entrepaño fijo/ajustable (1 estante). Puerta frontal overlay. Back panel 6mm, estante 15mm",
-                    "relative_position": "izquierda (mitad izquierda de la franja superior)",
+                    "name": "Gabinete Superior Central - Izquierda",
+                    "type": "gabinete",
+                    "specifications": "Puerta abatible vertical; 1 entrepaño que genera 2 niveles internos; frentes 18 mm, interiores 15 mm, fondo 6 mm; prever ranurado para cinta LED y chaflán según proyecto.",
+                    "relative_position": "sobre hueco TV, lado izquierdo del conjunto central",
                     "dimensions": {
-                        "height": 474.0,
-                        "width": 683.0,
-                        "depth": 344.0,
+                        "height": 400.0,
+                        "width": 710.0,
+                        "depth": 550.0,
                         "unit": "mm"
                     }
                 },
                 {
-                    "name": "Compartment derecho",
-                    "type": "compartment",
-                    "specifications": "Compartimento interior con 1 entrepaño fijo/ajustable (1 estante). Puerta frontal overlay. Back panel 6mm, estante 15mm",
-                    "relative_position": "derecha (mitad derecha de la franja superior)",
+                    "name": "Gabinete Superior Central - Derecha",
+                    "type": "gabinete",
+                    "specifications": "Puerta abatible vertical; 1 entrepaño que genera 2 niveles internos; frentes 18 mm, interiores 15 mm, fondo 6 mm; prever ranurado para cinta LED y chaflán según proyecto.",
+                    "relative_position": "sobre hueco TV, lado derecho del conjunto central",
                     "dimensions": {
-                        "height": 474.0,
-                        "width": 683.0,
-                        "depth": 344.0,
+                        "height": 400.0,
+                        "width": 710.0,
+                        "depth": 550.0,
                         "unit": "mm"
                     }
                 }
             ],
             "pieces": [
                 {
-                    "name": "Puerta izquierda",
-                    "role": "frente puerta",
-                    "height": 504.0,
-                    "width": 707.0,
-                    "depth": 18.0,
-                    "material": "Melamina frentes 18mm (Rovere Pelikano - según especificación)",
-                    "quantity": 1
-                },
-                {
-                    "name": "Puerta derecha",
-                    "role": "frente puerta",
-                    "height": 504.0,
-                    "width": 707.0,
-                    "depth": 18.0,
-                    "material": "Melamina frentes 18mm (Rovere Pelikano - según especificación)",
-                    "quantity": 1
-                },
-                {
-                    "name": "Panel superior (tapa)",
-                    "role": "parte superior del módulo",
+                    "name": "Tapa superior (continua)",
+                    "role": "tapa superior shared",
                     "height": 18.0,
                     "width": 1420.0,
-                    "depth": 350.0,
-                    "material": "Melamina 18mm (frentes / tapa superior)",
+                    "depth": 550.0,
+                    "material": "Melamina Taroa de Primadera (18mm)",
                     "quantity": 1
                 },
                 {
-                    "name": "Panel inferior (base)",
-                    "role": "base del módulo",
+                    "name": "Base inferior (continua)",
+                    "role": "base",
                     "height": 18.0,
                     "width": 1420.0,
-                    "depth": 350.0,
-                    "material": "Melamina 18mm (base)",
+                    "depth": 550.0,
+                    "material": "Melamina Taroa de Primadera (18mm)",
                     "quantity": 1
                 },
                 {
-                    "name": "Panel lateral izquierdo",
-                    "role": "costado izquierdo",
-                    "height": 510.0,
+                    "name": "Lateral izquierdo",
+                    "role": "carcasa",
+                    "height": 400.0,
                     "width": 18.0,
-                    "depth": 350.0,
-                    "material": "Melamina 18mm (costado)",
+                    "depth": 550.0,
+                    "material": "Melamina Taroa de Primadera (18mm)",
                     "quantity": 1
                 },
                 {
-                    "name": "Panel lateral derecho",
-                    "role": "costado derecho",
-                    "height": 510.0,
+                    "name": "Lateral derecho",
+                    "role": "carcasa",
+                    "height": 400.0,
                     "width": 18.0,
-                    "depth": 350.0,
-                    "material": "Melamina 18mm (costado)",
+                    "depth": 550.0,
+                    "material": "Melamina Taroa de Primadera (18mm)",
                     "quantity": 1
                 },
                 {
-                    "name": "Divisor central (tabique)",
-                    "role": "separador vertical entre compartimentos",
-                    "height": 510.0,
+                    "name": "Tabique central (divisor entre gabinetes)",
+                    "role": "divisor",
+                    "height": 400.0,
                     "width": 18.0,
-                    "depth": 350.0,
-                    "material": "Melamina 18mm (tabique)",
+                    "depth": 550.0,
+                    "material": "Melamina Taroa de Primadera (18mm)",
                     "quantity": 1
                 },
                 {
-                    "name": "Fondo",
-                    "role": "panel posterior",
-                    "height": 510.0,
+                    "name": "Fondo (trasera continua)",
+                    "role": "fondo",
+                    "height": 400.0,
                     "width": 1420.0,
                     "depth": 6.0,
-                    "material": "Fondo melamínico 6mm (según especificación)",
+                    "material": "Melamina Sukta Mt de Primadera (6mm)",
                     "quantity": 1
                 },
                 {
-                    "name": "Entrepaño 1",
-                    "role": "estante interior",
+                    "name": "Frente / Puerta izquierda",
+                    "role": "frente puerta",
+                    "height": 397.0,
+                    "width": 707.0,
+                    "depth": 18.0,
+                    "material": "Melamina Taroa de Primadera (18mm, canto rígido)",
+                    "quantity": 1
+                },
+                {
+                    "name": "Frente / Puerta derecha",
+                    "role": "frente puerta",
+                    "height": 397.0,
+                    "width": 707.0,
+                    "depth": 18.0,
+                    "material": "Melamina Taroa de Primadera (18mm, canto rígido)",
+                    "quantity": 1
+                },
+                {
+                    "name": "Entrepaño (gabinete izquierdo)",
+                    "role": "entrepaño",
                     "height": 15.0,
-                    "width": 683.0,
-                    "depth": 344.0,
+                    "width": 674.0,
+                    "depth": 544.0,
                     "material": "Melamina interior 15mm",
                     "quantity": 1
                 },
                 {
-                    "name": "Entrepaño 2",
-                    "role": "estante interior",
+                    "name": "Entrepaño (gabinete derecho)",
+                    "role": "entrepaño",
                     "height": 15.0,
-                    "width": 683.0,
-                    "depth": 344.0,
+                    "width": 674.0,
+                    "depth": 544.0,
                     "material": "Melamina interior 15mm",
                     "quantity": 1
-                }
-            ],
-            "assumptions": [
-                "Espesor estándar frontal y laterales tomado como 18 mm (regla general indicada en documentación).",
-                "Fondo tomado como 6 mm según texto: 'Fondo de 6mm'.",
-                "Estantes interiores tomados en 15 mm según texto: 'Interior de mueble en 15mm'.",
-                "Altura total del módulo (510 mm) inferida a partir de referencias en documento (múltiples menciones de 0,51 m para elementos superiores) y por coherencia con línea de mobiliario; se considera como valor sugerido y requiere validación in situ.",
-                "Ancho total del módulo (1420 mm) sugerido a partir de la cota 1.42 m visible en la planta (se asume que corresponde al vano central sobre TV). Requiere verificación en obra.",
-                "Profundidad externa asumida 350 mm como valor típico para mueble alto/alcoba que alojará estantes y paso para cinta LED (no aparece explícito); puede ajustarse a valores de acta de vanos si corresponde.",
-                "Cálculo de dimensiones internas aplicado según reglas provistas: ancho_interno = ancho_externo - (2 × espesor_lateral) - espesor_divisor; alto_interno = alto_externo - (2 × espesor_superior_inferior); profundidad_interna = profundidad_externa - espesor_fondo. Estos cálculos se aplicaron y se registran en los submódulos.",
-                "Puertas dimensionadas como puertas overlay que cubren el vano menos holguras estándar de 3 mm por junta (puerta altura = h_ext - 2×3 mm; puerta ancho = (ancho_ext/2) - 3 mm). La holgura exacta y tipo de apertura (inset/overlay/frameless) deberá confirmarse.",
-                "Se considera un divisor vertical central de 18 mm entre las dos puertas (compartimentos).",
-                "No se ha incluido herrajes ni sistema de cierre lento en las piezas (solo dimensiones de paneles); el sistema de cierre lento y bisagras deben especificarse aparte.",
-                "Paso para cinta LED y orificios/ranuras para ventilación no están dimensionados; prever acceso en la tapa superior o trasera según proyecto. Estas condiciones deben verificarse en obra."
-            ],
-            "viability": {
-                "percentage": 65,
-                "reason": "Dimensiones externas (alto, ancho, profundidad) e información de herrajes/solapes han sido parcialmente inferidas a partir de planos y notas; falta verificación en obra y confirmación de tipo de apertura y posición exacta del paso de LED/ventilación.",
-                "missing_data": [
-                    "Confirmación in situ de ancho exacto del vano superior sobre TV (se asumió 1420 mm a partir de cotas en planta).",
-                    "Confirmación in situ de altura exacta del mueble alto superior (se asumió 510 mm).",
-                    "Confirmación in situ de profundidad requerida para el módulo (se asumió 350 mm).",
-                    "Tipo de montaje de puertas (overlay/inset/frameless) y holguras exactas.",
-                    "Posición y dimensiones del paso para cinta LED y detalles de ventilación/clearance para el minibar y TV.",
-                    "Confirmación de material final y certificación de acabado (melamina referencia exacta para frentes/interiores).",
-                    "Ubicación exacta de herrajes, bisagras y sistema de cierre lento."
-                ]
-            }
-        },
-        {
-            "name": "SUPERFICIE ESCRITORIO (sobre minibar)",
-            "type": "estructural",
-            "global_position": "Superficie sobre el minibar, módulo izquierdo inferior del conjunto; instalada sobre la tapa superior del minibar (frente al panel TV), sirve como escritorio/repisa",
-            "dimensions": {
-                "height": 18.0,
-                "width": 473.0,
-                "depth": 440.0,
-                "unit": "mm"
-            },
-            "structure": {
-                "doors": 0,
-                "drawers": 0,
-                "shelves": 0,
-                "cavities": 0
-            },
-            "sub_modules": [],
-            "pieces": [
+                },
                 {
-                    "name": "Tapa superficie escritorio",
-                    "role": "tapa/repisa estructural",
-                    "height": 18.0,
-                    "width": 473.0,
-                    "depth": 440.0,
-                    "material": "Tablero melamínico ROVERE (frentes) / Taroa de Primadera según especificación; canto rígido; espesor 18mm",
-                    "quantity": 1
+                    "name": "Herrajes (bisagras cierre lento y tornillería)",
+                    "role": "herrajes",
+                    "height": 0.0,
+                    "width": 0.0,
+                    "depth": 0.0,
+                    "material": "Bisagras cierre lento ocultas, tornillería y anclajes",
+                    "quantity": 4
                 }
             ],
             "assumptions": [
-                "Dimensiones del minibar extraídas del texto: h:0,51 m, L:0,473 m, w:0,44 m; convertidas a mm (510 mm, 473 mm, 440 mm). Se asume que la superficie se apoya exactamente sobre la tapa del minibar, por ello ancho y fondo se igualan a L y w reportados.",
-                "Espesor de la superficie asumido como 18 mm según regla estándar de carpintería modular (regla de inferencia proporcionada). Este valor se ha colocado en 'dimensions.height' indicando espesor de la pieza, no altura de instalación sobre el piso.",
-                "El módulo es puramente estructural (no cavidad ni compartimento) según el detalle proporcionado; por tanto no se modelaron puertas, cajones ni estantes.",
-                "Material especificado acorde a la nota general del proyecto: tablero melamínico ROVERE (Taroa de Primadera) para frentes y superficies; cantos rígidos en frentes. Se mantiene la notación textual del material tal como en la documentación.",
-                "No se han inferido ni aplicado salientes, chaflanes ni ranuras LED en la geometría; dichas modificaciones deben coordinarse en obra/prototipo según notas y se registran en 'viability.missing_data'.",
-                "Dimensiones internas útiles y fijaciones no se calculan porque el elemento es una tapa maciza sobre minibar; cualquier refuerzo, ménsula o soporte se deberá definir en la fabricación en obra según carga prevista."
+                "El ancho total de los gabinetes superiores centrales se iguala al ancho del escritorio (tapa) informado previamente: 1420 mm (usuario).",
+                "Se dividió el ancho total en dos gabinetes simétricos de 710 mm cada uno por ausencia de cota explícita de partición; esta división debe validarse o ajustarse según diseño arquitectónico.",
+                "Profundidad tomada como 0.55 m (550 mm) según indicación del usuario y vista lateral del plano; aplicada uniformemente a ambos gabinetes.",
+                "Espesores aplicados según especificación del proyecto: frentes y estructura 18 mm, entrepaños/interior 15 mm, fondo 6 mm.",
+                "Cálculos de huecos internos aplicados con reglas: ancho interno por submódulo = 710 - (2 × 18) = 674 mm; alto interno = 400 - (2 × 18) = 364 mm; profundidad interna = 550 - 6 = 544 mm. Estos cálculos documentados como regla de inferencia.",
+                "Puertas dimensionadas con holgura conservadora de 3 mm en alto y 3 mm en ancho (puerta altura = 400 - 3 = 397 mm; puerta ancho = 710 - 3 = 707 mm).",
+                "Se considera 1 entrepaño por gabinete (shelves total = 2) tal como se había planteado; posición vertical exacta del entrepaño no especificada y debe confirmarse in situ.",
+                "No se ha definido el sentido de apertura de las puertas ni ubicación exacta del ranurado para cinta LED o el chaflán; estos detalles se dejan para coordinación en obra.",
+                "Se añadió tabique central como pieza independiente (18 mm) para soportar puertas y separar gabinetes; si el proyecto prevé otra solución estructural, actualizará el detalle."
             ],
             "viability": {
-                "percentage": 70,
-                "reason": "Se dispone de dimensiones del minibar que permiten inferir ancho y fondo de la superficie y se aplicó espesor estándar. Sin embargo faltan detalles de alcance longitudinal de la repisa, altura de instalación exacta sobre el piso, y detalles de fijación/soportes y ranurado para LED/chaflán que afectan fabricación.",
+                "percentage": 85,
+                "reason": "Se recibieron las correcciones principales (ancho igual a escritorio y profundidad 0.55 m) y se han aplicado; quedan pendientes detalles de partición definitiva, ubicación de ranurado LED/chaflán y sentido de apertura de puertas.",
                 "missing_data": [
-                    "Altura de instalación sobre piso o altura libre respecto a otras piezas (solo se infirió espesor, no altura de montaje)",
-                    "Longitud/alcance total de la superficie escritorio en planta (si excede el ancho del minibar hacia el interior del módulo)",
-                    "Detalle y posicionamiento de fijaciones o soportes (ménsulas, zancas o estructura interior)",
-                    "Dimensiones y ubicación de ranurado para cinta LED y/o chaflan solicitado",
-                    "Tolerancias de dilatación y holguras específicas en juntas de encuentro con muebles adyacentes"
+                    "Confirmación de la división del ancho entre gabinetes (si no debe ser simétrica)",
+                    "Posición exacta/altura del entrepaño en cada gabinete (mm desde base)",
+                    "Sentido de apertura de puertas (bisagra izquierda/derecha)",
+                    "Sección, posición y dimensiones del ranurado para cinta LED y diseño de chaflán",
+                    "Detalle de fijación a pared / refuerzos y tolerancias de montaje",
+                    "Confirmación de materiales para entrepaños (si serán del mismo material que frentes)"
                 ]
             }
         },
         {
-            "name": "CLOSET DERECHO (piso-techo) con CAJA FUERTE",
+            "message": "Parametrización inicial del módulo generada. Faltan medidas críticas (ancho, alto y fondo exactos) y posición precisa de caja fuerte: revisar en sitio o aportar referencia de vano (P2..P9) para completar dimensiones definitivas.",
+            "name": "Closet vertical con caja fuerte",
             "type": "closet",
-            "global_position": "derecha, módulo vertical piso-techo (extremo derecho del conjunto), contiene caja fuerte embebida",
+            "global_position": "Parte derecha del conjunto; incluye espacio para caja fuerte",
             "dimensions": {
-                "height": 2335.0,
-                "width": 510.0,
+                "height": 2340.0,
+                "width": 616.0,
                 "depth": 565.0,
                 "unit": "mm"
             },
             "structure": {
-                "doors": 1,
+                "doors": 2,
                 "drawers": 0,
                 "shelves": 3,
                 "cavities": 4
             },
             "sub_modules": [
                 {
-                    "name": "Caja Fuerte (embebida)",
-                    "type": "compartment - embedded safe",
-                    "specifications": "Caja fuerte embebida según alzado; ubicación vertical media-superior del módulo; dimensiones exactas no especificadas en plano",
-                    "relative_position": "centro-derecha del frente del módulo, empotrada dentro del vano interior",
+                    "name": "Caja fuerte",
+                    "type": "seguridad",
+                    "specifications": "Requiere vano reforzado y fijación a estructura interior; puerta de caja fuerte independiente al frente del módulo. Ventilación y pasacables según plano. Ubicación: lado derecho del módulo, altura ocupando parte superior a media.",
+                    "relative_position": "derecha, ocupando parte central-alta del módulo (acceso frontal)",
                     "dimensions": {
-                        "height": 0.0,
-                        "width": 0.0,
-                        "depth": 0.0,
+                        "height": 900.0,
+                        "width": 350.0,
+                        "depth": 400.0,
                         "unit": "mm"
                     }
                 }
             ],
             "pieces": [
                 {
-                    "name": "Panel lateral izquierdo",
-                    "role": "carcasa lateral",
-                    "height": 2335.0,
-                    "width": 15.0,
+                    "name": "Lateral izquierdo",
+                    "role": "carcasa",
+                    "height": 2340.0,
+                    "width": 18.0,
                     "depth": 565.0,
-                    "material": "Melamínico interior 15mm (Tarroa de Primadera)",
+                    "material": "Melamina Taroa de Primadera (frentes 18mm)",
                     "quantity": 1
                 },
                 {
-                    "name": "Panel lateral derecho",
-                    "role": "carcasa lateral",
-                    "height": 2335.0,
-                    "width": 15.0,
+                    "name": "Lateral derecho",
+                    "role": "carcasa",
+                    "height": 2340.0,
+                    "width": 18.0,
                     "depth": 565.0,
-                    "material": "Melamínico interior 15mm (Tarroa de Primadera)",
+                    "material": "Melamina Taroa de Primadera (frentes 18mm)",
                     "quantity": 1
                 },
                 {
-                    "name": "Panel superior (top)",
-                    "role": "cierre superior carcasa",
-                    "height": 15.0,
-                    "width": 480.0,
+                    "name": "Tapa superior",
+                    "role": "carcasa",
+                    "height": 18.0,
+                    "width": 616.0,
                     "depth": 565.0,
-                    "material": "Melamínico interior 15mm (Tarroa de Primadera)",
+                    "material": "Melamina Taroa de Primadera (frentes 18mm)",
                     "quantity": 1
                 },
                 {
-                    "name": "Panel inferior (bottom)",
-                    "role": "base carcasa",
-                    "height": 15.0,
-                    "width": 480.0,
+                    "name": "Base inferior",
+                    "role": "carcasa",
+                    "height": 18.0,
+                    "width": 616.0,
                     "depth": 565.0,
-                    "material": "Melamínico interior 15mm (Tarroa de Primadera)",
+                    "material": "Melamina Taroa de Primadera (frentes 18mm)",
                     "quantity": 1
                 },
                 {
-                    "name": "Panel trasero (fondo)",
+                    "name": "Trasera (fondo)",
                     "role": "fondo",
-                    "height": 2305.0,
-                    "width": 480.0,
+                    "height": 2340.0,
+                    "width": 616.0,
                     "depth": 6.0,
-                    "material": "Melamina fondo 6mm (Sukta Mt de Primadera)",
+                    "material": "Melamina Sukta Mt de Primadera (fondo 6mm)",
                     "quantity": 1
                 },
                 {
-                    "name": "Frente / puerta",
-                    "role": "puerta exterior",
-                    "height": 2335.0,
-                    "width": 510.0,
+                    "name": "Puerta izquierda",
+                    "role": "frente puerta",
+                    "height": 1100.0,
+                    "width": 250.0,
                     "depth": 18.0,
-                    "material": "Frente en 18mm (Rovere Pelikano) - con sistema cierre lento según especificación",
+                    "material": "Melamina Taroa de Primadera (frentes 18mm, canto rígido)",
                     "quantity": 1
                 },
                 {
-                    "name": "Entrepaños (estantes)",
-                    "role": "estantes interiores",
+                    "name": "Puerta derecha",
+                    "role": "frente puerta",
+                    "height": 1100.0,
+                    "width": 350.0,
+                    "depth": 18.0,
+                    "material": "Melamina Taroa de Primadera (frentes 18mm, canto rígido)",
+                    "quantity": 1
+                },
+                {
+                    "name": "Entrepaño fijo/ajustable",
+                    "role": "entrepaño",
                     "height": 15.0,
-                    "width": 480.0,
-                    "depth": 559.0,
-                    "material": "Melamínico interior 15mm (Tarroa de Primadera)",
+                    "width": 560.0,
+                    "depth": 400.0,
+                    "material": "Melamina interior 15mm (según especificación)",
                     "quantity": 3
+                },
+                {
+                    "name": "Refuerzo / zócalo",
+                    "role": "estructura base",
+                    "height": 50.0,
+                    "width": 616.0,
+                    "depth": 18.0,
+                    "material": "Melamina Taroa de Primadera 18mm",
+                    "quantity": 1
                 }
             ],
             "assumptions": [
-                "Se asume dimensión externa del módulo: altura 2335 mm y profundidad 565 mm tomando como referencia la tabla 'ACTA DE VANOS' (referencia P8 ALTO 2335 PROFUNDO 565) y las cotas en sección del plano.",
-                "Se asume ancho externo del módulo 510 mm basado en cotejo de cotas en alzado/secciones donde aparece '51' (51 cm) para el módulo vertical derecho.",
-                "Espesores utilizados según especificación del proyecto cuando está disponible: frentes 18 mm, interior (laterales, entrepaños, top/bottom) 15 mm, fondo 6 mm. Estas especificaciones provienen del texto del proyecto (Tarroa de Primadera).",
-                "Cálculos internos aplicados con reglas de carpintería: ancho interno = ancho externo - 2 × grosor lateral (480 mm = 510 - 2×15); alto interno = alto externo - (top + bottom) (2305 mm = 2335 - 2×15); profundidad útil interna = profundidad externa - grosor fondo (559 mm = 565 - 6). Se declara explícitamente el uso de estas fórmulas.",
-                "Se considera una única puerta de frente completo (puerta piso-techo) que cubre todo el módulo externamente; se asumió overlay/recubrimiento total y holgura de jamba estándar (2-3 mm) para aperturas (no listadas individualmente).",
-                "Las cuatro cavidades internas se derivan de 3 entrepaños: cavidades = entrepaños + 1.",
-                "La caja fuerte se modela como sub-módulo embebido pero sus dimensiones exactas y su fijación no están especificadas en planos; por tanto se deja dimensionada como 0 (indeterminada) y su integración deberá validarse en obra/prototipo.",
-                "No se han inventado accesorios ni herrajes específicos (bisagras, cerradura de caja fuerte, rieles), deben definirse en fase de detalle función/arquitectónica. Tampoco se ha incluido zócalo/contrahuella o tolerancias de montaje (se deben validar en sitio)."
+                "Se asume que el módulo es piso-techo con altura típica de vano tomada inicialmente como 2340 mm (valor tomado de la tabla ACTA DE VANOS referente P2/P8 aproximado).",
+                "Se asumió profundidad 565 mm y ancho 616 mm como valor razonable intermedio entre vanos listados; estos deben validarse en obra. (Si se dispone de referencia de vano específica se actualizará).",
+                "Espesores aplicados: frentes y estructura principal 18 mm, entrepaños interiores 15 mm, fondo 6 mm, según especificación del proyecto (texto suministrado).",
+                "Número de cavidades calculado como shelves+1 → 3 entrepaños generan 4 compartimientos internos.",
+                "Puertas divididas en 2 frentes: dimensiones aproximadas repartidas en 250/350 mm (derecha mayor por ubicación de caja fuerte). Estas dimensiones son estimadas y deben confirmarse con la ubicación real de la caja fuerte.",
+                "Submódulo 'Caja fuerte' declarado con dimensiones tentativas (900×350×400 mm) basadas en espacio visible en alzado; la caja requiere refuerzo y anclaje estructural en la carcasa.",
+                "Se consideraron holguras estándar de 2-3 mm para ajuste de puertas, bisagras de cierre lento (según especificación), y canales para pasacables/LED en zona TV indicados en proyecto general (no incluidos en suministro).",
+                "Si el usuario suministra la referencia exacta de vano (P2..P9) se reemplazarán las dimensiones aproximadas por las medidas oficiales."
             ],
             "viability": {
-                "percentage": 70,
-                "reason": "Dimensiones principales estimadas a partir de cotas generales del conjunto y anotaciones del plano; falta información específica de la caja fuerte, holguras exactas, posicionamiento de herrajes y espacios de ventilación/clearance que afectan montaje definitivo.",
+                "percentage": 55,
+                "reason": "Faltan dimensiones definitivas del vano y posición exacta de la caja fuerte; se han usado estimaciones razonadas pero se requiere validación en obra.",
                 "missing_data": [
-                    "Dimensiones exactas (ancho) asignadas oficialmente al módulo derecho dentro del conjunto (no hay etiqueta única en acta para sub-módulos).",
-                    "Dimensiones y especificaciones de la caja fuerte (alto, ancho, profundidad, sistema de fijación).",
-                    "Separaciones exactas entre entrepaños (posiciones de estantes) y si son fijos o ajustables.",
-                    "Tipo, posición y características de bisagras y mecanizados para cierre lento y manija según diseño arquitectónico.",
-                    "Aperturas/clearances reales para la puerta (lado de bisagra, swing) y tolerancias de dilatación a aplicar en obra.",
-                    "Detalle de zócalo/plinto y montaje al piso/techo (fijaciones)."
+                    "Ancho exacto del módulo (medida en obra o referencia de vano)",
+                    "Alto exacto del módulo (confirmar si 2340 o 2335 u otro)",
+                    "Fondo exacto especificado para este módulo",
+                    "Dimensiones exactas y especificaciones técnicas de la caja fuerte a instalar",
+                    "Posición y cotas precisas de entrepaños (altura relativa)",
+                    "Lado y tipo de apertura de puertas (sentido de bisagras) y holguras finales"
                 ]
             }
         }
     ],
     "tokens": {
-        "input": 37151,
-        "output": 21092,
-        "total": 58243
+        "input": 36570,
+        "output": 18467,
+        "total": 55037
     }
 }

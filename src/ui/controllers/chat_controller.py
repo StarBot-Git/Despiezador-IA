@@ -102,15 +102,21 @@ class ChatController:
     def On_IA_Response(self, output_obj, response_usage):
         # Remover el mensaje temporal "Analizando..."
         self.Remove_LastMessage()
+
+        type_msg = False
         
         # Convertir respuesta a texto legible
-        output_msg = self.main_window.agent_IA.Json_To_Message(output_obj.dict())
+        if self.main_window.agent_IA.__class__.__name__ == "Analista_Piezas":
+            type_msg, output_msg = self.main_window.agent_IA.Json_To_Message(output_obj.dict())
+        else:
+            output_msg = self.main_window.agent_IA.Json_To_Message(output_obj.dict())
         
         # Agregar respuesta de la IA
         self.Add_Message(output_msg, role="assistant")
         
         # Guardar el JSON
-        self.Save_OutputJSON(output_obj)
+        if type_msg == False:
+            self.Save_OutputJSON(output_obj)
 
         tokens_in, tokens_out = response_usage.input_tokens, response_usage.output_tokens
 

@@ -10,8 +10,8 @@ from agents.parametrizador.prompts import System_Prompt, Module_Prompt, USER_PRO
 from agents.parametrizador.types import Modules_Description, ModuleParametrizationResult
 
 class ParametrizadorModulos(BaseAgent):
-    SG_MODEL = "o4-mini"             # Modelo base
-    #SG_MODEL = "gpt-5-mini"             # Modelo base
+    #SG_MODEL = "o4-mini"             # Modelo base
+    SG_MODEL = "gpt-5-mini"             # Modelo base
     SG_RESPONSE_FORMAT = "json_object"  # Formato JSON
     SG_TEMPERATURE = 0.5                # Temperatura flexible
     SG_USER_PROMPT = USER_PROMPT        # Prompt recomendado
@@ -174,9 +174,6 @@ class ParametrizadorModulos(BaseAgent):
         Reemplaza SOLO el módulo cuyo 'name' coincide con new_module_obj.name
         dentro del archivo JSON.
         """
-
-        print(self.messages)
-        input("Presione enter...")
 
         new_module = new_module_obj.dict()
         target_name = new_module.get("name")

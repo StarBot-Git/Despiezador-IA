@@ -1,11 +1,35 @@
 {
-    "message": "Confirmo recepción de la información gráfica: tanto la imagen como el PDF son legibles y analizables. Contienen planta, alzado y corte necesarios para reconstruir el minibar y generar la clasificación y componentes. Observaciones: las cotas del minibar muestran discrepancias entre texto y dibujo (alto/ancho), y detalles de ventilación/fijaciones no están completamente dimensionados; si desea puedo extraer las cotas específicas, generar lista de cortes o incorporar cambios constructivos tras su confirmación en obra.",
-    "type_furniture": "",
-    "components": [],
-    "configuration": "",
-    "comments": "",
+    "message": "He dejado únicamente los módulos solicitados: el cuerpo principal (mueble bajo) y el zócalo. A continuación se detalla la clasificación y el detalle para fabricación/puesta en obra. Se incluyen observaciones técnicas necesarias por la eliminación de tapa, entrepaños y fondo falso.",
+    "type_message": false,
+    "type_furniture": "mueble_bajo",
+    "components": [
+        {
+            "name": "Cuerpo principal minibar",
+            "type_component": "mueble_bajo",
+            "quantity": 1,
+            "detail": {
+                "doors": 2,
+                "drawers": 0,
+                "shelves": 0,
+                "related_to": "Cuerpo inferior con cavidad para minibar (h:0.51 m; L:0.473 m; w:0.44 m en planta; corte lateral muestra w:0.48 m). Frente bipartido (~0.47 m cada hoja). Sin tapa, sin entrepaños y sin fondo falso según instrucción."
+            }
+        },
+        {
+            "name": "Zócalo",
+            "type_component": "estructural",
+            "quantity": 1,
+            "detail": {
+                "doors": 0,
+                "drawers": 0,
+                "shelves": 0,
+                "related_to": "Zócalo perimetral de apoyo según plano (acabado indicado en especificación 3). Soporta y remata la base del mueble; no constituye mueble_bajo por norma."
+            }
+        }
+    ],
+    "configuration": "Módulo único mueble_bajo de 1,00 m de ancho total (dos frentes aprox. 0,47 m c/u) con cavidad derecha para minibar. Sólo se mantienen la carcasa (cuerpo) y el zócalo; tapa/mesón, entrepaños y fondo falso eliminados.",
+    "comments": "Consecuencias constructivas de mantener sólo cuerpo y zócalo: 1) Al eliminar la tapa/mesón se pierde rigidez superior; es obligatorio prever un refuerzo o anclaje a la pared para evitar torsión o deformación. 2) Al eliminar el entrepaño reforzado, debe diseñarse una base o soporte reforzado (perfil metálico, zapata o bancada) para sostener el minibar; no confiar en adhesiones superficiales. 3) Al eliminar el fondo falso, coordinar protección y paso de cables/ventilación: conservar recortes/rejillas para ventilación (especific. 8) y accesos para conexiones eléctricas. 4) Confirmar en obra la profundidad útil definitiva (0,44 m vs 0,48 m) y las holguras recomendadas por el proveedor del minibar antes de fabricar.",
     "viability": {
-        "percentage": 0,
-        "reason": ""
+        "percentage": 60,
+        "reason": "El encargo es realizable pero presenta riesgos funcionales y estructurales: falta la tapa que aporta rigidez, se eliminó el entrepaño reforzado que soportaba el equipo y se suprimió el fondo falso que facilita gestión de servicios y ventilación. Se requiere que el contratista/ingeniería defina: método de refuerzo superior, soporte de carga para el minibar y detalles de ventilación y pasacables. Sin estas definiciones la fabricación no garantiza estabilidad y funcionamiento adecuado."
     }
 }
