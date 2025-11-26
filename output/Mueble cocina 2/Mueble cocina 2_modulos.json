@@ -1,0 +1,524 @@
+{
+    "parametrizacion": [
+        {
+            "name": "Cuerpo base unificado (M1) - 3 submódulos",
+            "type": "mueble_bajo",
+            "global_position": "frente M1",
+            "dimensions": {
+                "height": 920.0,
+                "width": 1600.0,
+                "depth": 530.0,
+                "unit": "mm"
+            },
+            "structure": {
+                "doors": 0,
+                "drawers": 3,
+                "shelves": 0,
+                "cavities": 0
+            },
+            "sub_modules": [
+                {
+                    "name": "Submódulo cajonera izquierda",
+                    "type": "cajonera",
+                    "specifications": "3 gavetas",
+                    "relative_position": "izquierda",
+                    "dimensions": {
+                        "height": 920.0,
+                        "width": 560.0,
+                        "depth": 530.0,
+                        "unit": "mm"
+                    }
+                },
+                {
+                    "name": "Submódulo bajo fregadero",
+                    "type": "módulo fregadero",
+                    "specifications": "1 cajón interno y espacio para tuberías",
+                    "relative_position": "centro",
+                    "dimensions": {
+                        "height": 920.0,
+                        "width": 450.0,
+                        "depth": 530.0,
+                        "unit": "mm"
+                    }
+                },
+                {
+                    "name": "Submódulo derecho",
+                    "type": "módulo de almacenamiento",
+                    "specifications": "espacio abierto",
+                    "relative_position": "derecha",
+                    "dimensions": {
+                        "height": 920.0,
+                        "width": 580.0,
+                        "depth": 530.0,
+                        "unit": "mm"
+                    }
+                }
+            ],
+            "pieces": [],
+            "assumptions": [
+                "Se asume altura externa total de 920 mm según cota .92",
+                "Se asume profundidad externa de 530 mm según cota .53",
+                "Se asume ancho total de 1600 mm (560+450+580) según alzado frontal",
+                "Espesor estándar de tableros usado de 18 mm para paneles divisores y laterales",
+                "Submódulo central incluye cajón interno y vano para tuberías",
+                "Submódulo derecho diseñado sin cerramiento interior como espacio abierto"
+            ],
+            "viability": {
+                "percentage": 70,
+                "reason": "Dimensiones externas y configuración inferidas; falta confirmación de espesores exactos, herrajes y alturas internas",
+                "missing_data": [
+                    "espesor real de tableros",
+                    "altura interna de cada gaveta",
+                    "detalles de herrajes y guías",
+                    "material específico de los tableros"
+                ]
+            }
+        },
+        {
+            "name": "Mueble alto izquierdo",
+            "type": "mueble_alto",
+            "global_position": "",
+            "dimensions": {
+                "height": 890.0,
+                "width": 560.0,
+                "depth": 320.0,
+                "unit": "mm"
+            },
+            "structure": {
+                "doors": 2,
+                "drawers": 0,
+                "shelves": 2,
+                "cavities": 0
+            },
+            "sub_modules": [],
+            "pieces": [
+                {
+                    "name": "Panel lateral",
+                    "role": "side",
+                    "height": 890.0,
+                    "width": 320.0,
+                    "depth": 18.0,
+                    "material": "melamina tipo vienes",
+                    "quantity": 2
+                },
+                {
+                    "name": "Panel superior",
+                    "role": "top",
+                    "height": 18.0,
+                    "width": 560.0,
+                    "depth": 320.0,
+                    "material": "melamina tipo vienes",
+                    "quantity": 1
+                },
+                {
+                    "name": "Panel inferior",
+                    "role": "bottom",
+                    "height": 18.0,
+                    "width": 560.0,
+                    "depth": 320.0,
+                    "material": "melamina tipo vienes",
+                    "quantity": 1
+                },
+                {
+                    "name": "Panel trasero",
+                    "role": "back",
+                    "height": 890.0,
+                    "width": 560.0,
+                    "depth": 6.0,
+                    "material": "melamina tipo vienes",
+                    "quantity": 1
+                },
+                {
+                    "name": "Estante",
+                    "role": "shelf",
+                    "height": 18.0,
+                    "width": 524.0,
+                    "depth": 302.0,
+                    "material": "melamina tipo vienes",
+                    "quantity": 2
+                },
+                {
+                    "name": "Puerta",
+                    "role": "door",
+                    "height": 851.0,
+                    "width": 260.0,
+                    "depth": 18.0,
+                    "material": "melamina tipo vienes",
+                    "quantity": 2
+                }
+            ],
+            "assumptions": [
+                "Espesor estándar de tableros de 18 mm",
+                "Espesor de panel trasero asumido 6 mm",
+                "Dimensiones externas extraídas de plano: ancho 560 mm, alto 890 mm, fondo 320 mm",
+                "Dimensiones internas calculadas: ancho interno = 560 − 2×18 = 524 mm; fondo interno = 320 − 18 = 302 mm",
+                "Dimensiones de puertas inferidas: ancho ≈ (524 − 3 mm holgura)/2 ≈ 260 mm; alto ≈ 890 − 2×18 − 3 mm holgura ≈ 851 mm"
+            ],
+            "viability": {
+                "percentage": 60,
+                "reason": "Dimensiones de puertas y panel trasero inferidas; posición global no especificada",
+                "missing_data": [
+                    "exact door width",
+                    "exact door height",
+                    "global_position",
+                    "back panel thickness"
+                ]
+            }
+        },
+        {
+            "name": "Mueble alto derecho (altura distinta al izquierdo)",
+            "type": "mueble_alto",
+            "global_position": "superior derecha",
+            "dimensions": {
+                "height": 0.0,
+                "width": 0.0,
+                "depth": 0.0,
+                "unit": "mm"
+            },
+            "structure": {
+                "doors": 2,
+                "drawers": 0,
+                "shelves": 2,
+                "cavities": 0
+            },
+            "sub_modules": [
+                {
+                    "name": "Compartimento superior",
+                    "type": "compartimento",
+                    "specifications": "espacio de almacenamiento",
+                    "relative_position": "superior",
+                    "dimensions": {
+                        "height": 0.0,
+                        "width": 0.0,
+                        "depth": 0.0,
+                        "unit": "mm"
+                    }
+                },
+                {
+                    "name": "Compartimento medio",
+                    "type": "compartimento",
+                    "specifications": "espacio de almacenamiento",
+                    "relative_position": "medio",
+                    "dimensions": {
+                        "height": 0.0,
+                        "width": 0.0,
+                        "depth": 0.0,
+                        "unit": "mm"
+                    }
+                },
+                {
+                    "name": "Compartimento inferior",
+                    "type": "compartimento",
+                    "specifications": "espacio de almacenamiento",
+                    "relative_position": "inferior",
+                    "dimensions": {
+                        "height": 0.0,
+                        "width": 0.0,
+                        "depth": 0.0,
+                        "unit": "mm"
+                    }
+                }
+            ],
+            "pieces": [
+                {
+                    "name": "Panel lateral izquierdo",
+                    "role": "panel lateral",
+                    "height": 0.0,
+                    "width": 0.0,
+                    "depth": 18.0,
+                    "material": "Melamina tipo vienes",
+                    "quantity": 1
+                },
+                {
+                    "name": "Panel lateral derecho",
+                    "role": "panel lateral",
+                    "height": 0.0,
+                    "width": 0.0,
+                    "depth": 18.0,
+                    "material": "Melamina tipo vienes",
+                    "quantity": 1
+                },
+                {
+                    "name": "Panel superior",
+                    "role": "panel horizontal",
+                    "height": 0.0,
+                    "width": 0.0,
+                    "depth": 18.0,
+                    "material": "Melamina tipo vienes",
+                    "quantity": 1
+                },
+                {
+                    "name": "Panel inferior",
+                    "role": "panel horizontal",
+                    "height": 0.0,
+                    "width": 0.0,
+                    "depth": 18.0,
+                    "material": "Melamina tipo vienes",
+                    "quantity": 1
+                },
+                {
+                    "name": "Panel trasero",
+                    "role": "panel trasero",
+                    "height": 0.0,
+                    "width": 0.0,
+                    "depth": 6.0,
+                    "material": "MDF",
+                    "quantity": 1
+                },
+                {
+                    "name": "Estante",
+                    "role": "shelf",
+                    "height": 0.0,
+                    "width": 0.0,
+                    "depth": 18.0,
+                    "material": "Melamina tipo vienes",
+                    "quantity": 2
+                },
+                {
+                    "name": "Puerta",
+                    "role": "door",
+                    "height": 0.0,
+                    "width": 0.0,
+                    "depth": 18.0,
+                    "material": "Melamina tipo vienes",
+                    "quantity": 2
+                }
+            ],
+            "assumptions": [
+                "Posición estimada: superior derecha",
+                "No se proporcionaron dimensiones externas del módulo, se deben verificar en sitio",
+                "Se asume grosor de paneles laterales y horizontales de 18 mm (regla estándar)",
+                "Se asume grosor de panel trasero de 6 mm (espesor común)",
+                "Se generaron tres compartimentos internos basados en dos estantes indicados"
+            ],
+            "viability": {
+                "percentage": 40,
+                "reason": "Faltan dimensiones externas para altura, ancho y profundidad",
+                "missing_data": [
+                    "dimensions.height",
+                    "dimensions.width",
+                    "dimensions.depth"
+                ]
+            }
+        },
+        {
+            "name": "Closet unificado centro-derecho (paneles corredizos M1)",
+            "type": "closet",
+            "global_position": "centro-derecho",
+            "dimensions": {
+                "height": 2360.0,
+                "width": 0.0,
+                "depth": 0.0,
+                "unit": "mm"
+            },
+            "structure": {
+                "doors": 2,
+                "drawers": 0,
+                "shelves": 5,
+                "cavities": 6
+            },
+            "sub_modules": [],
+            "pieces": [
+                {
+                    "name": "Panel puerta corrediza",
+                    "role": "door",
+                    "height": 2360.0,
+                    "width": 0.0,
+                    "depth": 18.0,
+                    "material": "Melamina tipo vienes",
+                    "quantity": 2
+                }
+            ],
+            "assumptions": [
+                "Altura total inferida de corte lateral A: 2,36 m",
+                "Espesor estándar de paneles y puertas asumido: 18 mm",
+                "Número de cavidades internas calculado: 5 repisas generan 6 compartimentos"
+            ],
+            "viability": {
+                "percentage": 40,
+                "reason": "Faltan dimensiones críticas de ancho y profundidad para fabricación",
+                "missing_data": [
+                    "dimensions.width",
+                    "dimensions.depth"
+                ]
+            }
+        },
+        {
+            "name": "Mesón (travertino)",
+            "type": "estructural",
+            "global_position": "frente M1",
+            "dimensions": {
+                "height": 20.0,
+                "width": 1600.0,
+                "depth": 600.0,
+                "unit": "mm"
+            },
+            "structure": {
+                "doors": 0,
+                "drawers": 0,
+                "shelves": 0,
+                "cavities": 0
+            },
+            "sub_modules": [],
+            "pieces": [
+                {
+                    "name": "Mesón travertino",
+                    "role": "slab",
+                    "height": 20.0,
+                    "width": 1600.0,
+                    "depth": 600.0,
+                    "material": "travertino",
+                    "quantity": 1
+                }
+            ],
+            "assumptions": [
+                "Thickness of travertino slab assumed as 20 mm due to lack of explicit dimension.",
+                "Width of countertop taken as 1600 mm based on total plan dimension 1.60 m.",
+                "Depth of countertop assumed 600 mm following standard cabinet depth and plan lateral section."
+            ],
+            "viability": {
+                "percentage": 70,
+                "reason": "Some dimensions are based on assumptions due to missing explicit values.",
+                "missing_data": []
+            }
+        },
+        {
+            "name": "Salpicadero (travertino)",
+            "type": "estructural",
+            "global_position": "trasera mesón",
+            "dimensions": {
+                "height": 450.0,
+                "width": 1600.0,
+                "depth": 20.0,
+                "unit": "mm"
+            },
+            "structure": {
+                "doors": 0,
+                "drawers": 0,
+                "shelves": 0,
+                "cavities": 0
+            },
+            "sub_modules": [],
+            "pieces": [
+                {
+                    "name": "Panel salpicadero",
+                    "role": "panel",
+                    "height": 450.0,
+                    "width": 1600.0,
+                    "depth": 20.0,
+                    "material": "travertino",
+                    "quantity": 1
+                }
+            ],
+            "assumptions": [
+                "Alto del salpicadero inferido como 450 mm basándose en la distancia típica entre mesón y mueble alto (medida .45 en alzado frontal).",
+                "Ancho inferido como 1600 mm según suma de frentes (.56+ .47+ .56 m) del módulo M1.",
+                "Profundidad inferida en 20 mm como espesor estándar de piedra travertino."
+            ],
+            "viability": {
+                "percentage": 70,
+                "reason": "Dimensiones inferidas por ausencia de datos explícitos.",
+                "missing_data": []
+            }
+        },
+        {
+            "name": "Repisas / estantes abiertos (mueble alto lateral visible en corte)",
+            "type": "estructural",
+            "global_position": "mueble alto lateral visible en corte A/B",
+            "dimensions": {
+                "height": 0.0,
+                "width": 0.0,
+                "depth": 0.0,
+                "unit": "mm"
+            },
+            "structure": {
+                "doors": 0,
+                "drawers": 0,
+                "shelves": 2,
+                "cavities": 0
+            },
+            "sub_modules": [],
+            "pieces": [
+                {
+                    "name": "estante",
+                    "role": "shelf",
+                    "height": 18.0,
+                    "width": 0.0,
+                    "depth": 0.0,
+                    "material": "melamina tipo vienes",
+                    "quantity": 2
+                },
+                {
+                    "name": "panel lateral",
+                    "role": "side panel",
+                    "height": 0.0,
+                    "width": 0.0,
+                    "depth": 18.0,
+                    "material": "melamina tipo vienes",
+                    "quantity": 2
+                }
+            ],
+            "assumptions": [
+                "Espesor estándar de tableros de 18 mm aplicado a estantes y paneles laterales.",
+                "Material de tableros según especificación general (melamina tipo vienes).",
+                "Dimensiones específicas del módulo (alto, ancho, fondo) no están indicadas en los cortes."
+            ],
+            "viability": {
+                "percentage": 30,
+                "reason": "Faltan dimensiones de alto, ancho y profundidad para parametrización completa.",
+                "missing_data": [
+                    "height",
+                    "width",
+                    "depth"
+                ]
+            }
+        },
+        {
+            "name": "Zócalo (acabado pintura gris nopal)",
+            "type": "estructural",
+            "global_position": "",
+            "dimensions": {
+                "height": 100.0,
+                "width": 1600.0,
+                "depth": 600.0,
+                "unit": "mm"
+            },
+            "structure": {
+                "doors": 0,
+                "drawers": 0,
+                "shelves": 0,
+                "cavities": 0
+            },
+            "sub_modules": [],
+            "pieces": [
+                {
+                    "name": "Zócalo principal",
+                    "role": "plinth panel",
+                    "height": 100.0,
+                    "width": 1600.0,
+                    "depth": 600.0,
+                    "material": "MDF 18 mm pintura gris nopal",
+                    "quantity": 1
+                }
+            ],
+            "assumptions": [
+                "Se asume altura de zócalo estándar de 100 mm",
+                "Se asume ancho total igual a 1600 mm según suma de submódulos (560+450+580)",
+                "Se asume profundidad igual a 600 mm según profundidad de módulos bajos",
+                "Se asume material MDF de 18 mm con acabado pintura gris nopal"
+            ],
+            "viability": {
+                "percentage": 70,
+                "reason": "Posición global no especificada; dimensiones inferidas con estándar",
+                "missing_data": [
+                    "global_position"
+                ]
+            }
+        }
+    ],
+    "tokens": {
+        "input": 54288,
+        "output": 21197,
+        "total": 75485
+    }
+}

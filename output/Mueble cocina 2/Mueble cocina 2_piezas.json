@@ -1,66 +1,100 @@
 {
-    "type_furniture": "M1 - Mueble cocina tipología 6",
+    "message": "Actualizo el modelo según tus correcciones: el módulo corredera central y el cuerpo derecho forman un único closet vertical unificado (acceso mediante puertas corredizas M1). Además hay dos muebles altos diferenciados por altura (no son un cuerpo continuo). He re-clasificado y mantenido el cuerpo base unificado como un solo mueble_bajo con 3 submódulos internos. A continuación detallo componentes y supuestos.",
+    "type_furniture": "mueble_cocina - M1",
     "components": [
         {
-            "name": "Cajonera base (lado izquierdo)",
+            "name": "Cuerpo base unificado (M1) - 3 submódulos",
             "type_component": "mueble_bajo",
             "quantity": 1,
             "detail": {
                 "doors": 0,
                 "drawers": 3,
                 "shelves": 0,
-                "related_to": "Mesón (travertino) / Lavaplatos"
+                "related_to": "mesón (travertino), fregadero, cajón interno"
             }
         },
         {
-            "name": "Mueble alto superior (sobre mesón)",
+            "name": "Mueble alto izquierdo (sobre zona de cocción y campana)",
             "type_component": "mueble_alto",
             "quantity": 1,
             "detail": {
-                "doors": 3,
+                "doors": 2,
                 "drawers": 0,
                 "shelves": 2,
-                "related_to": "Cubre la zona de mesón y campana extractora"
+                "related_to": "campana extractora, hueco microondas, mesón"
             }
         },
         {
-            "name": "Módulo alto corredizo - izquierdo (panel corredizo M1, interior DC-02)",
+            "name": "Mueble alto derecho (altura distinta al izquierdo)",
+            "type_component": "mueble_alto",
+            "quantity": 1,
+            "detail": {
+                "doors": 2,
+                "drawers": 0,
+                "shelves": 2,
+                "related_to": "mueble alto adyacente, visualizado en corte (altura distinta)"
+            }
+        },
+        {
+            "name": "Closet unificado centro-derecho (paneles corredizos M1)",
             "type_component": "closet",
             "quantity": 1,
             "detail": {
-                "doors": 1,
-                "drawers": 2,
-                "shelves": 2,
-                "related_to": "Cajonera interna DC-02 / espacio minibar (según detalle lateral)"
-            }
-        },
-        {
-            "name": "Módulo alto corredizo - derecho (almacenamiento vertical)",
-            "type_component": "closet",
-            "quantity": 1,
-            "detail": {
-                "doors": 1,
+                "doors": 2,
                 "drawers": 0,
-                "shelves": 4,
-                "related_to": "Almacenamiento vertical detrás de puerta corrediza"
+                "shelves": 5,
+                "related_to": "paneles puerta corrediza M1, almacenamiento vertical piso-techo"
             }
         },
         {
-            "name": "Mesón / Salpicadero",
+            "name": "Mesón (travertino)",
             "type_component": "estructural",
             "quantity": 1,
             "detail": {
                 "doors": 0,
                 "drawers": 0,
                 "shelves": 0,
-                "related_to": "Mueble bajo (soporta lavaplatos y grifería)"
+                "related_to": "salpicadero, fregadero"
+            }
+        },
+        {
+            "name": "Salpicadero (travertino)",
+            "type_component": "estructural",
+            "quantity": 1,
+            "detail": {
+                "doors": 0,
+                "drawers": 0,
+                "shelves": 0,
+                "related_to": "mesón"
+            }
+        },
+        {
+            "name": "Repisas / estantes abiertos (mueble alto lateral visible en corte)",
+            "type_component": "estructural",
+            "quantity": 1,
+            "detail": {
+                "doors": 0,
+                "drawers": 0,
+                "shelves": 2,
+                "related_to": "mueble alto, cortes A/B"
+            }
+        },
+        {
+            "name": "Zócalo (acabado pintura gris nopal)",
+            "type_component": "estructural",
+            "quantity": 1,
+            "detail": {
+                "doors": 0,
+                "drawers": 0,
+                "shelves": 0,
+                "related_to": "soporte base de módulos inferiores"
             }
         }
     ],
-    "configuration": "Conjunto lineal: a la izquierda mueble alto continuo sobre mesón y cajonera base; en el centro dos módulos verticales con puertas corredizas (panel M1 izquierdo con cajonera interna DC-02; panel derecho con entrepaños para almacenamiento). Mesón en travertino conecta el frente.",
-    "comments": "Interpretación basada en alzado, planta y cortes laterales. Materiales indicados en plano: mesón en travertino, melamina tipo vienes, zócalo pintura. No se clasifican electrodomésticos (campana, minibar, lavaplatos) como muebles; se indican como espacios/ocupaciones internas.",
+    "configuration": "Frente M1: un cuerpo base continuo bajo mesón (se considera 1 mueble_bajo con 3 submódulos: cajonera izq. 3 gavetas, módulo central bajo fregadero con cajón interno, submódulo derecho). Sobre mesón hay dos muebles altos independientes con alturas diferentes (no continuos). Al centro-derecha un closet vertical unificado que agrupa los paneles corredizos M1 y provee almacenamiento piso-techo. Mesón y salpicadero en travertino, zócalo continuo en pintura.",
+    "comments": "He unificado el módulo corredera central con el closet derecho tal como indicaste; por representación en plano los paneles corredizos corresponden al frente del closet. Se respetaron las alturas distintas de los dos muebles altos según alzado y cortes. Los números de entrepaños se estimaron a partir de las líneas de corte y hatch; confirmar en obra. Las puertas corredizas se registraron como 2 paneles de acceso al closet.",
     "viability": {
         "percentage": 85,
-        "reason": "Lectura de divisiones y símbolos clara (cajonera base, mueble alto, dos módulos con puerta corrediza). Incertidumbre en el conteo exacto de puertas del mueble alto y número preciso de entrepaños interiores (estimado desde cortes laterales). Verificar en obra alturas exactas, existencia de laterales interiores y la presencia/posición del minibar/electrodomésticos."
+        "reason": "La clasificación y unificación solicitada (closet centro-derecho) coincide con la geometría visible y tu aclaración, y los muebles altos se distinguen por alturas. Persisten incertidumbres: número exacto y separación de entrepaños internos en el closet, profundidades internas y si el closet alcanza exactamente el techo en todo su ancho; tipo y número de frentes de los muebles altos (puertas enfrentadas o una sola tapa), y especificación de herrajes corredera. Recomendable verificación en sitio de alturas, profundidades y herrajes antes de fabricación."
     }
 }

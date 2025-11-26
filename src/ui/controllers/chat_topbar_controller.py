@@ -5,6 +5,15 @@ class Chat_TopBarController:
         self.chat_topbar = chat_topbar
         self.main_window = main_window
 
+    def Load_OpenAIModel(self):
+        models_list = []
+        
+        for _, model_info in models.OPENAI_MODELS.items():
+            #print(model_info["display_name"])
+            models_list.append(model_info["display_name"])
+
+        self.chat_topbar.model_openAI_combo.addItems(models_list)
+
     """
         """
     def Change_OpenAIModel(self):

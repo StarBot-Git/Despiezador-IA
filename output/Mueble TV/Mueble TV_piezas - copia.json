@@ -1,0 +1,89 @@
+{
+    "message": "He revisado la parte izquierda según tu observación y ajusté la reconstrucción: la izquierda se interpreta como un mueble alto suspendido + minibar (mueble_bajo). Eliminé el mueble bajo bajo la TV como módulo independiente y mantuve el closet solo en la derecha con caja fuerte. Detalla cambios en los componentes.",
+    "type_furniture": "closet",
+    "components": [
+        {
+            "name": "Mueble alto izquierdo (sobre minibar)",
+            "type_component": "mueble_alto",
+            "quantity": 1,
+            "detail": {
+                "doors": 1,
+                "drawers": 0,
+                "shelves": 2,
+                "related_to": "Módulo suspendido a la izquierda del nicho de TV, ubicado sobre el minibar; gabinete alto (sin iniciar en piso) identificado en alzado y corte izquierdo."
+            }
+        },
+        {
+            "name": "Mini bar (módulo inferior izquierdo)",
+            "type_component": "mueble_bajo",
+            "quantity": 1,
+            "detail": {
+                "doors": 1,
+                "drawers": 0,
+                "shelves": 1,
+                "related_to": "Módulo apoyado en el piso indicado como MINI BAR en plano (h≈0.51 m, L≈0.473, w≈0.44); un único cuerpo de base bajo el mueble alto izquierdo."
+            }
+        },
+        {
+            "name": "Gabinete/mueble alto central (alrededor del nicho TV)",
+            "type_component": "mueble_alto",
+            "quantity": 1,
+            "detail": {
+                "doors": 2,
+                "drawers": 0,
+                "shelves": 1,
+                "related_to": "Mueble alto que forma la coronación y los cuerpos laterales del nicho para TV 55\"; identificado en alzado superior y cortes como cuerpo elevado continuo alrededor del nicho."
+            }
+        },
+        {
+            "name": "Closet lateral derecho con caja fuerte",
+            "type_component": "closet",
+            "quantity": 1,
+            "detail": {
+                "doors": 1,
+                "drawers": 0,
+                "shelves": 3,
+                "related_to": "Módulo vertical que va de piso a techo en el extremo derecho, integra la 'CAJA FUERTE' señalada en alzado; caja fuerte dentro del cuerpo del closet."
+            }
+        },
+        {
+            "name": "Panel / fondo TV y acentos (melamina gris)",
+            "type_component": "estructural",
+            "quantity": 1,
+            "detail": {
+                "doors": 0,
+                "drawers": 0,
+                "shelves": 0,
+                "related_to": "Panel de fondo del nicho y acentos en melamina gris (ref. Sukta Mt); elemento sin cavidad que soporta el TV y pasacintas LED."
+            }
+        },
+        {
+            "name": "Superficie de escritorio",
+            "type_component": "estructural",
+            "quantity": 1,
+            "detail": {
+                "doors": 0,
+                "drawers": 0,
+                "shelves": 0,
+                "related_to": "Cubierta del escritorio frontal indicada en planta; independizada de la tapa del minibar (lámina de madera), sin cavidades (escritorio sin cajoneras)."
+            }
+        },
+        {
+            "name": "Tapa superior continua / cielo del nicho",
+            "type_component": "estructural",
+            "quantity": 1,
+            "detail": {
+                "doors": 0,
+                "drawers": 0,
+                "shelves": 0,
+                "related_to": "Tapa horizontal superior que unifica los cuerpos altos; elemento estructural sin cavidad y con consideración de dilatación para paso de aire acondicionado."
+            }
+        }
+    ],
+    "configuration": "Conjunto lineal: en el extremo izquierdo mueble alto suspendido + minibar (mueble_bajo). En centro, nicho para TV con gabinete/mueble alto superior y panel estructural. En el extremo derecho, closet vertical de piso a techo con caja fuerte. Escritorio frontal independiente y tapa superior continua. No hay módulo bajo el TV separado (solo panel y posible entrepaño estructural), por lo tanto no se considera un mueble_bajo adicional bajo el nicho.",
+    "comments": "Se aplicó tu corrección: la parte izquierda es efectivamente un mueble alto + minibar; eliminé el supuesto mueble bajo bajo TV. Las cantidades de puertas y entrepaños se estiman a partir de alzados y cortes; validar en obra el número exacto de puertas en los cuerpos altos y la configuración interior de entrepaños/cajones si se requiere precisión para fabricación.",
+    "viability": {
+        "percentage": 95,
+        "reason": "Alta confianza en la reclasificación (basada en alzado, planta y cortes). La principal incertidumbre restante es el detalle exacto de frentes (número de puertas en los módulos altos superiores) y la posible existencia de cajoneras ocultas no evidenciadas en escala; se recomienda confirmación en sitio o detalle de frente para producción."
+    }
+}

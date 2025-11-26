@@ -1,0 +1,183 @@
+{
+    "name": "Mueble closet M2 (tipología 4)",
+    "type": "closet",
+    "global_position": "pared - piso a techo (habitación), módulo único",
+    "dimensions": {
+        "height": 2350.0,
+        "width": 1080.0,
+        "depth": 600.0,
+        "unit": "mm"
+    },
+    "structure": {
+        "doors": 2,
+        "drawers": 0,
+        "shelves": 4,
+        "cavities": 0
+    },
+    "sub_modules": [
+        {
+            "name": "Volumen interior principal",
+            "type": "interior_cavity",
+            "specifications": "Volumen útil interno calculado restando espesores de paneles",
+            "relative_position": "ocupación total interna (entre costados)",
+            "dimensions": {
+                "height": 2314.0,
+                "width": 1044.0,
+                "depth": 582.0,
+                "unit": "mm"
+            }
+        },
+        {
+            "name": "Espacio minibar (entrepaño reforzado)",
+            "type": "minibar_space",
+            "specifications": "Dimensiones sugeridas en especificación: h 0.59 x L 0.55 x w 0.55 m. Requiere entrepaño reforzado y ventilación.",
+            "relative_position": "lado derecho, altura media-baja (aprox.), frente interno",
+            "dimensions": {
+                "height": 590.0,
+                "width": 550.0,
+                "depth": 550.0,
+                "unit": "mm"
+            }
+        }
+    ],
+    "pieces": [
+        {
+            "name": "Panel lateral izquierdo",
+            "role": "lateral",
+            "height": 2350.0,
+            "width": 18.0,
+            "depth": 600.0,
+            "material": "Melamina tipo madera soder (espesor 18mm)",
+            "quantity": 1
+        },
+        {
+            "name": "Panel lateral derecho",
+            "role": "lateral",
+            "height": 2350.0,
+            "width": 18.0,
+            "depth": 600.0,
+            "material": "Melamina tipo madera soder (espesor 18mm)",
+            "quantity": 1
+        },
+        {
+            "name": "Tapa superior (top)",
+            "role": "superior",
+            "height": 18.0,
+            "width": 1044.0,
+            "depth": 600.0,
+            "material": "Melamina tipo madera soder (espesor 18mm)",
+            "quantity": 1
+        },
+        {
+            "name": "Base inferior",
+            "role": "inferior",
+            "height": 18.0,
+            "width": 1044.0,
+            "depth": 600.0,
+            "material": "Melamina tipo madera soder (espesor 18mm)",
+            "quantity": 1
+        },
+        {
+            "name": "Fondo falso (back panel)",
+            "role": "fondo",
+            "height": 2314.0,
+            "width": 1044.0,
+            "depth": 4.0,
+            "material": "Fondo falso melamina (espesor 4mm - asumir)",
+            "quantity": 1
+        },
+        {
+            "name": "Puerta izquierda",
+            "role": "puerta",
+            "height": 2310.0,
+            "width": 540.0,
+            "depth": 18.0,
+            "material": "Puerta parche en melamina tipo madera clara (Duratex) espesor 18mm",
+            "quantity": 1
+        },
+        {
+            "name": "Puerta derecha",
+            "role": "puerta",
+            "height": 2310.0,
+            "width": 540.0,
+            "depth": 18.0,
+            "material": "Puerta parche en melamina tipo madera clara (Duratex) espesor 18mm",
+            "quantity": 1
+        },
+        {
+            "name": "Entrepaños (4)",
+            "role": "entrepaño",
+            "height": 18.0,
+            "width": 1044.0,
+            "depth": 582.0,
+            "material": "Melamina tipo lino (espesor 18mm)",
+            "quantity": 4
+        },
+        {
+            "name": "Entrepaño reforzado para minibar",
+            "role": "entrepaño_reforzado",
+            "height": 18.0,
+            "width": 550.0,
+            "depth": 582.0,
+            "material": "Melamina tipo lino (refuerzo estructural adicional a definir en obra)",
+            "quantity": 1
+        },
+        {
+            "name": "Entrepaño superior (madera clara)",
+            "role": "entrepaño_superior",
+            "height": 18.0,
+            "width": 1044.0,
+            "depth": 582.0,
+            "material": "Melamina tipo madera clara (Duratex) espesor 18mm",
+            "quantity": 1
+        },
+        {
+            "name": "Zócalo (bolillo)",
+            "role": "zócalo",
+            "height": 30.0,
+            "width": 1080.0,
+            "depth": 60.0,
+            "material": "Zócalo acabado (material según especificación en obra)",
+            "quantity": 1
+        },
+        {
+            "name": "Manija vertical (closet piso a techo)",
+            "role": "manija",
+            "height": 2310.0,
+            "width": 20.0,
+            "depth": 20.0,
+            "material": "Metal según referencia (perfil por confirmar)",
+            "quantity": 1
+        }
+    ],
+    "assumptions": [
+        "Altura total tomada como 2350 mm (inferencia dentro del rango 2.32-2.35 m mostrado en alzado/corte). Verificar en sitio.",
+        "Espesor estándar de paneles usado = 18 mm salvo fondo falso asumido 4 mm (regla de inferencia técnica).",
+        "Ancho total = 1080 mm (dato del enunciado). Puertas indicadas 2 x 540 mm.",
+        "Profundidad externa = 600 mm (cota indicada y consistente con minibar). Profundidad interna = 600 - 18 = 582 mm (resta espesor fondo superior/inferior).",
+        "Ancho interno = 1080 - 2*18 = 1044 mm (resta espesores laterales).",
+        "Altura interior útil aproximada = 2350 - 2*18 = 2314 mm (resta espesores superior e inferior).",
+        "Puertas dimensionadas en altura como 2350 - 40 = 2310 mm (se restaron 20 mm de dilatación en piso y 20 mm en techo según nota de dilatación de 2 cm).",
+        "Entrepaños estándar asumidos espesor 18 mm; entrepaño reforzado del minibar previsto con mismo espesor conceptual (refuerzo estructural a definir en obra).",
+        "Dimensiones del minibar tomadas de la especificación: h 590 mm, ancho 550 mm, profundidad 550 mm (convertidas a mm).",
+        "Ubicación del minibar inferida del plano: lado derecho interior; posición exacta debe verificarse en sitio.",
+        "Fondo falso asumido de 4 mm de espesor (material y espesor reales no especificados).",
+        "Zócalo altura asumida 30 mm por defecto (no indicada explícitamente en plano).",
+        "Cantidad de manijas asumida = 1 manija vertical continua centrada en encuentro de puertas (plano indica manija piso-techo; confirmar cantidad y detalle en obra).",
+        "Se elimina la cavidad/caja fuerte del alcance por solicitud del contratista; cualquier referencia a caja fuerte en planos se ignora para fabricación de este módulo.",
+        "Cualquier método de refuerzo (soportes metálicos, tornillería, refuerzo interior) no está especificado y deberá definirse en obra."
+    ],
+    "viability": {
+        "percentage": 75,
+        "reason": "Se han inferido varias dimensiones clave y se ha eliminado la cavidad de caja fuerte por solicitud. Persisten incertidumbres sobre posiciones exactas de entrepaños, detalles de refuerzo, ventilación de minibar y herrajes.",
+        "missing_data": [
+            "Confirmación de altura total exacta en obra (valor usado 2350 mm es inferido)",
+            "Posiciones verticales exactas de los 4 entrepaños (cotas) y distancias entre ellos",
+            "Perfil, cantidad y detalle de la manija (unitaria o por puerta) y fijaciones",
+            "Detalle del refuerzo para el entrepaño del minibar (material, sección, capacidades)",
+            "Dimensión y tipo exacto del fondo falso (espesor/material)",
+            "Dimensiones y detalle de ventilación para minibar (rejilla/aberturas)",
+            "Tolerancias de holgura para puertas y herrajes"
+        ]
+    }
+}

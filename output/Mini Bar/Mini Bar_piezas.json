@@ -1,23 +1,11 @@
 {
-    "message": "No, en los planos no aparece un closet. El mueble es un minibar con almacenamiento, no un closet completo.",
-    "type_furniture": "mueble_bajo",
-    "components": [
-        {
-            "name": "Minibar (mueble base con puertas)",
-            "type_component": "mueble_bajo",
-            "quantity": 1,
-            "detail": {
-                "doors": 2,
-                "drawers": 0,
-                "shelves": 2,
-                "related_to": "Compartimento para minibar y almacenamiento"
-            }
-        }
-    ],
-    "configuration": "Mueble de base en piso con dos puertas, diseñado para minibar en un compartimento derecho con entrepaños reforzados y ventilación, y espacio de almacenamiento en el lado izquierdo.",
-    "comments": "El plano muestra un mueble de base con acceso a minibar y espacios cavernosos, sin elementos que configuren un closet completo vertical que llegue de piso a techo.",
+    "message": "Confirmo recepción de la información gráfica: tanto la imagen como el PDF son legibles y analizables. Contienen planta, alzado y corte necesarios para reconstruir el minibar y generar la clasificación y componentes. Observaciones: las cotas del minibar muestran discrepancias entre texto y dibujo (alto/ancho), y detalles de ventilación/fijaciones no están completamente dimensionados; si desea puedo extraer las cotas específicas, generar lista de cortes o incorporar cambios constructivos tras su confirmación en obra.",
+    "type_furniture": "",
+    "components": [],
+    "configuration": "",
+    "comments": "",
     "viability": {
-        "percentage": 95,
-        "reason": "La clasificación se basa en que es un mueble de base sin cavidad de closet completo, con función específica de minibar y almacenamiento."
+        "percentage": 0,
+        "reason": ""
     }
 }

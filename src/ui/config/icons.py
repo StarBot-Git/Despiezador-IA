@@ -9,9 +9,10 @@ LOGO = str(ICONS_DIR / "all_star_logo.svg")
 OPENAI_LOGO = str(ICONS_DIR / "openAI.svg")
 
 # ------ Modelos Star GPT ------
-ANALISTA_PIEZAS = str(ICONS_DIR / "analista_piezas.svg")
+# ANALISTA_PIEZAS = str(ICONS_DIR / "analista_piezas.svg")
 INSTRUCTOR = str(ICONS_DIR / "instructor.svg")
 ANALISTA = str(ICONS_DIR / "analista.svg")
+PARAMETRIZADOR = str(ICONS_DIR / "parametrizador.svg")
 SUPERVISOR = str(ICONS_DIR / "supervisor.svg")
 
 # ------ Archivos ------

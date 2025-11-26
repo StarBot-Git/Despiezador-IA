@@ -125,20 +125,6 @@ class MainWindow(QMainWindow):
         self.input_field.setMinimumHeight(42)
         self.input_field.setMaximumHeight(120)
         self.input_field.setObjectName("message-TextArea")
-        # self.input_field.setStyleSheet("""
-        #     QTextEdit {
-        #         background: #F5F7F9;
-        #         border: 1px solid #E0E6EB;
-        #         border-radius: 20px;
-        #         padding: 10px 16px;
-        #         font-size: 14px;
-        #         color: #133855;
-        #     }
-        #     QTextEdit:focus {
-        #         border: 1px solid #C5D4E0;
-        #         background: #FFFFFF;
-        #     }
-        # """)
 
         self.send_button = QPushButton("  Enviar")
         self.send_button.setCursor(Qt.PointingHandCursor)
@@ -146,23 +132,6 @@ class MainWindow(QMainWindow):
         self.send_button.setIcon(QIcon("assets/icons/paper_plane.png"))
         self.send_button.setIconSize(QSize(18, 18))
         self.send_button.setObjectName("message-SendButton")
-
-        # self.send_button.setStyleSheet("""
-        #     QPushButton {
-        #         background: #0F3A55;
-        #         color: white;
-        #         border-radius: 20px;
-        #         padding: 0 18px;
-        #         font-size: 14px;
-        #         font-weight: 600;
-        #     }
-        #     QPushButton:hover {
-        #         background: #174C71;
-        #     }
-        #     QPushButton:pressed {
-        #         background: #0B2C40;
-        #     }
-        # """)
 
         self.send_button.clicked.connect(self.chat_controller.Handle_SendMessage)
 

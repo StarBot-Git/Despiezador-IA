@@ -20,7 +20,6 @@ class Chat_TopBar(QFrame):
 
         self.model_openAI_combo = QComboBox()
         self.model_openAI_combo.setObjectName("ChatTopBar-ModelOpenAICB")
-        self.model_openAI_combo.addItems(["GPT-5 mini","GPT-4 nano"])
         self.model_openAI_combo.setEnabled(False)
 
         main_layout.addWidget(self.model_openAI_combo)
@@ -28,6 +27,8 @@ class Chat_TopBar(QFrame):
         # ======== Controlador | Chat TopBar ========= 
 
         self.controller = Chat_TopBarController(chat_topbar=self, main_window=main_window)
+
+        self.controller.Load_OpenAIModel()
         self.model_openAI_combo.currentIndexChanged.connect(self.controller.Change_OpenAIModel)
 
         main_layout.addStretch(1)

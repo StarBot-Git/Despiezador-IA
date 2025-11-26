@@ -1,15 +1,16 @@
 import os
-import json
+import shutil
 from pathlib import Path
 from PySide6.QtWidgets import QFileDialog
+from PySide6.QtCore import Qt
 
 from utils.paths import Normalize_Path, Ensure_OutputsRoot
 from utils.scanner import Scan_InputFolder
-from core import config
+from core import config, models_openAI_config
 from agents.analista.analista_piezas import Analista_Piezas
+from agents.parametrizador.parametrizador_modulos import ParametrizadorModulos
 from core.file_manager import OpenAIFileManager
 from ui.components.fileitem_widget import FileItemWidget
-#from core.ai_client import load_file, upload_file
 
 
 class SideBarController:
@@ -48,7 +49,7 @@ class SideBarController:
         self.sidebar.furniture_name = self.main_window.furniture_name = furniture_name = self.sidebar.furniture_combo.currentText()
 
         if not furniture_name == "Seleccione un mueble...":
-            print(f"{furniture_name}")
+            print(f"[Mueble] Se selecciono: {furniture_name}")
 
             furniture_path = config.INPUT_DIR / furniture_name
             output_path = config.OUTPUT_DIR / furniture_name
@@ -61,15 +62,12 @@ class SideBarController:
 
             paths = Scan_InputFolder(furniture_path)
 
-            print(paths)
-
             paths_str = [str(p) for p in paths]
 
             if paths_str:
                 for file in paths_str:
                     if file not in self.Get_Uploaded_Files():
                         self.Add_File(file)
-                        #print(f"añadi:{file}")
 
             self.sidebar.uploaded_files = paths_str
 
@@ -105,12 +103,53 @@ class SideBarController:
     def Get_Uploaded_Files(self):
         """Retorna la lista de archivos subidos"""
         return self.sidebar.uploaded_files.copy()
+    
+    """
 
+    """
+    def _copy_to_furniture_folder(self, filepath: str) -> Path:
+        """
+        Copia el archivo al directorio del mueble si no est? ya dentro.
+        Devuelve la ruta final (original si no se copi?).
+        """
+        target_dir = getattr(self.sidebar, "input_dir", "")
+        
+        if not target_dir:
+            return Path(filepath)
+
+        target_dir = Path(target_dir)
+        src_path = Path(filepath)
+
+        try:
+            src_in_target = src_path.resolve().is_relative_to(target_dir.resolve())
+        except AttributeError:
+            try:
+                src_path.resolve().relative_to(target_dir.resolve())
+                src_in_target = True
+            except ValueError:
+                src_in_target = False
+
+        if src_in_target:
+            return src_path
+
+        target_dir.mkdir(parents=True, exist_ok=True)
+
+        dest_path = target_dir / src_path.name
+        counter = 1
+        while dest_path.exists():
+            dest_path = target_dir / f"{src_path.stem}_{counter}{src_path.suffix}"
+            counter += 1
+
+        shutil.copy2(src_path, dest_path)
+        print(f"[Archivos] Copiado a carpeta del mueble: {dest_path}")
+        return dest_path
+    
     """
 
     """
     def Add_File(self, filepath: str):
-        """Añade un archivo a la lista"""
+        """A?ade un archivo a la lista"""
+        filepath = str(self._copy_to_furniture_folder(filepath))
         self.sidebar.uploaded_files.append(filepath)
         
         # Crear widget del archivo
@@ -118,6 +157,7 @@ class SideBarController:
         file_widget.remove_clicked.connect(self.Remove_File)
         
         self.sidebar.files_layout.addWidget(file_widget)
+        self.Update_AgentFiles()
     
     """
 
@@ -134,6 +174,28 @@ class SideBarController:
                 widget.deleteLater()
                 break
         
+        self.Update_AgentFiles()
+
+    """
+        Update_AgentFiles():
+        Refresca los archivos asociados al agente IA con la lista actual.
+    """
+    def Update_AgentFiles(self):
+        agent = self.main_window.agent_IA
+        furniture_name = getattr(self.sidebar, "furniture_name", "")
+
+        if agent is None:
+            return
+
+        if not furniture_name or furniture_name == "Seleccione un mueble...":
+            return
+
+        files_data = self.Load_File_IDs(paths=self.sidebar.uploaded_files,furniture_name=furniture_name)
+
+        agent.Clear_FileHistory()
+        
+        agent.files = files_data
+        agent.Add_Files(files_data)
 
     # ------ Control | Modelo StarGPT ------
     
@@ -142,22 +204,38 @@ class SideBarController:
     """
     def Change_SG_Model(self):
         selected_model = self.sidebar.model_combo.get_value()
-        print(f"es: {selected_model}")
+        self.sidebar.model_title.setText(selected_model)
+
+        print(f"[Modelo] Se selecciono: {selected_model}")
 
         if not selected_model == "STAR GPT":
-            self.sidebar.model_title.setText(selected_model)
-
-            #print(self.sidebar.uploaded_files)
             files_data = self.Load_File_IDs(paths=self.sidebar.uploaded_files, furniture_name=self.sidebar.furniture_name)
 
-            print(files_data)
+            print(f"[Archivos] Se cargaron los archivos: {files_data}")
 
             if selected_model == "Analista de Piezas":
                 self.main_window.agent_IA = Analista_Piezas(self.ai_client)
                 self.main_window.agent_IA.Add_Files(files_data)
                 self.main_window.input_field.setText(self.main_window.agent_IA.SG_USER_PROMPT)
 
+            elif selected_model == "Parametrizador de Modulos":
+                self.main_window.agent_IA = ParametrizadorModulos(self.ai_client)
+                self.main_window.agent_IA.Add_Files(files_data)
+                self.main_window.input_field.setText(self.main_window.agent_IA.SG_USER_PROMPT)
+                
+                
+            model_display_name = models_openAI_config.OPENAI_MODELS_BY_NAME[self.main_window.agent_IA.model]
+
+            index = self.main_window.chat_topbar.model_openAI_combo.findText(model_display_name["display_name"], Qt.MatchFixedString | Qt.MatchCaseSensitive)
+
+            if index >= 0:
+                self.main_window.chat_topbar.model_openAI_combo.setCurrentIndex(index)
+
+            print(f"[{selected_model}] configurado!")
             self.main_window.chat_topbar.model_openAI_combo.setEnabled(True)
+
+            if selected_model == "Parametrizador de Modulos":
+                self.main_window.chat_controller.Handle_SendMessage()
         
         else:
             self.main_window.agent_IA = None

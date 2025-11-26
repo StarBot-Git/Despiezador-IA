@@ -1,0 +1,327 @@
+{
+    "parametrizacion": [
+        {
+            "name": "Torre de hornos",
+            "type": "closet",
+            "global_position": "Zona izquierda - torre integrada al mueble bajo y mesón",
+            "dimensions": {
+                "height": 0.0,
+                "width": 0.0,
+                "depth": 0.0,
+                "unit": "mm"
+            },
+            "structure": {
+                "doors": 2,
+                "drawers": 0,
+                "shelves": 2,
+                "cavities": 3
+            },
+            "sub_modules": [
+                {
+                    "name": "Compartment superior",
+                    "type": "cavity",
+                    "specifications": "Espacio para horno",
+                    "relative_position": "superior",
+                    "dimensions": {
+                        "height": 0.0,
+                        "width": 0.0,
+                        "depth": 0.0,
+                        "unit": "mm"
+                    }
+                },
+                {
+                    "name": "Compartment medio",
+                    "type": "cavity",
+                    "specifications": "Espacio para microondas",
+                    "relative_position": "medio",
+                    "dimensions": {
+                        "height": 0.0,
+                        "width": 0.0,
+                        "depth": 0.0,
+                        "unit": "mm"
+                    }
+                },
+                {
+                    "name": "Compartment inferior",
+                    "type": "cavity",
+                    "specifications": "Espacio de almacenamiento",
+                    "relative_position": "inferior",
+                    "dimensions": {
+                        "height": 0.0,
+                        "width": 0.0,
+                        "depth": 0.0,
+                        "unit": "mm"
+                    }
+                }
+            ],
+            "pieces": [
+                {
+                    "name": "Panel lateral izquierdo",
+                    "role": "side panel",
+                    "height": 0.0,
+                    "width": 0.0,
+                    "depth": 0.0,
+                    "material": "MDF 18mm",
+                    "quantity": 1
+                },
+                {
+                    "name": "Panel lateral derecho",
+                    "role": "side panel",
+                    "height": 0.0,
+                    "width": 0.0,
+                    "depth": 0.0,
+                    "material": "MDF 18mm",
+                    "quantity": 1
+                },
+                {
+                    "name": "Panel superior",
+                    "role": "top panel",
+                    "height": 0.0,
+                    "width": 0.0,
+                    "depth": 0.0,
+                    "material": "MDF 18mm",
+                    "quantity": 1
+                },
+                {
+                    "name": "Panel inferior",
+                    "role": "bottom panel",
+                    "height": 0.0,
+                    "width": 0.0,
+                    "depth": 0.0,
+                    "material": "MDF 18mm",
+                    "quantity": 1
+                },
+                {
+                    "name": "Panel trasero",
+                    "role": "back panel",
+                    "height": 0.0,
+                    "width": 0.0,
+                    "depth": 0.0,
+                    "material": "MDF 18mm",
+                    "quantity": 1
+                },
+                {
+                    "name": "Estante",
+                    "role": "shelf",
+                    "height": 0.0,
+                    "width": 0.0,
+                    "depth": 0.0,
+                    "material": "MDF 18mm",
+                    "quantity": 2
+                },
+                {
+                    "name": "Puerta",
+                    "role": "door",
+                    "height": 0.0,
+                    "width": 0.0,
+                    "depth": 0.0,
+                    "material": "MDF 18mm",
+                    "quantity": 2
+                }
+            ],
+            "assumptions": [
+                "Se usa espesor estándar de 18 mm para paneles, estantes y puertas",
+                "El número de cavidades se infiere como estantes+1",
+                "Los submódulos representan compartimentos para horno, microondas y almacenamiento",
+                "No se cuenta con dimensiones exactas de módulo ni submódulos"
+            ],
+            "viability": {
+                "percentage": 30,
+                "reason": "Falta información de dimensiones externas e internas",
+                "missing_data": [
+                    "dimensions.height",
+                    "dimensions.width",
+                    "dimensions.depth",
+                    "sub_modules.dimensions.height",
+                    "sub_modules.dimensions.width",
+                    "sub_modules.dimensions.depth",
+                    "pieces.height",
+                    "pieces.width",
+                    "pieces.depth"
+                ]
+            }
+        },
+        {
+            "name": "Mueble alto sobre mesón",
+            "type": "mueble_alto",
+            "global_position": "pared superior sobre mesón",
+            "dimensions": {
+                "height": 700.0,
+                "width": 1915.0,
+                "depth": 320.0,
+                "unit": "mm"
+            },
+            "structure": {
+                "doors": 6,
+                "drawers": 0,
+                "shelves": 3,
+                "cavities": 3
+            },
+            "sub_modules": [
+                {
+                    "name": "Cuerpo 1",
+                    "type": "sub_mueble_alto",
+                    "specifications": "2 puertas, 1 estante interno",
+                    "relative_position": "izquierda",
+                    "dimensions": {
+                        "height": 700.0,
+                        "width": 641.0,
+                        "depth": 320.0,
+                        "unit": "mm"
+                    }
+                },
+                {
+                    "name": "Cuerpo 2",
+                    "type": "sub_mueble_alto",
+                    "specifications": "2 puertas, 1 estante interno",
+                    "relative_position": "centro",
+                    "dimensions": {
+                        "height": 700.0,
+                        "width": 633.0,
+                        "depth": 320.0,
+                        "unit": "mm"
+                    }
+                },
+                {
+                    "name": "Cuerpo 3",
+                    "type": "sub_mueble_alto",
+                    "specifications": "2 puertas, 1 estante interno",
+                    "relative_position": "derecha",
+                    "dimensions": {
+                        "height": 700.0,
+                        "width": 641.0,
+                        "depth": 320.0,
+                        "unit": "mm"
+                    }
+                }
+            ],
+            "pieces": [],
+            "assumptions": [
+                "Altura total inferida como 700 mm según C001_Corte B",
+                "Ancho total inferido como 1 915 mm según suma de anchos en C001_Planta A (641+633+641)",
+                "Profundidad estándar de mueble alto inferida como 320 mm",
+                "Espesor estándar de paneles asumido 18 mm",
+                "Número de cavidades igual a número de sub-módulos",
+                "Detalle de piezas no provisto en plano, piezas omitidas"
+            ],
+            "viability": {
+                "percentage": 80,
+                "reason": "Faltan detalles de piezas y materiales específicos para corte",
+                "missing_data": [
+                    "pieces"
+                ]
+            }
+        },
+        {
+            "name": "Mueble bajo - pared (bajo mesón y fregadero)",
+            "type": "mueble_bajo",
+            "global_position": "pared",
+            "dimensions": {
+                "height": 820.0,
+                "width": 1920.0,
+                "depth": 600.0,
+                "unit": "mm"
+            },
+            "structure": {
+                "doors": 3,
+                "drawers": 1,
+                "shelves": 1,
+                "cavities": 1
+            },
+            "sub_modules": [
+                {
+                    "name": "Submódulo Izquierdo",
+                    "type": "puerta simple",
+                    "specifications": "Puerta simple de 600 mm de ancho",
+                    "relative_position": "izquierda",
+                    "dimensions": {
+                        "height": 820.0,
+                        "width": 600.0,
+                        "depth": 600.0,
+                        "unit": "mm"
+                    }
+                },
+                {
+                    "name": "Submódulo Central",
+                    "type": "puerta doble",
+                    "specifications": "Doble puerta con cajón superior",
+                    "relative_position": "centro",
+                    "dimensions": {
+                        "height": 820.0,
+                        "width": 1165.0,
+                        "depth": 600.0,
+                        "unit": "mm"
+                    }
+                },
+                {
+                    "name": "Submódulo Derecho",
+                    "type": "puerta simple",
+                    "specifications": "Puerta simple de 600 mm de ancho",
+                    "relative_position": "derecha",
+                    "dimensions": {
+                        "height": 820.0,
+                        "width": 600.0,
+                        "depth": 600.0,
+                        "unit": "mm"
+                    }
+                }
+            ],
+            "pieces": [],
+            "assumptions": [
+                "Se asume altura externa estándar de módulo base de 820 mm (720 mm interior + 100 mm zócalo)",
+                "La anchura total de 1920 mm se infiere de la dimensión 1.92 m en el plano",
+                "La profundidad de 600 mm se asume como estándar de módulo bajo mesón",
+                "Se considera una cavidad para el espacio de fregadero"
+            ],
+            "viability": {
+                "percentage": 80,
+                "reason": "Dimensiones inferidas basadas en medidas estándar y plano; verificar en obra",
+                "missing_data": [
+                    "height",
+                    "width",
+                    "depth"
+                ]
+            }
+        },
+        {
+            "name": "Mueble bajo - isla",
+            "type": "mueble_bajo",
+            "global_position": "isla",
+            "dimensions": {
+                "height": 900.0,
+                "width": 1920.0,
+                "depth": 600.0,
+                "unit": "mm"
+            },
+            "structure": {
+                "doors": 4,
+                "drawers": 0,
+                "shelves": 0,
+                "cavities": 4
+            },
+            "sub_modules": [],
+            "pieces": [],
+            "assumptions": [
+                "Se asumió grosor de panel de 18 mm según estándar.",
+                "Anchura total inferida de 1.92 m del plano (1920 mm).",
+                "Profundidad estándar de módulos bajos inferida como 600 mm.",
+                "Altura estándar de módulo bajo con mesón inferida como 900 mm.",
+                "Número de cavidades igual al número de puertas."
+            ],
+            "viability": {
+                "percentage": 70,
+                "reason": "Dimensiones inferidas por ausencia de datos explícitos.",
+                "missing_data": [
+                    "height",
+                    "width",
+                    "depth"
+                ]
+            }
+        }
+    ],
+    "tokens": {
+        "input": 55474,
+        "output": 12603,
+        "total": 68077
+    }
+}

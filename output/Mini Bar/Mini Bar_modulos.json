@@ -1,0 +1,169 @@
+{
+    "parametrizacion": [
+        {
+            "name": "Cuerpo minibar M1 (mueble único)",
+            "type": "mueble_bajo",
+            "global_position": "lado derecho del mueble bajo total (alojamiento minibar) - segunda mitad del ancho total 1.00 m",
+            "dimensions": {
+                "height": 840.0,
+                "width": 470.0,
+                "depth": 550.0,
+                "unit": "mm"
+            },
+            "structure": {
+                "doors": 2,
+                "drawers": 0,
+                "shelves": 2,
+                "cavities": 1
+            },
+            "sub_modules": [
+                {
+                    "name": "minibar_cavity",
+                    "type": "cavidad_aparato",
+                    "specifications": "Alojamiento para minibar según cotas anotadas en plano. Ventilación prevista y entrepaño reforzado para apoyo. Fondo falso y dilataciones 20 mm en costados/piso/techo.",
+                    "relative_position": "lado derecho interior del cuerpo (ocupa sector inferior/central del módulo)",
+                    "dimensions": {
+                        "height": 510.0,
+                        "width": 440.0,
+                        "depth": 473.0,
+                        "unit": "mm"
+                    }
+                },
+                {
+                    "name": "entrepaño_reforzado",
+                    "type": "entrepaño (reforzado)",
+                    "specifications": "Entrepaño reforzado para ubicación y soporte del minibar; material melamina tipo lino con refuerzo metálico interior. Soporta carga del minibar.",
+                    "relative_position": "posicionado horizontalmente a la cota indicada para sostener minibar (dentro de la cavidad)",
+                    "dimensions": {
+                        "height": 18.0,
+                        "width": 440.0,
+                        "depth": 473.0,
+                        "unit": "mm"
+                    }
+                }
+            ],
+            "pieces": [
+                {
+                    "name": "Panel lateral izquierdo (cuerpo M1)",
+                    "role": "panel estructural lateral",
+                    "height": 840.0,
+                    "width": 550.0,
+                    "depth": 18.0,
+                    "material": "Melamina tipo madera soder (estructura)",
+                    "quantity": 1
+                },
+                {
+                    "name": "Panel lateral derecho (cuerpo M1)",
+                    "role": "panel estructural lateral",
+                    "height": 840.0,
+                    "width": 550.0,
+                    "depth": 18.0,
+                    "material": "Melamina tipo madera soder (estructura)",
+                    "quantity": 1
+                },
+                {
+                    "name": "Tapa superior (formica)",
+                    "role": "tapa superior/mesón",
+                    "height": 18.0,
+                    "width": 470.0,
+                    "depth": 550.0,
+                    "material": "Formica CLAY PW sobre base melamina",
+                    "quantity": 1
+                },
+                {
+                    "name": "Panel inferior (base)",
+                    "role": "base estructural",
+                    "height": 18.0,
+                    "width": 470.0,
+                    "depth": 550.0,
+                    "material": "Melamina tipo madera soder",
+                    "quantity": 1
+                },
+                {
+                    "name": "Fondo falso (back panel interno)",
+                    "role": "fondo falso",
+                    "height": 804.0,
+                    "width": 434.0,
+                    "depth": 18.0,
+                    "material": "Melamina tipo lino (interior)",
+                    "quantity": 1
+                },
+                {
+                    "name": "Puerta - hoja A",
+                    "role": "puerta de parche",
+                    "height": 804.0,
+                    "width": 217.0,
+                    "depth": 18.0,
+                    "material": "Melamina tipo madera clara (parche) - Soder / Duratex",
+                    "quantity": 1
+                },
+                {
+                    "name": "Puerta - hoja B",
+                    "role": "puerta de parche",
+                    "height": 804.0,
+                    "width": 217.0,
+                    "depth": 18.0,
+                    "material": "Melamina tipo madera clara (parche) - Soder / Duratex",
+                    "quantity": 1
+                },
+                {
+                    "name": "Entrepaño fijo/variable (interior)",
+                    "role": "entrepaño",
+                    "height": 18.0,
+                    "width": 434.0,
+                    "depth": 532.0,
+                    "material": "Melamina tipo lino (interior); uno reforzado para minibar",
+                    "quantity": 2
+                },
+                {
+                    "name": "Entrepaño reforzado (soporte minibar)",
+                    "role": "entrepaño reforzado",
+                    "height": 18.0,
+                    "width": 440.0,
+                    "depth": 473.0,
+                    "material": "Melamina tipo lino + refuerzo metálico",
+                    "quantity": 1
+                },
+                {
+                    "name": "Zócalo / bolillo",
+                    "role": "zócalo",
+                    "height": 50.0,
+                    "width": 470.0,
+                    "depth": 18.0,
+                    "material": "Acabado zócalo (según especificación)",
+                    "quantity": 1
+                }
+            ],
+            "assumptions": [
+                "Se interpreta que las cotas en plano están en metros; se convierten a milímetros para fabricación.",
+                "Paneles estándar adoptados con espesor 18 mm cuando no se especifica (regla de inferencia técnica). Esta regla aplicada a laterales, tapa, base, fondo y puertas.",
+                "Dimensiones externas del cuerpo: ancho 0.47 m (470 mm) y profundidad 0.55 m (550 mm) se toman del enunciado y anotaciones en planta/corte (.47 y .55).",
+                "Altura del módulo tomada de la cota .84 m (840 mm) que aparece en el alzado/corte del plano; la cavidad del minibar usa la cota específica h:0.51 m (510 mm).",
+                "Cálculo de huecos internos conforme a regla: ancho_interno = ancho_externo - 2×espesor (470 - 2×18 = 434 mm); profundidad_interna = profundidad_externa - espesor posterior (550 - 18 = 532 mm); alto_interno = alto_externo - 2×espesor (840 - 2×18 = 804 mm). Se documenta uso de estas fórmulas.",
+                "La cavidad del minibar se parametriza con las dimensiones textuales presentes en plano: h 510 mm, w 440 mm, depth (L) 473 mm (se priorizan las cotas del recuadro 'MINI BAR' frente a dimensiones internas genéricas).",
+                "Se asume que las 2 puertas indicadas corresponden al cuerpo (una hoja por mitad del ancho interior calculado). Ancho de cada hoja aproximado = ancho_interno / 2 = 217 mm (se deja constancia que es aproximación y requiere verificación en obra).",
+                "Se incluye un entrepaño reforzado específico con dimensiones iguales a la cavidad del minibar para apoyo directo del equipo, y dos entrepaños adicionales a modo de estantes según la especificación proporcionada.",
+                "Tapa superior manufacturada en Formica CLAY PW sobre base de melamina según especificación del proyecto.",
+                "Se considera la existencia de fondo falso (fondo independiente) y dilatación de 20 mm indicadas en notas; detalle de fijaciones y ventilación (orificio/retícula) debe definirse en taller/obra.",
+                "Cotas menores de holgura para puertas (2–3 mm) y bisagras no detalladas aquí; deben verificarse en taller para montaje final."
+            ],
+            "viability": {
+                "percentage": 70,
+                "reason": "Existe información redundante y pequeñas contradicciones en profundidad y ancho de cavidad (valores 0.44–0.48 m y 0.473–0.55 m aparecen en plano); se han elegido valores compatibles y aplicando reglas estándar, pero requieren verificación en obra.",
+                "missing_data": [
+                    "Espesores reales de zócalo y frentes (se asumió 18 mm general).",
+                    "Confirmación si las 2 puertas pertenecen a este cuerpo o al conjunto total (se asumieron 2 hojas en este cuerpo).",
+                    "Posición exacta (cota) del entrepaño reforzado y altura libre sobre éste (se usó la cota de cavidad 510 mm).",
+                    "Detalle y tamaño/posición exacta de las perforaciones/retículas de ventilación para minibar.",
+                    "Altura útil interior exacta del minibar dentro del mueble si hay baldas intermedias adicionales o cajoneras ocultas.",
+                    "Detalles de bisagras, herrajes, y tolerancias de montaje (holguras, jambas, juntas)."
+                ]
+            }
+        }
+    ],
+    "tokens": {
+        "input": 8842,
+        "output": 5250,
+        "total": 14092
+    }
+}

@@ -130,9 +130,10 @@ class SideBar(QWidget):
         # self.model_combo.add_item("Instructor de Modelacion", settings.INSTRUCTOR_ICON_CB)
         self.model_combo.add_item("STAR GPT", icons.IA_ICON)
         self.model_combo.add_item("Analista de Piezas", icons.ANALISTA)
+        self.model_combo.add_item("Parametrizador de Modulos", icons.PARAMETRIZADOR)
         #self.model_combo.model.item(1).setEnabled(False)
         self.model_combo.add_item("Supervisor de Piezas", icons.SUPERVISOR)
-        self.model_combo.model.item(2).setEnabled(False)
+        self.model_combo.model.item(3).setEnabled(False)
 
         self.model_combo.currentIndexChanged.connect(self.controller.Change_SG_Model)
 

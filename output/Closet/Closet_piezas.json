@@ -1,23 +1,23 @@
 {
-    "message": "El plano y la descripción indican que el mueble closet incluye un minibáar en su interior, específicamente en el componente que tiene la dimensión sugerida de 0.55 m x 0.55 m x 0.59 m de altura, con ventilación para minibar y entrepaño reforzado para su ubicación. Por lo tanto, se clasifica como un closet con minibar.",
-    "type_furniture": "closet con minibar",
+    "message": "Análisis del plano recibido: se trata de un módulo tipo closet (M2) de piso a techo con dos puertas laterales de parche (2 hojas) y cuerpo único de 1,08 m de ancho (54 + 54). Interior con entrepaños, entrepaño reforzado para minibar (con ventilación y fondo falso) y ubicación de caja fuerte en la mitad derecha. Se indican zócalo, bolillo y dilatación de 2 cm contra piso/techo/costados. A continuación se entrega la clasificación modular y detalles extraídos del plano y la tabla de especificaciones.",
+    "type_furniture": "closet",
     "components": [
         {
-            "name": "Closet con minibar",
+            "name": "Mueble closet M2 (tipología 4)",
             "type_component": "closet",
             "quantity": 1,
             "detail": {
                 "doors": 2,
                 "drawers": 0,
                 "shelves": 4,
-                "related_to": "Estructura de closet con espacio para minibar, ventilación y entrepaños reforzados"
+                "related_to": "Caja fuerte interior; entrepaño reforzado para minibar con ventilación; fondo falso; zócalo; dilatación 2 cm"
             }
         }
     ],
-    "configuration": "Puertas en melamina tipo madera clara, estructura en melamina, entrepaños reforzados, ventilación para minibar y espacio interno para minibar.",
-    "comments": "El mueble incluye un espacio de minibar con ventilación y entrepaños reforzados. La estructura y puertas siguen especificaciones de melamina y fórmica.",
+    "configuration": "Módulo único de piso a techo. Ancho total 1,08 m (2 puertas de 0,54 m cada una). Profundidad de diseño estimada 0,60 m (coincide con cota indicada en corte y permite acomodar minibar dim sugeridas: h0,59 x L0,55 x w0,55). Altura total indicada en alzado/corte aprox. 2,32–2,35 m (verificar en sitio). Entrepaños: 4 entrepaños en melamina tipo lino; además se prevé entrepaño reforzado específico para minibar y entrepaño superior en melamina tipo madera clara según especificaciones. Fondo falso incluido. Dilatación de 2 cm contra piso/techo/costados según nota.",
+    "comments": "Basado en la geometría de planta, alzado y corte y la lista de especificaciones. Se identifican: puerta doble parche en melamina (tipo madera clara), estructura en melamina, tapa en formica para mesón (referencia a refuerzo mesón lavamanos fuera del módulo). La caja fuerte está embutida en el cuerpo derecho; el entrepaño correspondiente podría requerir refuerzo local y fijación específica para la caja. Se respetó la taxonomía: módulo clasificado como 'closet'.",
     "viability": {
-        "percentage": 100,
-        "reason": "El diseño mencionado y la estructura del closet con espacio para minibar son coherentes con las reglas de clasificación y la descripción en planos."
+        "percentage": 80,
+        "reason": "La mayoría de elementos esenciales están claros (doble puerta 54+54 = 1,08 m; presencia de caja fuerte; entrepaños; entrepaño reforzado para minibar; ventilación; fondo falso; dilatación 2 cm). Incertidumbres que requieren verificación en sitio: profundidad exacta final del módulo (se asumió 0,60 m por cotejo con cota en corte y dimensiones minibar), confirmación si el entrepaño reforzado es adicional a los 4 entrepaños especificados, separación/espaciado exacto entre entrepaños, ubicación y dimensiones exactas de la caja fuerte (espesor y montaje), detalles de herrajes (bisagras, tirador especificado como manija piso-techo) y refuerzos estructurales para el minibar y el refuerzo indicado \"VER REFUERZO PARA MESÓN LAVAMANOS\". Todas las dimensiones y especificaciones deben ser verificados y detallados por el contratista en sitio según la nota del plano."
     }
 }

@@ -9,13 +9,14 @@ class BaseAgent:
         self.files = []
 
         self.messages = [{"role": "system", "content": system_prompt}]
+        self.content = []
 
         #_____________________________________________________________
 
     """
         Add_Files():
     """
-    def Add_Files(self, files: list[dict]):
+    def Add_Files(self, files: list[dict] = None):
         #_____________________________________________________________
 
         if files:
@@ -24,7 +25,10 @@ class BaseAgent:
 
                 self.files.append({"type": input_type, "file_id": file_id})
                 print(f"[{self.__class__.__name__}] Añadio: {file_id}")
-
+            
+            self.content.extend(self.files)
+        else:
+            self.content.extend(self.files)
         #_____________________________________________________________
 
     """
@@ -60,23 +64,26 @@ class BaseAgent:
         #_______________________________________________________________________________
 
     """
+    """
+    def Reset_History(self):
+        self.messages = [{"role":"system","content":self.system_prompt}]
+
+    """
         Run():
     """
     def Run(self, prompt):
         #_______________________________________________________________________________
 
         print(f"[{self.__class__.__name__}] Hizo su peticion a OpenAI: {self.model}")
-        content = []
 
         # ------ Añadir | Prompt ------
-        content.append({"type": "input_text", "text": prompt})
-        content.extend(self.files)
+        self.content.append({"type": "input_text", "text": prompt})
         # self.messages.append()
 
-        if content:
-            self.messages.append({"role": "user", "content": content})
+        if self.content:
+            self.messages.append({"role": "user", "content": self.content})
 
-        print(self.messages)
+        #print(self.messages)
 
         # ------ OpenAI | Solicitud ------
         response = self.ai_client.Send_Request(
@@ -88,6 +95,7 @@ class BaseAgent:
         assistant_json = parsed.model_dump_json()
 
         self.messages.append({"role": "assistant", "content": assistant_json})
+        self.content = []
 
         return parsed, response.usage
     

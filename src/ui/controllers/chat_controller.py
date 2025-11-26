@@ -1,6 +1,6 @@
 import json
 
-from PySide6.QtWidgets import QWidget
+from PySide6.QtCore import QTimer
 
 from ui.components.message_bubble import MessageBubble
 from ui.workers.ai_worker import AIWorker
@@ -15,11 +15,13 @@ class ChatController:
     """
     def Add_Message(self, text, role="assistant"):
         bubble = MessageBubble(text, role)
-
+        
         self.chat_area.layout.insertWidget(self.chat_area.layout.count() - 1, bubble)
-
-        # Auto scroll al final
-        self.chat_area.scroll.verticalScrollBar().setValue(self.chat_area.scroll.verticalScrollBar().maximum())
+        
+        # Auto scroll al final (con delay para que se renderice el widget)
+        QTimer.singleShot(10, lambda: self.chat_area.scroll.verticalScrollBar().setValue(
+            self.chat_area.scroll.verticalScrollBar().maximum()
+        ))
 
     def Remove_LastMessage(self):
         """
@@ -37,10 +39,32 @@ class ChatController:
                 widget.deleteLater()
 
     def Save_OutputJSON(self, response_obj):
-        file_JSON = f"{self.main_window.output_dir}\\{self.main_window.furniture_name}_piezas.json"
+        # ----------------------------------------------------
+        # 1. Determinar tipo de archivo (piezas/modulos)
+        # ----------------------------------------------------
+        keyword_file = "none"
+        agent_name = self.main_window.agent_IA.__class__.__name__
 
-        #print(disassemble_obj)
+        if agent_name == "ParametrizadorModulos":
+            keyword_file = "modulos"
+        elif agent_name == "Analista_Piezas":
+            keyword_file = "piezas"
 
+        file_JSON = f"{self.main_window.output_dir}\\{self.main_window.furniture_name}_{keyword_file}.json"
+
+        # ----------------------------------------------------
+        # 2. SI ES UN MODULO PARAMETRIZADO → actualizar solo 1 módulo
+        # ----------------------------------------------------
+        if agent_name == "ParametrizadorModulos":
+            if self.main_window.agent_IA.init_state == True:
+                self.main_window.agent_IA.Update_SingleModule(file_JSON, response_obj)
+                return
+            else:
+                self.main_window.agent_IA.init_state = True
+        
+        # ----------------------------------------------------
+        # 3. SI NO ES PARAMETRIZADOR → guardar JSON normal
+        # ----------------------------------------------------
         with open(file_JSON, "w", encoding="utf-8") as f:
             json.dump(response_obj.dict(), f, indent=4, ensure_ascii=False)
 
@@ -65,11 +89,12 @@ class ChatController:
         self.Add_Message("✍️ Analizando...", role="assistant")
 
         # Crear y configurar el worker thread
-        self.ai_worker = AIWorker(self.main_window.agent_IA, text)
+        self.ai_worker = AIWorker(self.main_window.agent_IA, text, self.main_window.furniture_name)
         
         # Conectar las señales
         self.ai_worker.finished.connect(self.On_IA_Response)
         self.ai_worker.error.connect(self.On_IA_Error)
+        self.ai_worker.progress.connect(self.On_IA_Progress)
         
         # Iniciar el thread (no bloquea la interfaz)
         self.ai_worker.start()
@@ -120,3 +145,8 @@ class ChatController:
         self.main_window.send_button.setText("  Enviar")
         
         print(f"[ERROR] {error_msg}")
+
+    def On_IA_Progress(self, msg):
+        self.Remove_LastMessage()
+
+        self.Add_Message(msg, role="assistant")

@@ -45,17 +45,6 @@
                 "shelves": 0,
                 "related_to": "Isla principal con placa de cocina y campana, frente con 4 cuerpos/aperturas visibles."
             }
-        },
-        {
-            "name": "Mesón / Encimera (QUARZTONE)",
-            "type_component": "estructural",
-            "quantity": 1,
-            "detail": {
-                "doors": 0,
-                "drawers": 0,
-                "shelves": 0,
-                "related_to": "Cubierta en QUARZTONE sobre muebles bajos e isla (elemento estructural, sin cavidad)."
-            }
         }
     ],
     "configuration": "Configuración lineal contra pared con torre de hornos en la izquierda, mueble bajo continuo + fregadero en la pared, mueble alto continuo encima del mesón, isla independiente con placa y campana.",

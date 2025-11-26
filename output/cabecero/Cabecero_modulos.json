@@ -1,0 +1,138 @@
+{
+    "parametrizacion": [
+        {
+            "name": "cabecero - panel acolchado (cuerpo principal)",
+            "type": "estructural",
+            "global_position": "",
+            "dimensions": {
+                "height": 1150.0,
+                "width": 2430.0,
+                "depth": 50.0,
+                "unit": "mm"
+            },
+            "structure": {
+                "doors": 0,
+                "drawers": 0,
+                "shelves": 0,
+                "cavities": 0
+            },
+            "sub_modules": [],
+            "pieces": [
+                {
+                    "name": "marco perimetral",
+                    "role": "estructura",
+                    "height": 1150.0,
+                    "width": 2430.0,
+                    "depth": 18.0,
+                    "material": "madera",
+                    "quantity": 1
+                },
+                {
+                    "name": "panel acolchado",
+                    "role": "tapizado",
+                    "height": 1114.0,
+                    "width": 2394.0,
+                    "depth": 50.0,
+                    "material": "espuma y tapizado",
+                    "quantity": 1
+                },
+                {
+                    "name": "soporte central",
+                    "role": "estructura interna",
+                    "height": 1150.0,
+                    "width": 18.0,
+                    "depth": 50.0,
+                    "material": "madera",
+                    "quantity": 1
+                },
+                {
+                    "name": "banda iluminación oculta",
+                    "role": "iluminación",
+                    "height": 20.0,
+                    "width": 2430.0,
+                    "depth": 18.0,
+                    "material": "madera",
+                    "quantity": 1
+                }
+            ],
+            "assumptions": [
+                "Usado altura total de 1.15m extraída del alzado lateral",
+                "Ancho total estimado sumando repeticiones de 0.20m y 0.29m (≈2.43m)",
+                "Asumido grosor de panel acolchado de 50mm basado en representación gráfica",
+                "Asumido grosor estándar de tablero de 18mm para el marco perimetral",
+                "Calculadas dimensiones internas restando espesores de marco (2×18mm)"
+            ],
+            "viability": {
+                "percentage": 60,
+                "reason": "Faltan dimensiones exactas internas y posición global, realizadas estimaciones",
+                "missing_data": [
+                    "global_position",
+                    "cushion_depth_exacto",
+                    "illumination_band_depth_exacto"
+                ]
+            }
+        },
+        {
+            "name": "faja superior - perfil iluminación (tira LED oculta)",
+            "type": "estructural",
+            "global_position": "parte superior mural",
+            "dimensions": {
+                "height": 50.0,
+                "width": 3932.0,
+                "depth": 18.0,
+                "unit": "mm"
+            },
+            "structure": {
+                "doors": 0,
+                "drawers": 0,
+                "shelves": 0,
+                "cavities": 1
+            },
+            "sub_modules": [
+                {
+                    "name": "canal LED",
+                    "type": "cavity",
+                    "specifications": "Espacio interno para instalar perfil LED y disipador de calor",
+                    "relative_position": "trasero interno de la faja superior",
+                    "dimensions": {
+                        "height": 0.0,
+                        "width": 0.0,
+                        "depth": 0.0,
+                        "unit": "mm"
+                    }
+                }
+            ],
+            "pieces": [
+                {
+                    "name": "panel faja",
+                    "role": "estructura primaria",
+                    "height": 50.0,
+                    "width": 3932.0,
+                    "depth": 18.0,
+                    "material": "madera",
+                    "quantity": 1
+                }
+            ],
+            "assumptions": [
+                "Se asume ancho total igual a 1960+12+1960 mm según indicaciones de alzado frontal",
+                "Se asume altura visible de la faja de 50 mm como perfil estándar de iluminación oculta",
+                "Se asume profundidad igual al espesor estándar de 18 mm",
+                "Se define una única cavidad interna para alojar perfil LED sin dimensiones precisas en el plano"
+            ],
+            "viability": {
+                "percentage": 40,
+                "reason": "Dimensiones exactas de la cavidad LED y perfil no especificadas en plano",
+                "missing_data": [
+                    "dimensiones internas de la cavidad LED",
+                    "dimensiones del perfil LED",
+                    "profundidad precisa de la faja de iluminación"
+                ]
+            }
+        }
+    ],
+    "tokens": {
+        "input": 17342,
+        "output": 4093,
+        "total": 21435
+    }
+}
